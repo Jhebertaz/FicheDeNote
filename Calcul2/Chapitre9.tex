@@ -1,0 +1,95 @@
+%Chapitre9
+\section{Les intégrales curvilignes et l'analyse vectorielle dans le plan}
+	\subsection{Les champs vectoriels}
+		\begin{mydef}
+			\index{Champ vectoriel}
+			Soit $D$ un sous-ensemble de $\mathbb{R}^2$ (resp. $\mathbb{R}^3$)). Un champ vectoriel dans $\mathbb{R}^2$ (resp. $\mathbb{R}^3$)) est une fonction $\vec{F}$ qui, à chaque point $(x,y)\in D$ (resp. $(x,y,z)\in D$)), associe un vecteur à deux (resp. trois) dimensions $\vec{F}(x,y)$ (resp. $\vec{F}(x,y,z)$).
+		\end{mydef}
+		\begin{mydef}
+			\index{Champ de gradients}
+			Un champ de gradients, noté $\nabla f$ est un champ vectoriel dans $\mathbb{R}^n$ qui associe un vecteur en chaque point où les dérivées partielles sont définies.
+			\[\nabla f(\vec{x})=(\partial f/\partial x_1,\partial f/\partial x_2,...,\partial f/\partial x_n)\]
+		\end{mydef}
+	\subsection{Les intégrales curvilignes}
+		\begin{mydef}
+			\index{Intégrale curviligne}
+			Si $f$ est définie sur une courbe lisse et paramétré $C$, alors l'intégrale curviligne de $f$ le long de $C$ est 
+			\[\int_C f(\vec{x})\, ds=\int_{a}^{b} f\big(\vec{x}(t)\big)\sqrt{\sum_{i=1}^{n}\bigg(\frac{dx_i}{dt}\bigg)^2}\, dt=\int_{a}^{b} f\big(\vec{r}(t)\big)||\pvec{r}(t)||\, dt \]
+			où $\vec{x}(t)=\vec{r}(t)$
+		\end{mydef}
+		\begin{mydef}
+			\index{Intégrale curviligne par rapport aux composantes}
+			\index{Intégrale curviligne par rapport à l'abcisse curviligne}
+			L'intégrale curviligne par rapport à l'abcisse curviligne est définit 
+			\[\int_C \sum_{i=1}^n f(\vec{x})\, dx_i =\int_{a}^{b}\sum_{i=1}^n f\big(
+			\vec{x}(t)\big)x_i'\, dt\]
+		\end{mydef}
+	\subsection{Les intégrales curvilignes de champs vectoriels}
+		\begin{mydef}
+			\index{Intégrale curviligne de champs vectoriels le long d'une courbe}
+			Soit $\vec{F}$ un champ vectoriel continue défini sur une courbe lisse $C$ paramétrée par une fonction vectorielle $\vec{r}(t), a\leq t\leq b$. Alors l'intégrale curviligne de $\vec{F}$ le long de $C$ est \[\int_C\vec{F}\bullet d\vec{r}=\int_{a}^{b} \vec{F}\big(\vec{r}(t)\big)\bullet\pvec{r}(t)\, dt=\int_C\vec{F}\bullet\vec{T}\, ds\]
+			\[\int_C\vec{F}\bullet d\vec{r}=\int_C P\, dx + Q\, dy + R\, dz \quad\text{ où } \vec{F}=(P,Q,R) \]
+		\end{mydef}
+	\subsection{Le théorème fondamental des intégrales curvilignes}
+		\begin{mythm}\index{Théorème  fondamental du calcul différentiel et intégral}
+			Le théorème  fondamental du calcul différentiel et intégral affirme que \[\int_{a}^{b}F'(x)\, dx=F(a)-F(b)\] où $F$ est continue sur $[a,b]$.
+		\end{mythm}
+		\begin{mythm}
+			Soit une courbe lisse $C$ paramétrée par la fonction vectorielle $\vec{r}(t), a\leq t\leq b$. Soit une fonction différentiable de deux ou trois variables dont le vecteur gradient $\nabla f$ est continue sur $C$. Alors,\[\int_C \nabla f\bullet d\vec{r}=f\big(\vec{r}(b)\big)-f\big(\vec{r}(a)\big)\]
+		\end{mythm}
+		\begin{mydef}
+			\index{Champ conservatif}
+			Un champ vectoriel est dite consesrvatif si $\vec{F}=\nabla f$
+		\end{mydef}
+	\subsection{L'indépendance du chemin}
+		\begin{mydef}
+			\index{Courbe fermée}
+			\index{Indépendance du chemin}
+			\index{Chemin}
+			L'intégrale curviligne $\int_C \vec{F}\bullet\ d\vec{r}$ est indépendant du chemin si \[\forall C_1,C_2\subset D : \int_{C_1}\vec{F}\bullet\ d\vec{r}=\int_{C_2}\vec{F}\bullet\ d\vec{r}\] 
+			où $\vec{F}$ est un champ vectoriel continue sur un domaine $D$. L'intégrale curviligne d'un champ vectoriel conservatif est indépendante du chemin.
+			Sur une courbe fermée telle que $\forall C_1,C_2, C_1\cup C_2 \text{ fermé } \Longleftrightarrow \vec{r}(a)=\vec{r}(b)$, l'intégrale curviligne sur un champ vectoriel conservatif est nulle.
+		\end{mydef}
+		\begin{mythm}
+			\[\int_C \vec{F}\bullet d\vec{r} \text{ est indépendante du chemin dans $D$}\Longleftrightarrow\forall C_{ferm\acute{e}}\subset D,\int_C \vec{F}\bullet d\vec{r} =0\]
+		\end{mythm}
+		\begin{mydef}
+			\index{Région ouverte}
+			Une région ouverte sont telle que
+			\[\forall p\in D, \exists\delta >0 : Disque(p,\delta)\subset D\]
+		\end{mydef}
+		\begin{mydef}
+			\index{Région connexe}
+			\[\forall p,q\in D, \exists C\subset D \implies  p,q\in C  \]
+		\end{mydef}
+		\begin{mythm}
+			\index{Champ conservatif}
+			\index{Chemin}
+			Soit un champ vectoriel $\vec{F}$ continu sur un domaine ouvert et connexe $D$. Si $\int_C \vec{F}\bullet d\vec{r}$ est indépendante du chemin dans $D$, alors $\vec{F}$ est un champ vectoriel conservatif sur $D$, c'est-à-dire qu'il existe une fonction $f$ telle que $\nabla f=\vec{F}$.
+		\end{mythm}
+		\begin{mythm}
+			\index{Champ conservatif}
+			\index{Courbe simple}
+			Si $\vec{F}=\big(P(x,y), Q(x,y)\big)$, un champ vectoriel conservatif tel que $P et Q$ ont des dérivées partielle premières  continues sur un domaine $D$, alors en tout point de $D$ on a \[\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}\]
+			La réciproque n'est vrai que pour sur une courbe simple (qui ne se coupe pas).
+		\end{mythm}
+		\begin{mythm}
+			\index{Domain simplement connexe}
+			\index{Champs conservatif}
+				Soit un champ vectoriel $\vec{F}=(P,Q)$ défini sur un domnain simplement connexe $D$. Supposant que $P et Q$ ont des dérivées partielles premières continues et que \[\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}\]
+				Alors, $\vec{F}$ est conservatif.
+		\end{mythm}
+	\subsection{Le théorème de Green}
+		\begin{mydef}
+			\index{Orientation positive}
+			\index{Courbe fermée}
+			Soit une région $D$ dont la frontière est une courbe $C$ fermée. L'orientation positive est défini comme le parcours en fait dans le sens antihoraire (généralement). L'intérieur de la région $D$ se trouve à gauche lorsque $C$ est parcourue.
+		\end{mydef}
+		\begin{mythm}
+			\index{Théorème de Green}
+			\index{Aire}
+			Soit $C$ une courbe plane fermée simple, lisse par morceaux et orientée dans le sens positif, et soit $D$ la région délimitée par $C$. Si $P$ et $Q$ ont des dérivées partielle premières continues sur un domaine qui contient $D$, alors \[\int_C P\,dx + Q\, dy = \iint\limits_D\Big(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Big)\, dA\]
+			Le théorème de Green donne alors les formules suivantes pour l'aire de $D$
+			\[A=\oint_C x\, dy=\oint_C y\ dx=\frac{1}{2}\oint_C x\, dy -y \, dx\]
+		\end{mythm}
+		

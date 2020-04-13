@@ -1,0 +1,151 @@
+%Chapitre10
+\section{Les intégrales de surface et l'analyse vectorielle dans l'espace}
+	\subsection{Les surfaces paramétrées et leurs aires}
+		\begin{mydef}
+			\index{Surface paramétrée}
+			\index{Equations paramétriques}
+			Une surface paramétrée, noté $S$ est l'ensemble de tous les points $(x,y,z)\in\mathbb{R}^3$, tels que \[x=x(u,v)\quad y=y(u,v)\quad z=z(u,v)\quad (u,v)\in D\]
+			où $\vec{r}(u,v)=\big(x(u,v),y(u,v),z(u,v)\big)$ est une fonction vectorielle aux équations paramétriques de $S$ définie sur la région $D$.
+		\end{mydef}
+		\subsubsection{Les plans tangents}
+			\begin{mydef}
+				\index{Equations paramétrique du plan}
+				L'équation paramétrique du plan est
+				\[\vec{r}(u,v)=\vec{r}_0+u\pvec{r}_u+v\pvec{r}_v\]
+				ou
+				\[(\pvec{r}_u\times \pvec{r}_v)\bullet(\overrightarrow{r_p-r_0})\quad\text{ avec }\begin{cases}
+				P_0 = \vec{r}(u_0,v_0)\\
+				\vec{n}=\pvec{r}_u\times\pvec{r}_v\\
+				r_p-r_0=(x-x_0,y-y_0,z-z_0)
+				\end{cases}
+				\]
+				ou $\pvec{r}_u$ et $\pvec{r}_v$ sont les fonctions vectorielles dont les composantes sont respectivement dérivée par rapport à $u$ et $v$
+			\end{mydef}
+		\subsubsection{L'aire d'une` surface paramétrée}
+			\begin{mydef}
+				\index{Aire}
+				Si une surface lisse $S$ est paramétrée par la fonction vectorielle
+				\[\vec{r}(u,v)=(x(u,v),y(u,v),z(u,v))\]
+				et si $S$ est parcourue une seule fois lorsque $(u,v)$ balaie le domaine $D$ des paramètres, alors l'aire de la surface $S$ est,
+				\[A(S)=\iint\limits_D||\vec{r}_u\times\vec{r}_v||\, dA,\]
+				où 
+				\[\vec{r}_u=\Big(\frac{\partial x}{\partial u},\frac{\partial y}{\partial u},\frac{\partial y}{\partial u}\Big)\quad
+				\vec{r}_v=\Big(\frac{\partial x}{\partial v},\frac{\partial y}{\partial v},\frac{\partial y}{\partial v}\Big)\]
+			\end{mydef}
+		\subsubsection{L'aire des graphes de fonctions de deux variables}
+			\begin{mydef}
+				\index{Aire}
+				La formulaire de l'aire d'une surface d'équation $z=f(x,y)$ est\[A(S)=\iint\limits_D \sqrt{1+\Big(\frac{\partial z}{\partial x}\Big)^2+\Big(\frac{\partial z}{\partial y}\Big)^2}\, dA\]
+			\end{mydef}
+	\subsection{Les intégrales de surface}
+		\subsubsection{Les surfaces paramétrées}
+			\begin{mydef}
+				\index{Intégrale de surface}
+				\index{Surface paramétrée}
+				Soit $S$ une surface paramétrée par
+				\[\vec{r}(u,v)=(x(u,v),y(u,v),z(u,v))\quad (u,v)\in D\]
+				Si les composantes sont continues et si $\vec{r}_u$ et $\vec{r}_v$ sont non nuls et non parallèles en tout point de $D$, alors l'intégrale de surface de $f$ sur $S$ est \[\iint\limits_S f(x,y,z)\, dS=\iint\limits_D f\big(\vec{r}(u,v)\big)||\vec{r}_u\times\vec{r}_v||\, dA\]
+			\end{mydef}
+		\subsubsection{Les graphes de fonctions de deux variables}
+			\begin{mydef}
+				\index{Intégrale de surface}
+				Soit une surface $S$ d'équation $z=g(x,y)$ comme une surface d'équations paramétriques \[x=x\quad y=y\quad z=g(x,y)\]
+				Alors l'intégrale de surface est
+				\[\iint\limits_S f(x,y,z)\, dS=\iint\limits_D f\big(x,y,g(x,y)\big)\sqrt{\Big(\frac{\partial z}{\partial x}\Big)^2+\Big(\frac{\partial z}{\partial y}\Big)^2 +1}\, dA\]
+			\end{mydef}
+		\subsubsection{Les surfaces orientées}
+			\begin{mydef}
+				\index{Surface orientable}
+				\index{Vecteur unitaire}
+				\index{Gradient}
+				Une surface $S$ qui possède en chaque point (sauf peut-être sur sa frontière) un plan tangent. (Il existe donc deux vecteurs unitaires $n_1=-n_2$) Une surface $S$ est orientable si on peut choisir un vecteur normal en chaque points $(x,y,z)$ de sorte de façon que $\vec{n}$ varie continûment sur $S$. Par convention $\vec{n}$ pointe vers les $z>0$. (cote positive) La direction normal à une surface de niveau est la direction du gradient.
+			\end{mydef}
+		\subsubsection{Les intégrales de surface de champs vectoriels}
+			\begin{mydef}
+				\index{Intégrale de surface}
+				\index{Surface orientée}
+				\index{Vecteur normal}
+				\index{Flux de $\vec{F}$ à travers $S$}
+				Soit $\vec{F}$ un champs vectoriel continu défini sur une surface $S$ orientée par un vecteur normal unitaire $\vec{n}$, alors l'intégrale de surface $\vec{F}$ sur $S$  (flux de $\vec{F}$ à travers $S$) est 
+				\[\iint\limits_S\vec{F}\bullet\, d\vec{S}=\iint\limits_S \vec{F}\bullet \vec{n}\, dS\]
+				Où $dS = ||\vec{r}_u\times\vec{r}_v||\, dA$.
+				\[\iint\limits_S\vec{F}\bullet\, d\vec{S}=\iint\limits_D \vec{F}\bullet (\vec{r}_u\times\vec{r}_v)\, dA\]
+				Si la surface $S$ est un graphe $z=g(x,y)$, on peut considérer $x$ et $y$ comme des paramètres. Si $\vec{F}=(P,Q,R)$, alors
+				\[\iint\limits_S\vec{F}\bullet\, d\vec{S}=\iint\limits_D\Bigg(-P\frac{\partial g}{\partial x}-Q\frac{\partial g}{\partial y} + R\Bigg)\, dA\]
+			\end{mydef}
+	\subsection{Le rotationnel et la divergence}
+		\subsubsection{Le rotationnel}
+			\begin{mydef}
+				\index{Rotationnel}
+				Si $\vec{F}=(P,Q,R)$ est un champ vectoriel sur $\mathbb{R}^3$ et si toutes dérivées partielles de $P$, de $Q$ et de $R$ existent, alors le rotationnel de $\vec{F}$, noté $\rot{\vec{F}}$, est le champ vectoriel sur $\mathbb{R}^3$ défini par
+				\[\rot{\vec{F}}=\Bigg(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z},
+				\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x},
+				\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigg)\]
+				Autrement, \[\nabla \times \vec{F} = \begin{vmatrix}
+				\vec{i}&\vec{j}&\vec{k}\\
+				\frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
+				P&Q&R
+				\end{vmatrix}=\rot{\vec{F}}\]
+			\end{mydef}
+			\begin{mythm}
+				\index{Rotationnel}
+				\index{Gradient}
+				Soit une fonction $f$ de trois variables possède des dérivées secondes partielles continues, alors \[\rot{(\nabla f)}=\vec{0}\]
+			\end{mythm}
+			\begin{mythm}
+				\index{Rotationnel}
+				\index{Champ conservatif}
+				Si $\vec{F}$ est conservatif, alors $\rot{\vec{F}}=\vec{0}$.
+			\end{mythm}
+			\begin{mythm}
+				\index{Rotationnel}
+				\index{Champ conservatif}
+				Si $\vec{F}$ est un champ vectoriel défini sur tout $\mathbb{R}^3$ dont les fonctions composantes ont des dérivées partielles continues, et si $\rot{\vec{F}}=\vec{0}$, alors $\vec{F}$ est un champ vectoriel conservatif.
+			\end{mythm}
+		\subsubsection{La divergence}
+			\begin{mydef}
+				\index{Divergence}
+				Si $\vec{F}=(P,Q,R)$ est un champ vectoriel sur $\mathbb{R}^3$ et si $\partial P/\partial x,\partial Q/\partial y,\partial R/\partial z$ existent, alors la divergence de $\vec{F}$ est la fonction de trois variables définie par \[\dive{\vec{F}}=\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\]
+				Autrement, \[\dive{\vec{F}}=\nabla\bullet\vec{F}\]
+			\end{mydef}
+			\begin{mythm}
+				\index{Divergence}
+				Si $\vec{F}=(P,Q,R)$ est un champ vectoriel sur $\mathbb{R}^3$ et si P, Q, R ont des dérivées partielles secondes continues, alors
+				\[\dive{\rot{\vec{F}}}=0\]
+			\end{mythm}
+		\subsubsection{Le laplacien}
+			\begin{mydef}
+				\index{Laplacien}
+				\index{Equation de Laplace}
+				Si $f$ est une fonction de trois variable, le laplacien de $f$ est
+				\[\dive{(\nabla f)}=\nabla\bullet(\nabla f)=\nabla ^2=\nabla\bullet\nabla=\frac{\partial ^2 f}{\partial x^2}+\frac{\partial ^2 f}{\partial y^2}+\frac{\partial ^2 f}{\partial z^2}\]
+				L'équation de Laplace est 
+				\[\nabla^2 f=\frac{\partial ^2 f}{\partial x^2}+\frac{\partial ^2 f}{\partial y^2}+\frac{\partial ^2 f}{\partial z^2}=0\]
+				Si $\vec{F}=(P,Q,R)$ est un champ vectoriel, alors le laplacien de $\vec{F}$
+				\[\nabla^2 \vec{F}=\big(\nabla^2P,\nabla^2Q,\nabla^2R\big)\]	
+			\end{mydef}
+		\subsubsection{Les formes vectorielles du théorème de Green}
+			\begin{mythm}
+				\index{Théorème de Green}
+				\index{Rotationnel}
+				En considèrant $\vec{F}=(P,Q,0)$, alors la formule du théorème d Green s'exprime sous forme vectorielle \[\oint_C\vec{F}\bullet d\vec{r}=\iint\limits_D (\rot{\vec{F}})\bullet\vec{k}\, dA\]
+				Aussi,
+				\[\oint_C\vec{F}\bullet d\vec{r}=\iint\limits_D \dive{F(x,y)}\, dA\]
+			\end{mythm}
+	\subsection{Le théorème de Stoke}
+		\begin{mythm}[Stokes]
+			\index{Théorème de Stoke}
+			\index{Surface orientée}
+			\index{Orientation positive}
+			Soit $S$, une surface lisse par morceaux orientée et bornée par un courbe frontière $C$ lisse par morceaux, fermée et simple, et orientée positivement par rapport à $S$. Soit un champ vectoriel $\vec{F}$ dont les composantes ont des dérivées partielles continues sur une région ouverte dans $\mathbb{R}^3$ qui contient $S$. Alors, \[\oint_C \vec{F}\bullet d\vec{r}=\iint\limits_S \rot{\vec{F}}\bullet d\vec{S}\]
+			La courbe frontière est aussi noté $\partial S$, alors, 
+			\[\iint\limits_{S} \rot{\vec{F}}\bullet d\vec{S}\oint_{\partial S} \vec{F}\bullet d\vec{r}\]
+		\end{mythm}
+	\subsection{Le théorème de flux-divergence}
+		\begin{mythm}[Flux-divergence]
+			\index{Flux-divergence}
+			\index{Surface orientée}
+			\index{Orientation positive}
+			Soit une région solide simple $E$ et $S$ la surface frontière de $E$, orientés positivement (vers l'extérieur). Soit un champ vectoriel $\vec{F}$ dont les fonctions composantes ont des dérivées partielles continues sur une région ouverte qui contient $E$. Alors, \[\iint\limits_S \vec{F}\bullet d\vec{S}=\iiint\limits_E \dive{\vec{F}}\, dV\]
+		\end{mythm}
+	

@@ -1,0 +1,66 @@
+%Chapitre 8
+\section{Les dérivées et les intégrales des fonctions vectorielles}
+	\subsection{Les règles de dérivations}
+		\begin{mythm}
+			\index{Règles de dérivations}
+			Si $\vec{u}$ et $\vec{v}$ sont des fonctions dérivables, $c$ est un scalaire et $f$ est une fonction réelle, alors,
+			\begin{align}
+				&\frac{d}{dt}[\vec{u}(t)+\vec{v}(t)]=\pvec{u}(t)+\pvec{v}(t)\\
+				&\frac{d}{dt}[c\vec{u}(t)]=c\pvec{u}(t)\\
+				&\frac{d}{dt}[f(t)\vec{u}(t)]=f'(t)\vec{u}(t)+f(t)\pvec{u}(t)\\
+				&\frac{d}{dt}[\vec{u}(t)\bullet\vec{v}(t)]=\pvec{u}(t)\bullet\vec{v}(t)+\vec{u}(t)\bullet\pvec{v}(t)\\
+				&\frac{d}{dt}[\vec{u}(t)\times\vec{v}(t)]=\pvec{u}(t)\times\vec{v}(t)+\vec{u}(t)\times\pvec{v}(t)\\
+				&\frac{d}{dt}\Big[\vec{u}\big(f(t)\big)\Big]=f'(t)\pvec{u}\big(f(t)\big)
+			\end{align}
+		\end{mythm}
+	\subsection{La longueur d'arc et la courbure}
+		\begin{mythm}
+			\index{Longueur d'une courbe paramétrée}
+			Soit $C$ une courbe paramétrée par $x=f(t)$, $y=g(t)$, $a\leq t\leq b$, où $f$ et $g$ ont des dérivées continues sur $[a,b]$, et $C$ est parcourue une seule fois lorsque $t$ varie de $a$ à $b$. Alors, la longueur de $C$ est
+			\[L=\int_{a}^{b}\sqrt{\Big(\frac{dx}{dt}\Big)^2 +\Big(\frac{dy}{dt}\Big)^2}\, dt\]
+			\[L=\int_{a}^{b}\sqrt{\Big(\frac{dx}{dt}\Big)^2 +\Big(\frac{dy}{dt}\Big)^2 +\Big(\frac{dz}{dt}\Big)^2}\, dt\]
+			\[L=\int_{a}^{b}||\pvec{r}(t)||^2\, dt\]
+		\end{mythm}
+	\subsection{L'abscisse curviligne}
+		\begin{mydef}
+			\index{Abscisse curviligne}
+			L'abcisse curviligne $s$ de $C$ est définie par
+			\[s(t)=\int_{a}^{t}||\pvec{r}(u)||^2\, du=\int_{a}^{t}\sqrt{\Big(\frac{dx}{du}\Big)^2 +\Big(\frac{dy}{du}\Big)^2 +\Big(\frac{dz}{du}\Big)^2}\, du\]
+			\[\frac{ds}{dt}=||\pvec{r}(t)||\]
+		\end{mydef}
+	\subsection{La courbure}
+		\begin{mydef}
+			\index{Vecteur tangent unitaire}
+			Si $C$ est une courbe lisse définie par la fonction vectorielle $\vec{r}$, son vecteur tangent unitaire $\vec{T}(t)$ est donné par \[\vec{T}(t)=\frac{\pvec{r}(t)}{||\pvec{r}(t)||}\]
+			et $\vec{T}(t)$ indique la direction de la courbe.
+		\end{mydef}
+		\begin{mydef}
+			\index{Courbure}
+			La courbure d'une courbe est \[\kappa=\Big|\Big|\frac{d\vec{T}}{ds}\Big|\Big|,\quad \kappa(t)=\frac{||\pvec{T}(t)||}{||\pvec{r}(t)||},\]
+			où $\vec{T}$ est le vecteur tangent unitaire. La courbure est la norme du taux de variation du vecteur tangent unitaire par rapport à l'abcisse curviligne.
+		\end{mydef}
+		\begin{mythm}
+			\index{Courbure}
+			La courbure de la courbe paramétrée par la fonction vectorielle $\vec{r}$ est
+				\[\kappa(t)=\frac{||\pvec{r}(t)\times\pvec{r}'(t)||}{||\pvec{r}(t)||^3}\]
+		\end{mythm}
+	\subsection{Les vecteurs normal et binormal}
+		\begin{mydef}
+			\index{Vecteur normal unitaire principal}
+			\index{Normal unitaire}
+			Si $\pvec{r}$ est lisse, on définit le vecteur normal unitaire principal $\vec{N}(t)$ (ou la normal unitaire) par
+				\[\vec{N}=\frac{\pvec{T}(t)}{||\pvec{T}(t)||}\]
+		\end{mydef}
+		\begin{mydef}
+			\index{Vecteur binormal}
+			Le vecteur binormal $\vec{B}(t)$ est définit par
+			\[\vec{B}(t)=\vec{T}(t)\times\vec{N}(t) : \vec{B}\perp\vec{T}\perp\vec{N}\]
+		\end{mydef}
+		\begin{mydef}
+			\index{Plan normal}
+			Le plan normal de $C$ en $P$ est la plan déterminé apr le vecteur normal $\vec{N}$ et le vecteur binormal $\vec{B}$ en un point $P$ d'une courbe $C$
+		\end{mydef}
+		\begin{mydef}
+			\index{Plan osculateur}
+			Le plan osculateur dee $C$ en $P$ est la plan déterminé apr le vecteur tangent unitaire $\vec{T}$ et le vecteur normal $\vec{N}$ en un point $P$ d'une courbe $C$
+		\end{mydef}
