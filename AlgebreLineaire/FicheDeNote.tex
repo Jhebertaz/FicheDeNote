@@ -1,0 +1,497 @@
+\documentclass{article}[french, babel]
+	\addtolength{\oddsidemargin}{-.875in}
+	\addtolength{\evensidemargin}{-.875in}
+	\addtolength{\textwidth}{1.75in}
+	\addtolength{\topmargin}{-.875in}
+	\addtolength{\textheight}{1.75in}
+	\usepackage{fancyhdr}
+	\usepackage{bm}
+	\usepackage{amsmath,amssymb,amsthm,mathtools,enumitem,imakeidx} 
+	\usepackage{caption,pdfpages}
+	\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+	\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+	\pagestyle{fancy}
+	\lhead{Julien Hébert-Doutreloux}
+	\rhead{--Page \thepage}
+	\cfoot{Algèbre Linéaire}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+	\newtheorem{mydef}{Définition}
+	\newtheorem{myprop}{Proposition}
+	\newtheorem{mythm}{Théorème}
+	\indexsetup{othercode=\small}
+	\makeindex[program=makeindex,columns=2,intoc=true,options={-s index_style.ist}]
+	\newcommand{\proj}[2]{\text{\normalfont{proj}}_#1 #2}
+	\newcommand{\prodsc}[2]{\langle #1,#2\rangle}
+	\author{Julien Hébert-Doutreloux}
+	\title{Fiche de Note}
+	\let\stdsection\section
+	\renewcommand\section{\newpage\stdsection}
+\begin{document}
+		\begin{titlepage}
+		\centering
+		\includegraphics[width=0.5\textwidth]{Universite_de_Montreal_logo}\par\vspace{1cm}
+		{\scshape\LARGE Université de Montréal\par}
+		\vspace{1cm}
+		{\scshape\Large Fiche Récapitulative\par}
+		\vspace{1.5cm}
+		{\huge\bfseries Algèbre Linéaire I\par}
+		\vspace{2cm}
+		{\Large\itshape Julien Hébert-Doutreloux\par}
+		\vfill
+		%supervised by\par
+		%Dr.~Mark \textsc{Brown}
+		\vfill
+		% Bottom of the page
+		{\large \today\par}
+	\end{titlepage}
+\setcounter{page}{2}
+	\tableofcontents
+	\newpage
+\section{Transformation linéaire et leurs propriétés}
+	\subsection{Transformation linéaire entre deux espaces vectoriels quelconques}
+		\begin{mydef}
+			\index{Application linéaire}
+			\index{Transformation linéaire}
+				Soit $\mathcal{V}$ et $\mathcal{W}$ deux espaces vectoriels sur le corps des réels. L'application $T:\mathcal{V}\longrightarrow\mathcal{W}$ est dite linéaire si :
+				\begin{enumerate}
+					\item $T(O_{\mathcal{V}})=O_{\mathcal{W}}$
+					\item $T(u+v)=T(u)+t(v),\quad\forall u,v\in\mathcal{V}$
+					\item $T(cu)=cT(u),\quad\quad\forall c\in\mathbb{R}, \forall u\in\mathcal{V}$
+				\end{enumerate}
+			\end{mydef}
+		\begin{myprop}
+				\[\forall c,d\in\mathbb{R},\forall u,v\in\mathcal{V},T(cu+dv)=cT(u)+dT(v) \Longleftrightarrow T \text{ est une tranformation linéaire} \]
+		\end{myprop}
+	\subsection{Noyau et image d'une transformation linéaire}
+		\begin{mydef}
+			\index{Noyau}
+			Le noyau de $T$ est un sous-ensemble de $\mathcal{V}$ défini : $\ker (T)=\{u\in\mathcal{V} : T(u)=O_{\mathcal{W}}\}$.
+		\end{mydef}
+		\begin{mydef}
+			\index{Image}
+			L'image de $T$ est un sous-ensemble de $\mathcal{W}$ définie : $\text{\normalfont{im}}(T) = \{w\in\mathcal{W} : \exists u\in\mathcal{V} | w=T(u)\}$.
+		\end{mydef}	
+		\begin{myprop}
+			Si $T:\mathcal{V}\longrightarrow\mathcal{W}$ une transformation linéaire alors,
+			\begin{enumerate}
+				\item $\ker(T) \text{est un sous-espace vectoriel de }\mathcal{V}$
+				\item $\text{\normalfont{im}}(T) \text{est un sous-espace vectoriel de }\mathcal{W}$
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Transformation linéaire injective, surjective, isomorphisme}
+		\begin{mydef}
+			\index{Injectivité}
+				Soit $\mathcal{V}$ et $\mathcal{W}$ deux espaces vectoriels sur le corps des réels. La transformation linéaire $T:\mathcal{V}\longrightarrow\mathcal{W}$ est \textbf{injective} si tout vecteur de $\mathcal{W}$ est l'image \textbf{d'au plus} un vecteur de $\mathcal{V}$. \[T:\mathcal{V}\longrightarrow\mathcal{W}\text{\normalfont{ injective}}\Longleftrightarrow \forall u_1,u_2\in\mathcal{V} : u_1\stackrel{\neq}{=} u_2\implies T(u_1)\stackrel{\neq}{=} T(u_2).\]
+		\end{mydef}
+		\begin{mythm}
+			\index{Injectivité}
+			\[T:\mathcal{V}\longrightarrow\mathcal{W}\text{\normalfont{ injective}}\Longleftrightarrow \ker(T) =\{O_{\mathcal{V}}\}\]
+		\end{mythm}
+		\begin{mydef}
+			\index{Surjectivité}
+			Soit $\mathcal{V}$ et $\mathcal{W}$ deux espaces vectoriels sur le corps des réels. La transformation linéaire $T:\mathcal{V}\longrightarrow\mathcal{W}$ est \textbf{surjective} si tout vecteur de $\mathcal{W}$ est l'image \textbf{d'au moins} un vecteur de $\mathcal{V}$.
+		\end{mydef}
+		\begin{mythm}
+			\index{Surjectivité}
+			\[T:\mathcal{V}\longrightarrow\mathcal{W}\text{\normalfont{ surjective}}\Longleftrightarrow\text{\normalfont{im}}(T)=\mathcal{W}\]
+		\end{mythm}
+		\begin{mydef}
+			\index{Isomorphisme}
+			\index{Bijection}
+			Une transformation linéaire qui est à la fois injective et surjective est appelée un \textbf{isomorphisme} (bijective).
+		\end{mydef}
+	\subsection{Transformation linéaire $T : \mathbb{R}^n\longrightarrow\mathbb{R}^m$ et matrice associée}
+		\begin{myprop}
+			\index{Injectivité}
+			\index{Surjectivité}
+			\index{Isomorphisme}
+			Si $T : \mathbb{R}^n\longrightarrow\mathbb{R}^m$ est une transformation linéaire et $A$ est la matrice associée à $T$ alors $\ker(T)=\ker A$ et $\text{\normalfont{im}}(T)=\text{\normalfont{im}}\ A.$ 
+			\begin{enumerate}
+				\item $T \text{\normalfont{ injective}} \Longleftrightarrow \ker A=\{O\}\ \text{colonnes de } A \text{ linéairement indépendantes}$
+				\item $T \text{\normalfont{ surjective}} \Longleftrightarrow \text{\normalfont{im}}\ A=\mathbb{R}^m\ \text{colonnes de } A \text{ engendrent } \mathbb{R}^m$
+			\end{enumerate}
+		\end{myprop}
+\section{Bases et systèmes de coordonnées dans des espaces vectoriels}
+	\subsection{Base d'un espace ou sous-espace vectoriel}
+		\begin{mydef}
+			\index{Base}
+			Soit un \textbf{espace (resp. sous-ensemble) vectoriel} $\mathcal{V}$.
+			Un ensemble de vecteurs $\{v_1,v_2,...,v_n\}$ \textbf{est une base de} $\mathcal{V}$ si
+			\begin{enumerate}
+				\item  $\{v_1,v_2,...,v_n\}$ est une famille libre (linéairement indépendant)
+				\item $\mathcal{V} = \text{\normalfont{Vect}}\{v_1,v_2,...,v_n\}$ (famille génératrice)
+			\end{enumerate}
+		\end{mydef}
+	\subsection{Système de coordonnées}
+		\begin{mythm}
+			\index{Système de coordonnées}
+			\index{Application coordonnée}
+			Soit $B=\{v_1,v_2,...,v_n\}$ une base d'un espace vectoriel $\mathcal{V}$, alors
+			\[\forall v\in\mathcal{V},\exists!c_1,c_2,...,c_n\in\mathbb{R} : v = \sum_{i=1}^{n}c_iv_i\]
+			Les coefficients réels $c_1,c_2,...,c_n$ sont les \textbf{composantes ou les coordonnées} du vecteur $v$ dans la base $B$. Autrement,\[[v]_B=\begin{pmatrix}
+			c_1\\ \vdots \\ c_n
+			\end{pmatrix}\in\mathbb{R}^n\]
+			La correspondance entre l'espace vectoriel $\mathcal{V}$ et $\mathbb{R}^n$ est l'\textbf{application coordonnées} (relative à la base $B$) $T_C : v\in\mathcal{V}\longrightarrow [v]_B$
+		\end{mythm}
+		\begin{mythm}
+			\index{Isomorphisme}
+			Soit $B$ une base formée de $n$ vecteurs d'un espace vectoriel $\mathcal{V}$. L'application coordonnées $T_C : \mathcal{V}\longrightarrow\mathbb{R}^n$ est un isomorphisme de $\mathbb{R}$ dans $\mathbb{R}^n$.
+		\end{mythm}
+	\subsection{Dimension d'un espace ou d'un sous-espace vectoriel}
+		\begin{mydef}
+			\index{Dimension}
+			La \textbf{dimension ($\text{\normalfont{dim}}\ \mathcal{V}$) d'un espace vectoriel est donnée par le nombre de vecteurs de ses bases.}
+		\end{mydef}
+		\begin{mythm}
+			\index{Base}
+			\index{Dimension}
+			Soit $B=\{v_1,v_2,...,v_n\}$ une base formée de $n$ vecteurs d'un espace vectoriel $\mathcal{V}$ alors toute famille de $\mathcal{V}$ contenant plus de $n$ vecteurs est \textbf{liée}. La dimension de d'une base de l'espace vectoriel $\mathcal{V}$ équivalente à la dimension de l'espace vectoriel $\mathcal{V}$.
+		\end{mythm}
+	\subsection{Théorèmes sur les bases}
+		\begin{mythm}
+			\index{Ensemble générateur}
+			Si $\text{\normalfont{dim}}\ \mathcal{V} = p\in\mathbb{N}$, alors tout ensemble linéairement indépendant de $p$ vecteurs est une base de $\mathcal{V}$ et tout ensemble générateur de $p$ vecteurs est un base de $\mathcal{V}$.
+		\end{mythm}
+\section{Changement de base et matrices associées à une transformation linéaire, rang}
+	\subsection{Système de coordonnées, matrice de passage}
+		\begin{mydef}
+			\index{Matrice de passage}
+			\index{Base canonique}
+			Soit $\mathcal{V}=\mathbb{R}^n$ et $B=\{v_1,v_2,...,v_n\}$ une base de $\mathcal{V}$. La \textbf{matrice de passage} de la base $B$ à la \textbf{base canonique} est définie par $P_B=(v_1\:v_2\:...\: v_n)$, la matrice formée des vecteurs de $B$.
+		\end{mydef}
+		\begin{myprop}
+			Tout vecteur $x\in\mathbb{R}^n$ (dans la base canonique) satisfait $x=P_B[x]_B\Longleftrightarrow [x]_B=P_B^{-1}x$.
+		\end{myprop}
+	\subsection{Système de coordonnées, matrice de passage et changement de base}
+		\begin{mydef}
+			\index{Matrice de changement de base}
+			Soit $B=\{b_1, b_2, ...,b_n\}$ et $C=\{c_1, c_2, ...,c_n\}$ deux bases d'un espace vectoriel $\mathcal{V}$ de dimensions finie $n$. La \textbf{matrice de passage de la base} $B$ \textbf{à la base} $C$ est définie par $P_{C\leftarrow B}=\big([b_1]_C\: [b_2]_C\:...\:[b_n]_C\big)$. La matrice de changement de base de $B$ à $C$ est la matrice formée des coordonnées des vecteurs de $B$ dans la base $C$.
+		\end{mydef}
+		\begin{mythm}
+			\index{Matrice de changement de base}
+			La matrice de changement de base est unique et inversible telle que $\big(P_{C\leftarrow B}\big)^{-1}=P_{B\leftarrow C}$ et que pour tout vecteur $x\in\mathcal{V},[x]_C=P_{C\leftarrow B} [x]_B$.
+			\\
+			Si $P_B$ (resp. $P_C$) est la matrice de passage de $B$ (resp. $C$) à la base canonique alors, $P_{C\leftarrow B}=\big(P_C\big)^{-1}P_B$.
+		\end{mythm}
+	\subsection{Matrice associée à une transformation linéaire}
+		\begin{mydef}
+			\index{Matrice associée}
+			\index{Transformation linéaire}
+			\index{Base}
+			Soit $T : \mathcal{V}\longrightarrow\mathcal{W}$ une transformation linéaire de $\mathcal{V}$ dans $\mathcal{W}$, telle que $\text{\normalfont{dim}}\ \mathcal{V}=n$ et $\text{\normalfont{dim}}\ \mathcal{W}=m$. Soit $B=\{b_1,b_2,...,b_n\}$ une base de $\mathcal{V}$ et $C=\{c_1,c_2,...,c_n\}$ une base de $\mathcal{W}$. La matrice associée à la transformation linéaire dans les bases $B$ et $C$ est donnée par
+			\[[T]_{C\leftarrow B}=\Big(\big[T(b_1)\big]_C\: \big[T(b_2)\big]_C\: ...\: \big[T(b_n)\big]_C\Big)\in\mathbb{R}^{m\times n}\quad\text{et}\quad\big[T(v)\big]_C = [T]_{C\leftarrow B}[v]_B,\quad\forall v\in\mathcal{V}\]
+		\end{mydef}
+		\begin{myprop}
+			\index{Espace d'arrivé}
+			\index{Espace de départ}
+			\index{Base}
+			\index{Changement de base}
+			\index{Matrice associée}
+			Soit la transformation linéaire $T : \mathcal{V}\longrightarrow\mathcal{W}$ et soit deux bases différentes dans chacuns des espaces $\mathcal{V}$ et $\mathcal{W}$. Soit $B$ et $B'$ des bases de l'espace de départ et, $C$ et $C'$ deux bases de l'espace d'arrivé.
+			\begin{itemize}
+				\item $P_{B\leftarrow B'}$ (resp. $P_{C'\leftarrow C}$), la matrice de changement de base de $B'$ à $B$ (resp. $C$ à $C'$) dans $\mathcal{V}$ (resp. $\mathcal{W}$)
+				\item $[T]_{C\leftarrow B}$ (resp. $[T]_{C'\leftarrow B'}$), la matrice associée à $T$ dans les bases $B$ et $C$ (resp. $B'$ et $C'$) 
+			\end{itemize}
+		Alors, $[T]_{C'\leftarrow B'}=P_{C'\leftarrow C}[T]_{C\leftarrow B}P_{B\leftarrow B'}$ 
+		\end{myprop}
+	\subsection{Rang d'une transformation linéaire et matrice associée}
+		\begin{mydef}
+			\index{Rang}
+			\index{Dimension}
+			\index{Matrice canonique}
+			\index{Image}
+			\index{Noyau}
+			Soit $T:\mathcal{V}\longrightarrow\mathcal{W}$ une transformation linéaire telle que $\text{\normalfont{dim}}\ \mathcal{V}=n$ et $\text{\normalfont{dim}}\ \mathcal{W}=m$. Le \textbf{rang} de $T$ est égal à la dimension de son image : $\text{\normalfont{rang}}\ T=\text{\normalfont{dim}}(\text{\normalfont{im}}\ T)$.\\
+			Si $A$ est la matrice canonique associée à $T:\mathbb{R}^n \longrightarrow\mathbb{R}^m$, alors $$\text{\normalfont{rang}}\ T=\text{\normalfont{rang}}\ A = \text{\normalfont{dim}}(\text{\normalfont{im}}\ A)$$ (nombre de pivot de $A$ et donc le nombre $r$ de variables de bases). Alors que $\text{\normalfont{dim}}(\ker A)=n-r$, le nombre de variables libres. Autrement dit, $$\text{\normalfont{dim}}(\text{\normalfont{im}}\ A) + \text{\normalfont{dim}}(\ker A)=n$$
+		\end{mydef}
+		\begin{mythm}
+			\index{Transformation linéaire}
+			\index{Rang}
+			\index{Noyau}
+			\index{Dimension}
+			Soit $T : \mathcal{V}\longrightarrow\mathcal{W}$ une transformation linéaire, alors
+			\[\text{\normalfont{rang}}\ T+\text{\normalfont{dim}}(\ker T)=\text{\normalfont{dim}}\ \mathcal{V}\quad\text{ou encore}\quad\text{\normalfont{dim}}(\text{\normalfont{im}}\ T)+\text{\normalfont{dim}}(\ker T)=\text{\normalfont{dim}}\ \mathcal{V}\]
+		\end{mythm}
+		\begin{myprop}
+			\index{Isomorphisme}
+			\index{Transformation linéaire}
+			Si la transformation linéaire $T : \mathcal{V}\longrightarrow\mathcal{W}$ est un \textbf{isomorphisme} alors $\text{\normalfont{dim}}\ \mathcal{V}=\text{\normalfont{dim}}\ \mathcal{W}$.
+		\end{myprop}
+\section{Produit scalaire, norme, orthogonalité sur un espace vectoriel, notion d'espace euclidien}
+	\subsection{Produit scalaire sur un espace vectoriel $\mathcal{V}$}  
+		\begin{mydef}
+			\index{Produit scalaire}
+			\index{Application linéaire}
+			Un produit scalaire \textbf{réel} sur un espace vectoriel $\mathcal{V}$ est une application notée $\langle ,., \rangle : \mathcal{V}\times \mathcal{V} \longrightarrow\mathbb{R}$ telle que $(u,v)\longmapsto \langle u,v \rangle$, vérifiant les axiomes suivants $\forall u,v,w\in \mathcal{V}$ et $ \forall c\in\mathbb{R}$  :
+			\begin{enumerate}
+				\item $\langle u,v \rangle = \langle v,u \rangle$
+				\item $\langle u+v, w \rangle=\langle u,w \rangle +\langle v, w \rangle$
+				\item $\langle cu,v \rangle=c\langle u,v \rangle$
+				\item $\langle u,u \rangle\geq 0$ et $\langle u,u \rangle=0$ $\Longleftrightarrow u=0$
+			\end{enumerate}
+		\end{mydef}
+	\subsection{Produit scalaire sur un espace vectoriel  $\mathcal{V}$ et norme}
+		\begin{mydef}
+			\index{Norme}
+			\index{Unitaire}
+			La norme est donnée par :
+			\[||u||=\sqrt{\langle u,u\rangle}\]
+			Normaliser :
+			\[\hat{u}=\frac{u}{||u||},\quad||\hat{u}||=1\]
+		\end{mydef}
+		\begin{myprop}
+			\index{Propriétés du produit scalaire}
+			\index{Cauchy-Schwarz}\index{Inégalité triangulaire} ~
+			\begin{enumerate}
+				\item $||u||= 0 \Longleftrightarrow u=0$
+				\item $||cu|| =|c|\cdot||u||,\forall c\in\mathbb{R}$
+				\item $|\langle u,v \rangle|\leq ||u||\cdot||v||$ et $|\langle u,v \rangle|= ||u||\cdot||v||\Longleftrightarrow u=\lambda v,\forall \lambda\in\mathbb{R}$
+				\item $||u+v||\leq||u||+||v||$ et $||u+v||=||u||+||v||\Longleftrightarrow u=\lambda v,\forall \lambda\in\mathbb{R}$
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Orthogonalité et propriétés}
+		\begin{mydef}
+			\index{Orthogonalité}
+			\index{Vecteurs orthogonaux}
+			Soit un espace vectoriel $\mathcal{V}$ muni d'un produit scalaire $\langle ,., \rangle : \mathcal{V}\times \mathcal{V} \longrightarrow\mathbb{R}$ telle que $(u,v)\longmapsto \langle u,v \rangle$, alors les vecteurs $u$ et $v$ sont dits \textbf{orhtogonaux} si $\langle u,v\rangle=0$
+		\end{mydef}
+		\begin{mydef}
+			\index{Complément orthogonal}
+			Soit $\mathcal{W}$ un sous-espace vectoriel de $\mathcal{V}$. Le \textbf{complément orthogonal} de $\mathcal{W}$, noté $\mathcal{W}^{\perp}$, est l'espace engedré par les vecteurs orthogonaux à $\mathcal{W}$: \[\mathcal{W}^{\perp}=\big\{z\in\mathcal{V} \lvert \langle z,w\rangle=0, \forall w\in\mathcal{W} \big\}\]
+		\end{mydef}
+		\begin{myprop}
+			\index{Propriétés de l'orthogonalité}
+			\index{Espace euclidien}
+			Soit un espace vectoriel $\mathcal{V}$ (et $\mathcal{W}$ un sous-espace) muni d'un produit scalaire $\langle ,., \rangle : \mathcal{V}\times \mathcal{V} \longrightarrow\mathbb{R}$ telle que $(u,v)\longmapsto \langle u,v \rangle$. Un tel espace est appelé \textbf{espace euclidien}. Alors,
+			\begin{enumerate}
+				\item le vecteur nul est orthogonal à tous les vecteurs de $\mathcal{V}$
+				\item les vecteurs $u$ et $v$ de $\mathcal{V}$ sont orthogonaux $\Longleftrightarrow ||u+v||^2=||u||^2 +||v||^2$
+				\item si $\mathcal{W}=\text{\normalfont{Vect}}\{u_1,u_2,...,u_n\}$, on a $z\in\mathcal{W}^{\perp}\Longleftrightarrow \langle z,u_i\rangle =0,\forall i = 1,2,...,p$
+				\item $\mathcal{W}^{\perp}$ est un sous-espace vectoriel de $\mathcal{V}$
+				\item si $\mathcal{V}$ ests de dimension finie, alors $\text{\normalfont{dim}} \ \mathcal{W}+\text{\normalfont{dim}} \ \mathcal{W}^{\perp}=\text{\normalfont{dim}} \ \mathcal{V}$
+				\item $\mathcal{W}\subset\mathcal{H}\Longleftrightarrow \mathcal{H}^{\perp}\subset\mathcal{W}^{\perp}$ ($\mathcal{H}$ sous-espace de $\mathcal{V}$)
+				\item $\mathcal{W}\cap\mathcal{W}^{\perp}=\{0\}$
+				\item $\{0\}^{\perp}=\mathcal{V}$ 
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Ensembles orthogonaux et bases orthogonales}
+		\begin{mydef}
+			\index{Base orthogonale}
+			\index{Base orthonormée}
+			\index{Produit scalaire}
+			Un ensemble de vecteur $B=\{u_1,u_2,...,u_n\}$ de $\mathcal{V}$ muni d'un produit scalaire $\langle .,.\rangle:\mathcal{V}\times\mathcal{V}\longrightarrow\mathbb{R}$ forme une \textbf{base orthogonal} si 
+			\begin{enumerate}
+				\item $B$ est une base
+				\item Les vecteurs de $B$ sont mutuellement orthogonaux\[\langle u_i,u_j\rangle=0 \forall i,j=1,2,...,n, i\neq j\]
+			\end{enumerate}
+		La base est orthonormée si tous ses vecteurs sont \textbf{unitaire}.
+		\end{mydef}
+		\begin{myprop}
+			\index{Propriétés des bases orthogonals/normées}
+			\index{Famille orthogonale}
+			\index{Base}
+			~
+			\begin{enumerate}
+				\item Si deux vecteurs $u$ et $v$ non nuls de $\mathcal{V}$ sont \textbf{orthogonaux}, alors ils sont \textbf{linéairement indépendants}.
+				\item Si $\text{\normalfont{dim}} \ \mathcal{V}=n$ et que $B=\{u_1,u_2,...,u_n\}$ est une famille orthogonale de vecteurs de $\mathcal{V}$ alors c'est une base de $\mathcal{V}$.
+			\end{enumerate}
+		\end{myprop}
+\section{Orthogonalité, procédé de Gram-Schmidt}
+	\subsection{Projection orthogonale sur un sous-espace vectoriel}
+		\begin{mydef}
+			\index{Projection orthogonale}
+			\index{Espace euclidien}
+			Soit $u\neq 0$ et $y$ deux vecteurs de l'espace euclidien $\mathcal{V}$, alors la projection orthogonale de $y$ sur $u$ est donnée par le vecteur,
+			\[\hat{y}=\proj{u}{y}=\frac{\prodsc{y}{u}}{\prodsc{u}{u}}u=\frac{\prodsc{y}{u}}{||u||^2} u\]
+		\end{mydef}
+		\begin{mythm}
+			\index{Meilleur approximation}
+			\index{Espace euclidien}
+			\index{Base orthogonale}
+			Soit $\mathcal{W}$ un sous-espace d'un espace euclidien $\mathcal{V}$ et $B=\{u_1,u_2,...,u_p\}$ une base \textbf{orthogonale} de $\mathcal{W}$, alors tout vecteur $y$ de $\mathcal{V}$ s'écrit de façon \textbf{unique} sous la forme \[y=\hat{y}+z,\quad \hat{y}\in\mathcal{W}, z\in\mathcal{W}^{\perp}\]
+			\[\hat{y}=\proj{\mathcal{W}}{y}=\proj{{u_1}}{y}+\proj{{u_2}}{y}+\dots+\proj{{u_p}}{y} = \sum_{i=1}^{p} \frac{\prodsc{y}{u_i}}{||u_i||^2} u_i\]
+			\[z=y-\hat{y}\]
+			Le vecteur $\hat{y}$ est appelé le vecteur de \textbf{projection orthogonale de $y$ sur $\mathcal{W}$}. Aussi appelé la \textbf{meilleur approximation de $y$ par un élément de $\mathcal{W}$} dans le sens suivant :
+			\[\forall v\in\mathcal{W}\backslash\{\hat{y}\}, ||y-\hat{y}||< ||y-v||\]
+		\end{mythm}
+	\subsection{Base orthonormée et matrice orthogonale}
+		\begin{mydef}
+			\index{Matrice orthogonale}
+			Une \textbf{matrice orthogonale} est une matrice carrée d'ordre $n$ formée de $n$ vecteurs \textbf{orthonormés}.
+		\end{mydef}
+		\begin{myprop}
+			\index{Propriétés des matrices orthogonales}
+			\index{Transformation linéaire}
+			\index{Matrice orthogonale}
+			~
+			\begin{enumerate}
+				\item Si $U$ est une matrice orthogonale alors $U^T U=I \Longleftrightarrow U^{-1}=U^T$
+				\item $|\det U| = 1$
+				\item $\forall x\in\mathbb{R}^n,||Ux||=||x||$
+				\item $\forall x,y\in\mathbb{R}^n,(Ux)\cdot (Uy)=x\cdot y$
+				\item $(Ux)\cdot (Uy)=0\Longleftrightarrow x\cdot y=0$
+			\end{enumerate}
+			Une transformation linéaire de $\mathbb{R}^n\longrightarrow\mathbb{R}^n$ représentée par une matrice orthogonale préserve les longueurs et l'orthogonalité des vecteurs de $\mathbb{R}^n$.
+		\end{myprop}
+	\subsection{Procédé de Gram-Schmidt}
+		\begin{myprop}
+			\index{Procédé de Gram-Schmidt}
+			\index{Produit scalaire}
+			\index{Base orthogonale}
+			\index{Base orthonormée}
+			\index{Espace euclidien}
+			Soit $\{v_1,v_2,...,v_n\}$ une base quelconque d'un espace euclidien $\mathcal{V}$ muni du produit scalaire $\prodsc{.}{.}:\mathcal{V}\times\mathcal{V}\longrightarrow\mathbb{R}$ telle que $(u,v)\mapsto\prodsc{u}{v}$, alors il existe une base orthogonale $\{u_1,u_2,...,u_n\}$ qui peut être construite à partir de la base $\{v_1,v_2,...,v_n\}$ comme suit :
+			\begin{align*}
+				&u_1 = v_1\\
+				&u_{i>1}=v_i-\sum_{j>1}^{i}\proj{{u_{j-1}}}{v_i}
+			\end{align*} 
+			Il suffit de normaliser les vecteurs de la base orthogonale pour obtenir une base orthonormée. 
+		\end{myprop}
+\section{Diagonalisation de matrices}
+	\subsection{Matrice semblables et processus de diagonalisation}
+		\begin{mydef}
+			\index{Matrice semblable}
+			Deux matrices carrées $A$ et $A'$ d'ordre $n$ sont dites \textbf{semblables} s'il existe une matrice $P$ inversible d'ordre $n$ telle que \[P^{-1}A P=A'\]
+		\end{mydef}
+	\subsection{Matrices semblables, transformation linéaire et changement de base}
+		\begin{myprop}
+			\index{Transformation linéaire}
+			\index{Base}
+			\index{Matrice relative}
+			Soit $B$ et $B'$ deux bases de $\mathcal{V}$, une transformation linéaire $T:\mathcal{V}\longrightarrow\mathcal{V}$ et $[T]_{B\leftarrow B}=[T]_B$ et $[T]_{B'\leftarrow B'}=[T]_B'$, les deux matrices relatives à ces bases. On a :	\begin{align*}
+				P_{B'\leftarrow B}[T]_{B}P_{B\leftarrow B'}=[T]_{B'}\\
+				\intertext{avec}
+				P_{B\leftarrow B'}=\big([b'_1]_B,[b'_2]_B,...,[b'_n]_B, \big)
+			\end{align*}
+			Ainsi $[T]_{B'}$ et $[T]_B$ sont semblables car $P_{B'\leftarrow B}=\big(P_{B\leftarrow B'}\big)^{-1}$
+		\end{myprop}
+	\subsection{Matrices semblables et diagonalisation}
+		\begin{myprop}
+			\index{Polynôme caractéristique}
+			\index{Equation caractéristique}
+			\index{Valeur propre}
+			\index{Multiplicité algébrique}
+			\index{Vecteur propre}
+			~
+			\begin{enumerate}
+				\item Pour chaque $\lambda_i$ fixé, $(A-\lambda_i I)$ est une matrice \textbf{singulière} ($\det(A-\lambda_i I)=0$) car il doit exister des solutions non-triviales $U_{\lambda_i}\neq 0$ au système homogène $(A-\lambda_i I)u_{lambda_i}=0$
+				\item Le polynôme en $\lambda$, noté $p_A(\lambda)=\det(A-\lambda I)$ est appelé \textbf{polynôme caractéristique }de $A$
+				\item Les \textbf{valeurs propres} de $A$ sont les racines de \textbf{l'équation caractéristique} $p_A (\lambda)=0$. Il y en a exactement $n$ (comptées avec leur \textbf{multiplicité algébrique})
+				\item Tous les $u_{\lambda_i}\neq 0$ doivent être linéairement indépendant (car $P$ est inversible)
+				\item Le vecteur $u_{\lambda_i}$ est un \textbf{vecteur propre} de $A$ associé à la \textbf{valeur propre} $\lambda_i$. Il satisfait $Au_{\lambda_i}=\lambda_i u_{\lambda_i}$
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Valeurs propres et multiplicité algébrique}
+		\begin{myprop}
+			\index{Matrice singulière}
+			\index{Valeur propre}
+			\index{Matrice triangulaire}
+			~
+			\begin{enumerate}
+				\item Une matrice singulière à toujours au moins une de ses valeurs propres égale à zéro
+				\item Les valeurs propres d'une matrice triangulaire sont données par les éléments des sa diagonale. En particuliers, les valeurs propres d'une matrice diagonale sont ses éléments diagonaux
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Espaces propres et multiplicité géométrique}
+		\begin{mydef}
+			\index{Espace propre}
+			\index{Multiplicité géométrique}
+			Soit $A$ une matrice d'ordre $n$, l'espace propre de $A$ associé à la valeur propre $\lambda$ est défini comme le sous-espace vectoriel 
+			\[E_{\lambda}=\ker(A-\lambda I)=\{u\in\mathbb{C}^n \lvert (A-\lambda I)u=0\}\]
+			\[\dim E_{\lambda}=n-\text{\normalfont{rang}}(A-\lambda I)\]
+			C'est la \textbf{multiplicité géométrique} de $\lambda$ associée à $A$. Une base de chaque espace propre $E_{\lambda}$ est formée des vecteurs linéairement indépendants solutions du système homogène $(A=\lambda I)u=0$
+		\end{mydef}
+		\begin{myprop}
+			\index{Vecteur propre}
+			\index{Valeur propre}
+			\index{Base}
+			~
+			\begin{enumerate}
+				\item Des vecteurs propres associés à des vecteurs propres distinctes sont linéairement indépendants.
+				\item Si l'espace propre $E_{\lambda}$ associé à la valeur propre $\lambda$ est de dimension 1, alors le vecteur propre assoicé est défini à un multiple près.
+				\item Si $\dim E_{\lambda}>1$, les vecteurs propres associés forment une base de $E_{\lambda}$ et il y a une infinité de manière de choisir ces vecteurs.
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Diagonalisation de matrices carrées}
+		\begin{mythm}
+			\index{Matrice diagonalisable}
+			\index{Vecteur propre}
+			\index{Valeur propre}
+			Une matrice $A$ d'ordre $n$ est diagonalisable $\Longleftrightarrow$ elle admet exactement $n$ vecteurs propres linéairement indépendants $u_{\lambda_1},u_{\lambda_2},...,u_{\lambda_n}$ correspondant aux valeurs propres $\lambda_1,\lambda_2,...,\lambda_n$. Autrement, $A$ est diagonalisable $\Longleftrightarrow$ il existe une matrice $P$ d'ordre $n$ inversible telle que \[P^{-1}AP=D=\text{\normalfont{diag}} (\lambda_1,\lambda_2,...,\lambda_n),\] avec $P=u_{\lambda_1}\, u_{\lambda_2}\, ...\, u_{\lambda_n}$
+			\begin{enumerate}
+				\item Si elle existe, la matrice diagonale $D$ est formée des valeurs propres de $A$ comptées avec leur multiplicité.
+				\item L'ordres des valeurs et vecteurs propres est important lorsque l'on forme $D$ et $P$.
+				\item Les vecteurs propres associés à des valeurs propres distinctes sont linéairement indépendants.
+				\item  Une matrice qui possède $n$ valeurs propres distinctes est diagonalisable.
+			\end{enumerate}
+		\end{mythm}
+	\begin{mythm}{Corollaire}
+		\index{Propriétés des matrices diagonalisable}
+		\index{Matrice semblable}
+		Si $A$ est diagonalisable alors,
+		\begin{enumerate}
+			\item $\det A=\prod_{i=1}^{n}\lambda_i$
+			\item $\text{\normalfont{tr}}~A=\sum_{i=1}^{n}\lambda_i$
+			\item $A^k=PD^kP^{-1},\forall k\in\mathbb{N}$
+			\item $A^{-1}=PD^{-1}P^{-1}$
+			\item Les matrices $A$ et $D$ sont semblables
+		\end{enumerate}
+	\end{mythm}
+\section{Diagonalisation de matrices, valeurs propres multiples, diagonalisation des matrices symétriques réelles et hermitiennes complexes}
+	\subsection{Diagonalisation de matrices et valeurs propres multiples}
+		\begin{mythm}
+			\index{Diagonalisation}
+			\index{Valeur propre}
+			\index{Multiplicité algébrique}
+			\index{Espace propre}
+			Soit une matrice $A$ d'ordre $n$ admettant $p\leq n$ valeurs propres distinctes $\lambda_1,\lambda_2,...,\lambda_p$ de multiplicité algébrique $\alpha_1,\alpha_2,...,\alpha_p : \sum \alpha_i = n$. Alors,
+			\begin{enumerate}
+				\item $\dim E_{\lambda_k}\leq\alpha_k, \forall k=1,2,...,p$
+				\item $A$ est diagonalisable $\Longleftrightarrow\dim E_{\lambda_k}=\alpha_k,\forall k=1,...,p$
+				\item Si $A$ est diagonalisable alors les vecteurs propres de $A$ sont des vecteurs de base de tous les espaces propres $\dim E_{\lambda_k},\forall k=1,...,p$. Ils servent à construire la matrice inversible $P$.
+			\end{enumerate}
+		\end{mythm}
+		\begin{mythm}{Corollaire}
+			\index{Particularité de la diagonalisation}
+			\index{Multiplicité algébrique}
+			\index{Multiplicité géométrique}
+			\index{Valeur propre}
+			\index{Vecteur propre}
+			~
+			\begin{enumerate}
+				\item Toute matrice carrée n'est pas forcément diagonalisable
+				\item Une matrice est diagonalisable $\Longleftrightarrow$ la \textbf{multiplicité algébrique} des valeurs propres est \textbf{égale} à la \textbf{multiplicité géométrique} de ces dernières
+			\end{enumerate}
+		\end{mythm}
+	\subsection{Lien entre changement de base et diagonalisation de matrice associées à des transformations linéaires}
+		\begin{myprop}
+			\index{Transformation linéaire}
+			Si $A=[T]_B$ est diagonalisable sous la forme $P^{-1}AP=D$ alors $D$ est la matrice qui représente $T$ dans la base formée des vecteurs propres de $A$ et $P=P_{B\leftarrow B'}$
+		\end{myprop}
+	\subsection{Diagonalisation des matrices symétriques et hermitiennes}
+		 \begin{mydef}
+		 	\index{Matrice hermitienne}
+		 	Une \textbf{matrice hermitienne} $A$ d'ordre $n$ qui prend ses valeurs dans les nonbres complexes est telle que $\bar{A}^T=A$ où $\bar{A}$ signifie que cette matrice est formée des éléments obtenus en prenant la conjugaison complexe de chaque éléments de la matrice $A$.
+		 \end{mydef}
+		 \begin{myprop}
+		 	Une matrice hermitienne dont tout les éléments sont réels est une \textbf{matrice symétrique réelle}. Tout les théorèmes valables pour les matrices hermitiennes complexes le sont aussi pour les matrice symétriques réelles.
+		 \end{myprop}
+	 	\begin{mythm}
+	 		\index{Théorème spectral}
+	 		\index{Matrice hermitienne}
+	 		\index{Matrice diagonalisable}
+	 		\index{Valeur propre}
+	 		\index{Vecteur propre}
+	 		\index{Matrice unitaire}
+	 		\index{Matrice orthogonale}
+	 		~
+	 		\begin{enumerate}
+	 			\item Une matrice hermitienne complexe $A$ (symétrique réelle) est diagonalisable
+	 			\item Ses valeurs propres sont nécessairement réelles
+	 			\item Il existe une matrice unitaire $U$ (orthogonale réelle) qui la diagonalise. \[\exists U\in\mathbb{C}^{n\times n}:\bar{U}^TU=I\text{ et } U^{-1}AU=\bar{U}^TAU=D\]
+	 		\end{enumerate}
+	 	\end{mythm}
+	\newpage
+	\printindex
+\end{document}
