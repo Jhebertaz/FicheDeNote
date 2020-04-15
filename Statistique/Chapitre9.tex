@@ -1,0 +1,33 @@
+\section{Chapitre 9: Inference for Categorical Data}
+	\subsection{Inference for Two-Way Tables}
+		\begin{itemize}
+			\item Soit $Z_1,Z_2,...,Z_p$ des variables aléatoires i.i.d. normale standard et soit $X=\sum_{i=1}^{p}Z^2_i$. Alors $X$ suit une distribution \textbf{chi-deux}\index{Chi-deux} à $p$ degrés de liberté, dénotée par $\chi^2_p$.
+			\item The \textbf{null hypothesis}\index{Null hypothesis} for $r\times c$ tables of count data is that there is no relationship between the row variable and the column variable.
+			
+			\item \textbf{Expected cell counts}\index{Expected cell counts} under the null hypothesis are computed using the formula
+			
+			\[\text{expected count} = \frac{\text{row total}\times\text{column total}}{n}\]
+			
+			\item The null hypothesis is tested by the \textbf{chi-square statistic}\index{Chi-square statistic}, which compares the observed counts with the expected counts:
+			
+			\[X^2=\sum \frac{\big(\text{observed}-\text{expected}\big)^2}{\text{expected}}\]
+			
+			Under the null hypothesis, $X^2$ has approximately the $\chi^2$ distribution with $(r-1)(c-1)$ degrees of freedom. The $P$-value for the test is
+			
+			\[P \Big(\chi^2\geq X^2\Big)\]
+			
+			where $\chi^2$ is a random variable having the $\chi^2 (df)$ distribution with
+			$df=(r-1)(c-1)$.
+			
+			\item The chi-square approximation is adequate for practical use when the average expected cell count is $5$ or greater and all individual expected counts are $1$ or greater, except in the case of $2\times2$ tables. All four expected counts in a $2\times2$ table should be $5$ or greater.
+			
+			\item For two-way tables, we first compute percents or proportions that describe the relationship of interest. Then, we compute expected counts, the $X^2$ statistic, and the $P$-value.
+			
+			\item Two different models for generating $r\times c$ tables lead to the chi-square test. In the first model, independent simple random samples (\textit{SRS}s) are drawn from each of $c$ populations, and each observation is classified according to a categorical variable with $r$ possible values. The null hypothesis is that the distributions of the row categorical variable are the same for all $c$ populations. In the second model, a single SRS is drawn from a population, and observations are classified according to two categorical variables having $r$ and $c$ possible values. In this model, $H_0$ states that the row and column variables are independent.
+		\end{itemize}
+	\subsection{9.2 Goodness}
+		\begin{itemize}
+			\item The \textbf{chi-square goodness-of-fit test}\index{Chi-square goodness-of-fit test} is used to compare the sample distribution of a categorical variable from a population with a hypothesized distribution. The data for n observations with $k$ possible outcomes are summarized as observed counts,$ n_1, n_2,..., n_k$, in $k$ cells. The \textbf{null hypothesis}\index{Null hypothesis} specifies probabilities $p_1, p_2,..., p_k$ for the possible outcomes.
+			
+			\item The analysis of these data is similar to the analyses of two-way tables discussed in Section 9.1. For each cell, the \textbf{expected count}\index{Expected count} is determined by multiplying the total number of observations $n$ by the specified probabilitypi. The null hypothesis is tested by the usual \textbf{chi-square statistic}\index{Chi-square statistic}, which compares the observed counts, ni, with the expected counts. Under the null hypothesis, $X^2$ has approximately the $\chi^2$ distribution with $df=k-1$.
+		\end{itemize}

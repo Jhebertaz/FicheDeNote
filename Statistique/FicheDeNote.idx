@@ -1,0 +1,110 @@
+\indexentry{Parameter}{3}
+\indexentry{Statistic}{3}
+\indexentry{Inference}{3}
+\indexentry{Sampling distribution}{3}
+\indexentry{Bias}{3}
+\indexentry{Variability}{3}
+\indexentry{Margin of error}{3}
+\indexentry{Population distribution}{3}
+\indexentry{Sample mean}{3}
+\indexentry{Central limit theorem}{3}
+\indexentry{Count}{3}
+\indexentry{Binomial distribution}{3}
+\indexentry{Binomial setting}{3}
+\indexentry{Sampling distribution of the count of successes}{3}
+\indexentry{Sample proportion}{3}
+\indexentry{Binomial probabilities}{4}
+\indexentry{Binomial count}{4}
+\indexentry{Sample proportion}{4}
+\indexentry{Normal approximation}{4}
+\indexentry{Continuity correction}{4}
+\indexentry{Binomial probability formula}{4}
+\indexentry{Poisson distribution}{4}
+\indexentry{Poisson setting}{4}
+\indexentry{Confidence interval}{5}
+\indexentry{Confidence level}{5}
+\indexentry{Margin of error}{5}
+\indexentry{Table D}{5}
+\indexentry{Test of significance}{5}
+\indexentry{Null hypothesis}{5}
+\indexentry{Alternative hypothesis}{5}
+\indexentry{One-sided alternative}{5}
+\indexentry{Two-sided alternative}{5}
+\indexentry{Test statistic}{5}
+\indexentry{$P$-value}{5}
+\indexentry{Statistically significant}{6}
+\indexentry{$z$ statistic}{6}
+\indexentry{Table A}{6}
+\indexentry{Standard Normal critical values (Table D)}{6}
+\indexentry{Power}{6}
+\indexentry{Decision theory}{6}
+\indexentry{Type I error}{6}
+\indexentry{Type II error}{6}
+\indexentry{Standard error}{7}
+\indexentry{One-sample $z$ statistic}{7}
+\indexentry{One-sample $t$ statistic}{7}
+\indexentry{$t$ distribution}{7}
+\indexentry{Degrees of freedom $k$}{7}
+\indexentry{Confidence interval for the mean}{7}
+\indexentry{Margin of error}{7}
+\indexentry{Matched pairs}{7}
+\indexentry{equivalence testing}{7}
+\indexentry{Robust}{7}
+\indexentry{Two-sample $z$ statistic}{8}
+\indexentry{two-sample $t$ statistic}{8}
+\indexentry{Conservative inference procedures}{8}
+\indexentry{More accurate probability values}{8}
+\indexentry{Confidence interval}{8}
+\indexentry{Margin of error}{8}
+\indexentry{Two-sample $t$ statistic}{8}
+\indexentry{Pooled two-sample $t$ procedures}{8}
+\indexentry{Pooled estimator}{8}
+\indexentry{Sample size}{9}
+\indexentry{Power of one-sample $t$ test}{9}
+\indexentry{Power of the two-sample $t$ test}{9}
+\indexentry{Noncentrality parameter}{9}
+\indexentry{Noncentral $t$ distribution}{9}
+\indexentry{Sample proportion}{10}
+\indexentry{Margin of error for confidence level $C$}{10}
+\indexentry{Standard error}{10}
+\indexentry{Level $C$ large-sample confidence interval}{10}
+\indexentry{Sample size}{10}
+\indexentry{$z$ statistic}{10}
+\indexentry{Large-sample estimate of the difference in two population proportions}{11}
+\indexentry{Standard error of the difference $D$}{11}
+\indexentry{Margin of error for confidence level $C$}{11}
+\indexentry{Large-sample level $C$ confidence interval}{11}
+\indexentry{$z$ statistic}{11}
+\indexentry{Pooled estimate}{11}
+\indexentry{Relative risk}{11}
+\indexentry{Chi-deux}{12}
+\indexentry{Null hypothesis}{12}
+\indexentry{Expected cell counts}{12}
+\indexentry{Chi-square statistic}{12}
+\indexentry{Chi-square goodness-of-fit test}{12}
+\indexentry{Null hypothesis}{12}
+\indexentry{Expected count}{12}
+\indexentry{Chi-square statistic}{12}
+\indexentry{Simple linear regression}{13}
+\indexentry{Parameters}{13}
+\indexentry{Population regression line}{13}
+\indexentry{Least-squares regression line}{13}
+\indexentry{Model standard deviation}{13}
+\indexentry{Residuals}{13}
+\indexentry{Plots of the residuals}{13}
+\indexentry{Level $C$ confidence interval for $\beta_1$}{13}
+\indexentry{Test of the hypothesis}{13}
+\indexentry{$t$ statistic}{13}
+\indexentry{Estimated mean response}{13}
+\indexentry{Level $C$ confidence interval for the mean response}{13}
+\indexentry{Estimated value of the response variable}{14}
+\indexentry{Level $C$ prediction interval}{14}
+\indexentry{Transformation}{14}
+\indexentry{ANOVA table}{14}
+\indexentry{ANOVA $F$ statistic}{14}
+\indexentry{Square of the sample correlation}{14}
+\indexentry{Standard errors for $b_0$ and $b_1$}{14}
+\indexentry{Standard error that we use for a confidence interval}{14}
+\indexentry{Standard error that we use for a prediction interval}{14}
+\indexentry{Population correlation}{14}
+\indexentry{$t$ statistic}{14}

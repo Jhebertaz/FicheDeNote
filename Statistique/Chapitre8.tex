@@ -1,0 +1,78 @@
+\section{Chapitre 8: Inference for Proportions}
+	\subsection{Inference for a Single Proportion}
+		\begin{itemize}
+			\item Inference about a population proportion $p$ from an \textit{SRS} of size $n$ is based on the \textbf{sample proportion}\index{Sample proportion} $\hat{p}=X/n$. When $n$ is large, $\hat{p}$ has approximately the Normal distribution with mean $p$ and standard deviation $\sqrt{p(1-p)/n}$.
+			
+			\item For large samples, the \textbf{margin of error for confidence level $C$}\index{Margin of error for confidence level $C$} is
+			
+			\[m=z^{*}SE_{\hat{p}}\]
+			
+			where the critical value $z^{*}$ is the value for the standard Normal density curve with area $C$ between $-z^{*}$ and $z^{*}$, and the \textbf{standard error}\index{Standard error} of $\hat{p}$ is
+			
+			\[SE_{\hat{p}}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \]
+			
+			\item The \textbf{level $C$ large-sample confidence interval}\index{Level $C$ large-sample confidence interval} is
+			
+			\[\hat{p}\pm m\]
+			
+			We recommend using this interval for $90\%, 95\%$, and $99\%$ confidence whenever the number of successes and the number of failures are both at least 10. When sample sizes are smaller, alternative procedures such as the plus four estimate of the population proportion are recommended.
+			
+			\item The \textbf{sample size}\index{Sample size} required to obtain a confidence interval of approximate margin of error $m$ for a proportion is found from
+			
+			\[n=\bigg(\frac{z^{*}}{m}\bigg)^2 p^{*}(1-p^{*})\]
+			
+			where $p^{*}$ is a guessed value for the proportion and $z^{*}$ is the standard Normal critical value for the desired level of confidence. To ensure that the margin of error of the interval is less than or equal to m no matter what $\hat{p}$ may be, use
+			
+			\[n=\frac{1}{4} \bigg(\frac{z^{*}}{m}\bigg)^2\]
+			
+			\item Tests of $H_0: p = p_0$ are based on the \textbf{$z$ statistic}\index{$z$ statistic}
+			
+			\[z=\frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}\]
+			
+			with $P$-values calculated from the $N(0, 1)$ distribution. Use this procedure when the expected number of successes, $np_0$, and the expected number of failures, $n(1 - p_0)$, are both greater than $10$.
+			
+			\item Software can be used to determine the sample sizes for significance tests.
+		\end{itemize}
+	\subsection{8.2 Comparing Two Proportions}
+		\begin{itemize}
+			\item The \textbf{large-sample estimate of the difference in two population proportions}\index{Large-sample estimate of the difference in two population proportions} is
+			\[D=\hat{p}_1-\hat{p}_2\]
+			
+			where $\hat{p}_1$ and $\hat{p}_2$ are the sample proportions:
+			
+			\[\hat{p}_1=\frac{X_1}{n_1} and \hat{p}_2=\frac{X_2}{n_2}\]
+			
+			• The \textbf{standard error of the difference $D$}\index{Standard error of the difference $D$} is
+			
+			\[SE_D=    \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}\]
+			
+			• The \textbf{margin of error for confidence level $C$}\index{Margin of error for confidence level $C$} is
+			
+			\[m=z^{*}SE_D\]
+			
+			where $z^{*}$ is the value for the standard Normal density curve with area $C$ between $-z^{*}$ and $z^{*}$. The \textbf{large-sample level $C$ confidence interval}\index{Large-sample level $C$ confidence interval} is
+			
+			\[D \pm m\]
+			
+			We recommend using this interval for $90\%, 95\%,$ or $99\%$ confidence when the number of successes and the number of failures in both samples are all at least $10$. When sample sizes are smaller, alternative procedures such as the plus four estimate of the difference in two population proportions are recommended.
+			
+			\item Significance tests of $H_0: p_1 = p_2$ use the \textbf{$z$ statistic}\index{$z$ statistic}
+			
+			\[z=\frac{\hat{p}_1-\hat{p}_2}{SE_{D_p}}\]
+			
+			with $P$-values from the $N(0, 1)$ distribution. In this statistic,
+			
+			\[SE_{D_p}= \sqrt{\hat{p}(1-\hat{p})\Big(\frac{1}{n_1}+\frac{1}{n_2}\Big)}\]
+			
+			and $\hat{p}$ is the \textbf{pooled estimate}\index{Pooled estimate} of the common value of $p_1$ and $p_2$:
+			
+			\[\hat{p}=\frac{X_1+X_2}{n_1+n_2}\]
+			
+			Use this test when the number of successes and the number of failures in each of the samples are at least $5$.
+			
+			\item \textbf{Relative risk}\index{Relative risk} is the ratio of two sample proportions:
+			
+			\[RR=\frac{\hat{p}_1}{\hat{p}_2}\]
+			
+			Confidence intervals for relative risk are often used to summarize the comparison of two proportions.
+		\end{itemize}

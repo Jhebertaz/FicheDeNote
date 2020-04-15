@@ -1,0 +1,42 @@
+\section{Chapitre 4}
+		\subsection{Règles pour les moyennes}
+			\begin{mythm}
+				Si $X$ est une variable aléatoire et $a$ et $b$ des constantes, alors
+				\begin{align}
+					E(a+bX)=\mu_{a+bX}=a+b\mu_X=a+bE(X)
+					\intertext{Si $X$ et $Y$ sont des variables aléatoires (indépendantes ou non), alors}
+					E(X+Y)=\mu_{X\pm Y}=\mu_X \pm \mu_Y = E(X)\pm E(Y)
+				\end{align}
+			\end{mythm}
+		\subsection{Règles pour les moyennes}
+			\begin{mydef}(Variance)
+				Soit $x_1,x_2,...,$ les événements élémentaires de la variable aléatoire discrète $X$ et $p_1,p_2,...,$ leur probabilité respective. La variance de $X$ est donnée par \[\sigma_X^2=\sum_{i=1}^{\infty}(x_i-\mu_X)^2p_i=E(X-\mu_X)^2\]
+				L'écart type est la racine carrée de la variance.
+			\end{mydef}
+			\begin{mythm}
+				Si $X$ est une variable aléatoire et $a$ et $b$ des constantes, alors
+				\begin{align}
+				\sigma_{a+bX}^2=b^2\sigma_X^2
+				\intertext{Si $X$ et $Y$ sont des variables aléatoires indépendantes, alors}
+				\sigma_{Y\pm X}^2=\sigma_X^2+\sigma_Y^2
+				\intertext{Si $X$ et $Y$ ont une corrélation de $\rho$, alors}
+				\sigma_{Y\pm X}^2=\sigma_X^2+\sigma_Y^2\pm 2\rho\sigma_X\sigma_Y
+				\end{align}
+			\end{mythm}
+		\subsection{Règles générales des probabilités}
+			\begin{myprop}
+				\begin{flalign}
+					\intertext{Règle d'addition pour l'union de deux événements}
+					P(A\cup B)=P(A\text{ ou }B)=P(A)+P(B)-P(A\cap B)
+					\intertext{Propabilité conditionnelle}
+					P(B|A)=\frac{P(A\cap B)}{P(A)}
+					\intertext{Règle de multiplication pour l'intersection}
+					P(A\cap B)=P(A)P(B|A)=P(B)P(A|B)\\
+					P(A\cap B\cap C)=P(A)P(B|A)P(C|A\cap B)
+					\intertext{Théorème de Bayes}
+					P(A|B)=\frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|A^C)P(A^C)}
+					\intertext{Indépendance (soit $A$ et $B$ indépendant, alors)}
+					P(B|A)=P(B)\\
+					P(A\cap B)=P(A)P(B)
+				\end{flalign}
+			\end{myprop}

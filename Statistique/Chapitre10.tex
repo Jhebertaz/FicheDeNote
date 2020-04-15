@@ -1,0 +1,79 @@
+\section{Chapitre 10: Inference for Regression}
+	\subsection{10.1 Simple Linear Regression}
+		\begin{itemize}
+			\item The statistical model for \textbf{simple linear regression}\index{Simple linear regression} assumes that the means of the response variable $y$ fall on a line when plotted against $\mathsf{x}$, with the observed $y$’s varying Normally about these means. For $n$ observations, this model can be written
+		
+			\[y_i=\beta_0+\beta_1 \mathsf{x}_i+\epsilon_i\]
+			
+			where $i = 1, 2,..., n$, and the $\epsilon_i$ are assumed to be independent and Normally distributed with mean $0$ and standard deviation $\sigma$. Here $\beta_0 + \beta_1 \mathsf{x}_i$ is the mean response when $\mathsf{x} = \mathsf{x}_i$. The \textbf{parameters}\index{Parameters} of the model are $\beta_0$, $\beta_1$, and $\sigma$.
+			
+			\item The \textbf{population regression line}\index{Population regression line} intercept and slope, $\beta_0$ and $\beta_1$, are estimated by the intercept and slope of the \textbf{least-squares regression line}\index{Least-squares regression line}, $b_0$ and $b_1$. The \textbf{model standard deviation}\index{Model standard deviation} $\sigma$ is estimated by
+			
+			\[s=\sqrt{\frac{\sum e_i^2}{n-2}}\]
+			
+			where the $e_i$ are the \textbf{residuals}\index{Residuals}
+			
+			\[e_i=y_i-\hat{y}_i\]
+			
+			\item Prior to inference, always examine the residuals for Normality, constant variance, and any other remaining patterns in the data. \textbf{Plots of the residuals}\index{Plots of the residuals} both against the case number and against the explanatory variable are commonly part of this examination. Scatterplot smoothers are helpful in detecting patterns in these plots.
+			
+			\item A \textbf{level $C$ confidence interval for $\beta_1$}\index{Level $C$ confidence interval for $\beta_1$} is
+			
+			\[b_1 \pm t^{*}SE_{b_1}\]
+			
+			where $t^{*}$ is the value for the $t(n- 2)$ density curve with area $C$ between $-t^{*}$ and $t^{*}$.
+			
+			\item The \textbf{test of the hypothesis}\index{Test of the hypothesis} $H_0: \beta_1 = 0$ is based on the \textbf{$t$ statistic}\index{$t$ statistic}
+			
+			\[t=\frac{b_1}{SE_{b_1}}\]
+			
+			and the $t(n - 2)$ distribution. This tests whether there is a straight-line relationship between $y$ and $\mathsf{x}$. There are similar formulas for confidence intervals and tests for $\beta_0$, but these are meaningful only in special cases.
+			
+			\item The \textbf{estimated mean response}\index{Estimated mean response} for the subpopulation corresponding to the value $x^{*}$ of the explanatory variable is
+			
+			\[\widehat{\mu}_y = b_0 + b_1 x^{*}\]
+			
+			\item A \textbf{level $C$ confidence interval for the mean response}\index{Level $C$ confidence interval for the mean response} is
+			
+			\[\widehat{\mu_y} \pm t^{*} SE_{\widehat{\mu}}\]
+			
+			where $t^{*}$ is the value for the $t(n- 2)$ density curve with area $C$ between $-t^{*}$ and $t^{*}$.
+			
+			\item The \textbf{estimated value of the response variable}\index{Estimated value of the response variable} $y$ for a future observation from the subpopulation corresponding to the value $x^{*}$ of the explanatory variable is
+			
+			\[\hat{y}=b_0+b_1 x^{*}\]
+			
+			\item A \textbf{level $C$ prediction interval}\index{Level $C$ prediction interval} for the estimated response is
+			\[\hat{y} \pm t^{*} SE_{\hat{y}}\]
+			
+			where $t^{*}$ is the value for the $t(n - 2)$ density curve with area $C$ between $-t^{*}$ and $t^{*}$. The standard error for the prediction interval is larger than the confidence interval because it also includes the variability of the future observation around its subpopulation mean.
+			
+			\item Sometimes, a \textbf{transformation}\index{Transformation} of one or both of the variables can make their relationship linear. However, these transformations can harm the assumptions of Normality and constant variance, so it is important to examine the residuals.
+		\end{itemize}
+	\subsection{10.2 More Detail about Simple Linear Regression}
+		\begin{itemize}
+			\item The \textbf{ANOVA table}\index{ANOVA table} for a linear regression gives the degrees of freedom, sum of squares, and mean squares for the model, error, and total sources of variation. The \textbf{ANOVA $F$ statistic}\index{ANOVA $F$ statistic} is the ratio MSM/MSE. Under $H_0: \beta_1 = 0$, this statistic has an $F(1, n - 2)$ distribution and is used to test $H_0$ versus the two-sided alternative.
+			
+			\item The \textbf{square of the sample correlation}\index{Square of the sample correlation} can be expressed as
+			
+			\[r^2=\frac{SSM}{SST}\]
+			
+			and is interpreted as the proportion of the variability in the response variable $y$ that is explained by the explanatory variable $\mathsf{x}$ in the linear regression.
+			
+			\item The \textbf{standard errors for $b_0$ and $b_1$}\index{Standard errors for $b_0$ and $b_1$} are
+			\[\begin{matrix} SE_{b_0}=s\sqrt{\frac{1}{n}+\frac{\bar{x}^2}{\sum (x_i-\bar{x})^2}}\\
+			SE_{b_1}=\frac{s}{\sqrt{\sum (x_i-\bar{x})^2}}\end{matrix}\]
+					
+			\item The \textbf{standard error that we use for a confidence interval}\index{Standard error that we use for a confidence interval} for the estimated mean response for the subpopulation corresponding to the value $\mathsf{x}^{*}$ of the explanatory variable is
+			\[SE_{\widehat{\mu}}=s\sqrt{\frac{1}{n}+\frac{(x^{*}-\bar{x})^2}{\sum (x_i-\bar{x})^2}}\]
+			
+			\item The \textbf{standard error that we use for a prediction interval}\index{Standard error that we use for a prediction interval} for a future observation from the subpopulation corresponding to the value $\mathsf{x}^{*}$ of the explanatory variable is
+			
+			\[SE_{\widehat{\mu}}=s\sqrt{1+\frac{1}{n}+\frac{(x^{*}-\bar{x})^2}{\sum (x_i-\bar{x})^2}}\]			
+			\item When the variables $y$ and $\mathsf{x}$ are jointly Normal, the sample correlation is an estimate of the \textbf{population correlation}\index{Population correlation} $\rho$. The test of $H_0: \rho = 0$ is based on the \textbf{$t$ statistic}\index{$t$ statistic}
+			
+			\[t=\frac{r\sqrt{n-2}}{\sqrt{1-r^2}}\]
+			
+			which has a $t(n - 2)$ distribution under $H_0$. This test statistic is numerically identical to the $t$ statistic used to test $H_0: \beta_1 = 0$.
+		\end{itemize}
+	

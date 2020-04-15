@@ -1,0 +1,95 @@
+\section{Chapitre 7: Inference for Means}
+	\subsection{7.1 Inference for the Mean of a Population}
+		\begin{itemize}
+			\item Significance tests and confidence intervals for the mean $\mu$ of a Normal population are based on the sample mean $\bar{X}$ of an \textit{SRS}. Because of the central limit theorem, the resulting procedures are approximately correct for other population distributions when the sample is large.
+			
+			\item The \textbf{standard error}\index{Standard error} of the sample mean is \[SE_{\bar{X}}=\frac{s}{\sqrt{n}}\]			
+			
+			\item The standardized sample mean, or \textbf{one-sample $z$ statistic}\index{One-sample $z$ statistic},\[z=\frac{\bar{x}-\mu}{\sigma/\sqrt{n}}\]
+			
+			has the $N(0, 1)$ distribution. If the standard deviation $\sigma/\sqrt{n}$ of $\bar{x}$ is replaced by the \textbf{standard error} $s/\sqrt{n}$, the \textbf{one-sample $t$ statistic}\index{One-sample $t$ statistic}
+			\[t=\frac{\bar{x}-\mu}{s/\sqrt{n}}\]
+			
+			has the \textbf{$t$ distribution}\index{$t$ distribution} with $n-1$ degrees of freedom.
+			
+			\item There is a $t$ distribution for every positive \textbf{degrees of freedom $k$}\index{Degrees of freedom $k$}. All are symmetric distributions similar in shape to Normal distributions. The $t(k)$ distribution approaches the $N(0, 1)$ distribution as $k$ increases.
+			
+			\item A level $C$ \textbf{confidence interval for the mean}\index{Confidence interval for the mean} $\mu$ of a Normal population is
+			\[\bar{x}\pm t^{*}\frac{s}{\sqrt{n}}\]			
+			where $t^{*}$ is the value for the $t(n - 1)$ density curve with area $C$ between $-t^{*}$ and $t^{*}$. The quantity
+			
+			\[t^{*}\frac{s}{\sqrt{n}}\]			
+			is the \textbf{margin of error}\index{Margin of error}.
+			
+			\item Significance tests for $H_0: \mu = \mu_0$ are based on the $t$ statistic. P-values or fixed significance levels are computed from the $t(n - 1)$ distribution.
+			
+			\item A matched pairs analysis is needed when subjects or experimental units are matched in pairs or when there are two measurements on each individual or experimental unit and the question of interest concerns the difference between the two measurements.
+			
+			\item The one-sample procedures are used to analyze \textbf{matched pairs}\index{Matched pairs} data by first taking the differences within the matched pairs to produce a single sample.
+			
+			\item One-sample \textbf{equivalence testing}\index{equivalence testing} assesses whether a population mean $\mu$ is practically different from a hypothesized mean $\mu$0. This test requires a threshold $\delta$, which represents the largest difference between $\mu$ and $\mu_0$ such that the means are considered equivalent.
+			
+			\item The $t$ procedures are relatively \textbf{robust}\index{Robust} against non-Normal populations. The $t$ procedures are useful for non-Normal data when $15\leq n<40$ unless the data show outliers or strong skewness. When $n\geq 40$, the $t$ procedures can be used even for clearly skewed distributions.
+		\end{itemize}
+	\subsection{7.2 Comparing Two Means}
+		\begin{itemize}
+			 \item Significance tests and confidence intervals for the difference between the means $\mu_1$ and $\mu_2$ of two Normal populations are based on the difference $\bar{x}_1-\bar{x}_2$ between the sample means from two independent \textit{SRS}s. Because of the central limit theorem, the resulting procedures are approximately correct for other population distributions when the sample sizes are large.
+			
+			\item When independent SRSs of sizes $n_1$ and $n_2$ are drawn from two Normal populations with parameters $\mu_1$, $\sigma_1$ and $\mu_2$, $\sigma_2$ the \textbf{two-sample $z$ statistic}\index{Two-sample $z$ statistic}
+			
+			\[z=\frac{(\bar{x}_1-\bar{x}_2)-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\]
+			
+			has the $N(0, 1)$ distribution.
+			
+			\item The \textbf{two-sample $t$ statistic}\index{two-sample $t$ statistic}
+			
+			\[t=\frac{(\bar{x}_1-\bar{x}_2)-(\mu_1-\mu_2)}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\]
+			
+			does not have a $t$ distribution. However, good approximations are available.
+			
+			\item \textbf{Conservative inference procedures}\index{Conservative inference procedures} for comparing $\mu_1$ and $\mu_2$ are obtained from the two-sample $t$ statistic by using the $t(k)$ distribution with degrees of freedom $k$ equal to the smaller of $n_1-1$ and $n_2-1$.
+			
+			\item \textbf{More accurate probability values}\index{More accurate probability values} can be obtained by estimating the degrees of freedom from the data. This is the usual procedure for statistical software.
+			
+			\item An approximate level $C$ \textbf{confidence interval}\index{Confidence interval} for $\mu_1-\mu_2$ is given by
+			\[(\bar{x}_1-\bar{x}_2)\pm t^{*}\sqrt{ \frac{s_1^2}{n_1}+\frac{s_2^2}{n_2} } \]
+			
+			Here, $t^{*}$ is the value for the $t(k)$ density curve with area $C$ between $-t^{*}$ and $t^{*}$, where $k$ is computed from the data by software or is the smaller of $n_1-1$ and $n_2-1$. The quantity
+			
+			\[t^{*}\sqrt{ \frac{s_1^2}{n_1}+\frac{s_2^2}{n_2} } \]
+			
+			is the \textbf{margin of error}\index{Margin of error}.
+			
+			\item Significance tests for $H_0:\mu_1 -\mu_2=\Delta_0$ use the \textbf{two-sample $t$ statistic}\index{Two-sample $t$ statistic}
+			
+			\[t=\frac{(\bar{x}_1-\bar{x}_2)-\Delta_0}{\sqrt{ \frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\]
+			
+			The P-value is approximated using the $t(k)$ distribution where $k$ is estimated from the data using software or is the smaller of $n_1-1$ and $n_2-1$.
+			
+			\item The guidelines for practical use of two-sample $t$ procedures are similar to those for one-sample $t$ procedures. Equal sample sizes are recommended.
+			
+			\item If we can assume that the two populations have equal variances, \textbf{pooled two-sample $t$ procedures}\index{Pooled two-sample $t$ procedures} can be used. These are based on the \textbf{pooled estimator}\index{Pooled estimator}
+			
+			\[s^2_p=\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1+n_2-2}\]
+			
+			of the unknown common variance and the $t(n_1+n_2-2)$ distribution. We do not recommend this procedure for regular use.
+		\end{itemize}
+	\subsection{7.3 Additional Topics on Inference}
+		\begin{itemize}
+			\item The \textbf{sample size}\index{Sample size} required to obtain a confidence interval with an expected margin of error no larger than $m$ for a population mean satisfies the constraint
+			
+			\[m\geq t^{*}s^{*}/\sqrt{n}\]
+			
+			where $t^{*}$ is the critical value for the desired level of confidence with $n-1$ degrees of freedom, and $s^{*}$ is the guessed value for the population standard deviation.
+			
+			\item The sample sizes necessary for a two-sample confidence interval can be obtained using a similar constraint, but guesses of both standard deviations and an estimate for the degrees of freedom are required. We suggest using the smaller of $n_1-1$ and $n_2- 1$ for degrees of freedom.
+			
+			\item The \textbf{power}\index{Power of one-sample $t$ test} of the one-sample $t$ test can be calculated like that of the $z$ test, using an approximate value for both $\sigma$ and $s$.
+			
+			\item The \textbf{power}\index{Power of the two-sample $t$ test} of the two-sample $t$ test is found by first finding the critical value for the significance test, the degrees of freedom, and the \textbf{noncentrality parameter}\index{Noncentrality parameter} for the alternative of interest. These are used to calculate the power from a \textbf{noncentral $t$ distribution}\index{Noncentral $t$ distribution}. A Normal approximation works quite well. Calculating margins of error for various study designs and conditions is an alternative procedure for evaluating designs.
+			
+			\item The \textbf{sign test} is a \textbf{distribution-free test} because it uses probability calculations that are correct for a wide range of population distributions.
+			
+			\item The sign test for "no treatment effect" in matched pairs counts the number of positive differences. The P-value is computed from the $B(n, 1/2)$ distribution, where $n$ is the number of non-$0$ differences. The sign test is less powerful than the $t$ test in cases where use of the $t$ test is justified.
+		\end{itemize}
+	

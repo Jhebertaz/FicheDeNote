@@ -1,0 +1,46 @@
+\documentclass{article}[babel]
+	\addtolength{\oddsidemargin}{-.875in}
+	\addtolength{\evensidemargin}{-.875in}
+	\addtolength{\textwidth}{1.75in}
+	\addtolength{\topmargin}{-.875in}
+	\addtolength{\textheight}{1.75in}
+	\usepackage{fancyhdr}
+	\usepackage{amsmath,amssymb,amsthm,etoolbox,mathtools,verbatim,enumitem,imakeidx} 
+	\usepackage{caption,pdfpages}
+	\DeclareGraphicsExtensions{.pdf,.png}
+	\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+	\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+	\pagestyle{fancy}
+	\lhead{Julien Hébert-Doutreloux}
+	\rhead{--Page \thepage}
+	\cfoot{Statistique}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+	\newtheorem{mydef}{Définition}
+	\newtheorem{myprop}{Proposition}
+	\newtheorem{mythm}{Théorème}
+	\indexsetup{othercode=\small}
+	\makeindex[program=makeindex,columns=2,intoc=true,options={-s index_style.ist}]
+	\newcounter{code}
+	\newenvironment{code}[1]
+	{\index{#1}\refstepcounter{code}\rule{1ex}{1ex}\hspace{\stretch{1}} }
+	{ \hspace{\stretch{1}}\rule{1ex}{1ex} }
+\begin{document}
+	\tableofcontents
+	\pagebreak
+	\input{Chapitre4}
+		\pagebreak
+	\input{Chapitre5}
+		\pagebreak
+	\input{Chapitre6}
+		\pagebreak
+	\input{Chapitre7}
+		\pagebreak
+	\input{Chapitre8}
+		\pagebreak
+	\input{Chapitre9}
+		\pagebreak
+	\input{Chapitre10}
+	\newpage
+	\printindex
+\end{document}

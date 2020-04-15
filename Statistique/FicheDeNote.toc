@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Chapitre 4}{2}% 
+\contentsline {subsection}{\numberline {1.1}Règles pour les moyennes}{2}% 
+\contentsline {subsection}{\numberline {1.2}Règles pour les moyennes}{2}% 
+\contentsline {subsection}{\numberline {1.3}Règles générales des probabilités}{2}% 
+\contentsline {section}{\numberline {2}Chapitre 5: Sampling Distributions}{3}% 
+\contentsline {subsection}{\numberline {2.1}5.1 Toward Statistical Inference}{3}% 
+\contentsline {subsection}{\numberline {2.2}5.2 The samplig Distributions of a Sample Mean}{3}% 
+\contentsline {subsection}{\numberline {2.3}5.3 Sampling Distributions for Counts and Proportions}{3}% 
+\contentsline {section}{\numberline {3}Chapitre 6}{5}% 
+\contentsline {subsection}{\numberline {3.1}6.1 Estimating with Confidence}{5}% 
+\contentsline {subsection}{\numberline {3.2}6.2 Tests of Significance}{5}% 
+\contentsline {subsection}{\numberline {3.3}6.3 Use and Abuse of Tests}{6}% 
+\contentsline {subsection}{\numberline {3.4}Power and Inference as a Decision}{6}% 
+\contentsline {section}{\numberline {4}Chapitre 7: Inference for Means}{7}% 
+\contentsline {subsection}{\numberline {4.1}7.1 Inference for the Mean of a Population}{7}% 
+\contentsline {subsection}{\numberline {4.2}7.2 Comparing Two Means}{8}% 
+\contentsline {subsection}{\numberline {4.3}7.3 Additional Topics on Inference}{9}% 
+\contentsline {section}{\numberline {5}Chapitre 8: Inference for Proportions}{10}% 
+\contentsline {subsection}{\numberline {5.1}Inference for a Single Proportion}{10}% 
+\contentsline {subsection}{\numberline {5.2}8.2 Comparing Two Proportions}{11}% 
+\contentsline {section}{\numberline {6}Chapitre 9: Inference for Categorical Data}{12}% 
+\contentsline {subsection}{\numberline {6.1}Inference for Two-Way Tables}{12}% 
+\contentsline {subsection}{\numberline {6.2}9.2 Goodness}{12}% 
+\contentsline {section}{\numberline {7}Chapitre 10: Inference for Regression}{13}% 
+\contentsline {subsection}{\numberline {7.1}10.1 Simple Linear Regression}{13}% 
+\contentsline {subsection}{\numberline {7.2}10.2 More Detail about Simple Linear Regression}{14}% 
+\contentsline {section}{Index}{15}% 

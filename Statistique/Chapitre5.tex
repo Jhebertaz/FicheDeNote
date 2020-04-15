@@ -1,0 +1,69 @@
+\section{Chapitre 5: Sampling Distributions}
+	\subsection{5.1 Toward Statistical Inference}
+		\begin{itemize}
+			\item A number that describes a population is a \textbf{parameter}\index{Parameter}. A number that describes a sample (is computed from the sample data) is a \textbf{statistic}\index{Statistic}. The purpose of sampling or experimentation is usually \textbf{inference}\index{Inference}: use sample statistics to make statements about unknown population parameters.
+			
+			\item  A statistic from a probability sample or a randomized experiment has a \textbf{sampling distribution}\index{Sampling distribution} that describes how the statistic varies in repeated data productions. The sampling distribution answers the question "What would happen if we repeated the sample or experiment many ?" Formal statistical inference is based on the sampling distributions of statistics.
+			
+			\item  A statistic as an estimator of a parameter may suffer from \textbf{bias}\index{Bias} or from high \textbf{variability}\index{Variability}. Bias means that the center of the sampling distribution is not equal to the true value of the parameter. The variability of the statistic is described by the spread of its sampling distribution. Variability is usually reported by giving a \textbf{margin of error}\index{Margin of error} for conclusions based on sample results.
+			
+			\item  Properly chosen statistics from randomized data production designs have no bias resulting from the way the sample is selected or the way the experimental units are assigned to treatments. We can reduce the variability of the statistic by increasing the size of the sample or the size of the experimental groups.
+		\end{itemize}
+	\subsection{5.2 The samplig Distributions of a Sample Mean}
+		\begin{itemize}
+			\item The \textbf{population distribution}\index{Population distribution} of a variable is the distribution of its values for all members of the population.
+			
+			\item The \textbf{sample mean}\index{Sample mean} $\bar{X}$ of an SRS of size $n$ drawn from a large population with mean $\mu$ and standard deviation $\sigma$ has a sampling distribution with mean and standard deviation
+			\begin{align*}
+				\mu_{\bar{X}}=\mu\\
+				\sigma_{\bar{X}}=\frac{\sigma}{\sqrt{n}}
+			\end{align*}
+			The sample mean $\bar{X}$ is an \textbf{unbiased estimator} of the population mean $\mu$ and is less variable than a single observation. The standard deviation decreases in proportion to the square root of the sample size $n$. This means that to \textbf{reduce} the standard deviation by a factor of $C$, we need to \textbf{increase} the sample size by a factor of $C^2$.
+			
+			\item The \textbf{central limit theorem}\index{Central limit theorem} states that, for large $n$, the sampling distribution of $\bar{X}$ is approximately $N(\mu, \sigma/\sqrt{n})$ for any population with mean $\mu$ and finite standard deviation $\sigma$. This allows us to approximate probability calculations of $\bar{X}$ using the Normal distribution.
+			
+			\item Linear combinations of independent Normal random variables have Normal distributions. In particular, if the population has a Normal distribution, so does $\bar{X}$.
+		\end{itemize}
+	\subsection{5.3 Sampling Distributions for Counts and Proportions}
+		\begin{itemize}
+			\item A \textbf{count}\index{Count} $X$ of successes has the \textbf{binomial distribution}\index{Binomial distribution} $B(n, p)$ in the \textbf{binomial setting}\index{Binomial setting}: there are $n$ trials, all independent, each resulting in a success or a failure, and each having the same probability $p$ of a success.
+			
+			\item The binomial distribution $B(n, p)$ is a good approximation to the \textbf{sampling distribution of the count of successes}\index{Sampling distribution of the count of successes} in an \textit{SRS} of size $n$ from a large population containing proportion $p$ of successes. \textit{We will use this approximation when the population is at least $20$ - larger than the sample.}
+			
+			\item The \textbf{sample proportion}\index{Sample proportion} of successes $\hat{p}=X/n$ is an estimator of the population proportion $p$. It does not have a binomial distribution, but we can do probability calculations about $\hat{p}$ by restating them in terms of $X$.
+			
+			\item \textbf{Binomial probabilities}\index{Binomial probabilities} are most easily found by software. There is an exact formula that is practical for calculations when $n$ is small. \textbf{Table C} contains binomial probabilities for some values of $n$ and $p$. \textit{For large $n$, you can use the Normal approximation.}
+			
+			\item The mean and standard deviation of a \textbf{binomial count}\index{Binomial count} $X$ and a \textbf{sample proportion}\index{Sample proportion} $\hat{p}=X/n$ are
+			\[\begin{matrix}	
+				\mu_{X} = np&\mu_{\hat{p}}=p\\
+				\sigma_{X} =\sqrt{np(1-p)} & \sigma_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}\end{matrix} \]
+			The sample proportion $\hat{p}$ is, therefore, an \textbf{unbiased estimator} of the population proportion $p$.
+			
+			\item The \textbf{Normal approximation}\index{Normal approximation} to the binomial distribution says that if $X$ is a count having the $B(n,p)$ distribution, then when $n$ is large,
+			\[\begin{matrix}
+				X \text{ is approximately } N\Big(np,\sqrt{np(1-p)}\Big)\\
+				\hat{p} \text{ is approximately } N\Big(p,\sqrt{\frac{p(1-p)}{n}}\Big)
+			\end{matrix}\]
+			We will use this approximation when $np\geq 10$ and $n(1-p)\leq 10$. It allows us to approximate probability calculations about $X$ and $\hat{p}$ using the Normal distribution.
+			
+			\item The \textbf{continuity correction}\index{Continuity correction} improves the accuracy of the Normal approximations.
+			
+			\item The exact \textbf{binomial probability formula}\index{Binomial probability formula} is
+			\[P(X=k)=\begin{pmatrix} n\\ k \end{pmatrix} p^k(1-p)^{n-k}\]
+			where the possible values of $X$ are $k = 0,1,..., n$. The binomial probability formula uses the \textbf{binomial coefficient}
+			\[\begin{pmatrix}n\\k\end{pmatrix}=\frac{n!}{k!(n-k)!}\]
+						
+			\item Here the factorial $n!$ is \[n!=n\times(n-1)\times(n-2)\times...\times3\times2\times1\]
+			
+			for positive whole numbers $n$ and $0! = 1$. The binomial coefficient counts the number of ways of distributing $k$ successes among $n$ trials.
+			
+			\item A count $X$ of successes has a \textbf{Poisson distribution}\index{Poisson distribution} in the \textbf{Poisson setting}\index{Poisson setting}: the number of successes that occur in two nonoverlapping units of measure are independent; the probability that a success will occur in a unit of measure is the same for all units of equal size and is proportional to the size of the unit; the probability that more than one event occurs in a unit of measure is negligible for very small-sized units. In other words, the events occur one at a time.
+			
+			\item If $X$ has the Poisson distribution with mean $\mu$, then the standard deviation of $X$ is $\sqrt{\mu}$, and the possible values of $X$ are the whole numbers $0, 1, 2, 3,$ and so on.
+			
+			\item The \textbf{Poisson probability} that $X$ takes any of these values is
+			\[P(X=k)=\frac{e^{-\mu}\mu^k}{k!}\quad k=0,1,2,3,...\]
+			
+			Sums of independent Poisson random variables also have the Poisson distribution. For example, in a Poisson model with mean $\mu$ per unit of measure, the count of successes in $a$ units is a Poisson random variable with mean $a\mu$.
+		\end{itemize}

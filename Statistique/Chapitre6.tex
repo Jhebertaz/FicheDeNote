@@ -1,0 +1,61 @@
+\section{Chapitre 6}
+	\subsection{6.1 Estimating with Confidence}
+		\begin{itemize}
+			\item The purpose of a \textbf{confidence interval}\index{Confidence interval} is to estimate an unknown parameter with an indication of how accurate the estimate is and of how confident we are that the result is correct.
+			
+			\item Any confidence interval has two parts: an interval computed from the data and a confidence level. The interval often has the form
+				\[\text{estimate} \pm \text{margin of error}\]
+			
+			\item The \textbf{confidence level}\index{Confidence level} states the probability that the method will give a correct answer. That is, if you use $95 \%$ confidence intervals, in the long run $95  \%$ of your intervals will contain the true parameter value. When you apply the method once (that is, to a single sample), you do not know if your interval gave a correct answer (this happens $95 \%$ of the time) or not (this happens $5 \%$ of the time).
+					
+			\item The \textbf{margin of error}\index{Margin of error} for a level $C$ confidence interval for the mean $\mu$ of a Normal population with known standard deviation $\sigma$, based on an \textit{SRS} of size $n$, is given by \[m=z^{*}\frac{\sigma}{\sqrt{n}}\]
+			
+			Here $z^{*}$ is obtained from the row labeled $z^{*}$ at the bottom of \textbf{Table D}\index{Table D}. The probability is $C$ that a standard Normal random variable takes a value between $-z^{*}$ and $z^{*}$. The confidence interval is \[\bar{x}\pm m\]
+			
+			If the population is not Normal and n is large, the confidence level of this interval is approximately correct.
+			
+			\item Other things being equal, the margin of error of a confidence interval decreases as
+				\begin{itemize}
+					\item the confidence level $C$ decreases,
+					\item the sample size $n$ increases, and
+					\item the population standard deviation $\sigma$ decreases.
+				\end{itemize}
+			\item The sample size n required to obtain a confidence interval of specified margin of error m for a population mean is \[n=\bigg(\frac{z^{*}\sigma}{m}\bigg)^2\]
+			
+			where $z^{*}$ is the critical point for the desired level of confidence.
+			
+			\item A specific confidence interval formula is correct only under specific conditions. The most important conditions concern the method used to produce the data. Other factors such as the form of the population distribution may also be important. These conditions should be investigated prior to any calculations.
+		\end{itemize}
+	\subsection{6.2 Tests of Significance}
+		\begin{itemize}
+			\item A \textbf{test of significance}\index{Test of significance} is intended to assess the evidence provided by data against a \textbf{null hypothesis}\index{Null hypothesis} $H_0$ in favor of an \textbf{alternative hypothesis}\index{Alternative hypothesis} $H_a$.
+			
+			\item The hypotheses are stated in terms of population parameters. Usually, $H_0$ is a statement that no effect or no difference is present, and $H_a$ says that there is an effect or difference in a specific direction (\textbf{one-sided alternative}\index{One-sided alternative}) or in either direction (\textbf{two-sided alternative}\index{Two-sided alternative}).
+			
+			\item The test is based on a \textbf{test statistic}\index{Test statistic}. The \textbf{$P$-value}\index{$P$-value} is the probability, computed assuming that $H_0$ is true, that the test statistic will take a value at least as extreme as that actually observed. Small $P$-values indicate strong evidence against $H_0$. Calculating $P$-values requires knowledge of the sampling distribution of the test statistic when H0 is true.
+			
+			\item If the $P$-value is as small or smaller than a specified value $\alpha$, the data are \textbf{statistically significant}\index{Statistically significant} at significance level $\alpha$.
+			
+			\item Significance tests for the hypothesis $H_0: \mu = \mu_0$ concerning the unknown mean $\mu$ of a population are based on the \textbf{$z$ statistic}\index{$z$ statistic}: \[z=\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}\]			
+			The $z$ test \textbf{assumes} an \textit{SRS} of size $n$, known population standard deviation $\alpha$, and either a Normal population or a large sample. $P$-values are computed from the Normal distribution (\textbf{Table A}\index{Table A}). Fixed $\alpha$ tests use the table of \textbf{standard Normal critical values (Table D)}\index{Standard Normal critical values (Table D)}.
+		\end{itemize}
+	\subsection{6.3 Use and Abuse of Tests}
+		\begin{itemize}
+			 \item $P$-values are more informative than the reject-or-not result of a level $\alpha$ test. Beware of placing too much weight on traditional values of $\alpha$, such as $\alpha = 0.05$.
+			
+			\item Very small effects can be highly significant (small $P$), especially when a test is based on a large sample. A statistically significant effect need not be practically important. Plot the data to display the effect you are seeking, and use confidence intervals to estimate the actual values of parameters.
+			
+			\item On the other hand, lack of significance does not imply that $H_0$ is true, especially when the test has a low probability of detecting an effect.
+			
+			\item Significance tests are not always valid. Faulty data collection, outliers in the data, and testing a hypothesis on the same data that suggested the hypothesis can invalidate a test. Many tests run at once will probably produce some significant results by chance alone, even if all the null hypotheses are true.
+		\end{itemize}
+	\subsection{Power and Inference as a Decision}
+		\begin{itemize}
+			\item The \textbf{power}\index{Power} of a significance test measures its ability to detect an alternative hypothesis. The power to detect a specific alternative is calculated as the probability that the test will reject $H_0$ when that alternative is true. This calculation requires knowledge of the sampling distribution of the test statistic under the alternative hypothesis. Increasing the size of the sample increases the power when the significance level remains fixed.
+			
+			\item An alternative to significance testing regards $H_0$ and $H_a$ as two statements of equal status that we must decide between. This \textbf{decision theory}\index{Decision theory} point of view regards statistical inference in general as giving rules for making decisions in the presence of uncertainty.
+			
+			\item In the case of testing $H_0$ versus $H_a$, decision analysis chooses a decision rule on the basis of the probabilities of two types of error. A \textbf{Type I error}\index{Type I error} occurs if $H_0$ is rejected when it is in fact true. A \textbf{Type II error}\index{Type II error} occurs if $H_0$ is accepted when in fact $H_a$ is true.
+			
+			\item In a fixed level $\alpha$ significance test, the significance level $\alpha$ is the probability of a Type I error, and the power to detect a specific alternative is $1$ minus the probability of a Type II error for that alternative.
+		\end{itemize}
