@@ -1,0 +1,21 @@
+\section*{4.8.17.}
+	Un véhicul se rend en une heure d'une point $A$ à un point $B$ distants de $D>0$ kilomètres. En faisant les hypothèses nécessaires, montrer qu'il existe deux points du trajet distants de $D/2$ kilomètres où le véhicule passe a une demie-heure d'intervalle. \textit{Suggestion} : Considérer $d(s)$ la distance parcourue du temps $0$ au temps $s\in [0,1]$ et définir
+	\[h(t)= d(t+1/2)-d(t)-D/2\] 
+	\subsection*{Solution}
+	Puisque $h$ dépend du temps, alors elle est par hypothèse continue (la téléportation est impossible).
+	\[
+	\begin{cases}
+		h(0)=d(0+1/2)-d(0)-D/2=d(1/2)-D/2\\
+		h(1/2)=d(1/2+1/2)-d(1/2)-D/2=D/2-d(1/2)
+	\end{cases}\]
+	Par trichotomie des nombres réels,
+	\begin{align}
+	h(0)>h(1/2)\\
+	h(0)=h(1/2)\\
+	h(0)<h(1/2)
+	\end{align}
+	Sachant que $h(0)+h(1/2)=0$, alors de (1) et (3),
+	\[h(0)h(1/2)<0\]
+	En particuliers, $h$ étant continue sur $[0,1/2]$ et respectant : $h(0)\neq h(1/2)$. Par le théorème des valeurs intermédiaires,
+	\[\exists c\in[0,1/2] : 0=h(c)=d(c+1/2)-d(c)-D/2 \]
+	De (2), l'existence d'un $c\in [0,1/2]$ tel que $h(c)=h(c+1/2)$ est triviale, $c=0$ et/ou $c=1/2$.

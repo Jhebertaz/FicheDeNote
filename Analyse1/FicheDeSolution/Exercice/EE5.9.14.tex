@@ -1,0 +1,16 @@
+\section*{5.9.14.}
+	Soit $f:\mathbb{R}\longrightarrow\mathbb{R}$ une fonction différentiable sur $\mathbb{R}$ telle que \[|f(x)-f(y)|\leq (x-y)^2\]
+	pour tous $x,y\in\mathbb{R}$. Montrer que f est une fonction constante.
+	\subsection*{Solution}
+		\begin{align*}
+			|f(x)-f(y)|\leq |x-y|^2&\implies 0\leq\frac{|f(x)-f(y)|}{|x-y|}\leq |x-y|\\
+			&\implies 0\leq\lim_{x\to y}\frac{|f(x)-f(y)|}{|x-y|}\leq \lim_{x\to y}|x-y|=0\\
+			&\implies 0\leq\lim_{x\to y}\frac{|f(x)-f(y)|}{|x-y|}\leq 0
+			\intertext{Par trichotomie, la dérivée en tout point est nulle, par conséquent la primitive est une fonction constante.}
+%			\intertext{En particuliers, la fonction est lipschitzienne, donc uniformément continue ainsi que sa dérivé est bornée. Par conséquent,}
+%			\begin{matrix}
+%			\forall\varepsilon>0,\exists\delta>0 :\forall x,y\in\mathbb{R}, |x-y|<\delta\implies |f(x)-f(y)|<\varepsilon\\
+%			et\\
+%			\exists M>0,\forall x\in\mathbb{R}, |f'(x)| < M
+%			\end{matrix}
+		\end{align*}

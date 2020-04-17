@@ -1,0 +1,44 @@
+	\section*{4.10.5}
+		\subsection{\normalfont{Soit $f:D\longrightarrow\mathbb{R}$ une fonction continue et $x_0\in D$ tel que $f(x_0)>0$. Montrer qu'il existe un voisinage $V(x_0,\delta)$ et un nombre $\varepsilon>0$ tels que $f(x)>\varepsilon$ pour tout $x\in D\cap V(x_0,\delta)$. \textit{De même, pour $f(x_0)<0$, montrer qu'il existe un voisinage $V(x_0,\delta)$ et un nombre $\varepsilon>0$ tels que $f(x)<-\varepsilon$ pour tout $x\in D\cap V(x_0,\delta)$ (solution analogue).}}}
+		\subsubsection*{Solution}
+			Remarquons les différents comportements d'une fonction continue dans un voisinage relativement proche de $f(x_0)$.
+			\begin{enumerate}
+				\item $\leftarrow\rightarrow$ : Constant
+				\item $\nearrow\searrow$ : Croissant-Décroissant
+				\item $\searrow\nearrow$ : Décroissant-Croissant
+				\item $\searrow\searrow$ : Décroissant-Décroissant
+				\item $\nearrow\nearrow$ : Croissant-Croissant
+			\end{enumerate}
+			Les cas 1 et 3 sont triviaux puisqu'il existe un petit voisinage tel que pour tout $f(x)\in f\big(V(x_0,\delta)\big), f(x)>0$. En particuliers, $f(x)>f(x_0)/2=\varepsilon>0$.\\
+			Pour les autres cas, le cas 2 se résout de manière similaire au cas 4 et au cas 5.\\
+			\\
+			Sans perdre de généralité $f$ Croissant-Décroissant et $f(x_0)>0$
+				\[
+				\begin{cases}
+						\nearrow\implies\exists\delta_1>0 :\forall x,y\in D\cap (x_0-\delta_1,x_0), x>y \implies f(y)>f(x)\\
+						\searrow\implies\exists\delta_2>0 : \forall x,y\in D\cap (x_0,x_0+\delta_2), x>y \implies f(y)<f(x)
+				\end{cases}
+				\]
+			Ainsi, en prenant $\delta = \min\{\delta_1,\delta_2\}$ on a,
+				\[V(x_0,\delta)\subset (x_0-\delta_1,x_0)\cup\{x_0\}\cup(x_0,x_0+\delta_2)\]
+			tel que $f$ croisse sur l'intervalle $(x_0-\delta,x_0)$ et décroisse sur l'intervalle $(x_0,x_0+\delta)$.\\
+			Par le théorème de valeurs intermédiaire, ($f(x_0-\delta)\neq f(x_0)$) :
+			\[
+				\forall y\in f([x_0-\delta,x_0]),\exists c_1\in (x_0-\delta,x_0) : f(c_1)=y<f(x_0)
+			\]
+			Ainsi, il existe une préimage $c_1$ (resp. $c_2$) tel que l'image est strictement supérieure à zero et strictement inférieure à $f(x_0)$, car la fonction croît (\textit{resp. décroît}) sur l'intervalle $[x_0-\delta,x_0]$ (\textit{resp.} $[x_0,x_0+\delta]$) jusqu'à (\textit{resp. de}) $x_0$ où la fonction est strictement positive.
+			Donc, en redéfinissant $\delta=\min\{c_1,c_2\}$ on a \[\forall x\in D\cap V(x_0,\delta), f(x)>\min\{f(c_1),f(c_2)\}=\varepsilon\]
+		\subsection{\normalfont{Soit $h:\mathbb{R}\longrightarrow\mathbb{R}$ une fonction continue sur $\mathbb{R}$ telle que $h(r)=0$ pour tout nombre rationnel $r$. Montrer que $h(x)=0$ pour tout nombre réel $x$.}}
+		\subsubsection*{Solution}
+			Puisque $h$ est continue, alors pour toute suite $\{x_n\}$ qui converge vers $x_0$ avec $x_n\in\mathbb{R}$ pour chaque $n$, la suite $\{h(x_n)\}$ converge vers $h(x_0)$.\\
+			En particuliers, par la densité des nombre irrationnel (\textit{resp. rationnel}) dans les réels.
+			\[
+				\exists(y_n)\in\mathbb{Q}^C : \forall n\in\mathbb{N}, y_n\neq r, \lim_{n\to\infty} y_n = r
+			\]
+			\[
+			\exists(x_n)\in\mathbb{Q} : \forall n\in\mathbb{N}, x_n\neq r, \lim_{n\to\infty} x_n = r
+			\]
+			En supposant que $\lim_{n\to\infty} h(y_n)\neq 0$ on contredit la condition de continuité de $h$ puisqu'il existerait deux suites $(x_n)$ et $(y_x)$ telles que $\lim_{n\to\infty} h(x_n)\neq \lim_{n\to\infty} h(y_n)$. Pour que $h$ soit une fonction continue, il est donc nécéssaire que la $\lim_{n\to\infty} h(y_n)= 0=h(r)$ pour toute suite convergente.
+		\subsection{\normalfont{Soit $f$ et $g$ deux fonctions continues sur $\mathbb{R}$ telle que $f(x)=g(x)$ pour tout nombre rationnel. Montrer que $f(x)=g(x)$ pour tout nombre réel $x$.}}
+		\subsubsection*{Solution}
+		En définissant la fonction $h(x)=f(x)-g(x)$, on se retrouve dans la situation de l'exercice précédant.

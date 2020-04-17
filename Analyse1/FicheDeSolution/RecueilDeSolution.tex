@@ -1,0 +1,55 @@
+\documentclass{article}[babel]
+	\addtolength{\oddsidemargin}{-.875in}
+	\addtolength{\evensidemargin}{-.875in}
+	\addtolength{\textwidth}{1.75in}
+	\addtolength{\topmargin}{-.875in}
+	\addtolength{\textheight}{1.75in}
+	\usepackage{fancyhdr}
+	\usepackage{hyperref}
+	\usepackage{amsmath,amssymb,amsthm,etoolbox,mathtools,verbatim,enumitem,imakeidx}
+	\usepackage{caption,pdfpages,graphicx}
+	\DeclareGraphicsExtensions{.pdf,.png}
+	\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+	\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+	\pagestyle{fancy}
+	\lhead{Julien Hébert-Doutreloux}
+	\rhead{--Page \thepage}
+	\cfoot{Analyse I}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+	\newtheorem{mydef}{Définition}
+	\newtheorem{myprop}{Proposition}
+	\newtheorem{mythm}{Théorème}
+	\indexsetup{othercode=\small}
+	\makeindex[program=makeindex,columns=2,intoc=true,options={-s index_style.ist}]
+	\newcounter{code}
+	\newenvironment{code}[1]
+	{\index{#1}\refstepcounter{code}\rule{1ex}{1ex}\hspace{\stretch{1}} }
+	{ \hspace{\stretch{1}}\rule{1ex}{1ex} }
+	\newcommand{\Heq}[1]{\overset{\left[#1\right]}{\underset{\mathrm{H}}{=}}}
+	\renewcommand\thesubsection{\alph{subsection})}
+\begin{document}
+	\begin{titlepage}
+		\centering
+		\includegraphics[width=0.5\textwidth]{Universite_de_Montreal_logo}\par\vspace{1cm}
+		{\scshape\LARGE Université de Montréal\par}
+		\vspace{1cm}
+		{\scshape\Large Fiche Solution\par}
+		\vspace{1.5cm}
+		{\huge\bfseries Analyse I\par}
+		\vspace{2cm}
+		{\Large\itshape Julien Hébert-Doutreloux\par}
+		\vfill
+		%supervised by\par
+		%Dr.~Mark \textsc{Brown}
+		\vfill
+		% Bottom of the page
+		{\large \today\par}
+	\end{titlepage}
+		\setcounter{page}{2}
+		%\tableofcontents
+		%\newpage
+	\input{Exercice/inputs}
+		\newpage
+		\printindex
+\end{document}

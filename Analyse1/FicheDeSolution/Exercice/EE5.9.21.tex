@@ -1,0 +1,16 @@
+\section*{5.9.21.}
+	Déterminer, si elle existe, la dérivée en 0 de la fonction 
+	\[f(x)=\frac{1}{1+|x|^3}\] sur tout $x\in\mathbb{R}$
+	\subsection*{Solution}
+		Par la valeur absolue,
+		\[f(x)=\begin{cases}
+		(1-x^3)^{-1} & \text{si } x<0\\
+		(1+x^3)^{-1} & \text{si } x\geq 0
+		\end{cases}\]
+		Ainsi, la dérivée de $f$ est,
+		\[f'(x)=\begin{cases}
+		3x^2(1-x^3)^{-2} & \text{si } x<0\\
+		-3x^2(1+x^3)^{-2} & \text{si } x\geq 0
+		\end{cases}\]
+		La dérivé existe car 
+		\[0=\lim_{x\to 0^-}3x^2(1-x^3)^{-2}=\lim_{x\to 0}-3x^2(1-x^3)^{-2}=0\]

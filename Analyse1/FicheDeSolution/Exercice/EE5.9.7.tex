@@ -1,0 +1,31 @@
+\section*{5.9.7.}
+	Soit une fonction $f:(a,b)\longrightarrow\mathbb{R}$ qui est dérivable sur l'intervalle $(a,b)$ pour $-\infty\leq a<b\leq +\infty$. Montrer que si la dérivée $f'$ est bornée, alors $f$ est uniformément continue.
+	\subsection*{Solution}
+%		\begin{align*}
+%			\intertext{Puisque $f'$ est bornée, alors,}
+%			\exists M\in\mathbb{R}_{>0} : \forall x\in (a,b), | f'(x) | < M\\
+%			\intertext{Par continuité de $f$}
+%			\forall\varepsilon>0,\exists\delta>0 : \forall x\in (a,b), |x-x_0|<\delta\implies |f(x)-f(x_0)|<\varepsilon
+%			\intertext{Ainsi, considérons, $|x-x_0|<\delta>|y-y_0| : y_0\in (a,b)$}
+%			\lim_{x\to x_0}| f(x)-f(x_0)|<\lim_{x\to x_0}\delta\bigg|\frac{f(x)-f(x_0)}{x-x_0}\bigg|<\delta M\\
+%			\lim_{y\to y_0}| f(y)-f(y_0)|<\lim_{y\to y_0}\delta\bigg|\frac{f(y)-f(y_0)}{y-y_0}\bigg|<\delta M
+%			\end{align*}
+%		\begin{align*}
+%			\intertext{En particuliers, par l'inégalité triangulaire}
+%			2\delta M>&\lim_{(x,y)\to (x_0,y_0)}\Big[|f(x)-f(x_0)| +|  f(y)+f(y_0)|\Big]\geq\\
+%			&\quad\lim_{(x,y)\to (x_0,y_0)}|f(x)-f(x_0) - f(y)+f(y_0)|\geq\\			
+%			&\qquad\lim_{(x,y)\to (x_0,y_0)}|f(x) - f(y)-2\max\{|f(x_0)|,|f(y_0)|\}|\geq\\
+%			&\qquad\quad\lim_{(x,y)\to (x_0,y_0)}|f(x) - f(y) - C|\geq\\
+%			&\qquad\qquad\lim_{(x,y)\to (x_0,y_0)}\Big||f(x) - f(y)| - |C|\Big|
+%			\end{align*}
+%			La constante $C$ appartient au réel et $C>2\max\{|f(x_0)|,|f(y_0)|\}\geq 0$. Par les propriétés des valeurs absolues,
+%			\[-2\delta M<	\lim_{(x,y)\to (x_0,y_0)}|f(x) - f(y)| - |C|<2\delta M\]
+%			\[-2\delta M+C<\lim_{(x,y)\to (x_0,y_0)}|f(x) - f(y)|<2\delta M+C\]
+%			La fonction est ainsi uniformément continue (conclusion manquante)
+			\subsection*{Alternative}
+			Soit $x,y\in (a,b)$ telle que sans perdre de généralité $x<y$. Par le théorème de la moyenne,\[\exists c\in (x,y) : \frac{f(y)-f(x)}{x-y}=f'(c) \]
+			Par hypothèse, $\exists M\in\mathbb{R}_{>0} : \forall z\in (a,b ),|f'(z)|< M$, alors
+			\[\bigg|\frac{f(x)-f(y)}{x-y}\bigg|=|f'(c)|<M\]
+			En particuliers, la fonction est lipschitzienne,
+			\[\forall x,y\in (a,b), |f(x)-f(y)|<M|x-y|\]
+			Par conséquent, la fonction est uniformément continue.

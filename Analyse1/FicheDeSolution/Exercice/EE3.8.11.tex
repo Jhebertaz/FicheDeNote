@@ -1,0 +1,23 @@
+\section*{3.8.11}
+	Montrer que si $|r|<1$, alors 
+		\[\frac{1}{(1-r)^2}=\Bigg(\sum_{n=0}^{+\infty}r^n\Bigg)^2=\sum_{n=0}^{+\infty}(n+1)r^n\]
+	\subsection*{Solution}
+		Remarquons que si $|r|\geq 1$, la série $\sum_{n=0}^{+\infty} r^n$ diverge.\\
+		Posons $A_n = \sum_{n=0}^{+\infty} r^n$, qui est absolument convergente pour $|r|<1$. En utilisant le théorème relatif au produit de Cauchy:
+		\begin{center}
+			\fbox{
+				\begin{minipage}{25em}
+					Soit la série $\sum_{n=0}^{+\infty} a_n$ qui converge absolument et la série $\sum_{n=0}^{+\infty} b_n$ qui converge. Posons $\sum_{n=0}^{+\infty} a_n = A$ et $\sum_{n=0}^{+\infty} b_n = B$. Le produit de Cauchy $\sum_{n=0}^{+\infty} c_n$ converge vers $A \cdot B$
+				\end{minipage}
+				}
+		\end{center}
+	Supposons, $a_n=b_n=r^n$. Puisque $\sum_{n=0}^{+\infty} a_n$ est absolument convergente, alors elle est simplement convergente. Par définition du produit de Cauchy,
+	\begin{align*}
+		c_n=&\sum_{k=0}^{n} r^k\cdot r^{n-k}\\
+		\intertext{Par un changement d'indice,}
+		=&\sum_{k=1}^{n+1} r^{k-1}\cdot r^{n-k+1}\\
+		=&\sum_{k=1}^{n+1} r^{n}\\
+		=&(n+1)r^n
+		\intertext{Ainsi, par le théorème}
+		\sum_{n=0}^{+\infty} (n+1)r^n =& \ A \cdot B = \Bigg(\sum_{n=0}^{+\infty}r^n\Bigg)^2 = \frac{1}{(1-r)^2}
+	\end{align*}

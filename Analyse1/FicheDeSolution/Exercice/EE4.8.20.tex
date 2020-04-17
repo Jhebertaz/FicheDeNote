@@ -1,0 +1,21 @@
+\section*{4.8.20.}
+	Soit une fonction continue $f:[a,b]\longrightarrow [m,M]$ avec $[a,b]\subseteq[m,M]$, où on définit $[a,b] : m=\inf\{f:x\in[a,b]\}$ et $M=\sup\{f:x\in[a,b]\}$ pour $-\infty<a<b<+\infty$. Montrer qu'il existe un point $c\in [a,b]$ tel que $f(c)=c$.
+\subsection*{Solution}
+	En supposant que $a\neq b$,
+	\begin{align}
+		[a,b]\subseteq[m,M]\implies m\leq a < b \leq M\\
+		\intertext{De même, par le codomaine de $f$ on a pour tout $x\in[a,b]$}
+		m\leq f(x) \leq M	
+	\end{align}
+	Par la continuité de $f$ si $m=\inf\{f:x\in[a,b]\}$, alors il existe un point $\alpha $ de $[a,b]$ tel que $f(\alpha)=m$ et respectivement si $M=\sup\{f:x\in[a,b]\}$, alors il existe un point $\beta $ de $[a,b]$ tel que $f(\beta)=M$.\\
+	Considérons la fonction $h:[a,b]\longrightarrow\mathbb{R}$, définie par $h(x)=f(x)-x$. Sans perdre de généralité posons $\alpha<\beta$
+	\[
+	\begin{cases}
+	h(\alpha)=f(\alpha)-\alpha= m-\alpha\leq m - a\leq 0\\
+	h(\beta)=f(\beta)-\beta= M-\beta\geq M - b\geq 0
+	\end{cases}
+	\]
+	En particuliers, $h(\alpha)h(\beta)<0$ puisque $h(\alpha)<0<h(\beta)$, alors par le théorème des valeurs absolue, 
+	\[0\in[h(\alpha),h(\beta)], \exists c\in [a,b] : h(c)=f(c)-c=0\]
+	Les cas $h(\alpha)=0$ et $h(\beta)=0$ sont évident ($c=m$ ou $c=M$).
+	

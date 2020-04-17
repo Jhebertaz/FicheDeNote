@@ -1,0 +1,12 @@
+\section*{5.9.8.}
+	Soit $f:[a,b]\longrightarrow [a,b]$ une fonction continue sur $[a,b]$ et dérivable sur $(a,b)$ pour $-\infty<a<b<+\infty$, telle que $|f'(x)|<1$ pour tout $x\in (a,b)$. Montrer qu'il existe un seul point $c\in [a,b]$ tel que $f(c)=c$.
+	\subsection*{Solution}
+		Considérons la fonction $g:[a,b]\longrightarrow\mathbb{R}$ continue et dérivable sur les mêmes intervalle que $f$ et définie par $g(x)=f(x)-x$.  Puisque $a\leq f(x)\leq b$,
+		\[\begin{cases}
+		g(a)=f(a)-a\geq 0\\
+		g(b)=f(b)-b\leq 0
+		\end{cases}
+		\]
+		Par le théorème des valeurs intermédiaires, \[0\in\mathbb{R}, \exists c\in [a,b] : g(c)=f(c)-c = 0 \]
+		Montrons l'unicité du point vérifiant l'égalité ci-dessus. \[g(x)=f(x)-x\implies g'(x)=f'(x)-1\]
+		Par hypothèse, $|f'(x)|<1$, alors $g'(x)<1-1 = 0$ pour tout $x\in (a,b)$. En particuliers, la vitesse d'accroissement de $g$ est strictement négative donc la fonction se doit d'être injective (donc bijective sur son image) sur l'intervalle $[a,b]$ sans quoi il existerait deux point ayant la même image et donc par le théorème de Rolle un point $e$ où la dérivé de $g$ en ce point serai nulle, il y aurai ainsi une contradiction.

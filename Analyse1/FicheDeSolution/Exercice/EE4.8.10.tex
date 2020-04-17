@@ -1,0 +1,13 @@
+\section*{4.8.10.}
+	Soit $f:[0,1]\longrightarrow[0,1]$ une fonction continue. Montrer qu'il existe un nombre réel $c\in [0,1]$ tel que $f(c)=c$.
+\subsection*{Solution}
+	Considérons la fonction $h:[0,1]\longrightarrow\mathbb{R}$, définie par $h(x)=f(x)-x$. Ainsi,
+	\[
+	\begin{cases}
+		h(0)=f(0)-0\implies 0\leq h(0) \leq 1\\
+		h(1)=f(1)-1\implies -1\leq h(1) \leq 0
+	\end{cases}
+	\]
+	En particuliers, si $h(1)< 0< h(0)$, par le théorème des valeurs intémédiaires,
+	\[0 \in [f(1),f(0)], \exists c\in [0,1] : h(c)=f(c)-c=0\]
+	Pour les cas $h(0)=0$ et/ou $h(1)=0$, alors la valeur de $c$ est /vidente ($0$ et/ou $1$)

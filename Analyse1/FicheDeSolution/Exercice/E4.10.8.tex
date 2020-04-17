@@ -1,0 +1,24 @@
+	\section*{4.10.8}
+		\subsection{\normalfont{Soit $f:[0,2\pi]\longrightarrow\mathbb{R}$ une fonction continue telle que $f(0)=f(2\pi)$. Montrer qu'il existe un nombre $c\in[0,2\pi]$ tel que $f(c)=f(c+\pi)$.}}
+		\subsubsection*{Solution}
+		Considérons $h:[0,\pi]\longrightarrow\mathbb{R}$ une fonction continue (thm. \textit{algèbre de fonction continue}) définie par $h(x)=f(x)-f(x+\pi)$. Alors,
+		\[
+		\begin{cases}
+		h(0)=f(0)-f(\pi)\\
+		h(\pi)=f(\pi)-f(2\pi)=f(\pi)-f(0)
+		\end{cases}\]
+		Par trichotomie des nombres réels,
+		\begin{align}
+			h(0)>h(\pi)\\
+			h(0)=h(\pi)\\
+			h(0)<h(\pi)
+		\end{align}
+		Sachant que $h(0)+h(\pi)=0$, alors de (1) et (3),
+		\[h(0)h(\pi)<0\]
+		En particuliers, $h$ étant continue sur $[0,\pi]$ et respectant : $h(0)\neq h(\pi)$. Par le théorème des valeurs intermédiaires,
+		\[\exists c\in[0,\pi] : 0=h(c)=f(c)-f(c+\pi) \]
+		De (2), l'existence d'un $c\in [0,\pi]$ tel que $f(c)=f(c+\pi)$ est triviale, $c=0$ et/ou $c=\pi$.
+%		\subsection{\normalfont{Montrer que tout polynôme de degré impair à coefficients réels possède au moins une racine.}}
+%		\subsubsection*{Solution}
+%		Par définition, un polynôme de degré impair est telle que $p(-x)=-p(x)$. Similairement aux situations (1), (2) et (3) du numéro précédant, on par la continuité des fonctions polynomiale (thm.) et par le théorème de valeurs intermédiaires :
+%		\[\exists c \in\mathbb{R} : p(-c)+p(c)=0\]

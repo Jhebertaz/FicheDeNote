@@ -1,0 +1,32 @@
+\section*{4.8.13.}
+	Soit une fonction continue $f,g:\mathbb{R}\longrightarrow\mathbb{R}$ deux fonction bornées et uniformément continues. Montrer que la fonction produit (usuel) $f\cdot g$ est aussi uniformément continue. Est-ce toujours vras si les fonctions sont non-bornées.  
+\subsection*{Solution}
+	Par hypothèse que $f$ et $g$ sont bornées :
+	\begin{align}
+		\exists M_1\in\mathbb{R^+} : \forall x\in D, \big|f(x)\big|\leq M_1\\
+		\exists M_2\in\mathbb{R^+} : \forall x\in D, \big|g(x)\big|\leq M_2
+	\end{align}
+	Par hypothèse que $f$ et $g$ sont sont uniformément continues :
+	\begin{align}
+		\forall\varepsilon_1>0,\exists\delta_1>0 : \forall x,y\in D, |x-y|<\delta_1 \implies \big|f(x)-f(y)\big|<\varepsilon_1\\
+		\forall\varepsilon_2>0,\exists\delta_2>0 : \forall x,y\in D, |x-y|<\delta_2 \implies \big|g(x)-g(y)\big|<\varepsilon_2
+	\end{align}
+	Considérons la fonction continue (\textit{thm} sur produit de fonction continu) $h: D\longrightarrow\mathbb{R}$ définie par $h(x)=f(x)g(x)$. Montrons que $h$ est uniformément continue:
+	\begin{align*}
+	\intertext{Définissons $M=\max\{M_1,M_2\}$ et considérons $\varepsilon_1=\varepsilon_2 : =\frac{\epsilon}{2M} $}
+	\big|h(x)-h(y)\big|&=\big|f(x)g(x)-f(y)g(y)\big|\\
+	&=\big|f(x)g(x)-f(x)g(y)+f(x)g(y)-f(y)g(y)\big|\\
+	&=\big|f(x)\big(g(x)-g(y)\big)+g(y)\big(f(x)-f(y)\big)\big|
+	\intertext{Par l'inégalité triangulaire,}
+	&\leq \big|f(x)\big(g(x)-g(y)\big)\big|+\big|g(y)\big(f(x)-f(y)\big)\big|\\
+	&=\big|f(x)\big|\cdot\big|\big(g(x)-g(y)\big)\big|+\big|g(y)\big|\cdot\big|\big(f(x)-f(y)\big)\big|
+	\intertext{Par (1) et (2),}
+	&\leq M_1\cdot\big|\big(g(x)-g(y)\big)\big|+M_2\cdot\big|\big(f(x)-f(y)\big)\big|
+	\intertext{Par (3) et (4),}
+	&< M_1\cdot\varepsilon_2+M_2\cdot\varepsilon_1\\
+	&<2 M (\frac{\epsilon}{2M})=\epsilon
+	\intertext{Ainsi, la fonction $h$ satisfait la définition de continuité uniforme,}
+	\forall\epsilon>0,\exists\delta_{(\epsilon)} >0 &: \forall x,y\in D, |x-y|<\delta \implies \big|h(x)-h(y)\big|<\epsilon
+	\end{align*}
+	Ce n'est pas toutes les fonctions continues qui par le produit avec une autre fonction continue sont uniformément continues. Le carré de la fonction identité en est un exemple (contre-exemple).
+	

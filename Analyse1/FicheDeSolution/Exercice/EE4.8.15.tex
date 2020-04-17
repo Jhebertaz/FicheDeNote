@@ -1,0 +1,21 @@
+\section*{4.8.15.}
+	Montrer que la fonction \[f(x)=\frac{1}{(1+x^2)}\] est uniformément continue sur l'intervalle $(0,+\infty)$.
+	\subsection*{Solution}
+	Par définition, $f$ est uniformément continue sur $E$ si,
+	\[
+	\forall\varepsilon>0,\exists\delta_{(\varepsilon)}>0 : \forall x,y\in E, |x-y|<\delta \implies \big|f(x)-f(y)\big|<\varepsilon
+	\]
+	\begin{align*}
+	\intertext{Soit $x,y\in (0,\infty)$ et $0\leq|x-y|<\delta$,}
+	\big|f(x)-f(y)\big|&=\bigg|\frac{1}{1+x^2}-\frac{1}{1+y^2}\bigg|\\
+	&=\bigg|\frac{x^2-y^2}{(1+x^2)(1+y^2)}\bigg|\\
+	&\leq\bigg|\frac{\delta (x+y)}{(1+x^2)(1+y^2)}\bigg|\\
+	&\leq\delta\bigg|\frac{x}{(1+x^2)(1+y^2)}+\frac{y}{(1+x^2)(1+y^2)}\bigg|
+	\intertext{Si $a\in (0,1), a^2<a<1\implies a<1+a^2$. Ainsi, $\frac{a}{1+a^2}<1$.}
+	\intertext{Sinon, $a\in [1,\infty), 1 \leq a<a^2\implies a< a^2+1$. Ainsi, $\frac{a}{1+a^2}<1$}
+	\intertext{En particuliers, $\forall a\in (0,\infty), \frac{a}{1+a^2}<1$. Alors,}
+	\delta\bigg|\frac{x}{(1+x^2)(1+y^2)}+\frac{y}{(1+x^2)(1+y^2)}\bigg|&<2\delta
+	\intertext{En posant, $\delta =\frac{\varepsilon}{2}$}
+	\forall\varepsilon>0,\exists\delta_{(\varepsilon)}>0 : \forall x,y\in(0,\infty), |x-y|<\delta&\implies\big|f(x)-f(y)\big|<2\delta=\varepsilon
+	\end{align*}
+	Donc, la fonction $f$ est uniformément continue sur $(0,\infty)$.
