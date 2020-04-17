@@ -1,0 +1,132 @@
+\section{Limite et continuité}
+	\subsection{Limite d'une fonction}
+		\begin{mydef}\index{Limite d'une fonction}
+			Soit $x_0$ un point d'accumulation de $D_f$. On dit que $f$ a pour limite $L$ au point $x_0$ (ou encore tend vers $L$ lorsque x tend vers $x_0$) si,\[\forall\varepsilon_{>0},\exists\delta_{>0} : \forall x\in D_f\cap V'(x_0,\delta), f(x)\in V(L,\varepsilon)\]
+			ou encore soit une suite $\{x_n\}\in D_f : \forall n\ininteger, x_n\neq x_0$
+			\[\forall\varepsilon_{>0},\exists\delta_{>0} : \forall n\ininteger,|x_n-x_0|<\delta\implies|f(x_n)-L|<\varepsilon \]
+			ou encore 
+			\[\forall\varepsilon_{>0},\exists\delta_{>0} : \forall x\in D_f\backslash\{x_0\}, |x-x_0|<\delta \implies |f(x)-L|<\varepsilon\]
+			Notation
+			\[
+			\lim_{x\to x_0}f(x)=L\quad\text{ou}\quad f(x)\xrightarrow[x\to x_0]{~} L\]
+		\end{mydef}
+		\begin{mythm}
+			Si la limite d'une fonction $f$ existe en un point, elle est unique.
+		\end{mythm}
+		\begin{mythm}
+			Soit $f:D_f\longrightarrow\mathbb{R}$ et $x_0$ un point d'accumulation de $D_f$. On a $\lim\limits_{x\to x_0}f(x)=L \Longleftrightarrow$ pour toute suite $\{x_n\}$ qui converge vers $x_0$ avec $x_n\in D_f,x_n\neq x_0, \forall n\ininteger$, la suite $\{f(x_n)\}$ converge vers $L$. 
+		\end{mythm}
+		\begin{mydef}\index{Fonction bornée}\index{Fonction localement bornée}
+			Une fonction $f$ est bornée si\[\exists M\inreal_{>0} :\forall x\in D_f, |f(x)|\leq M \]
+			Une fonction $f$ est localement bornée en un point $x_0\in D_f$ si \[\exists\delta_{>0}~\wedge~\exists M_{>0} :\forall x\in D_f\cap V(x_0,\delta) |f(x)|\leq M\]
+		\end{mydef}
+		\begin{mythm}
+			Si $f$ possède une limite $L$ au point $x_0$, $x_0$ étant un point d'accumulation de $D_f$, elle est localement bornée au point $x_0$.
+		\end{mythm}
+		\begin{mythm}\index{Limite à gauche}\index{Limite à droite}
+			Soit $x_0$ un point d'accumulation de $D_f\cap (x_0,+\infty)$ (resp. $D_f\cap (-\infty,x_0)$). La fonction possède une limite à droite (resp. à gauche) au point $x_0$ si, \[\forall\varepsilon_{>0},\exists\delta_{>0} : \forall x\in D_f\cap (x_0,x_0+\delta), |f(x)-L|<\varepsilon\]
+			resp. \[\forall\varepsilon_{>0},\exists\delta_{>0} : \forall x\in D_f\cap (x_0-\delta,x_0), |f(x)-L|<\varepsilon\]
+			Notation
+			\[\lim_{x\to x_0^+}f(x)=L\]
+			resp.
+			\[\lim_{x\to x_0^-}f(x)=L\]
+		\end{mythm}
+		\begin{mythm}
+			Soit $x_0$ un point d'accumulation de $D_f\cap(-\infty,x_0)$ et de $D_f\cap (x_0,+\infty)$. Alors, 
+			\[\lim_{x\to x_0}f(x)=L\Longleftrightarrow \lim_{x\to x_0^-}f(x)=\lim_{x\to x_0^+}f(x)=L\]
+		\end{mythm}
+	\subsection{Opérations sur les limites}
+		\begin{mythm}\index{Opérations sur les limites}
+			Soit $f,g:D\longrightarrow\mathbb{R}$ deux fonctions de domaine commun $D$ qui possèdent une limites en $x_0$, un point d'accumulation de $D$. On a
+			\begin{enumerate}
+				\item $(f+g)(x_0) : \lim\limits_{x\to x_0}\big(f(x)+g(x)\big)=\lim\limits_{x\to x_0}f(x)+\lim\limits_{x\to x_0}g(x)$
+				\item $(f\cdot g)(x_0) : \lim\limits_{x\to x_0}\big(f(x)\cdot g(x)\big)=\Big(\lim\limits_{x\to x_0}f(x)\Big)\cdot\Big(\lim\limits_{x\to x_0}g(x)\Big)$
+				\item $(f/g)(x_0) : \lim\limits_{x\to x_0}\frac{f(x)}{g(x)}=\frac{\lim\limits_{x\to x_0}f(x)}{\lim\limits_{x\to x_0}g(x)}$, si $\forall x\in D, g(x)\neq 0$ et $\lim\limits_{x\to x_0}g(x)\neq 0$
+			\end{enumerate}
+		\end{mythm}
+			\begin{mythm}\index{Des Gendarmes}
+				Soit $f,g,h$ trois fonctions de domaine commun $D$ telles que \[\exists\delta_{>0}: \forall x \in D\cap V'(x_0,\delta), f(x)\leq g(x)\leq h(x)\]
+				Si $\lim\limits_{x\to x_0} f(x)=\lim\limits_{x\to x_0}h(x)=L \implies \lim\limits_{x\to x_0}g(x)=L$
+			\end{mythm}
+		\subsection{Continuité}
+			\begin{mydef}
+				Une fonction $f$ est continue au point $x_0\in D_f$ si \[\forall\varepsilon_{>0},\exists\delta_{(\varepsilon)} : \forall x \in D_f \cap V(x_0,\delta), f(x)\in V\big(f(x_0),\varepsilon\big)\]
+				ou encore
+				\[\forall\varepsilon_{>0},\exists\delta_{(\varepsilon)} :\forall x\in D_f, |x-x_0|<\delta \implies |f(x)-f(x_0)|<\varepsilon\]
+			\end{mydef}
+			\begin{mythm}
+				Soit $x_0$ un point d'accumulation de $D_f$, $x_0\in D_f$. Les énoncés suivants s'équivalent.
+				\begin{enumerate}[label =\alph*)]
+					\item $f$ est continue en $x=x_0$
+					\item $\lim\limits_{x\to x_0} f(x)=f\big(\lim\limits_{x\to x_0}\big)=f(x_0)$
+					\item Pour toute suite $\{x_n\}$ qui converge vers $x_0$ avec $x_n\in D_f$ pour chaque $n$, la suite $\{f(x_n)\}$ converge vers $f(x_0)$.
+				\end{enumerate}
+			\end{mythm}
+		\subsection{Opération sur les fonction continues}
+			\begin{mythm}\index{Opération sur les fonction continues}
+				Soit $f,g:D\longrightarrow\mathbb{R}$ deux fonctions continues en $x_0\in D$. On a 
+				\begin{enumerate}[label=\alph*)]
+					\item $f+g$ continue en $x_0$
+					\item $fg$  continue en $x_0$
+					\item $f/g$  continue en $x_0$ si $g(x_0)\neq 0$
+				\end{enumerate}
+			\end{mythm}
+			\begin{mythm}\index{Composition}
+				Soit $f:A\longrightarrow B$ et $g:C\longrightarrow D$ telles que $f(A)\subset C$. Si $f$ est continue en $x_0\in A$ et $g$ continue en $f(x_0)$, alors $g\circ f$ est continue en $x_0$.
+			\end{mythm}
+		\subsection{Propriétés des fonctions continues}
+		\begin{mythm}
+			Soit $D$ un ensemble compact et $f:D \longrightarrow\mathbb{R}$ une fonction continue. L'ensemble $f(D)$ est compact.
+		\begin{mythm}[Corollaire]
+			Soit $D$ un ensemble compact et $f:D \longrightarrow\mathbb{R}$ une fonction continue. La fonction $f$ est bornée sur $D$.
+		\end{mythm}
+		\end{mythm}
+		\begin{mythm}[Bornes atteintes]\index{Bornes atteintes}
+			Soit $D$ un ensemble compactet $f:D \longrightarrow\mathbb{R}$ une fonction continue. \[\exists a,b\inreal : f(a)=\sup\limits_{x\in D}f(x)\quad\text{et}\quad f(b)=\inf\limits_{x\in D}f(x)\]
+		\end{mythm}
+		\begin{mythm}[Valeurs intermédiaires]
+			Soit $f$ une fonction continuesur $[a,b]$ telle que $f(a)\neq f(b)$ et $y$ un nombre arbitraire compris entre $f(a)$ et $f(b)$. Alors,\[\exists c\in (a,b) : f(c)=y\]
+		\begin{mythm}[Corollaire]
+			Soit $f:[a,b]\longrightarrow\mathbb{R}$ une fonction continue telle que $f(a)\neq f(b)$. L'image de $f\big([a,b]\big)$ est un intervalle.
+		\end{mythm}
+		\end{mythm}
+	\subsection{Continuité uniforme}
+		\begin{mydef}\index{Fonction uniformément continue}
+			Une fonction $f$ est uniformément continue sur un ensemble $E\subset\mathbb{R}$ si \[\forall\varepsilon_{>0},\exists\delta_{(\varepsilon)}>0 : \forall x,y\in E, |x-y|<\delta \implies |f(x)-f(y)|<\varepsilon\]
+		\end{mydef}
+		\begin{mythm}
+			Soit $f:D\longrightarrow\mathbb{R}$ et $D$ un ensemble compact. Toute fonction $f$ continue sur $D$ est uniformément continue.
+		\end{mythm}
+		\begin{mythm}
+			Soit $f:D\longrightarrow\mathbb{R}$, $x_0$ un point d'accumulation de $D$ et $f$ une fonction uniformément continue sur $D$. Alors, $\lim\limits_{x\to x_0}f(x)$ existe.
+		\end{mythm}
+	\subsection{Fonction réciproque}
+		\begin{mydef}\index{Fonction injective}
+			Soit $f:A\longrightarrow B$, la fonction $f$ est injective si \[\forall x,y, f(x)=f(y)\implies x=y\quad(ou~x\neq y\implies f(x)\neq f(y))\]
+		\end{mydef}
+		\begin{mydef}\index{Fonction surjective}
+			Soit $f:A\longrightarrow B$, la fonction $f$ est surjective si \[\forall y\in B,\exists x\in A : f(x)=y\implies f(A)=B\]
+		\end{mydef}
+		\begin{mydef}\index{Fonction bijective}
+			Une fonction est bijective si elle est injective et surjective
+		\end{mydef}
+		\begin{mydef}\index{Fonction identité}
+			La fonction identité est la fonction $f:A\longrightarrow A$ définie par $f(x)=x$.
+		\end{mydef}
+		\begin{mydef}\index{Fonction réciproque}\index{Fonction inverse}
+			Si $f:A\longrightarrow B$ et $g:B\longrightarrow A$ sont telles que la composée $f\circ g$ est la fonction identité sur $B$, et que $g\circ f$ est la fonction identité sur $A$, on dit que la fonction $g$ est la fonction réciproque (ou inverse) de $f$. On note la réciproque de $f$ par $f^{-1}$.
+		\end{mydef}
+		\begin{mythm}
+			Une fonction $f:A\longrightarrow B$ possède un fonction réciproque $\Longleftrightarrow$ $f$ est bijective.
+		\end{mythm}
+		\begin{mydef}\index{Fonction monotone}
+			Une fonction $f$ est croissante (resp. strictement croissante) si $x,y\in D$ et $x>y\implies f(x)\geq f(y)$ (resp. $f(x)>f(y)$). Une fonction $f$ est décroissante (resp. strictement décroissante) si $x,y\in D$ et $x>y\implies f(x)\leq f(y)$ (resp. $f(x)<f(y)$). Une fonction qui a une de ces propriétés est monotone (resp. strictement monotone).
+		\end{mydef}
+		\begin{mythm}
+			Soit $f:A\longrightarrow f\big(A\big)$ une fonction strictement croissante (resp. strictement décroissante). On a
+			\begin{enumerate}[label =\alph*)]
+				\item $f$ est injective, d'où $f^{-1}$
+				\item $f^{-1}$ est strictement croissante (resp. strictement décroissante)
+				\item $f$  continue $\implies$ $f^{-1}$ continue
+			\end{enumerate}
+		\end{mythm}
