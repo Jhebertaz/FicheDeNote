@@ -1,0 +1,38 @@
+\section{Les ensembles}
+	\begin{mydef}\index{Ensemble des points intérieurs}
+		Soit $E\subset\mathbb{R}$, l'ensemble de ses point intérieur noté $int~E$ est tel que \[int~E=\{x\in E | \exists\delta_{>0}, V(x,\delta)\subset E\}\]
+		\[int~E\subset E\subset\mathbb{R}\]
+		Remarque: $int~E$ est un ouvert 
+	\end{mydef}
+	\begin{mydef}\index{Ensemble des points d'accumulations}
+			Soit $E\subset\mathbb{R}$, l'ensemble de ses point d'accumulation noté $E'$  est tel que \[E'=\{x\in E | \forall\delta_{>0}, V'(x,\delta)\cap E\neq\emptyset\}\]
+		\[E'\subset\mathbb{R}\supset E\]
+		Remarque : "Ensemble dérivé de E"
+		\[E~fini \implies E' =\emptyset\]
+		\[E~infini \nRightarrow E'=\emptyset\]
+	\end{mydef}
+	\begin{mydef}\index{Ensemble ouvert}
+		Soit $E\subset\mathbb{R}$,
+		\[E~ouvert \Longleftrightarrow int~E=E\]
+		\[E \subset int~E\subset E\subset\mathbb{R}\]
+	\end{mydef}
+	\begin{mydef}{Ensemble fermé}
+		Soit $E\subset\mathbb{R}$,
+			\[E~ferm\acute{e}\Longleftrightarrow E'\subset E\]
+	\end{mydef}
+	\begin{mydef}\index{Ensemble compact}
+		Soit $E\subset\mathbb{R}$,
+		\[E~compact \Longleftrightarrow E~ferm\acute{e}~et~born\acute{e}\]
+		Ensemble compact si tout recouvrement ouvert de $E$ possède un sous-recouvrement fini.
+	\end{mydef}
+	\begin{mydef}{Recouvrement ouvert}
+		Ensemble $O$ : collection d'ensemble ouvert \[\{O_{\lambda}, \lambda\in\Lambda\}\] tel que \[\mathbb{R}\supset E\subset \bigcup_{\lambda\in\Lambda}O_{\lambda}\]
+	\end{mydef}
+	\begin{mythm}\index{Sous-recouvrement ouvert}
+		Soit $O$ un recouvrement ouvert de $E\subset\mathbb{R}$\[O'\subset O\]
+		sera appelé sous-recouvrement fini si $O'$ est lui même un recouvrement ouvert de $E$ et qu'il contient un nombre fini d'éléments.
+	\end{mythm}
+	\begin{mydef}\index{Frontière}
+		Soit $E\subset\mathbb{R}$, la frontière de $E$ noté $Fr~E=fr~E=\bar{E}\backslash\{int~E\}$
+		\[\bar{E}\backslash\{int~E\}\subset fr~E\subset \bar{E}\backslash\{int~E\}\] 
+	\end{mydef}

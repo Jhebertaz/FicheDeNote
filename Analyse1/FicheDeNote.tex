@@ -28,13 +28,17 @@
 	{ \hspace{\stretch{1}}\rule{1ex}{1ex} }
 	\newcommand{\Heq}[1]{\overset{\left[#1\right]}{\underset{\mathrm{H}}{=}}}
 	\renewcommand\thesubsection{\alph{subsection})}
+		\newcommand{\inreal}{\in\mathbb{R}}
+	\newcommand{\ininteger}{\in\mathbb{N}}
+	\renewcommand{\emptyset}{\O
+	}
 \begin{document}
 	\begin{titlepage}
 		\centering
 		\includegraphics[width=0.5\textwidth]{Universite_de_Montreal_logo}\par\vspace{1cm}
 		{\scshape\LARGE Université de Montréal\par}
 		\vspace{1cm}
-		{\scshape\Large Fiche Solution\par}
+		{\scshape\Large Fiche Récapitulative\par}
 		\vspace{1.5cm}
 		{\huge\bfseries Analyse I\par}
 		\vspace{2cm}
@@ -49,7 +53,12 @@
 		\setcounter{page}{2}
 		%\tableofcontents
 		%\newpage
-	\input{Exercice/inputs}
+		\input{NombreReel}
+		\input{Interval}
+		\input{Point}
+		\input{Ensemble}
+		\input{Theorem}
+		\input{Property}
 		\newpage
 		\printindex
 \end{document}

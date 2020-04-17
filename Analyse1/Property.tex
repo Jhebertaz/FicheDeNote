@@ -1,0 +1,76 @@
+\section{Les propriétés}
+	\subsection*{Ouvert/Fermé/Compact}
+	\begin{myprop}[$\bigcup\bigcap$ ouvert]
+		\index{Ensemble ouvert}
+		Soit $\{O_{\lambda},\lambda\in\Lambda\}$, une collection d'ensemble ouvert
+		\begin{itemize}
+			\item $\bigcup\limits_{\lambda\in\Lambda}O_{\lambda}~ouvert$
+			\item $\bigcap\limits^{n}_{\lambda\in\Lambda}O_{\lambda}~ouvert~si~|\Lambda|<\infty$
+		\end{itemize}
+	(i.e)~Un nombre fini d'ensemble
+	\end{myprop}
+	\begin{myprop}[$\bigcup\bigcap$ fermé]
+		\index{Ensemble fermé}
+		Soit $\{F_{\lambda},\lambda\in\Lambda\}$, une collection d'ensemble fermé
+		\begin{itemize}
+			\item $\bigcup\limits_{\lambda\in\Lambda}F_{\lambda}~ferm\acute{e}~ferm\acute{e}~si~|\Lambda|<\infty$
+			\item $\bigcap\limits^{n}_{\lambda\in\Lambda}F_{\lambda}~ferm\acute{e}$
+		\end{itemize}
+		(i.e)~Un nombre fini d'ensemble
+	\end{myprop}
+	\begin{myprop}[$\bigcup\bigcap$ compact]
+		\index{Ensemble compact}
+		Soit $\{K_{\lambda},\lambda\in\Lambda\}$, une collection d'ensemble compact
+		\begin{itemize}
+			\item $\bigcup\limits_{\lambda\in\Lambda}K_{\lambda}~compact~si~|\Lambda|<\infty$
+			\item $\bigcap\limits^{n}_{\lambda\in\Lambda}K_{\lambda}~compact~si~|\Lambda|<\infty$
+		\end{itemize}
+		(i.e)~Un nombre fini d'ensemble
+	\end{myprop}
+	\begin{myprop}
+		\begin{itemize}
+			\item $\emptyset~ouvert$
+			\item $A,B ~ ouverts\implies\begin{cases}
+			A\cup B~ouvert\\
+			A\cap B ~ ouvert
+			\end{cases}$
+			\item $E~ouvert\Longleftrightarrow E^C~ferm\acute{e}$
+			\item $E~ferm\acute{e}\Longleftrightarrow E'\subset E$
+			\item $E~compact\implies\sup E\in E$
+			\item $F~ferm\acute{e},E~compact : F\subset E\subset\mathbb{R}\implies F~compact$
+			\item Soit $E\subset\mathbb{R}$\begin{itemize}
+				\item $int~E=\bigcup\limits_{O\subset E}O$ \\
+				(L'intérieur d'un ensemble $E$ est la réunion de tous les ensembles ouvert contenue dans $E$)
+				\item $int~E~ouvert$
+				\item $int~E$ plus grand ouvert contenue dans $E$
+			\end{itemize}
+		\end{itemize}
+	\end{myprop}
+	\subsection*{Adhérence/Accumulation/Intérieur}
+	\begin{myprop}
+		\begin{itemize}
+			\item $\bar{E}=E\cup E'$
+			\item $(\bar{E})=int~(E^C)$
+			\item $\bar{E}~ferm\acute{e}$
+			\item $A,B\subset\mathbb{R}$,\begin{itemize}
+				\item $A\subset B\implies \bar{A}\subset\bar{B}$
+				\item $\overline{A\cup B}\implies\bar{A}\cup\bar{B}$
+				\item $int~(A\cap B)=int~(A)\cap int~(B)$
+				\item $int~(A\cup B)=int~(A)\cup int~(B)$ 
+			\end{itemize}
+			\item Soit $A\subset\mathbb{R}_{\neq\emptyset}$,\begin{itemize}
+				\item $d(x,A)=\inf\{|x-a| : a\in A\}$ la distance $x$ de $A$
+				\item $x\in \bar{A} \Longleftrightarrow d(x,A)=0$
+				\item $A$ fermé et $d(x,A)=0$ $\implies x\in A$
+			\end{itemize}
+		\end{itemize}
+	\end{myprop}
+	\begin{myprop}[Supremum/Infimum]
+		\index{Supremum}
+		\index{Infimum}
+		Soit $E\subset\mathbb{R}$ non-vide et borné,
+		\[\forall \varepsilon_{>0},\exists x,y\in E : \begin{cases}
+		\sup E -\varepsilon <x\leq\sup E\\
+		\inf E \geq x< \inf E+\varepsilon
+		\end{cases}\]
+	\end{myprop}
