@@ -1,0 +1,95 @@
+\section{Suites numériques}
+\subsection{Limite d'une suite et suite bornée}
+	\begin{mydef}\index{Suite numérique}
+		Une suite de nombres réels est une fonction de domain $\mathbb{N}$ et de champ (ou image) un sous-ensemble de $\mathbb{R}$
+	\end{mydef}
+	\begin{mydef}\index{Suite convergente}
+		La suite $\{x_n\}$ converge (ou tend) vers la limite $x$ si, \[\forall\varepsilon_{>0},\exists N : n>N \implies |x_n-x|<\varepsilon\]
+		Notation : $\lim\limits_{n\to\infty} x_n=x$ ou $x_n\longrightarrow x$
+	\end{mydef}
+	\begin{mythm}[Unicité]
+		Si $\lim\limits_{n\to\infty}x_n =x$ et $\lim\limits_{n\to\infty}x_n=y$, alors $x=y$
+	\end{mythm}
+	\begin{mydef}
+		Une suite est bornée supérieurement si,\[\exists M\inreal : \forall n\ininteger, |x_n| < M\]Une suite est bornée inférieurment si,\[\exists m\inreal : \forall n\ininteger, |x_n|>m\]
+	\end{mydef}
+	\begin{mythm}
+		Toute suite convergent est bornée
+	\end{mythm}
+\subsection{Opération sur les limites}
+	\begin{mythm}\index{Opération sur les limites}
+		Si $\lim\limits_{n\to\infty}x_n =x$ et $\lim\limits_{n\to\infty}y_n=y$,
+		\begin{enumerate}
+			\item $\lim\limits_{n\to\infty}(x_n\pm y_n)=x\pm y$
+			\item $\lim\limits_{n\to\infty}k\cdot x_n=k\cdot x, k\inreal$
+			\item $\lim\limits_{n\to\infty}x_n\cdot y_n=x\cdot y$
+			\item $\lim\limits_{n\to\infty}\frac{x_n}{y_n}=\frac{x}{y}, y\neq 0$
+		\end{enumerate}
+	\end{mythm}
+	\begin{mythm}\index{Des Gendarmes}
+		Soit $\lim\limits_{n\to\infty}x_n=\lim\limits_{n\to\infty}z_n=x$. Si $x_n\leq y_n\leq z_n$ pour tout entier positif $n$, alors $\lim\limits_{n\to\infty}y_n=x$.
+	\end{mythm}
+	\begin{mythm}\index{Caractérisation des points d'accumulation}
+		Un point $x_0$ est un point d'accumulation d'un ensemble $E\subset\mathbb{R}$ si et seulement si il existe une suite $\{x_n\}$ d'éléments de $E$, $x_n\neq x_0,\forall n\ininteger : \lim\limits_{n\to\infty}x_n=x_0$.
+	\end{mythm}
+	\begin{mythm}
+		~
+		\begin{enumerate}
+			\item $\lim\limits_{n\to\infty}x_n=\pm\infty~\wedge~\lim\limits_{n\to\infty}y_n=\pm\infty\implies \lim\limits_{n\to\infty}(x_n + y_n)=\pm\infty$
+			\item $\lim\limits_{n\to\infty}x_n=\pm\infty~\wedge~\lim\limits_{n\to\infty}y_n=\pm\infty\implies \lim\limits_{n\to\infty}(x_n\cdot y_n)=+\infty$
+			\item $\lim\limits_{n\to\infty}x_n=\pm\infty~\wedge~\lim\limits_{n\to\infty}y_n=\mp\infty\implies \lim\limits_{n\to\infty}(x_n\cdot y_n)=-\infty$
+			\item $\lim\limits_{n\to\infty}|x_n|=+\infty\Longleftrightarrow\lim\limits_{n\to\infty}\frac{1}{x_n}=0$
+			\item $\lim\limits_{n\to\infty}x_n>0~\wedge~\lim\limits_{n\to\infty}y_n=\pm\infty\implies\lim\limits_{n\to\infty}x_n\cdot y_n=\pm\infty$
+		\end{enumerate}
+	\end{mythm}
+	\begin{mythm}
+		Soit $\{x_n\}$ une suite telle que $x_n\neq 0,\forall n \ininteger$. Supposons que \[\lim_{n\to\infty}\Big|\frac{x_{n+1}}{x_n}\Big|=L\inreal\]
+		\begin{enumerate}[label =\alph*)]
+			\item $L<1 \implies\lim\limits_{n\to\infty}x_n=0 $
+			\item $L>1\implies\lim\limits_{n\to\infty}|x_n|=\pm\infty$
+		\end{enumerate}
+	\end{mythm}
+	\subsection{Sous-suites et suites monotones}
+	\begin{mydef}\index{Sous-suite}
+		Soit $\{x_n\}$ une suite quelconque d'entiers positifs telle que $1\leq n_1<n_2<...$ On appelle la suite $\{x_{n_k}\}$ une sous-suite de la suite $\{x_n\}$.
+	\end{mydef}
+	\begin{mythm}
+		Soit $\{x_n\}$ une suite convergente. Toute sous-suite de $\{x_n\}$ converge et a la même limite que la suite $\{x_n\}$.
+	\end{mythm}
+	\begin{mythm}[Corollaire]
+		Si une suite $\{x_n\}$ possède deux sous-suites qui convergent vers différentes valeurs, la suite $\{x_n\}$ diverge.
+	\end{mythm}
+	\begin{mythm}
+		Toute suite bornée possède une sous-suite convergente.
+	\end{mythm}
+	\begin{mydef}\index{Suite monotone}
+		Une suite $\{x_n\}$ est dite croissante (resp. décroissante) si $x_n\leq x_{n+1}, \forall n\ininteger$ (resp. $x_n\geq x_{n+1},\forall n \ininteger$). Si pour tout entier positif $n$, $x_n<x_{n+1}$, la suite $\{x_n\}$ est dite strictement croissante. Si pour tout entier positif $n$, $x_n>x_{n+1}$, la suite $\{x_n\}$ est dite strictement décroissante. Une suite qui a une des ces propriétés est dite monotone
+	\end{mydef}
+	\begin{mythm}
+		Toute suite monotone bornée possède une limite (à partir d'un certain rang $N$).
+	\end{mythm}
+	\begin{mythm}
+		Un ensemble $E\subset\mathbb{R}$ est compact $\Longleftrightarrow$ toute suite $\{x_n\}$ d'éléments de $E$ contient une sous-suite qui converge vers un élément de $E$.
+	\end{mythm}
+	\subsection{Suites de Cauchy}
+	\begin{mydef}\index{Suite de Cauchy}
+		Une suite $\{x_n\}$ est appelée suite de Cauchy si \[\forall\varepsilon_{>0},\exists N_{(\varepsilon)}\ininteger : \forall n>N~\wedge~\forall k\ininteger, |x_{n+k}-X_n|<\varepsilon\]
+		ou pour tout couple d'entiers $n,m>N, |x_m-x_n|<\varepsilon$.
+	\end{mydef}
+	\begin{mythm}
+		Toute suite de Cauchy est bornée.
+	\end{mythm}
+	\begin{mythm}\index{Critère de Cauchy}
+		Une suite convergente $\Longleftrightarrow$ elle est de Cauchy.
+	\end{mythm}
+	\subsection{Limite supérieure et limite inférieure}
+	\begin{mydef}\index{Valeur d'adhérence}
+		Un nombre réel $x$ est appelé valeur d'adhérence d'une suite $\{x_n\}$ s'il existe une sous-suite de $\{x_n\}$ qui converge vers $x$.
+	\end{mydef}
+	\begin{mythm}
+		Soit $\{x_n\}$ une suite bornée et \[A=\{x~|~\exists\{x_{n_k}\}\in\{x_n\} : \{x_{n_k}\}\longrightarrow x \}\]
+		L'ensemble $A$ est non vide, borné et fermé.
+	\end{mythm}
+	\begin{mydef}\index{Limite supérieure}\index{Limite inférieure}
+		On appelle limite supérieure (resp. limite inférieure) d'une suite bornée $\{x_n\}$ la plus petite borne supérieure (resp. la plus grande borne inférieure) de l'ensemble des valeurs d'adhérence de la suite.
+	\end{mydef}
