@@ -1,0 +1,75 @@
+\section{Dérivation}
+	\subsection{Fonctions différentiables ou dérivables}
+		\begin{mydef}\index{Dérivabilité}
+			Soit $f:D_f \longrightarrow \mathbb{R}$ une fonction et $x_0$ un point d'accumulation de $D_f$ tel que $x_0\in D_f$. On dit que $f$ est différentiable (ou dérivable) au point $x_0$ si $\lim\limits_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$ existe (nombre réel). Cette limite, si elle existe, est appelée la dérivée de $f$ en $x_0$ et est notée $f'(x_0)$ ou $\frac{d}{dx}f(x)\Big\lvert_{x=x_0}$. Si $f$ est différentiable (ou dérivable) en chaque point de $D_f$, on dit que $f$ est différentiable (ou dérivable) sur $D_f$
+		\end{mydef}
+		\begin{mythm}
+			Soit $f:D_f\longrightarrow\mathbb{R}$ une fonction et $x_0\in D_f$ un point d'accumulation de $D_f$. Si $f$ est différentiable au point $x_0$, elle est continue au point $x_0$.
+		\end{mythm}
+	\subsection{Opération sur les fonctions différentiables}
+		\begin{mythm}
+			Soit $f,g:D\longrightarrow\mathbb{R}$ deux fonction différentiables en $x_0$. On a
+			\begin{enumerate}[label=\alph*)]
+				\item $(f+g)$ est différentiable en $x_0$ et $(f+g)'(x_0)=f'(x_0)+g(x_0)$
+				\item $(fg)$ est différentiable en $x_0$ et $(fg)'(x_0)=f'(x_0)g(x_0)+f(x_0)g'(x_0)$
+				\item si $g(x_0)\neq 0$, $(f/g)$ (le domaine est l'ensemble de tous les $x$ tels que $g(x)\neq 0$) est différentiable en $x_0$ et \[\Big(\frac{f}{g}\Big)'(x_0)=\frac{f'(x_0)g(x_0)-f(x_0)g'(x_0)}{(g(x_0))^2}\]
+			\end{enumerate}
+		\end{mythm}
+		\begin{mythm}
+			Soit $f:D_f\longrightarrow\mathbb{R}$ et $g:D_g\longrightarrow\mathbb{R}$ deux fonctions telles que $f(D_f)\subset D_g$. Si $f$ est différentiable en $x_0$ et $g$ est différentiable en $f(x_0)$, $g\circ f$ est différentiable en $x_0$ et \[(g\circ f)'(x_0)=g'(f(x_0))f'(x_0).\]
+		\end{mythm}
+		\begin{mythm}
+			Soit $f:(a,b)\longrightarrow f\big((a,b)\big)$ une fonction strictement croissante (resp. décroissante). Pour chaque $x_0\in (a,b)$ tel que $f'(x_0)\neq 0$, la fonction $f^{-1}(y)$ est différentiable en $y_0=f(x_0)$ et
+			\[\big(f^{-1}\big)'(y_0)=\frac{1}{f'(x_0)}\] 
+		\end{mythm}
+		\begin{mythm}\index{Formule de Leibniz}
+			Si $f$ et $g$ sont $n$ fois différentiables sur $[a,b]$
+			\[\frac{d^n}{dx^n}\big(f(x)g(x)\big)=\sum_{k=0}^{n}\binom{k}{n}f^{(k)}(x)g^{(n-k)}(x)\]
+			où l'on pose $f^{(0)}(x)=f(x)$
+		\end{mythm}
+	\subsection{Propriétés des fonctions différentiables}
+		\begin{mythm}[Rolle]\index{De Rolle}
+			Soit $f$ une fonction continue sur $[a,b]$ telle que $f(a)=f(b)$. Si $f'(x_0)$ existe pour tout $x_0\in(a,b)$, \[\exists c\in (a,b) : f'(c)=0\]
+		\begin{mythm}[Corollaire]
+			Soit $f$ une fonction continue sur $[a,b]$ telle que $f(a)=f(b)$.Si $f'(x_0)$ existe pour tout $x_0\in (a,b)$ et si $x_1, x_2\in (a,b)$ sont deux zéros consécutifs de $f'(x)=0$, il y a au plus un nombre $r\in (x_1,x_2)$ tel que $f(r)=0$
+		\end{mythm}
+		\end{mythm}
+		\begin{mythm}[Moyenne]\index{De la moyenne}
+			Si $f$ est continue sur $[a,b]$ et différentiable sur $(a.b)$, \[\exists c\in (a,b) : \frac{f(b)-f(a)}{b-a}=f'(c),\quad a<c<b\]
+		\end{mythm}
+		\begin{mythm}
+			Soit $f:[a,b]\longrightarrow\mathbb{R}$ une fonction continue et différentiable sur $(a,b)$.\begin{enumerate}[label=\alph*)]
+				\item si $\forall x\in (a,b),f'(x)=0 \implies f$ est constante
+				\item si $\forall x\in (a,b), f'(x)\geq 0~(resp.~ >0) \implies f$ est croissant (resp. strictement croissante)
+				\item si $\forall x\in (a,b), f'(x)\leq 0~(resp.~ <0) \implies f$ est décroissant (resp. strictement décroissante)
+			\end{enumerate}
+		\end{mythm}
+		\begin{mythm}[Formule de Cauchy]\index{Formule de Cauchy}
+			Soit $f$ et $g$ deux fonctions continues sur $[a,b]$ et différentiables sur $(a,b)$. Si $g'(x)\neq 0$ pour tout $x\in (a,b)$, alors \[\exists c\in (a,b) : \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(c)}{g'(c)}\]
+		\end{mythm}
+	\subsection{Règle de L'Hôspital}
+		\begin{mythm}(Règle de L'Hôspital)
+			Soit deux fonction $f$ et $g$ continues sur $I$ et telles que \begin{enumerate}[label=\alph*)]
+				\item $f(a^+)=\lim\limits_{x\to a}f(x)=0=\lim\limits_{x\to a}g(x)=g(a^+)$
+				\item $f'(x)$ et $g'(x)$ existent pour tout $x\in I$
+				\item $g(x)$ et $g'(x)$ diffèrent de $0$ pour tout $x\in I$
+				\item $L=\lim\limits_{x\to a}f'(x)/g'(x)$ existe, où $L\inreal\cup\{-\infty,+\infty\}$
+			\end{enumerate}
+			On en conclut que
+			\[\lim_{x\to a} \frac{f(x)}{g(x)}=L\]
+		\end{mythm}
+		\begin{mythm}(Règle de L'Hôspital)
+			Soit deux fonction $f$ et $g$ continues sur $I$ et telles que \begin{enumerate}[label=\alph*)]
+				\item$\lim\limits_{x\to a}f(x)=\lim\limits_{x\to a}g(x)=\pm \infty$
+				\item $f'(x)$ et $g'(x)$ existent pour tout $x\in I$
+				\item $g(x)$ et $g'(x)$ diffèrent de $0$ pour tout $x\in I$
+				\item $L=\lim\limits_{x\to a}f'(x)/g'(x)$ existe, où $L\inreal\cup\{-\infty,+\infty\}$
+			\end{enumerate}
+			On en conclut que
+			\[\lim_{x\to a} \frac{f(x)}{g(x)}=L\]
+		\end{mythm}
+	\subsection{Formule de Taylor}
+		\begin{mythm}[Formule de Taylor]\index{Formule de Taylor}
+			Soit $f$ un fonction définie sur $[a,b]$. Si les dérivées $f'(x),f''(x),...,f^{(n)}$ existent partout sur $[a,b]$, alors pour tout $x\in [a,b]$, il existe un nombre $c\in (a,x)$ tel que \[f(x)=\sum_{k=0}^{n-1}\frac{f^{(k)}(a)}{k!}(x-a)^k + \frac{f^{(n)}(c)}{n!}(x-a)^n\]
+			Cette égalité s'appelle la formule de Taylor d'ordre $n$ avec $\frac{f^{(n)}(c)}{n!}(x-a)^n$ le reste de Lagrange.
+		\end{mythm}

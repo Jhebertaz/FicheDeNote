@@ -1,0 +1,113 @@
+\section{Série numériques}
+	\subsection{Convergence des séries numériques}
+		\begin{mydef}
+			Soit la suite $\{a_n\}$ de nombres réels, $n\geq 1$. La série associée à cette suite et représentée par l'expression
+			\[\sum_{n=1}^{\infty}a_n=a_1+a_2+...\]
+			Par définition, la suite des sommes partielles $\{S_n\}$ est définie oar 
+			\[S_n=\sum_{k=1}^{n}a_k,\quad n\geq 1\]
+		\end{mydef}
+		\begin{mydef}
+			La série $\sum_{n=1}^{\infty}a_n$ converge si la suite des sommes partielles $\{S_n\}$ converge.
+		\end{mydef}
+		\begin{mythm}[Critère de Cauchy]\index{Critère de Cauchy}
+			La série $\sum_{n=1}^{\infty}a_n$ converge si et seulement si, \[\forall\varepsilon_{>0},\exists N\ininteger : \forall n>N\wedge\forall k>0, \Bigg|\sum_{i=n+1}^{n+k}a_i\Bigg|<\varepsilon\]
+		\end{mythm}
+		\begin{mythm}[Critère du terme général]\index{Critère du terme général}
+			Si la série $\sum_{n=1}^{\infty}a_n$ converge $\implies\lim\limits_{n\to\infty}a_n=0$
+		\end{mythm}
+		\begin{mythm}
+			Soit $\sum_{n=1}^{\infty}a_n$ et $\sum_{n=1}^{\infty}b_n$ deux séries convergentes. \[\forall k_1,k_2\inreal,\sum_{n=1}^{\infty}(k_1a_n+k_2b_n)=k_1\sum_{n=1}^{\infty}a_n+k_2\sum_{n=1}^{\infty}b_n\]
+		\end{mythm}
+		\begin{mythm}
+			Soit $\{a_n\}$ et $\{b_n\}$ deux suites de nombres réels. Supposons \[\exists N\ininteger : \forall n\geq N, a_n=b_n\]\[\sum_{n=1}^{\infty}a_n\inreal\Longleftrightarrow\sum_{n=1}^{\infty}b_n\inreal\]
+		\end{mythm}
+		\begin{mythm}[Associativité finie]\index{Associativité finie}
+			Si $\sum_{n=1}^{\infty}a_n$ converge, on peut grouper les termes en blocs finis (mais en conservant l'ordre des termes) sans changer la convergence et la valeur de la somme. Autrement dit, si $1=k_a<k_2<...,$\[\sum_{n=1}^{\infty}\sum_{i=k_n}^{k_{n+1}-1}a_i=\sum_{n=1}^{\infty}a_n\]
+		\end{mythm}
+		\begin{mythm}
+			Soit la suite $\{k_n\}$ d'entiers strictement croissante telle que $\{k_{n+1}-k_n\}$ est bornée. \[\lim_{n\to\infty} a_n=0\implies\sum_{n=1}^{\infty}a_n\quad\wedge\quad\sum_{n=1}^{\infty}\sum_{i=k_n}^{k_{n+1}-1}a_i\quad(\text{sont de même nature})\]
+		\end{mythm}
+	\subsection{Critères de convergence}
+		\begin{mydef}[Convergence absolue]
+			La série $\sum_{n=1}^{\infty}a_n$ converge absolument si $\sum_{n=1}^{\infty}|a_n|$ converge. Si la série $\sum_{n=1}^{\infty}a_n$ converge et la série $\sum_{n=1}^{\infty}|a_n|$ diverge, on dit que la série $\sum_{n=1}^{\infty}a_n$ converge conditionnellement ou est semi-convergente
+		\end{mydef}
+		\begin{mythm}\index{Critère de convergence absolu}
+			Toute série absolument convergente converge.
+		\end{mythm}
+		\begin{mythm}[Critère de condensation de Cauchy]\index{Critère de condensation de Cauchy}
+			Soit la suite décroissante $\{a_n\}$, $a_n\geq 0$.\[\sum_{n=1}^{\infty}a_n\inreal\Longleftrightarrow\sum_{n=1}^{\infty}2^n a_{2^n}\inreal\]
+		\end{mythm}
+		\begin{mythm}[Critère de comparaison]\index{Critère de comparaison}
+			Soit deux séries $\sum_{n=1}^{\infty}a_n$ et $\sum_{n=1}^{\infty}b_n$ telles que $b_n\geq 0$.
+			\begin{enumerate}[label=\alph*)]
+				\item Si $\sum_{n=1}^{\infty}b_n\inreal~\wedge~\exists N,M >0 :\forall n\geq N, |a_n|\leq Mb_n\implies \sum_{n=1}^{\infty}|a_n|\inreal$
+				\item Si $\sum_{n=1}^{\infty}b_n\notin\mathbb{R}~\wedge~\exists N,M>0 : \forall n\geq N, a_n\geq Mb_n\implies \sum_{n=1}^{\infty}a_n\notin\mathbb{R}$
+			\end{enumerate}
+		\end{mythm}
+		\begin{mythm}[Critère du quotient]\index{Critère du quotient}
+			Soit les deux séries $\sum_{n=1}^{\infty}a_n$ et $\sum_{n=1}^{\infty}b_n$. Posons $\lim\limits_{n\to \infty}\Big|\frac{a_n}{b_n}\Big|$
+			\begin{enumerate}[label=\alph*)]
+				\item Si $L\neq 0$ ou $\infty$, les séries $\sum|a_n|$ et $\sum|b_n|$ sont de même nature
+				\item Si $L=0$ et si la série $\sum b_n$ converge absolument, $\sum a_n$ converge absolument. Si la série $\sum|a_n| $ diverge, la série $\sum|b_n|$ diverge.
+				\item Si $L=\infty$ et si la série $\sum|b_n|$, la série $\sum|a_n|$ diverge. Si la série $\sum|a_n| $ converge, la série $\sum|b_n|$ converge.
+			\end{enumerate}
+		\end{mythm}
+		\begin{mythm}[Critère de D'Alembert]\index{Critère de D'Alembert}
+			Soit la série $\sum a_n~(a_n\neq 0)$ telle que la limite $L=\lim\limits_{n\to\infty}\Big|\frac{a_{n+1}}{a_n}\Big|\inreal$.
+			\begin{enumerate}[label=\alph*)]
+				\item Si $L<1$, la série converge absolument
+				\item Si $L>1$, la série diverge
+				\item Si $L=1$, nature indétermimée (non-concluant) 
+			\end{enumerate}
+		\end{mythm}
+		\begin{mythm}
+			Soit la série $\sum a_n$ telle que la limite $L=\lim\limits_{n\to \infty}\sqrt[n]{|a_n|}\inreal$
+			\begin{enumerate}[label=\alph*)]
+				\item Si $L<1$, la série converge absolument
+				\item Si $L>1$, la série diverge
+				\item Si $L=1$, nature indétermimée (non-concluant) 
+			\end{enumerate}
+		\end{mythm}
+	\subsection{Série alternées et réarrangement d'une séries}
+		\begin{mythm}[Critère des séries alternées]\index{Critère des séries alternées}
+			Si $\{a_n\}$ est une suite décroissante de termes positifs et $\lim\limits_{n\to\infty}a_n=0$
+			\[\sum_{n=1}^{\infty}(-1)^{n+1}a_n\inreal\]
+			De plus, si $S_n=\sum_{k=1}^n (-1)^{k+1}a_k$ et $S=\sum_{n=1}^{\infty}a_n$, \[\forall n\ininteger, |S-S_n|\leq a_{n+1}\]
+		\end{mythm}
+		\begin{mydef}
+			Soit la fonction bijective $f:\mathbb{N}\longrightarrow\mathbb{N}$. La série $\sum_{n=1}^{\infty}a_{f(n)}$ est appelée réarrangement de la série $\sum_{n=1}^{\infty}a_n$
+		\end{mydef}
+		\begin{mythm}
+			Soit la série absolument convergente $\sum_{n=1}^{\infty}a_n$ telle que $\sum_{n=1}^{\infty}a_n=S$. Tout réarrangement de $\sum_{n=1}^{\infty}a_n$ converge absolument vers $S$.
+		\end{mythm}
+		\begin{mythm}
+			Soit la série $\sum_{n=1}^{\infty}a_n$. Les suites $\{p_n\}$, $\{q_n\}$ sont définies par \[p_n=\begin{cases}
+			a_n&si~a_n\geq 0\\
+			0&si~a_n<0
+			\end{cases}\quad\text{et}\quad q_n=\begin{cases}
+			a_n&si~a_n< 0\\
+			0&si~a_n\geq0
+			\end{cases}\] 
+			La suite $\{p_n\}$ est la partie positive et la suite $\{q_n\}$ la partie négative de $\{a_n\}$. Alors,
+			\[p_n=\frac{a_n+|a_n|}{2}\quad\text{et}\quad q_n=\frac{a_n-|a_n|}{2}\]
+			Donc, $|a_n|=p_n-q_n$ et $a_n=p_n+q_n$
+			\begin{enumerate}[label=\alph*)]
+				\item $\sum a_n$ converge absoluement $\Longleftrightarrow$ $\sum p_n\wedge\sum q_n$ convergent ; de plus $\sum a_n=\sum p_n +\sum q_n$
+				\item Si $\sum a_n$ converge conditionnellement $\implies\sum p_n\wedge\sum q_n$ divergent
+			\end{enumerate}
+		\end{mythm}
+		\begin{mythm}[Théoème de Riemann]\index{Théoème de Riemann}
+			Soit la série $\sum a_n$ qui converge conditionnellement.\begin{enumerate}[label=\alph*)]
+				\item Il existe un réarrangement $\sum a_{f(n)}$ de $\sum a_n$ qui diverge
+				\item $b\inreal,\exists \sum a_{f(n)}~de~\sum a_n : \sum a_{f(n)}=b$ 
+			\end{enumerate}
+		\end{mythm}
+	\subsection{Multiplication de séries}
+		\begin{mydef}[Produit de Cauchy]\index{Produit de Cauchy}
+			Soit les séries $\sum_{n=0}^{\infty}a_n$ et $\sum_{n=0}^{\infty}b_n$. 
+			\[\forall n\ininteger, c_n=\sum_{k=0}^{n}a_kb_{n-k}\]
+			La série $\sum_{n=0}^{\infty}c_n$ est appelée produit de Cauchy des deux séries $\sum_{n=0}^{\infty}a_n$ et $\sum_{n=0}^{\infty}b_n$.
+		\end{mydef}
+		\begin{mythm}
+			Soit la série $\sum_{n=0}^{\infty}a_n$ qui converge absolument et la série $\sum_{n=0}^{\infty}b_n$ qui converge. Posons $\sum_{n=0}^{\infty}a_n=A$ et $\sum_{n=0}^{\infty}b_n=B$. Le produit de Cauchy $\sum_{n=0}^{\infty}c_n$ converge vers $A\cdot B$.
+		\end{mythm}
