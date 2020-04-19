@@ -1,0 +1,22 @@
+\section*{Question 3}
+	Soient $f,g :[0,1]\longrightarrow[0,1]$ deux fonctions continues sur $[0,1]$ et dérivables sur $(0,1)$ qui sont telles que $g(0)\neq f(0)=0$ et $f(1)\neq g(1)=0$. Montrer qu'il existe des nombres $c,d\in (0,1)$ tels que
+	\begin{enumerate}[label=\alph*)]
+		\item $f(c)=g(c)$
+		\item $f'(d)g(d)=-f(d)g'(d)$
+	\end{enumerate}
+\subsection{Solution}
+		Considérons la fonction $h:[0,1]\longrightarrow\mathbb{R}$ la fonction défini par \[h(x)=f(x)-g(x)\]
+		On a \[\begin{cases}
+		h(0)=f(0)-g(0)=-g(0)\leq 0\\
+		h(1)=f(1)-g(1)=f(1)\geq 0
+		\end{cases}\]
+		Puisque $f$ et $g$ sont des fonctions continues sur $[0,1]$ et différentiable sur $(0,1)$, alors il en est de même pour $h$.
+		Dans les cas où $h(0)=0$ ou $h(1)=0$ sont par hypothèse pas possible. Sinon, par le théorème de valeurs
+		\[h(0)h(1)<0 \implies\exists c\in (0,1): h(c)= f(c)-h(c)\]
+\subsection{Solution}
+		Considérons la fonction $h:[0,1]\longrightarrow\mathbb{R}$ défini par \[h(x)=f(x)g(x)\]
+		Puisque $f$ et $g$ sont des fonctions continues sur $[0,1]$ et différentiable sur $(0,1)$, alors il en est de même pour $h$. Par le théorème de Rolle, 
+		\[h(0)=h(1)=0 \implies \exists d\in (0,1) : \frac{h(1)-h(0)}{1-0}=h'(d)=0\]
+		Ainsi, par les régles de dérivée en chaines,
+		\[h'(x)=f'(x)g(x)+f(x)g'(x)\]
+		Donc, $h'(d)=0 \implies f'(d)g(d)=-f(d)g'(d)$

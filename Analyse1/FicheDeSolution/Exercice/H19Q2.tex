@@ -1,0 +1,24 @@
+\section*{Question 2}
+Soit une fonction $f:[-1,1]\longrightarrow\mathbb{R}$ telle que \[f(x)=\frac{\sin(\pi x)}{1-x^2}\]
+pour $-1<x<1$. Déterminer:
+\begin{enumerate}[label =\alph*)]
+	\item le valeurs de $f(x)$ en $x=-1,1$ pour que $f$ soit continue en ces points
+	\item les points $x\in(-1,1)$ où $|f|$ est dérivable
+\end{enumerate}
+\subsection{Solution}
+	\subsubsection*{}
+		Si $f$ est continue en $x=\pm 1$, alors \[\lim_{x\to \pm 1} f(x)=f(\lim_{x\to \pm 1} x)=f(\pm 1)\]
+		Ainsi la limite pour $x=-1$ est \[\lim_{x\to -1}\frac{\sin(\pi x)}{1-x^2}\quad \Big(\frac{0}{0}\Big)\]
+		Par la règle de L'Hospital (en posant $h(x)=\sin(\pi x)$ et $g(x)=1-x^2$),
+		\[\lim_{x\to -1} \frac{h(x)}{g(x)}\stackrel{?}{=}\lim_{x\to -1} \frac{h'(x)}{g'(x)}=\lim_{x\to -1}\frac{\pi\cos(\pi x)}{2x}=-\frac{\pi}{2}\]
+		Et similairement en $x=1$ où la limite est $\frac{\pi}{2}$. Ainsi les valeurs pour que $f$ soit continue en $x=\pm 1$ sont $\pm\frac{\pi}{2}$.
+	\subsection{Solution}
+		Puisque $\forall x\in (-1,1), 1-x^2 >0$, alors la fonction $|f|$ s'exprime par
+		\[|f|(x)=\begin{cases}
+		\frac{-sin(\pi x)}{1-x^2} & x\in(-1,0)\\
+		\frac{sin(\pi x)}{1-x^2} & x\in[0,-1)\\
+		\end{cases}\]
+		Cette fonction est respectivement différentiable sur ses parties, le seul points problématique est en $x=0$.
+		\[\frac{d f}{dx}\Big\lvert_{x=0^-}=\lim_{x\to 0^-}\frac{\frac{-\sin(\pi x)}{1-x^2}-0}{x-0}\quad \Big(\frac{0}{0}\Big)\]
+		Par la règle de L'Hospital, on trouve que la limite est $-\pi$. De manière analogue on trouve la limite lorsque $x\to 0^+$, mais cette dernière diffère puisqu'elle tends vers $\pi$. Ainsi, puisqu'il y a deux limites diffèrentes, la fonction n'est pas différentiable en $x=0$, mais l'est en tout autre point de l'intveralle $(-1,1)$.
+		

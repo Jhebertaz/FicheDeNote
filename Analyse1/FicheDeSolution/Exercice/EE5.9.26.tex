@@ -1,0 +1,23 @@
+\section*{5.9.26.}
+	Soit $f$ une fonction dérivable sur un intervalle ouvert qui contient $[0,1]$ telle que $f(0)=0$ et $f'(0)=f(1)$. Montrer qu'il existe un nombre réel $c\in (0,1)$ tel que
+		\[f'(c)=\frac{f(c)}{c}\]
+	\subsection*{Solution}
+		Posons $O$ l'intervalle ouvert tel que  $[0,1]\subsetneq O$, alors
+		Puisque $f$ est différentiable sur $O$,  $f(0)=0$ et que $f'(0)=f(1)$, alors, 
+		\[f'(0)=\lim_{x\to 0} \frac{f(x)-f(0)}{x-0}=\lim_{x\to 0}\frac{f(x)}{x}=f(1)\in \mathbb{R}\]
+		Par consèquent, la fonction $g:[0,1]\longrightarrow\mathbb{R}$ définie par \[g(x)=\begin{cases}
+		\frac{f(x)}{x} & x\in (0,1],\\
+		f(1)& x=0
+		\end{cases}\]
+		est continue sur $[0,1]$ car préalablement continue sur $(0,1]$ et \[\lim_{x\to 0^+}g(x)=\lim_{x\to 0^+}\frac{f(x)}{x}=f'(0)=f(1)=g(0)\]
+		Donc continue en $x=0$. La fonction $g$ est aussi diffèrentiable sur l'ouvert $(0,1)$ car sur $(0,1)$
+		\[g'(x)=\frac{d}{dx}\Big(\frac{f(x)}{x}\Big)\]
+		un quotient de fonction continue différentiable sur $(0,1)$.
+ \[g'(0)=\lim_{x\to 0} \frac{f(x)/x - g(0)}{x-0}=\frac{\lim_{x\to 0} f(x)/x - f(1)}{\lim_{x\to 0} x - 0}=\frac{0}{\lim_{x\to 0} x -0}=0\]
+		Par le théorème des accroissement finis, 
+		\[\exists c\in (0,1) : g'(c)=\frac{g(1)-g(0)}{1-0}=\frac{g(1)-g(0)}{1}=\frac{f(1)/1-f(1)}{1}=0\]
+		Puisque $c\in (0,1)$, alors $c>0$ donc,
+		\[g'(c)=\frac{d}{dx}\Big(\frac{f(x)}{x}\Big)\Big\lvert_{x=c}=\frac{f'(c)}{c} - \frac{f(c)}{c^2}=0\implies f'(c)=\frac{f(c)}{c}\]
+		
+		
+	

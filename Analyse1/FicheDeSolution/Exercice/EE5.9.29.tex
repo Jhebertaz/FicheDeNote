@@ -1,0 +1,12 @@
+\section*{5.9.29.}
+	Soit $f:[a,b]\longrightarrow\mathbb{R}$ une fonction continue sur $[a,b]\subseteq\mathbb{R}$ telle que $f(a)=f(b)=0$ et dérivable deux fois sur $(a,b)$ telle que $f^{(2)}(x)\neq 0$ pour tout $x\in (a,b)$. Montrer qu'on a $f(x)\neq 0$ pour tout $x\in (a,b)$.
+\subsection*{Solution}
+Supposons le contraire. Soit il existe un point $d\in (a,b) : f(d)=0$. Alors, par le théorème de Rolle,
+\[\exists c_1\in (a,d), \exists c_2\in (d,b) : \frac{f(d)-f(a)}{d-a}=f'(c_1)=0\text{ et }\frac{f(b)-f(c)}{b-c}=f(c_2)=0\]
+Puisque $f$ est $C^2(1,b)$ et que $f(c_1)=f(c_2)=0$, alors par le théorème de Rolle,
+\[\exists c_3\in (c_1, c_2) : \frac{f'(c_2)-f(c_1)}{c_2-c_1}=f''(c_3)=0\]
+Or cela contredit que $f^{(2)}(x)\neq 0$ pour tout $x\in (a,b)$ puisqu'il existe un point $c_3\in (c_1,c_2)\subset (a,b)$ telle que la dérivée seconde est nulle. Donc, il n'existe pas de point $d\in (a,b)$ tel que $f(d)=0$
+%	Puisque $f^{(2)}(x)\neq 0$ pour tout $x\in (a,b)$, alors pour tout $x_1,x_2\in (a,b), x_1\neq x_2 \implies f'(x_1)\neq f(x_2)$. Par injectivité de $f'$ on a $\forall x_1\in(a,c], \exists x_2\in [c,b), f(x_1)=f(x_2)$ où l'existence du $c$ est assurée par le théorème de Rolle tel que \[\exists c\in (a,b) : \frac{f(b)-f(a)}{b-a}=f'(c)=0\] En supposant sans perdre de généralité qu'il existe un autre $c'\neq c$ dans l'ouvert $(c,b)$ tel que 
+%	\[\frac{f(b)-f(c)}{b-c}=f'(c')=0\]
+%	alors, par le théorème de Rolle \[\exists d \in (c,c')\subsetneq(a,b) : \frac{f'(c')-f'(c)}{c'-c}=f''(d)=0\]
+%	Or, par hyptohèse $\forall x\in (a,b), f''(x)\neq 0$ menant à une contradiction. Ainsi, l'unicité de $c$ implique que $\forall x\in (a,b), f(x)\neq 0$.

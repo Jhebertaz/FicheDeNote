@@ -1,0 +1,15 @@
+\section*{5.9.16.}
+	Évaluer la limite suivante: \[\lim_{x\to 0}\frac{e^x-e^{\sin x}}{x-\sin x}\]
+	où $e^x=\exp (x)$ pour tout nombre réel $x$.
+	\subsection*{Solution}
+		Soit les fonction $f,g : I\longrightarrow\mathbb{R}$ deux fonctions lisses sur l'intervalle $I=(-\pi/2,-\pi/2)$ respectivement définie par $f(x)=e^x-e^{\sin x}$ et par $g(x)=x-\sin x$. Par continuité, $f(0)\implies\lim_{x\to 0}f(x)=0$ et similairement pour $g(x)$. Ainsi,
+		\[\lim_{x\to 0}\frac{f(x)}{g(x)}\quad\Big[\frac{0}{0}\Big]\Longleftrightarrow\lim_{x\to 0}\frac{g^{-1}(x)}{f^{-1}(x)}\quad\Big[\frac{\infty}{\infty}\Big]\]
+		Par la règle de L'Hospital,
+		\[\lim_{x\to 0}\frac{f(x)}{g(x)} \stackrel{?}{=}\lim_{x\to 0}\frac{f'(x)}{g'(x)}\stackrel{?}{=}\lim_{x\to 0}\frac{f''(x)}{g''(x)}\stackrel{?}{=}\lim_{x\to 0}\frac{f'''(x)}{g'''(x)}\stackrel{?}{=}L\]
+		Ainsi, les dérivées tertiaires sont  $f'''(x)=e^x-e^{\sin (x)} \cos ^3(x)+e^{\sin (x)} \cos (x)+3 e^{\sin (x)} \sin (x) \cos
+		(x)$ et $g'''(x)=\cos (x)$ tels que leurs primitive (de même pour les primitives de leurs primitves "primitive seconde") évalué $x=0$ étaient nulles d'où l'utilisation triples de la règle de L'Hospital.
+		\[\lim_{x\to 0}\frac{f'''(x)}{g'''(x)}=\lim_{x\to 0} \frac{e^x-e^{\sin (x)} \cos ^3(x)+e^{\sin (x)} \cos (x)+3 e^{\sin (x)} \sin (x) \cos
+			(x)}{\cos (x)}=0\]
+		La limite du quotient est donc nulle.
+		
+		

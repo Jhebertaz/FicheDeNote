@@ -1,0 +1,9 @@
+\section*{5.9.17.}
+	Un développement limité de Taylor est utile pour approcher une valeur prise par une fonction qui n'est pas un polynôme. En utilisant la méthode présentée dans les notes de cours pour approcher le nombre d'Euler $e$, calculer une valeur approchée de $sin(1)$ avec une erreur inférieure à $10^{-5}$.
+\subsection*{Solution}
+	Soit $f(x)=\sin(x)$ une fonction $C^{\infty}(\mathbb{R})$. Approximons $\sin(1)$ avec une erreur $R(1)<10^{-5}$.
+	Le terme d'erreur est déterminer par le reste de Lagrange (McLaurin) :\[R_n(c)=\frac{f^{(n+1)}(c)}{(n+1)!}(x)^{n+1}\]
+	Puisque $\sin 1 < \sin \frac{\pi}{2}=1$, alors $f^{(n+1)}(1)<1$. Négligeons $(x-x_0)^{n+1}$, alors \[R_n(1)<\frac{1}{(n+1)!}\implies R_8(1)<\frac{1}{9!}<\frac{1}{10^5}\]
+	La formule de Taylor (McLaurin), \[P_n(x)=\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x)^k\]
+	Ainsi, à l'ordre $n=8$ l'approxiamtion de $\sin 1$ est:
+	\[f(1)=\sin 1 \approx {1} - \frac{1}{3!} + \frac{1}{5!}-\frac{1}{7!} +\frac{1}{9!}\]
