@@ -1,0 +1,60 @@
+\section{L'optimisation}
+	\subsection{Les valeurs extrêmes des fonctions de deux variables}
+		\begin{mydef}\index{Matrice Hessienne}(Matrice Hessienne)
+			La matrice Hessienne d'une fonction $f$ à $n$ variables est la matrice carrée d'ordre $n$ notée $\nabla^2 f$ telle que l'élément $(\nabla^2 f)_{ij} = f_{x_i x_j}$ : 
+			\[\nabla^2 f=\begin{bmatrix}
+			f_{x_1 x_1} &f_{x_1 x_2} & ... &f_{x_1 x_n}\\
+			f_{x_2 x_1} &f_{x_2 x_2} & ... &f_{x_2 x_n}\\
+			\vdots &\vdots & \ddots &\vdots\\
+			f_{x_n x_1} &f_{x_n x_2} & ... &f_{x_n x_n}
+			\end{bmatrix}\]
+		\end{mydef}	
+		\begin{code}{Matrice Hessienne}
+			Le matrice Hessienne : \verb|MatrixForm[D[f[x, y,...], {{x, y,...}}, {{x, y,...}}]]| 
+		\end{code}
+		\begin{mydef}\index{Point critique}[Point critique]
+			Soit $f$ une fonction à $n$ variables et $P=(c_1,c_2,...,c_n)$, un point. Le point $P$ est un point critique si $\nabla f (P)=\vec{O}$.
+		\end{mydef}
+		\begin{mythm}\index{Test des dérivées premières}[Test des dérivées premières]
+			Si $f$ possède un maximum (resp. minimum) local en $(a,b)$ et si les dérivées partielles du premiers ordre de $f$ existent, alors $\nabla f(a,b)=\vec{O}.$
+		\end{mythm}
+		\subsubsection*{Les maximums et minimum absolus}
+			\begin{mythm}\index{Bornes atteintes}[Bornes atteintes]
+				Si $f$ est continu sur un compact $K$, alors $f$ atteint sont maximum (resp. sont minimum) absolus en au moins un points de $K$. Autrement dit, \[\exists \vec{x}_1,\vec{x}_1\in K : f(\vec{x}_1)=\inf_{\vec{x}\in K}\{f(\vec{x})\}\quad\text{et}\quad f(\vec{x})_2=\sup_{\vec{x}\in K}\{f(\vec{x})\}\]
+			\end{mythm}
+	\subsection{L'optimisation des fonctions de plusieurs variables}
+		\begin{mydef}
+			Un point critique $\vec{a}$ est un point de selle de la fonction $f$si, dans toute boule ouverte $B_{\varepsilon}(\vec{a})$, il existe des points $\vec{x}_1$ et $\vec{x}_2$ tels que $f(\vec{x}_1)<f(x)<f(\vec{x}_2)$.
+		\end{mydef}
+		\subsubsection*{Le signe d'une matrice}
+			\begin{mythm}\index{Critère de Sylvester}[Critère de Sylvester]
+				Soit $A$ une matrice symétrique inversible 
+				\begin{itemize}
+					\item Si $\alpha_j>0$ pour $j=1,2,...,n$, alors $A$ est définie positive.
+					\item Si $\beta_j>0$ pour $j=1,2,...,n$, alors $A$ est définie négative.
+				\end{itemize}
+			\end{mythm}
+			\begin{code}{Sylvester}
+				Calculer les mineurs principaux d'une matrice\hfill : 
+				\begin{flushleft}
+				\verb|submatrix[matrice_, d_] := Take[matrice[[1 ;; d, 1 ;; d]]]|\\
+			\verb|mineur[matrice_, d_] := Det[submatrix[matrice, d]]|\\
+				\verb|{x, y, z} = {0, 1, 2}|\\
+				\verb|For[i = 1, i < 4, i++, Print[mineur[matrice, i]]]|
+				\end{flushleft}
+				\indent\indent\indent\indent où \verb|d| le numéro de la colonne du ième élément de la diagonale principale. 
+			\end{code}
+		\begin{mythm}{Conditions suffisantes du deuxièmes ordre pour un problème d'optimisation sans contraintes}
+			\begin{itemize}
+				\item si $\nabla^2 f(\vec{a})$ est définie positive (resp. négative), alors $f$ possède un minimum (resp. un maximum) local en $\vec{a}$.
+				\item si $\nabla^2 f(\vec{a})$ est indéfiniem alors $\vec{a}$ est un point de selle de $f$
+			\end{itemize}
+		\end{mythm}
+	\begin{code}{Optimization avec contrainte}
+		Exemple de résolution pour trouver les points critique\hfill ;
+		\begin{flushleft}
+			\verb|F[x_, y_, z_] := x^3 - x y + y^2 + z^2|
+			\verb|gradient = Grad[F[x, y, z], {x, y, z}]|
+			\verb|Solve[Resolve[{gradient == mu Grad[x x + y y + z z, {x, y, z}] &&|\\\verb| x x + y y + z z == 1}, {mu, x, y, z}, Reals]]|
+		\end{flushleft}
+	\end{code}

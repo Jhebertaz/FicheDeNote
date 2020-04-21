@@ -1,0 +1,68 @@
+\section{Les dérivées des fonctions de plusieurs variables}
+	\subsection{Les dérivées partielles}
+		\begin{mythm}\index{Théorème de Clairaut}[Clairaut]
+			Soit une fonction $f$ définie sur un disque $D$ qui contient le point $(a,b)$. Si les fonction $f_{xy}$ et $f_{yx}$ sont continues sur $D$, alors \[f_{xy}(a,b)=f_{yx}(a,b)\]
+		\end{mythm}
+		\begin{code}{Derivative}
+		Gives the multiple partial derivative \verb|D[f,{x,n},{y,m},...]|
+	\end{code}
+	\subsection{Les plans tangents et approximations linéaires}
+		\subsubsection*{Les plans tangents}
+			\begin{mydef}
+					Si $f$ possède des dérivées partielles continues, alors l'équation du plan tangent à la surface $z=f(x,y)$ au point $P(x_0,y_0,z_0)$ est \[z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0).\]
+			\end{mydef}
+		\subsubsection*{Les approximations linéaires}
+			\begin{mydef}
+				La fonction linéaire dont le graph est ce plan tangent, à savoir \[L(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)\]
+				est appelée \textbf{linéarisation} de $f$ en $\vec{c}=(c_1,c_2,...,c_n)$, et l'approximation
+				\[f(\vec{x})\approxeq f(\vec{c})+\sum_{i=1}^n f_{x_i}(\vec{c})(x_i-c_i)\]
+				est appelée \textbf{approximation linéaire} de $f$ en $\vec{c}$. La différentielle est \[dw=\sum_{i=1}^{n}\frac{\partial w}{\partial x_i}\,dx_i\]
+			\end{mydef}
+			\begin{mythm}
+				Si les dérivées partielles $f_x$ et $f_y$ existent près de $(a,b)$ et sont continues en $(a,b)$, alors $f$ est différentiable en $(a,b)$.
+			\end{mythm}
+	\subsection{La règle de dérivation en chaîne}
+		\begin{mythm}[Règle de dérivation en chaîne]
+			Si $u$ est une fonction différentiable de $n$ variables $x_1,x_2,...,x_n$, et si chaque $x_j$ est une fonction différentiable des $m$ variables $t_1,t_2,...,t_m$, alors $u$ est une foncition différentiable de $t_1,t_2,...,t_m$ et
+			\[\frac{\partial u}{\partial t_i}=\sum_{i=1}^{n}\frac{\partial u}{\partial x_i}\frac{\partial x_i}{\partial t_i}\] 
+		\end{mythm}
+	\subsection{Les dérivées directionnelles et le vecteur gradient}
+		\subsubsection*{Les dérivées directionnelles}
+			\begin{mydef}\index{Dérivée directionnelle}
+				La \textbf{dérivée directionnelle} (si la limite existe) de $f$ dans la direction d'un vecteur unitaire $\vec{u}=(a,b,c)$ en $(x_0,y_0,z_0)$ est \[f_{\vec{u}}(x_0,y_0,z_0)=\lim_{h\to 0}\frac{f(x_0+ha,y_0+hb,z_0+hc)-f(x_0,y_0,z_0)}{h}\]
+			\end{mydef}
+			\begin{mydef}\index{Vecteur gradient}
+				Le \textbf{vecteur gradient}, noté $\nabla f$ ou \normalfont{grad} $f$, d'une fonction à $n$ variables est \[\Big(\frac{\partial f}{\partial x_1},\frac{\partial f}{\partial x_2},...,\frac{\partial f}{\partial x_n}\Big)\]
+				D'où la dérivée dans la direction $\vec{u}$, un vecteur unitaire, est \[f_{\vec{u}}(\vec{x})=\nabla f(\vec{x})\bullet \vec{u}\]
+			\end{mydef}
+			\begin{code}{Gradient}
+			Gradient of a scalar function $(\partial f / \partial x_1,...,\partial f / \partial _n)$ : \verb|Grad[f,{x_1,x_2,...,x_n}]| ou \verb|D[f[x, y,...], {{x, y,...}}]|
+		\end{code}
+		\subsubsection*{Les plans tangents aux surfaces de niveau}
+			\begin{mydef}
+				Soit une surface $S$ d'équation $F(x,y,z)=k$ et $P(x_0,y_0,z_0)$, un point de $S$. Si $\nabla F(P)\neq\vec{O}$, alors le \textbf{plan tangent à la surface de niveau} $F(x,y,z)=k$ en $P$ est \[\nabla F(P) \bullet (\vec{x}-P)=0\]
+			\end{mydef}
+			\begin{myprop}
+				Soit $f$ une fonction différentiable de $n$ variables, et $\vec{x}$ un point de $\mathbb{R}^n$. Alors,
+				\begin{itemize}
+					\item la dérivée directionnelle de $f$ en $\vec{x}$ est maximale dans la direction du gradient $\nabla f(\vec{x})$
+					\item la taux de variation maximal de $f$ en $\vec{x}$ est $||\nabla f(\vec{x})||$
+					\item si $\vec{u}\perp \nabla f(\vec{x})$, alors la $ \nabla f(\vec{x})\bullet\vec{u}=0$
+					\item le gradient $\nabla f(\vec{x})$ est perpendiculaire à l'ensemble de niveau de $f$ passant par $\vec{x}$
+				\end{itemize}
+			\end{myprop}
+		\begin{myprop}\index{Taux de variation maximal}
+			~
+		\begin{itemize}
+			\item 	Le gradient $\nabla f(x_0,y_0)$ indique la direction (possiblement, non unitaire) dans laquelle la fonction $f(x,y)$ a le plus grand taux de variation en $(x_0,y_0)$.
+			\item La taux maximal vaut : $||\nabla f(x_0,y_0)||$
+			\item $\nabla f(x_0,y_0)\neq 0$ est la direction perpendiculaire à la tengente à la courbe de niveau qui passe par $(x_0,y_0)$ 
+		\end{itemize}
+		\end{myprop}
+	\subsection{Les approximations de Taylor en deux variables}
+		\begin{mydef}\index{Polynôme de Taylor}[Polynôme de Taylor de degré $1$ de $f$ en $(a,b)$]
+			\[L(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)\]
+		\end{mydef}
+		\begin{mydef}\index{Polynôme de Taylor}[Polynôme de Taylor de degré $2$ de $f$ en $(a,b)$]
+			\[Q(x,y)=L(x,y) +\frac{1}{2!}f_xx(a,b)(x-a)^2+f_xy(a,b)(x-a)(y-b)+\frac{1}{2!}f_yy(a,b)(y-b)^2\]
+		\end{mydef}

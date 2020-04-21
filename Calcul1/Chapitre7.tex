@@ -1,0 +1,57 @@
+	\subsection{Les intégrales triples}
+		\begin{mythm}\index{Théorème de Fubini pour les intégrales triples}
+			Si $f$ est contniue sur le rectangle $B=[a,b]\times[c,d]\times[r,s]$, alors
+			\[\iiint\limits_B f(x,y,z)\, dV=\int_r^s\int_c^d\int_a^b f(x,y,z)\, dx\, dy\, dz\]
+		\end{mythm}
+		\begin{mydef}\index{Domaine de type 1}
+			Une région solide $E$ est dite de type 1 si elle est située entre les graphes de deux fonctions continues de $x$ et $y$,
+			\[E=\big\{(x,y,z) \vert (x,y)\in D, u_1(x,y)\leq z\leq u_2(x,y) \big\}\]
+			\[\iiint\limits_E f(x,y,z)\, dV = \iint\limits_D\bigg[\int_{u_1(x,y)}^{u_2(x,y)}f(x,y,z)\, dz\bigg]\, dA\]
+		\end{mydef}
+		\begin{mydef}\index{Domaine de type 1.I}
+			Si la projection $D$ de $E$ dans le plan $xy$ est une région de type I, alors
+			\[E=\big\{(x,y,z) \vert a\leq x\leq b,g_1(x)\leq y\leq g_2(x), u_1(x,y)\leq z\leq u_2(x,y) \big\}\]
+			\[\iiint\limits_E f(x,y,z)\, dV = \int_a^b\int_{g_1(x)}^{g_2(x)}\int_{u_1(x,y)}^{u_2(x,y)}f(x,y,z)\, dz\, dy\, dx\]
+		\end{mydef}
+		\begin{mydef}\index{Domaine de type 1.II}
+			Si  $D$ est une région de type II, alors
+			\[E=\big\{(x,y,z) \vert c\leq y \leq d,h_1(y)\leq x\leq h_2(y), u_1(x,y)\leq z\leq u_2(x,y) \big\}\]
+			\[\iiint\limits_E f(x,y,z)\, dV = \int_c^d\int_{h_1(y)}^{h_2(y)}\int_{u_1(x,y)}^{u_2(x,y)}f(x,y,z)\, dz\, dx\, dy\]
+		\end{mydef}
+		\begin{mydef}\index{Domaine de type 2}
+			Une région solide $E$ est de type 2 si elle est de la forme
+			\[E=\big\{(x,y,z) \vert  (y,z)\in D, u_1(y,z)\leq z\leq u_2(y,z) \big\}\]
+			\[\iiint\limits_E f(x,y,z)\, dV = \iint\limits_D\bigg[ \int_{u_1(y,z)}^{u_2(y,z)}f(x,y,z)\, dx\bigg]\, dA\]
+		\end{mydef}
+		\begin{mydef}\index{Domaine de type 3}
+			Une région solide $E$ est de type 3 si elle est de la forme
+			\[E=\big\{(x,y,z) \vert  (x,z)\in D, u_1(x,z)\leq z\leq u_2(x,z) \big\}\]
+			\[\iiint\limits_E f(x,y,z)\, dV = \iint\limits_D\bigg[ \int_{u_1(x,z)}^{u_2(x,z)}f(x,y,z)\, dy\bigg]\, dA\]
+		\end{mydef}
+		\begin{myprop}\index{Volume}
+		Soit la fonction $f(x,y,z)=1$ pour tout points de $E$, alors l'intégrale triple représente le volume de $E$, \[V(E)=\iiint\limits_E\, dV\]
+	\end{myprop}
+	\subsection{Les intégrales triples en coordonnées cylindriques}
+		\begin{mydef}\index{Intégrales triples en cylindrique}
+		\[\iiint\limits_E f(x,y,z)\, dV =\int_{\alpha}^{\beta}\int_{h_1(\theta)}^{h_2(\theta)}\int_{u_1(r\cos\theta,r\sin\theta)}^{u_2(r\cos\theta,r\sin\theta)}f(r\cos\theta,r\sin\theta,z)r\, dx\, dr\, d\theta\]
+	\end{mydef}
+	\subsection{Les intégrales triples en coordonnées sphériques}
+		\begin{mydef}\index{Intégrales triples en sphérique}
+	\[\iiint\limits_E f(x,y,z)\, dV=\int_c^d\int_{\alpha}^{\beta}\int_a^b f(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi)\rho^2\sin\phi\, d\rho\, d\theta\, d\phi \] où $E$ est un coin sphérique défini par
+	\[E=\big\{ (\rho,\theta,\phi) \lvert a\leq \rho \leq b, \alpha\leq \theta\leq \beta, c\leq\phi\leq d\big\}\]
+	Aussi,
+	\[\iiint\limits_E f(x,y,z)\, dV=\int_c^d\int_{\alpha}^{\beta}\int_{g_1(\theta,\phi)}^{g_2(\theta,\phi)} f(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi)\rho^2\sin\phi\, d\rho\, d\theta\, d\phi \] où $E$ est un coin sphérique défini par
+	\[E=\big\{ (\rho,\theta,\phi) \lvert \alpha\leq\theta\leq\beta, c\leq\phi\leq d, g_1(\theta,\phi)\leq\rho\leq g_2(\theta,\phi) \big\}\]
+	
+\end{mydef}
+\section{Code Mathematica}
+\begin{code}{Volume}
+	Méthode pour calculer des volumes bornée par des régions\hfill ;
+	\begin{flushleft}
+	\verb|R = ImplicitRegion[x x + y y <= z && x x + y y <= 25 && z <= 25, {x, y, z}]|\\
+	\verb|RegionBoundary[R]|\\
+	\verb|DiscretizeRegion[R, MeshQualityGoal -> "Maximal"]|\\
+	\verb|Volume[R]|\\
+	\verb|RegionMeasure[R, 3]|
+	\end{flushleft}
+\end{code}
