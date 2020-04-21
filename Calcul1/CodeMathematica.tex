@@ -1,31 +1,40 @@
 \section{Code Mathematica}
 	\begin{center}Méthode pour trouver et déterminer les extremums locaux d'une fonction à plusieurs variables.\end{center}
-	
 	\begin{verbatim}
-	\Quit[]
+	Quit[]
 	(*Trouvez les maximums locaux,les minimums locaux et
-	les points de selle de la fonction. Si vous disposez d'un logiciel
-	le permettant,tracez le graphe de la fonction en choisissant un 
+	les points de selle de la fonction.Si vous disposez d'un logiciel
+	le permettant,tracez le graphe de la fonction en choisisesant un 
 	domaine et un point de vue qui révèlent toutes les caractéris­
 	tiques importantes de la fonction. *)
 	
 	submatrix[matrice_, d_] := Take[matrice[[1 ;; d, ;; d]]];
-	mineur[matrice_, d_] := Det[submatrix[matrice, d]]
-	(*evalSyvelster[matrice_]:=For[i=1,i<Length[matrice]+1,i++,
-	If[mineur[matrice,i]<0,Print["-"],If[mineur[matrice,i]>0,
-	Print["+"],Print["0"]]]]*)
+	mineur   [matrice_, d_] := Det[submatrix[matrice, d]]	
+	Syvelster[matrice_]     := For[i = 1, i < Length[matrice]+1, i++,Print[Evaluate@mineur[matrice, i]]]
 	
-	evalSyvelster[matrice_] := 
-	        For[i = 1, i < Length[matrice] + 1, i++, 
-	           Print[Evaluate@mineur[matrice, i]]]
+	%%%
 	5.1.16
 	Panel[Grid[{
-	    {f := x y Exp[-(x^2 + y^2)/2]},
-	    {solu = Reduce@Resolve[Grad[f, {x, y}] == 0]},
-	    {mathess = D[f, {{x, y}}, {{x, y}}];},
-	    {MatrixForm@mathess},
-	    {{x, y} = {-1, 1};},
-	    {evalSyvelster[mathess]}}]]
+	           {f := x y Exp[-(x^2 + y^2)/2]},
+	           {solu = Reduce@Resolve[Grad[f, {x, y}] == 0]},
+	           {mathess = D[f, {{x, y}}, {{x, y}}];},
+	           {MatrixForm@mathess},
+	           {ContourPlot[f, {x, -2, 2}, {y, -2, 2}], 
+	                      Plot3D[f, {x, -2, 2}, {y, -2, 2}]},
+	           {{x, y} = {-1, 1};},
+	           {Syvelster[mathess]}}]]
+	%%%
+	5.1.20
+	Panel[Grid[{
+	           {f := Sin[x] Sin[y]},
+	           {solu =	Reduce@Resolve[Grad[f, {x, y}] == 0,
+	           			{x, y} \[Element] ImplicitRegion[-Pi <= x <= Pi && -Pi <= y <= Pi , {x, y}]]},
+	           {mathess = D[f, {{x, y}}, {{x, y}}];},
+	           {MatrixForm@mathess},
+	           {ContourPlot[Sin[x] Sin[y], {x, -Pi, Pi}, {y, -Pi, Pi}], 
+	                      Plot3D[Sin[x] Sin[y], {x, -Pi, Pi}, {y, -Pi, Pi}]},
+	           {{x, y} = {0, 0};},
+	           {Syvelster[mathess]}}]]
 	\end{verbatim}
 	\begin{center}***\end{center}
 \begin{center}Méthode pour calculer des volumes bornée par des surfaces \end{center}

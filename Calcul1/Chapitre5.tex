@@ -58,3 +58,23 @@
 			\verb|Solve[Resolve[{gradient == mu Grad[x x + y y + z z, {x, y, z}] &&|\\\verb| x x + y y + z z == 1}, {mu, x, y, z}, Reals]]|
 		\end{flushleft}
 	\end{code}
+\subsection{Les multiplicateurs de Lagrange}
+	\subsubsection{Les fonctions de plus de deux variables}
+	
+	\begin{mythm}\index{Multiplicateur de Lagrange}~
+		\begin{enumerate}[label=\alph*)]
+			\item Résoudre le système de $m+n$ équations à $m+n$ inconnues 
+			\begin{gather*}
+			\nabla f(\vec{x})=\sum_{i=1}^{m}\lambda_i\nabla g_i(\vec{x})\\
+			g_1(\vec{x})=k_1\\
+			g_2(\vec{x})=k_2\\
+			\vdots\\
+			g_m(\vec{x})=k_m		
+			\end{gather*}
+			\item Évaluer la fonction $f$ en tous les points critiques trouvés à l'étape a) pour déterminer la nature de ses points (minimum ou maximum)
+		\end{enumerate} 
+	\end{mythm}
+\begin{mythm}\index{Théorème des valeurs extrêmes}
+	Si $f$ est continue sur un domaine $S$ compact dans $\mathbb{R}^n$, alors $f$ admet un minimum absolu et un maximum absolu et des points $\vec{x}_1$ et $\vec{x}_2$ de $S$.
+	\[\exists\vec{x}_2,\vec{x}_2\in S : \inf\limits_{\vec{x}\in S} f =f(\vec{x_1})\quad\text{et}\quad \sup\limits_{\vec{x}\in S} f =f(\vec{x_2}) \]
+\end{mythm}
