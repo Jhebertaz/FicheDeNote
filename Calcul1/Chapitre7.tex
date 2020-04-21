@@ -44,14 +44,3 @@
 	\[E=\big\{ (\rho,\theta,\phi) \lvert \alpha\leq\theta\leq\beta, c\leq\phi\leq d, g_1(\theta,\phi)\leq\rho\leq g_2(\theta,\phi) \big\}\]
 	
 \end{mydef}
-\section{Code Mathematica}
-\begin{code}{Volume}
-	Méthode pour calculer des volumes bornée par des régions\hfill ;
-	\begin{flushleft}
-	\verb|R = ImplicitRegion[x x + y y <= z && x x + y y <= 25 && z <= 25, {x, y, z}]|\\
-	\verb|RegionBoundary[R]|\\
-	\verb|DiscretizeRegion[R, MeshQualityGoal -> "Maximal"]|\\
-	\verb|Volume[R]|\\
-	\verb|RegionMeasure[R, 3]|
-	\end{flushleft}
-\end{code}
