@@ -1,5 +1,7 @@
 \section{Code Mathematica}
-	\begin{center}Méthode pour trouver et déterminer les extremums locaux d'une fonction à plusieurs variables.\end{center}
+	\begin{center}
+		Méthode pour trouver et déterminer les extremums locaux d'une fonction à plusieurs variables.
+	\end{center}
 	\begin{verbatim}
 	Quit[]
 	(*Trouvez les maximums locaux,les minimums locaux et
@@ -36,8 +38,77 @@
 	           {{x, y} = {0, 0};},
 	           {Syvelster[mathess]}}]]
 	\end{verbatim}
+	
 	\begin{center}***\end{center}
-\begin{center}Méthode pour calculer des volumes bornée par des surfaces \end{center}
+	
+	\begin{center}
+		Méthode des multiplicateurs de Lagrange pour trouver les extremums sous contraintes 
+	\end{center}
+	\begin{verbatim}
+		(*Utilisez les multiplicateurs de Lagrange pour trouver le maxi­
+		mum et le minimum de la fonction sous les contraintes données.*)
+		%%%
+		5.3.8
+		Panel[Grid[{
+		           {f[x_, y_] := x Exp[y], g[x_, y_] := x^2 + y^2},
+		           {solu = Solve[Grad[f[x, y], {x, y}] == mu Grad[g[x, y], 
+		           {x, y}] && g[x, y] == 2, {x, y, mu}, Reals]}}]]
+		           {f[1, 1], f[-1, 1]}
+	\end{verbatim}
+	
+	\begin{center}***\end{center}
+	
+	\begin{verbatim}
+		%%%
+		5.3.14
+		Panel[Grid[{
+		           {f[x_, y_, z_] := x^4 + y^4 + z^4, g[x_, y_, z_] := x^2 + y^2 + z^2},
+		           {solu = Solve[Grad[f[x, y, z], {x, y, z}] == mu Grad[g[x, y, z], 
+		           {x, y, z}] && g[x, y, z] == 1, {x, y, z, mu}, Reals]},
+		           {Minimize[{f[x, y, z], g[x, y, z] == 1}, {x, y, z}]},
+		           {Maximize[{f[x, y, z], g[x, y, z] == 1}, {x, y, z}]}
+		}]]
+	\end{verbatim}
+	
+	\begin{center}***\end{center}
+	
+	\begin{verbatim}
+		%%%
+		5.3.18
+		Panel[Grid[{
+		           {f[x_, y_, z_] := x^2 + y^2 + z^2, g[x_, y_,z_] := x-y,	h[x_, y_, z_] := y^2 - z^2},
+		           {solu = Solve[Grad[f[x, y, z], {x, y, z}] == mu Grad[g[x, y, z], {x, y, z}] + 
+		                nu Grad[h[x, y, z], {x, y, z}] && g[x, y, z] == 1 && 
+		                    h[x, y, z] == 1, {x, y, z, mu, nu}, Reals]},
+		           {Minimize[{f[x, y, z], g[x, y, z] == 1 && h[x, y, z] == 1}, {x, y, z}]},
+		           {Maximize[{f[x, y, z], g[x, y, z] == 1 && h[x, y, z] == 1}, {x, y,z}]}
+		}]]
+	\end{verbatim}
+	Mathematica indique qu'aucun maximum est atteint, mais le maximum est atteint au point (2,1,0).
+	
+	\begin{center}***\end{center}
+	
+	\begin{center}
+		Méthode pour trouvez les extremums globaux sous une contrainte d'inégalité
+	\end{center}
+	\begin{verbatim}
+		(*Trouvez les extremums globaux de f, s'ils existent,sur la
+		région décrite par l'inégalité.*)
+		
+		%%%
+		5.3.38
+		Panel[Grid[{
+		           {f[x_, y_, z_] := z Exp[x y], g[x_, y_, z_] := x^2 + y^2 + z^2},
+		           {Minimize[{f[x, y, z], g[x, y, z] <= 9}, {x, y, z}]},
+		           {Maximize[{f[x, y, z], g[x, y, z] <= 9}, {x, y, z}]}
+		}]]
+	\end{verbatim}
+	
+	\begin{center}***\end{center}
+	
+	\begin{center}
+		Méthode pour calculer des volumes bornée par des surfaces 
+	\end{center}
 		\begin{flushleft}
 			\verb|R = ImplicitRegion[x x + y y <= z && x x + y y <= 25 && z <= 25, {x, y, z}]|\\
 			\verb|RegionBoundary[R]|\\
