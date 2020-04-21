@@ -1,7 +1,5 @@
 \section{Code Mathematica}
-
 \subsection{Méthode pour trouver et déterminer les extremums locaux d'une fonction à plusieurs variables.}
-
 	\begin{verbatim}
 	Quit[]
 	(*Trouvez les maximums locaux,les minimums locaux et
@@ -38,10 +36,7 @@
 	           {{x, y} = {0, 0};},
 	           {Syvelster[mathess]}}]]
 	\end{verbatim}
-	
 	\begin{center}***\end{center}
-	
-	
 \subsection{Méthode des multiplicateurs de Lagrange pour trouver les extremums sous contraintes}
 		\begin{verbatim}
 		(*Utilisez les multiplicateurs de Lagrange pour trouver le maxi­
@@ -54,9 +49,7 @@
 		           {x, y}] && g[x, y] == 2, {x, y, mu}, Reals]}}]]
 		           {f[1, 1], f[-1, 1]}
 	\end{verbatim}
-	
 	\begin{center}***\end{center}
-	
 	\begin{verbatim}
 		%%%
 		5.3.14
@@ -68,9 +61,7 @@
 		           {Maximize[{f[x, y, z], g[x, y, z] == 1}, {x, y, z}]}
 		}]]
 	\end{verbatim}
-	
 	\begin{center}***\end{center}
-	
 	\begin{verbatim}
 		%%%
 		5.3.18
@@ -83,15 +74,13 @@
 		           {Maximize[{f[x, y, z], g[x, y, z] == 1 && h[x, y, z] == 1}, {x, y,z}]}
 		}]]
 	\end{verbatim}
-	Mathematica indique qu'aucun maximum est atteint, mais le maximum est atteint au point (2,1,0).
-	
+	Mathematica indique qu'aucun maximum est atteint, mais le maximum est atteint au point (2,1,0).	
 	\begin{center}***\end{center}
-	
+
 \subsection{Méthode pour trouvez les extremums globaux sous une contrainte d'inégalité}
 	\begin{verbatim}
 		(*Trouvez les extremums globaux de f, s'ils existent,sur la
 		région décrite par l'inégalité.*)
-		
 		%%%
 		5.3.38
 		Panel[Grid[{
@@ -100,9 +89,94 @@
 		           {Maximize[{f[x, y, z], g[x, y, z] <= 9}, {x, y, z}]}
 		}]]
 	\end{verbatim}
-	
 	\begin{center}***\end{center}
-\subsection{Méthode pour calculer des volumes bornée par des surfaces}
+	\subsection{Intégrale doubles}
+	\begin{verbatim}
+	
+	(*Calculez l'intégrale double en la considérant comme le volume d'un solide.*)
+	%%%
+	6.1.9
+	Panel[Grid[{
+	           {Integrate[Sqrt[2], {x, 2, 6}, {y, -1, 5}]},
+	           {Integrate[Sqrt[2], {x, y} \[Element] ImplicitRegion[2 <= x <= 6 && -1 <= y <= 5, {x, y}]]}
+	}]]
+	\end{verbatim}
+	\begin{center}***\end{center}
+	\begin{verbatim}
+	(*Calculez l'intégrale double.*)
+	%%%
+	6.2.9
+	Panel[Grid[{
+	           {f := Exp[-y^2]},
+	           {Integrate[f, {y, 0, 3}, {x, 0, y}]},
+	           {Integrate[f, {x, y} \[Element] ImplicitRegion[0 <= y <= 3 && 0 <= x <= y, {x, y}]]}
+	}]]
+
+	%%%
+	6.2.17
+	Panel[Grid[{
+	           {f := 2 x - y},
+	           {Integrate[f, {x, y} \[Element] Circle[{0, 0}, 2]]}
+	}]]
+	
+	%%%
+	6.2.25
+	Panel[Grid[{
+	           {f := 1},
+	           {Integrate[f, {x, y, z} \[Element] ImplicitRegion[0 <= z <= x^2 && x^2 <= y <= 4, {x, y, z}]]}
+	}]]
+	\end{verbatim}
+	\begin{center}***\end{center}
+\subsection{Intégrale triple}
+	\begin{verbatim}
+	Exemple 7.3.2
+	(*Calcul d'intégrale triple*)
+	Panel[Grid[{
+	           {R = ImplicitRegion[Sqrt[x^2 + y^2] <= z <= 2, {x, y, z}]},
+	           {"Result :", Integrate[(x^2 + y^2), {x, y, z} \[Element] R]},
+	           {DiscretizeRegion[R]},
+	           {ClearAll["Global`"]}}]]
+	\end{verbatim}
+	\begin{center}***\end{center}
+	\begin{verbatim}
+	%%%
+	7.4.2
+	(*Calcul de volume*)
+	Panel[Grid[{
+	           {"Result :", Integrate[\[Rho]^2 Sin[\[Phi]], {\[Rho], 0, 3},
+	           {\[Theta], 0,Pi/2} , { \[Phi], 0, Pi/6}]}
+	}]]
+	\end{verbatim}
+	\begin{center}***\end{center}
+	\begin{verbatim}
+	%%%
+	7.4.5
+	(*Calcul d'intégrale triple*)
+	Panel[Grid[{
+	           {"Region :", region745 = ImplicitRegion[x^2 + y^2 + z^2 <= 25, {x, y, z}]},
+	           {"Result :", Integrate[(x^2 + y^2 + z^2)^2, {x, y, z} \[Element] region745]}
+	}]]
+	
+	%%%
+	7.4.8
+	Panel[Grid[{
+	           {"Region :",region748 = ImplicitRegion[x^2 + y^2 + z^2 <= 9 && y >= 0, {x, y, z}]},
+	           {"Result :", Integrate[y^2, {x, y, z} \[Element] region748]}
+	}]]
+	
+	%%%
+	7.4.26
+	(*Calcul de volume borné par des surfaces*)
+	(*Le résultat est erroné*)
+	\
+	Panel[Grid[{
+	           {"Region :", region7426 = ImplicitRegion[x^2 + y^2 + (z - 1)^2 <= 16
+	            && x^2 + y^2 <= 4, {x, y, z}]},
+	           {"Result :", Integrate[1, {x, y, z} \[Element] region7426]},
+	           {DiscretizeRegion[region7426]}}]]
+	\end{verbatim}
+	\begin{center}***\end{center}	
+\subsection{Méthode pour calculer des volumes bornés par des surfaces}
 		\begin{flushleft}
 			\verb|R = ImplicitRegion[x x + y y <= z && x x + y y <= 25 && z <= 25, {x, y, z}]|\\
 			\verb|RegionBoundary[R]|\\
