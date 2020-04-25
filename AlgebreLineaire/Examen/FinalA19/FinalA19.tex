@@ -19,8 +19,6 @@
 	\newtheorem{mydef}{Définition}
 	\newtheorem{myprop}{Proposition}
 	\newtheorem{mythm}{Théorème}
-	\indexsetup{othercode=\small}
-	\makeindex[program=makeindex,columns=2,intoc=true,options={-s index_style.ist}]
 	\newcommand{\proj}[2]{\text{\normalfont{proj}}_#1 #2}
 	\newcommand{\prodsc}[2]{\langle #1,#2\rangle}
 	\author{Julien Hébert-Doutreloux}
@@ -39,15 +37,11 @@
 		\vspace{2cm}
 		{\Large\itshape Julien Hébert-Doutreloux\par}
 		\vfill
-		%supervised by\par
-		%Dr.~Mark \textsc{Brown}
 		\vfill
-		% Bottom of the page
 		{\large \today\par}
 	\end{titlepage}
-\setcounter{page}{2}
-	\tableofcontents
-	\newpage
-	\input{inputs}
-	\newpage\printindex
+\input{Question/Q1}
+\input{Question/Q2}
+\input{Question/Q3}
+\input{Question/Q4}
 \end{document}

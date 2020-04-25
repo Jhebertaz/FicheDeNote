@@ -1,0 +1,90 @@
+\section{Diagonalisation de matrices}
+	\subsection{Matrice semblables et processus de diagonalisation}
+		\begin{mydef}
+			\index{Matrice semblable}
+			Deux matrices carrées $A$ et $A'$ d'ordre $n$ sont dites \textbf{semblables} s'il existe une matrice $P$ inversible d'ordre $n$ telle que \[P^{-1}A P=A'\]
+		\end{mydef}
+	\subsection{Matrices semblables, transformation linéaire et changement de base}
+		\begin{myprop}
+			\index{Transformation linéaire}
+			\index{Base}
+			\index{Matrice relative}
+			Soit $B$ et $B'$ deux bases de $\mathcal{V}$, une transformation linéaire $T:\mathcal{V}\longrightarrow\mathcal{V}$ et $[T]_{B\leftarrow B}=[T]_B$ et $[T]_{B'\leftarrow B'}=[T]_B'$, les deux matrices relatives à ces bases. On a :	\begin{align*}
+				P_{B'\leftarrow B}[T]_{B}P_{B\leftarrow B'}=[T]_{B'}\\
+				\intertext{avec}
+				P_{B\leftarrow B'}=\big([b'_1]_B,[b'_2]_B,...,[b'_n]_B, \big)
+			\end{align*}
+			Ainsi $[T]_{B'}$ et $[T]_B$ sont semblables car $P_{B'\leftarrow B}=\big(P_{B\leftarrow B'}\big)^{-1}$
+		\end{myprop}
+	\subsection{Matrices semblables et diagonalisation}
+		\begin{myprop}
+			\index{Polynôme caractéristique}
+			\index{Equation caractéristique}
+			\index{Valeur propre}
+			\index{Multiplicité algébrique}
+			\index{Vecteur propre}
+			~
+			\begin{enumerate}
+				\item Pour chaque $\lambda_i$ fixé, $(A-\lambda_i I)$ est une matrice \textbf{singulière} ($\det(A-\lambda_i I)=0$) car il doit exister des solutions non-triviales $U_{\lambda_i}\neq 0$ au système homogène $(A-\lambda_i I)u_{lambda_i}=0$
+				\item Le polynôme en $\lambda$, noté $p_A(\lambda)=\det(A-\lambda I)$ est appelé \textbf{polynôme caractéristique }de $A$
+				\item Les \textbf{valeurs propres} de $A$ sont les racines de \textbf{l'équation caractéristique} $p_A (\lambda)=0$. Il y en a exactement $n$ (comptées avec leur \textbf{multiplicité algébrique})
+				\item Tous les $u_{\lambda_i}\neq 0$ doivent être linéairement indépendant (car $P$ est inversible)
+				\item Le vecteur $u_{\lambda_i}$ est un \textbf{vecteur propre} de $A$ associé à la \textbf{valeur propre} $\lambda_i$. Il satisfait $Au_{\lambda_i}=\lambda_i u_{\lambda_i}$
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Valeurs propres et multiplicité algébrique}
+		\begin{myprop}
+			\index{Matrice singulière}
+			\index{Valeur propre}
+			\index{Matrice triangulaire}
+			~
+			\begin{enumerate}
+				\item Une matrice singulière à toujours au moins une de ses valeurs propres égale à zéro
+				\item Les valeurs propres d'une matrice triangulaire sont données par les éléments des sa diagonale. En particuliers, les valeurs propres d'une matrice diagonale sont ses éléments diagonaux
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Espaces propres et multiplicité géométrique}
+		\begin{mydef}
+			\index{Espace propre}
+			\index{Multiplicité géométrique}
+			Soit $A$ une matrice d'ordre $n$, l'espace propre de $A$ associé à la valeur propre $\lambda$ est défini comme le sous-espace vectoriel 
+			\[E_{\lambda}=\ker(A-\lambda I)=\{u\in\mathbb{C}^n \lvert (A-\lambda I)u=0\}\]
+			\[\dim E_{\lambda}=n-\text{\normalfont{rang}}(A-\lambda I)\]
+			C'est la \textbf{multiplicité géométrique} de $\lambda$ associée à $A$. Une base de chaque espace propre $E_{\lambda}$ est formée des vecteurs linéairement indépendants solutions du système homogène $(A=\lambda I)u=0$
+		\end{mydef}
+		\begin{myprop}
+			\index{Vecteur propre}
+			\index{Valeur propre}
+			\index{Base}
+			~
+			\begin{enumerate}
+				\item Des vecteurs propres associés à des vecteurs propres distinctes sont linéairement indépendants.
+				\item Si l'espace propre $E_{\lambda}$ associé à la valeur propre $\lambda$ est de dimension 1, alors le vecteur propre assoicé est défini à un multiple près.
+				\item Si $\dim E_{\lambda}>1$, les vecteurs propres associés forment une base de $E_{\lambda}$ et il y a une infinité de manière de choisir ces vecteurs.
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Diagonalisation de matrices carrées}
+		\begin{mythm}
+			\index{Matrice diagonalisable}
+			\index{Vecteur propre}
+			\index{Valeur propre}
+			Une matrice $A$ d'ordre $n$ est diagonalisable $\Longleftrightarrow$ elle admet exactement $n$ vecteurs propres linéairement indépendants $u_{\lambda_1},u_{\lambda_2},...,u_{\lambda_n}$ correspondant aux valeurs propres $\lambda_1,\lambda_2,...,\lambda_n$. Autrement, $A$ est diagonalisable $\Longleftrightarrow$ il existe une matrice $P$ d'ordre $n$ inversible telle que \[P^{-1}AP=D=\text{\normalfont{diag}} (\lambda_1,\lambda_2,...,\lambda_n),\] avec $P=u_{\lambda_1}\, u_{\lambda_2}\, ...\, u_{\lambda_n}$
+			\begin{enumerate}
+				\item Si elle existe, la matrice diagonale $D$ est formée des valeurs propres de $A$ comptées avec leur multiplicité.
+				\item L'ordres des valeurs et vecteurs propres est important lorsque l'on forme $D$ et $P$.
+				\item Les vecteurs propres associés à des valeurs propres distinctes sont linéairement indépendants.
+				\item  Une matrice qui possède $n$ valeurs propres distinctes est diagonalisable.
+			\end{enumerate}
+		\end{mythm}
+	\begin{mythm}{Corollaire}
+		\index{Propriétés des matrices diagonalisable}
+		\index{Matrice semblable}
+		Si $A$ est diagonalisable alors,
+		\begin{enumerate}
+			\item $\det A=\prod_{i=1}^{n}\lambda_i$
+			\item $\text{\normalfont{tr}}~A=\sum_{i=1}^{n}\lambda_i$
+			\item $A^k=PD^kP^{-1},\forall k\in\mathbb{N}$
+			\item $A^{-1}=PD^{-1}P^{-1}$
+			\item Les matrices $A$ et $D$ sont semblables
+		\end{enumerate}
+	\end{mythm}

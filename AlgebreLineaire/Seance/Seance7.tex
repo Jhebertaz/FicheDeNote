@@ -1,0 +1,42 @@
+\section{Bases et systèmes de coordonnées dans des espaces vectoriels}
+	\subsection{Base d'un espace ou sous-espace vectoriel}
+		\begin{mydef}
+			\index{Base}
+			Soit un \textbf{espace (resp. sous-ensemble) vectoriel} $\mathcal{V}$.
+			Un ensemble de vecteurs $\{v_1,v_2,...,v_n\}$ \textbf{est une base de} $\mathcal{V}$ si
+			\begin{enumerate}
+				\item  $\{v_1,v_2,...,v_n\}$ est une famille libre (linéairement indépendant)
+				\item $\mathcal{V} = \text{\normalfont{Vect}}\{v_1,v_2,...,v_n\}$ (famille génératrice)
+			\end{enumerate}
+		\end{mydef}
+	\subsection{Système de coordonnées}
+		\begin{mythm}
+			\index{Système de coordonnées}
+			\index{Application coordonnée}
+			Soit $B=\{v_1,v_2,...,v_n\}$ une base d'un espace vectoriel $\mathcal{V}$, alors
+			\[\forall v\in\mathcal{V},\exists!c_1,c_2,...,c_n\in\mathbb{R} : v = \sum_{i=1}^{n}c_iv_i\]
+			Les coefficients réels $c_1,c_2,...,c_n$ sont les \textbf{composantes ou les coordonnées} du vecteur $v$ dans la base $B$. Autrement,\[[v]_B=\begin{pmatrix}
+			c_1\\ \vdots \\ c_n
+			\end{pmatrix}\in\mathbb{R}^n\]
+			La correspondance entre l'espace vectoriel $\mathcal{V}$ et $\mathbb{R}^n$ est l'\textbf{application coordonnées} (relative à la base $B$) $T_C : v\in\mathcal{V}\longrightarrow [v]_B$
+		\end{mythm}
+		\begin{mythm}
+			\index{Isomorphisme}
+			Soit $B$ une base formée de $n$ vecteurs d'un espace vectoriel $\mathcal{V}$. L'application coordonnées $T_C : \mathcal{V}\longrightarrow\mathbb{R}^n$ est un isomorphisme de $\mathbb{R}$ dans $\mathbb{R}^n$.
+		\end{mythm}
+	\subsection{Dimension d'un espace ou d'un sous-espace vectoriel}
+		\begin{mydef}
+			\index{Dimension}
+			La \textbf{dimension ($\text{\normalfont{dim}}\ \mathcal{V}$) d'un espace vectoriel est donnée par le nombre de vecteurs de ses bases.}
+		\end{mydef}
+		\begin{mythm}
+			\index{Base}
+			\index{Dimension}
+			Soit $B=\{v_1,v_2,...,v_n\}$ une base formée de $n$ vecteurs d'un espace vectoriel $\mathcal{V}$ alors toute famille de $\mathcal{V}$ contenant plus de $n$ vecteurs est \textbf{liée}. La dimension de d'une base de l'espace vectoriel $\mathcal{V}$ équivalente à la dimension de l'espace vectoriel $\mathcal{V}$.
+		\end{mythm}
+	\subsection{Théorèmes sur les bases}
+		\begin{mythm}
+			\index{Ensemble générateur}
+			Si $\text{\normalfont{dim}}\ \mathcal{V} = p\in\mathbb{N}$, alors tout ensemble linéairement indépendant de $p$ vecteurs est une base de $\mathcal{V}$ et tout ensemble générateur de $p$ vecteurs est un base de $\mathcal{V}$.
+		\end{mythm}
+

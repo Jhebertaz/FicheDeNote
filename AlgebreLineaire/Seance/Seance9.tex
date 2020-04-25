@@ -1,0 +1,80 @@
+\section{Produit scalaire, norme, orthogonalité sur un espace vectoriel, notion d'espace euclidien}
+	\subsection{Produit scalaire sur un espace vectoriel $\mathcal{V}$}  
+		\begin{mydef}
+			\index{Produit scalaire}
+			\index{Application linéaire}
+			Un produit scalaire \textbf{réel} sur un espace vectoriel $\mathcal{V}$ est une application notée $\langle ,., \rangle : \mathcal{V}\times \mathcal{V} \longrightarrow\mathbb{R}$ telle que $(u,v)\longmapsto \langle u,v \rangle$, vérifiant les axiomes suivants $\forall u,v,w\in \mathcal{V}$ et $ \forall c\in\mathbb{R}$  :
+			\begin{enumerate}
+				\item $\langle u,v \rangle = \langle v,u \rangle$
+				\item $\langle u+v, w \rangle=\langle u,w \rangle +\langle v, w \rangle$
+				\item $\langle cu,v \rangle=c\langle u,v \rangle$
+				\item $\langle u,u \rangle\geq 0$ et $\langle u,u \rangle=0$ $\Longleftrightarrow u=0$
+			\end{enumerate}
+		\end{mydef}
+	\subsection{Produit scalaire sur un espace vectoriel  $\mathcal{V}$ et norme}
+		\begin{mydef}
+			\index{Norme}
+			\index{Unitaire}
+			La norme est donnée par :
+			\[||u||=\sqrt{\langle u,u\rangle}\]
+			Normaliser :
+			\[\hat{u}=\frac{u}{||u||},\quad||\hat{u}||=1\]
+		\end{mydef}
+		\begin{myprop}
+			\index{Propriétés du produit scalaire}
+			\index{Cauchy-Schwarz}\index{Inégalité triangulaire} ~
+			\begin{enumerate}
+				\item $||u||= 0 \Longleftrightarrow u=0$
+				\item $||cu|| =|c|\cdot||u||,\forall c\in\mathbb{R}$
+				\item $|\langle u,v \rangle|\leq ||u||\cdot||v||$ et $|\langle u,v \rangle|= ||u||\cdot||v||\Longleftrightarrow u=\lambda v,\forall \lambda\in\mathbb{R}$
+				\item $||u+v||\leq||u||+||v||$ et $||u+v||=||u||+||v||\Longleftrightarrow u=\lambda v,\forall \lambda\in\mathbb{R}$
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Orthogonalité et propriétés}
+		\begin{mydef}
+			\index{Orthogonalité}
+			\index{Vecteurs orthogonaux}
+			Soit un espace vectoriel $\mathcal{V}$ muni d'un produit scalaire $\langle ,., \rangle : \mathcal{V}\times \mathcal{V} \longrightarrow\mathbb{R}$ telle que $(u,v)\longmapsto \langle u,v \rangle$, alors les vecteurs $u$ et $v$ sont dits \textbf{orhtogonaux} si $\langle u,v\rangle=0$
+		\end{mydef}
+		\begin{mydef}
+			\index{Complément orthogonal}
+			Soit $\mathcal{W}$ un sous-espace vectoriel de $\mathcal{V}$. Le \textbf{complément orthogonal} de $\mathcal{W}$, noté $\mathcal{W}^{\perp}$, est l'espace engedré par les vecteurs orthogonaux à $\mathcal{W}$: \[\mathcal{W}^{\perp}=\big\{z\in\mathcal{V} \lvert \langle z,w\rangle=0, \forall w\in\mathcal{W} \big\}\]
+		\end{mydef}
+		\begin{myprop}
+			\index{Propriétés de l'orthogonalité}
+			\index{Espace euclidien}
+			Soit un espace vectoriel $\mathcal{V}$ (et $\mathcal{W}$ un sous-espace) muni d'un produit scalaire $\langle ,., \rangle : \mathcal{V}\times \mathcal{V} \longrightarrow\mathbb{R}$ telle que $(u,v)\longmapsto \langle u,v \rangle$. Un tel espace est appelé \textbf{espace euclidien}. Alors,
+			\begin{enumerate}
+				\item le vecteur nul est orthogonal à tous les vecteurs de $\mathcal{V}$
+				\item les vecteurs $u$ et $v$ de $\mathcal{V}$ sont orthogonaux $\Longleftrightarrow ||u+v||^2=||u||^2 +||v||^2$
+				\item si $\mathcal{W}=\text{\normalfont{Vect}}\{u_1,u_2,...,u_n\}$, on a $z\in\mathcal{W}^{\perp}\Longleftrightarrow \langle z,u_i\rangle =0,\forall i = 1,2,...,p$
+				\item $\mathcal{W}^{\perp}$ est un sous-espace vectoriel de $\mathcal{V}$
+				\item si $\mathcal{V}$ ests de dimension finie, alors $\text{\normalfont{dim}} \ \mathcal{W}+\text{\normalfont{dim}} \ \mathcal{W}^{\perp}=\text{\normalfont{dim}} \ \mathcal{V}$
+				\item $\mathcal{W}\subset\mathcal{H}\Longleftrightarrow \mathcal{H}^{\perp}\subset\mathcal{W}^{\perp}$ ($\mathcal{H}$ sous-espace de $\mathcal{V}$)
+				\item $\mathcal{W}\cap\mathcal{W}^{\perp}=\{0\}$
+				\item $\{0\}^{\perp}=\mathcal{V}$ 
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Ensembles orthogonaux et bases orthogonales}
+		\begin{mydef}
+			\index{Base orthogonale}
+			\index{Base orthonormée}
+			\index{Produit scalaire}
+			Un ensemble de vecteur $B=\{u_1,u_2,...,u_n\}$ de $\mathcal{V}$ muni d'un produit scalaire $\langle .,.\rangle:\mathcal{V}\times\mathcal{V}\longrightarrow\mathbb{R}$ forme une \textbf{base orthogonal} si 
+			\begin{enumerate}
+				\item $B$ est une base
+				\item Les vecteurs de $B$ sont mutuellement orthogonaux\[\langle u_i,u_j\rangle=0 \forall i,j=1,2,...,n, i\neq j\]
+			\end{enumerate}
+		La base est orthonormée si tous ses vecteurs sont \textbf{unitaire}.
+		\end{mydef}
+		\begin{myprop}
+			\index{Propriétés des bases orthogonals/normées}
+			\index{Famille orthogonale}
+			\index{Base}
+			~
+			\begin{enumerate}
+				\item Si deux vecteurs $u$ et $v$ non nuls de $\mathcal{V}$ sont \textbf{orthogonaux}, alors ils sont \textbf{linéairement indépendants}.
+				\item Si $\text{\normalfont{dim}} \ \mathcal{V}=n$ et que $B=\{u_1,u_2,...,u_n\}$ est une famille orthogonale de vecteurs de $\mathcal{V}$ alors c'est une base de $\mathcal{V}$.
+			\end{enumerate}
+		\end{myprop}
+

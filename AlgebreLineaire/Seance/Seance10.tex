@@ -1,0 +1,52 @@
+\section{Orthogonalité, procédé de Gram-Schmidt}
+	\subsection{Projection orthogonale sur un sous-espace vectoriel}
+		\begin{mydef}
+			\index{Projection orthogonale}
+			\index{Espace euclidien}
+			Soit $u\neq 0$ et $y$ deux vecteurs de l'espace euclidien $\mathcal{V}$, alors la projection orthogonale de $y$ sur $u$ est donnée par le vecteur,
+			\[\hat{y}=\proj{u}{y}=\frac{\prodsc{y}{u}}{\prodsc{u}{u}}u=\frac{\prodsc{y}{u}}{||u||^2} u\]
+		\end{mydef}
+		\begin{mythm}
+			\index{Meilleur approximation}
+			\index{Espace euclidien}
+			\index{Base orthogonale}
+			Soit $\mathcal{W}$ un sous-espace d'un espace euclidien $\mathcal{V}$ et $B=\{u_1,u_2,...,u_p\}$ une base \textbf{orthogonale} de $\mathcal{W}$, alors tout vecteur $y$ de $\mathcal{V}$ s'écrit de façon \textbf{unique} sous la forme \[y=\hat{y}+z,\quad \hat{y}\in\mathcal{W}, z\in\mathcal{W}^{\perp}\]
+			\[\hat{y}=\proj{\mathcal{W}}{y}=\proj{{u_1}}{y}+\proj{{u_2}}{y}+\dots+\proj{{u_p}}{y} = \sum_{i=1}^{p} \frac{\prodsc{y}{u_i}}{||u_i||^2} u_i\]
+			\[z=y-\hat{y}\]
+			Le vecteur $\hat{y}$ est appelé le vecteur de \textbf{projection orthogonale de $y$ sur $\mathcal{W}$}. Aussi appelé la \textbf{meilleur approximation de $y$ par un élément de $\mathcal{W}$} dans le sens suivant :
+			\[\forall v\in\mathcal{W}\backslash\{\hat{y}\}, ||y-\hat{y}||< ||y-v||\]
+		\end{mythm}
+	\subsection{Base orthonormée et matrice orthogonale}
+		\begin{mydef}
+			\index{Matrice orthogonale}
+			Une \textbf{matrice orthogonale} est une matrice carrée d'ordre $n$ formée de $n$ vecteurs \textbf{orthonormés}.
+		\end{mydef}
+		\begin{myprop}
+			\index{Propriétés des matrices orthogonales}
+			\index{Transformation linéaire}
+			\index{Matrice orthogonale}
+			~
+			\begin{enumerate}
+				\item Si $U$ est une matrice orthogonale alors $U^T U=I \Longleftrightarrow U^{-1}=U^T$
+				\item $|\det U| = 1$
+				\item $\forall x\in\mathbb{R}^n,||Ux||=||x||$
+				\item $\forall x,y\in\mathbb{R}^n,(Ux)\cdot (Uy)=x\cdot y$
+				\item $(Ux)\cdot (Uy)=0\Longleftrightarrow x\cdot y=0$
+			\end{enumerate}
+			Une transformation linéaire de $\mathbb{R}^n\longrightarrow\mathbb{R}^n$ représentée par une matrice orthogonale préserve les longueurs et l'orthogonalité des vecteurs de $\mathbb{R}^n$.
+		\end{myprop}
+	\subsection{Procédé de Gram-Schmidt}
+		\begin{myprop}
+			\index{Procédé de Gram-Schmidt}
+			\index{Produit scalaire}
+			\index{Base orthogonale}
+			\index{Base orthonormée}
+			\index{Espace euclidien}
+			Soit $\{v_1,v_2,...,v_n\}$ une base quelconque d'un espace euclidien $\mathcal{V}$ muni du produit scalaire $\prodsc{.}{.}:\mathcal{V}\times\mathcal{V}\longrightarrow\mathbb{R}$ telle que $(u,v)\mapsto\prodsc{u}{v}$, alors il existe une base orthogonale $\{u_1,u_2,...,u_n\}$ qui peut être construite à partir de la base $\{v_1,v_2,...,v_n\}$ comme suit :
+			\begin{align*}
+				&u_1 = v_1\\
+				&u_{i>1}=v_i-\sum_{j>1}^{i}\proj{{u_{j-1}}}{v_i}
+			\end{align*} 
+			Il suffit de normaliser les vecteurs de la base orthogonale pour obtenir une base orthonormée. 
+		\end{myprop}
+

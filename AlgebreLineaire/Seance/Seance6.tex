@@ -1,0 +1,65 @@
+\section{Transformation linéaire et leurs propriétés}
+	\subsection{Transformation linéaire entre deux espaces vectoriels quelconques}
+		\begin{mydef}
+			\index{Application linéaire}
+			\index{Transformation linéaire}
+				Soit $\mathcal{V}$ et $\mathcal{W}$ deux espaces vectoriels sur le corps des réels. L'application $T:\mathcal{V}\longrightarrow\mathcal{W}$ est dite linéaire si :
+				\begin{enumerate}
+					\item $T(O_{\mathcal{V}})=O_{\mathcal{W}}$
+					\item $T(u+v)=T(u)+t(v),\quad\forall u,v\in\mathcal{V}$
+					\item $T(cu)=cT(u),\quad\quad\forall c\in\mathbb{R}, \forall u\in\mathcal{V}$
+				\end{enumerate}
+			\end{mydef}
+		\begin{myprop}
+				\[\forall c,d\in\mathbb{R},\forall u,v\in\mathcal{V},T(cu+dv)=cT(u)+dT(v) \Longleftrightarrow T \text{ est une tranformation linéaire} \]
+		\end{myprop}
+	\subsection{Noyau et image d'une transformation linéaire}
+		\begin{mydef}
+			\index{Noyau}
+			Le noyau de $T$ est un sous-ensemble de $\mathcal{V}$ défini : $\ker (T)=\{u\in\mathcal{V} : T(u)=O_{\mathcal{W}}\}$.
+		\end{mydef}
+		\begin{mydef}
+			\index{Image}
+			L'image de $T$ est un sous-ensemble de $\mathcal{W}$ définie : $\text{\normalfont{im}}(T) = \{w\in\mathcal{W} : \exists u\in\mathcal{V} | w=T(u)\}$.
+		\end{mydef}	
+		\begin{myprop}
+			Si $T:\mathcal{V}\longrightarrow\mathcal{W}$ une transformation linéaire alors,
+			\begin{enumerate}
+				\item $\ker(T) \text{est un sous-espace vectoriel de }\mathcal{V}$
+				\item $\text{\normalfont{im}}(T) \text{est un sous-espace vectoriel de }\mathcal{W}$
+			\end{enumerate}
+		\end{myprop}
+	\subsection{Transformation linéaire injective, surjective, isomorphisme}
+		\begin{mydef}
+			\index{Injectivité}
+				Soit $\mathcal{V}$ et $\mathcal{W}$ deux espaces vectoriels sur le corps des réels. La transformation linéaire $T:\mathcal{V}\longrightarrow\mathcal{W}$ est \textbf{injective} si tout vecteur de $\mathcal{W}$ est l'image \textbf{d'au plus} un vecteur de $\mathcal{V}$. \[T:\mathcal{V}\longrightarrow\mathcal{W}\text{\normalfont{ injective}}\Longleftrightarrow \forall u_1,u_2\in\mathcal{V} : u_1\stackrel{\neq}{=} u_2\implies T(u_1)\stackrel{\neq}{=} T(u_2).\]
+		\end{mydef}
+		\begin{mythm}
+			\index{Injectivité}
+			\[T:\mathcal{V}\longrightarrow\mathcal{W}\text{\normalfont{ injective}}\Longleftrightarrow \ker(T) =\{O_{\mathcal{V}}\}\]
+		\end{mythm}
+		\begin{mydef}
+			\index{Surjectivité}
+			Soit $\mathcal{V}$ et $\mathcal{W}$ deux espaces vectoriels sur le corps des réels. La transformation linéaire $T:\mathcal{V}\longrightarrow\mathcal{W}$ est \textbf{surjective} si tout vecteur de $\mathcal{W}$ est l'image \textbf{d'au moins} un vecteur de $\mathcal{V}$.
+		\end{mydef}
+		\begin{mythm}
+			\index{Surjectivité}
+			\[T:\mathcal{V}\longrightarrow\mathcal{W}\text{\normalfont{ surjective}}\Longleftrightarrow\text{\normalfont{im}}(T)=\mathcal{W}\]
+		\end{mythm}
+		\begin{mydef}
+			\index{Isomorphisme}
+			\index{Bijection}
+			Une transformation linéaire qui est à la fois injective et surjective est appelée un \textbf{isomorphisme} (bijective).
+		\end{mydef}
+	\subsection{Transformation linéaire $T : \mathbb{R}^n\longrightarrow\mathbb{R}^m$ et matrice associée}
+		\begin{myprop}
+			\index{Injectivité}
+			\index{Surjectivité}
+			\index{Isomorphisme}
+			Si $T : \mathbb{R}^n\longrightarrow\mathbb{R}^m$ est une transformation linéaire et $A$ est la matrice associée à $T$ alors $\ker(T)=\ker A$ et $\text{\normalfont{im}}(T)=\text{\normalfont{im}}\ A.$ 
+			\begin{enumerate}
+				\item $T \text{\normalfont{ injective}} \Longleftrightarrow \ker A=\{O\}\ \text{colonnes de } A \text{ linéairement indépendantes}$
+				\item $T \text{\normalfont{ surjective}} \Longleftrightarrow \text{\normalfont{im}}\ A=\mathbb{R}^m\ \text{colonnes de } A \text{ engendrent } \mathbb{R}^m$
+			\end{enumerate}
+		\end{myprop}
+

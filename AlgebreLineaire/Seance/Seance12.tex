@@ -1,0 +1,64 @@
+\section{Diagonalisation de matrices, valeurs propres multiples, diagonalisation des matrices symétriques réelles et hermitiennes complexes}
+	\subsection{Diagonalisation de matrices et valeurs propres multiples}
+		\begin{mythm}[Algorithme de diagonalisation]
+			Soit$A$ une matrice $n\times n$ diagonalisable ($A=PDP^{-1}$). Pour diagonaliser la matrice $A$, on procède comme suit;
+		\begin{enumerate}
+			\item Déterminer le polynôme caratéristique de $A$\[P_A(\lambda)=\det(A-\lambda I)\]
+			\item Trouver les racines de $P_A(\lambda)$ (valeurs propres de $A$)
+			\item Déterminer les bases des espaces propres $E_{\lambda}$
+			\item Construire la matrice inversible $P$ à partir des vecteurs de base de tous les espaces propres
+			\item Construire la matrice diagonale $D$ à partir des valeurs propres de $A$.
+		\end{enumerate}
+		\end{mythm}
+		\begin{mythm}
+			\index{Diagonalisation}
+			\index{Valeur propre}
+			\index{Multiplicité algébrique}
+			\index{Espace propre}
+			Soit une matrice $A$ d'ordre $n$ admettant $p\leq n$ valeurs propres distinctes $\lambda_1,\lambda_2,...,\lambda_p$ de multiplicité algébrique $\alpha_1,\alpha_2,...,\alpha_p : \sum \alpha_i = n$. Alors,
+			\begin{enumerate}
+				\item $\dim E_{\lambda_k}\leq\alpha_k, \forall k=1,2,...,p$
+				\item $A$ est diagonalisable $\Longleftrightarrow\dim E_{\lambda_k}=\alpha_k,\forall k=1,...,p$
+				\item Si $A$ est diagonalisable alors les vecteurs propres de $A$ sont des vecteurs de base de tous les espaces propres $\dim E_{\lambda_k},\forall k=1,...,p$. Ils servent à construire la matrice inversible $P$.
+			\end{enumerate}
+		\end{mythm}
+		\begin{mythm}{Corollaire}
+			\index{Particularité de la diagonalisation}
+			\index{Multiplicité algébrique}
+			\index{Multiplicité géométrique}
+			\index{Valeur propre}
+			\index{Vecteur propre}
+			~
+			\begin{enumerate}
+				\item Toute matrice carrée n'est pas forcément diagonalisable
+				\item Une matrice est diagonalisable $\Longleftrightarrow$ la \textbf{multiplicité algébrique} des valeurs propres est \textbf{égale} à la \textbf{multiplicité géométrique} de ces dernières
+			\end{enumerate}
+		\end{mythm}
+	\subsection{Lien entre changement de base et diagonalisation de matrice associées à des transformations linéaires}
+		\begin{myprop}
+			\index{Transformation linéaire}
+			Si $A=[T]_B$ est diagonalisable sous la forme $P^{-1}AP=D$ alors $D$ est la matrice qui représente $T$ dans la base formée des vecteurs propres de $A$ et $P=P_{B\leftarrow B'}$
+		\end{myprop}
+	\subsection{Diagonalisation des matrices symétriques et hermitiennes}
+		 \begin{mydef}
+		 	\index{Matrice hermitienne}
+		 	Une \textbf{matrice hermitienne} $A$ d'ordre $n$ qui prend ses valeurs dans les nonbres complexes est telle que $\bar{A}^T=A$ où $\bar{A}$ signifie que cette matrice est formée des éléments obtenus en prenant la conjugaison complexe de chaque éléments de la matrice $A$.
+		 \end{mydef}
+		 \begin{myprop}
+		 	Une matrice hermitienne dont tout les éléments sont réels est une \textbf{matrice symétrique réelle}. Tout les théorèmes valables pour les matrices hermitiennes complexes le sont aussi pour les matrice symétriques réelles.
+		 \end{myprop}
+	 	\begin{mythm}
+	 		\index{Théorème spectral}
+	 		\index{Matrice hermitienne}
+	 		\index{Matrice diagonalisable}
+	 		\index{Valeur propre}
+	 		\index{Vecteur propre}
+	 		\index{Matrice unitaire}
+	 		\index{Matrice orthogonale}
+	 		~
+	 		\begin{enumerate}
+	 			\item Une matrice hermitienne complexe $A$ (symétrique réelle) est diagonalisable
+	 			\item Ses valeurs propres sont nécessairement réelles
+	 			\item Il existe une matrice unitaire $U$ (orthogonale réelle) qui la diagonalise. \[\exists U\in\mathbb{C}^{n\times n}:\bar{U}^TU=I\text{ et } U^{-1}AU=\bar{U}^TAU=D\]
+	 		\end{enumerate}
+	 	\end{mythm}
