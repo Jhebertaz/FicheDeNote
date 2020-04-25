@@ -1,0 +1,100 @@
+Question 1
+a)
+T[f_]:=x*(x+1)*D[f,{x,2}]+(x-1)*D[f,{x,1}]-f
+f=a x^2+b x+c ;
+g=A x^2+B x+C;
+Simplify[T[f]]
+Out[12]= -b-c+3 a x^2
+b)
+T[α f + β g]
+Simplify[%]
+Out[13]= -(c+b x+a x^2) α-(C+B x+A x^2) β+x (1+x) (2 a α+2 A β)+(-1+x) ((b+2 a x) α+(B+2 A x) β)
+c)
+In[28]:= Expand[T[1]]
+Expand[T[x]]
+Expand[T[x^2]]
+A={{-1,-1,0},{0,0,0},{0,0,3}};
+MatrixForm[A]
+(*Le noyau : Homogeneous system*)
+RowReduce@ArrayFlatten[{{A,0}}] //MatrixForm 
+MatrixForm[NullSpace[A]]
+Out[28]= -1
+Out[29]= -1
+Out[30]= 3 x^2
+Out[32]//MatrixForm= (-1	-1	0
+0	0	0
+0	0	3
+
+)
+Out[33]//MatrixForm= (1	1	0	0
+0	0	1	0
+0	0	0	0
+
+)
+Out[34]//MatrixForm= (-1	1	0)
+Question 2
+In[367]:= (*Base1*)
+b1={{1,0},{0,0}};
+b2={{0,1},{0,0}};
+b3={{0,0},{1,0}};
+b4={{0,0},{0,1}};
+B1={b1,b2,b3,b4};
+
+(*Transformation*)
+T[a_]:=a.{{-1,3},{1,2}};
+
+(*Base2*)
+bb1={{1,0},{0,0}};
+bb2={{0,1},{1,0}};
+bb3={{0,1},{-1,0}};
+bb4={{0,0},{0,1}};
+B2={bb1,bb2,bb3,bb4};
+
+(*Représentation [T] dans la base B1*)
+mat11={};For[i=1,i<5,i++,AppendTo[mat11,Flatten@Map[T,Symbol@StringJoin["b",ToString@i]]]];
+mat11=Transpose@mat11;
+Panel[Row[{Subscript["[T]",Subscript["B",1]],"  =  ",MatrixForm@mat11}]]
+MatrixForm@Map[T,{B1}]
+
+(*Représentation [T] dans la base B2*)
+mat21={};For[i=1,i<5,i++,AppendTo[mat21,Flatten@Map[T,Symbol@StringJoin["bb",ToString@i]]]];
+mat21=Transpose@mat21;
+
+(*####*)
+(*Matrice de passage de B1<-B2*)
+B=RowReduce[ArrayFlatten[{{mat11,mat21}}]][[All,5;;]] ;
+Panel[Row[{Subscript["P","B1←B2"],"  =  ",MatrixForm@B}]]
+(*Puisque la représentation de T dans la base B2 est dans les coordonnées de la base B1, il faut utiliser la matrice de passage pour que la representation de T de la base B2 soit dans les coordonnées de la base B2*)
+Panel[Row[{Subscript["[T]",Subscript["B",2]],"  =  ",MatrixForm[Inverse[B].mat21]}]]
+(*####*)
+Out[380]= Subscript[[T], Subscript[B, 1]]  =  (-1	1	0	0
+3	2	0	0
+0	0	-1	1
+0	0	3	2
+
+)
+Out[381]//MatrixForm= ((-1	3
+0	0
+
+)	(1	2
+0	0
+
+)	(0	0
+-1	3
+
+)	(0	0
+1	2
+
+))
+Out[385]= Subscript[P, B1←B2]  =  (1	0	0	0
+0	1	1	0
+0	1	-1	0
+0	0	0	1
+
+)
+Out[386]= Subscript[[T], Subscript[B, 2]]  =  (-1	1	1	0
+3/2	1/2	3/2	1/2
+3/2	3/2	1/2	-(1/2)
+0	3	-3	2
+
+)
