@@ -1,20 +1,19 @@
-FinalH20()
+FinalA19()
 {
-    for i in {1..4};
+    for i in {1..2};
     do 
-        pdflatex Hebert-Doutreloux_Final_Question_$i.tex;
+        pdflatex SolutionFinalA19_Question_$i.tex;
     done
 }
+FinalA19;
 
-FinalH20;
-
-for i in {1..4};
+for i in {1..2};
 do 
-    bibtex Hebert-Doutreloux_Final_Question_$i;
-    pdflatex Hebert-Doutreloux_Final_Question_$i.tex;
+    bibtex SolutionFinalA19_Question_$i;
+    pdflatex SolutionFinalA19_Question_$i.tex;
 done
 
-FinalH20;
+FinalA19;
 
 for i in "aux" "log" "bbl" "blg" "dvi" "out" "toc" "synctex.gz" "idx";
 do

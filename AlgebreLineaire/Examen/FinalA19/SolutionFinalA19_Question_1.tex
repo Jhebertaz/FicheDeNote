@@ -1,0 +1,27 @@
+\documentclass{article}[french, babel]
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\usepackage{fancyhdr}
+\usepackage{bm}
+\usepackage{amsmath,amssymb,amsthm,mathtools,enumitem,imakeidx} 
+\usepackage{caption,pdfpages}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\pagestyle{fancy}
+\lhead{Julien Hébert-Doutreloux}
+\rhead{--Page \thepage}
+\cfoot{Algèbre Linéaire}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newtheorem{mydef}{Définition}
+\newtheorem{myprop}{Proposition}
+\newtheorem{mythm}{Théorème}
+\newcommand{\proj}[2]{\text{\normalfont{proj}}_#1 #2}
+\newcommand{\prodsc}[2]{\langle #1,#2\rangle}
+\renewcommand\thesubsection{\alph{subsection})}
+\begin{document}
+	\input{Question/Q1}
+\end{document}

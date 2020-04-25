@@ -1,3 +1,71 @@
 \section*{Question 1}
+Soit l'application de $T:\mathbb{P}_2\longrightarrow\mathbb{P}_2$ définie par $T\big(p(x)\big)=x(x+1)p''(x)+(x-1)p'(x)-p(x)$.
 \subsection{}
-	
+Soit le pôlynome $p(x)=ax^2+bx+c$, l'application $T$ est
+\[\begin{split} T\big(p(x)\big)&=(x-1) (2 a x+b)-a x^2+2 a (x+1) x-b x-c\\
+ &=3 a x^2-b-c\end{split}\]
+\subsection{}
+Par la proposition suivante,
+	\[\forall c,d\in\mathbb{R},\forall u,v\in\mathcal{V},T(cu+dv)=cT(u)+dT(v) \Longleftrightarrow T \text{ est une tranformation linéaire} \]
+montrons que $T$ est une transformation linéaire.
+\begin{proof}
+	Soit $p_1(x)=ax^2+bx+c$,$p_2(x)=Ax^2+Bx+C$ et  $\alpha,\beta\in\mathbb{R}$
+
+\[\begin{split}
+T\big(\alpha p_1(x)+\beta p_2(x)\big)&=(x-1) (\alpha  (2 a x+b)+\beta  (2 A x+B))+x (x+1) (2 a \alpha +2 A \beta
+)\\
+&\qquad+\alpha  \left(-\left(a x^2+b x+c\right)\right)-\beta  \left(A x^2+B
+x+C\right)\\
+&=3 a \alpha  x^2+3 A \beta  x^2-\alpha  b-\beta  B-\alpha  c-\beta  C\\
+&=\alpha T\big(p_1(x)\big) + \beta T\big(p_2(x)\big)
+\end{split}\]
+\end{proof}
+\subsection{}
+Déterminons la matrice associée $A$ à l'application linéaire $T$ en considérant les polynôme de $\mathbb{P}_2$ comme des vecteurs (eg: $p_1(x):=(c,b,a)$).
+\[\begin{cases}
+T(1)=-1\implies (-1,0,0)\\
+T(x)=-1\implies (-1,0,0)\\
+T(x^2)=3x^2\implies (0,0,3)
+\end{cases}\implies A=
+\begin{pmatrix}
+-1 & -1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 3 \\
+\end{pmatrix}\]
+Aini, l'image de $T$ est évidente,\[im(T)=Vect
+\begin{Bmatrix}
+\left(
+\begin{array}{c}
+1 \\
+0 \\
+0 \\
+\end{array}
+\right),\left(
+\begin{array}{c}
+0 \\
+0 \\
+1 \\
+\end{array}
+\right)
+\end{Bmatrix}\]
+et le noyau de $T$ est 
+\[\left(
+\begin{array}{ccc|c}
+-1 & -1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 3 & 0 \\
+\end{array}
+\right)\sim\left(
+\begin{array}{cccc}
+1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}
+\right)\implies\ker(T)=Vect\left\{\begin{pmatrix}
+-1\\1\\0
+\end{pmatrix}\right\}\]
+Ainsi, l'image et le noyau sont respectivement de dimensions 2 et 1.
+\subsection{}
+Par un théorème,
+	\[T:\mathbb{P}_2\longrightarrow\mathbb{P}_2\text{\normalfont{ surjective}}\Longleftrightarrow\text{\normalfont{im}}(T)=\mathbb{P}_2\]
+Or, la dimensions de $\dim(\mathbb{P}_2)=3$ tandis que celle de $\dim(im(T))=2$, alors la transformation linéaire n'est pas surjective.

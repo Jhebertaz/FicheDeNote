@@ -1,0 +1,113 @@
+\section*{Question 2}
+\subsection{}
+Pour trouver la représentation de la base $[T]_B$,
+\[\{T(b_1),T(b_2),T(b_3),T(b_4)\}\]
+\[
+\begin{Bmatrix}
+\left(
+\begin{array}{cc}
+-1 & 3 \\
+1 & 2 \\
+\end{array}
+\right), & \left(
+\begin{array}{cc}
+1 & 2 \\
+1 & 2 \\
+\end{array}
+\right), & \left(
+\begin{array}{cc}
+0 & 0 \\
+-1 & 3 \\
+\end{array}
+\right), & \left(
+\begin{array}{cc}
+0 & 0 \\
+1 & 2 \\
+\end{array}
+\right) \\
+\end{Bmatrix}
+\]
+Autrement dit,
+\[\begin{cases}
+	T(b_1)=(-1,3,0,0)\bullet B\\
+	T(b_2)=(1,2,0,0)\bullet B\\
+	T(b_3)=(0,0,-1,3)\bullet B\\
+	T(b_4)=(0,0,1,2)\bullet B
+\end{cases}\implies [T]_B=
+\begin{pmatrix}
+ -1 & 1 & 0 & 0 \\
+3 & 2 & 0 & 0 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 3 & 2
+\end{pmatrix}
+\]
+\subsection{}
+Réecrivons les bases matricielles en bases vectorielles, et ce en considérant 
+\[
+\begin{pmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22} \\
+\end{pmatrix}
+\longrightarrow (a_{11},a_{12},a_{21},a_{22})^T\]
+Ainsi, la bases $B$ et $B'$ deviennent respectivement,
+\[B:=
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix},\quad B':=
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 1 & -1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}
+\]
+
+D'ailleurs sous cette forme, la base $B'$ est la matrice de passage $P_{B'\leftarrow B}$.
+\subsection{}
+De même qu'en a), pour la $B'$ 
+\[\{T(b'_1),T(b'_2),T(b'_3),T(b'_4)\}\]
+\[
+\begin{Bmatrix}
+\left(
+\begin{array}{cc}
+-1 & 3 \\
+0 & 0 \\
+\end{array}
+\right), & \left(
+\begin{array}{cc}
+1 & 2 \\
+0 & 0 \\
+\end{array}
+\right), & \left(
+\begin{array}{cc}
+0 & 0 \\
+-1 & 3 \\
+\end{array}
+\right), & \left(
+\begin{array}{cc}
+0 & 0 \\
+1 & 2 \\
+\end{array}
+\right) \\
+\end{Bmatrix}
+\]
+Autrement dit,
+\[\begin{cases}
+T(b'_1)=\Big(-1,\frac{3}{2},\frac{3}{2},0\Big)\bullet B'\\
+T(b'_2)=\Big(1,\frac{1}{2},\frac{3}{2},3\Big)\bullet B'\\
+T(b'_3)=\Big(1,\frac{3}{2},\frac{1}{2},-3\Big)\bullet B'\\
+T(b'_4)=\Big(0,\frac{1}{2},-\frac{1}{2},2\Big)\bullet B'
+\end{cases}\implies [T]_{B'}=
+\begin{pmatrix}
+-1 & 1 & 1 & 0 \\
+\frac{3}{2} & \frac{1}{2} & \frac{3}{2} & \frac{1}{2} \\
+\frac{3}{2} & \frac{3}{2} & \frac{1}{2} & -\frac{1}{2} \\
+0 & 3 & -3 & 2 \\
+\end{pmatrix}
+\]
+\subsection{}
+La relation est la suivante;
+ $[T]_{B'}=P_{B'\leftarrow B}[T]_B P_{B\leftarrow B'}$ 
