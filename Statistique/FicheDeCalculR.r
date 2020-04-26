@@ -1,43 +1,59 @@
-## FicheDeCalcul
+###################
+## FicheDeCalcul ##
+###################
 
-## Variables
+#################
+## Sample Mean ##
+#################
 
-
-## Sample Mean
 #n:taille
 #sig:standart deviation
 mux  = mu
 sigx = sig/sqrt(n) 
 
-## Binomial Count
+####################
+## Binomial Count ##
+####################
+
 #n:taille
 #p:probability of success
-
 mu  = n*p
 sig = sqrt(n*p*(1-p))
+binom.test()
 
-## Sample Proportion
+#######################
+## Sample Proportion ##
+#######################
+
 #n:taille
 #p:proportion of success
 mu  = p
 sig = sqrt(p*(1-p)/n)
 
+#########################
+## Confidence Interval ##
+#########################
 
-## Confidence Interval
 conf_interval <-function(estimate,margin_error){
   ic<-(estimate*c(1,1)+c(-1,1)*margin_error)
   return(ic)
 }
 
-## Estimate
+##############
+## Estimate ##
+##############
 
-## Quantile Function
+## Quantile Function ##
+
 ## QuantileToDensity
+#z:Normal Distribution
+#t:T Distribution
 dist_density <- function(distribution="z",qq,dl=NULL){
   ifelse (distribution=="z",pnorm(q=qq,lower.tail = TRUE),
           ifelse(distribution=="t",pt(q=qq,df=dl,lower.tail = TRUE),
                  NA))
 }
+
 ## DensityToQuantile
 #z:Normal Distribution
 #t:T Distribution
@@ -46,51 +62,84 @@ dist_quant <- function(distribution="z",pp=0.025,dl=NULL){
           ifelse(distribution=="t",qt(p=pp,df=dl,lower.tail = TRUE),
                  NA))
 }
-## Margin of Error
+
+#####################
+## Margin of Error ##
+#####################
+
 m = dist_quantile*standart_error
-  
-(sig/sqrt(n))
-(s/sqrt(n))
-m = tstar*(s/sqrt(n))
 
-## Exemple
-## 7.2.56
-## intermittent recovery
-n1  <- 16
-mu1 <- 1130
-s1  <- 191
+#############
+## Exemple ##
+#############
 
-n2  <- 13
-mu2 <- 781
-s2  <- 6.0
-se  <- sqrt( ((s1^2)/n1) + ((s2^2)/n2))
-tstar<- qt(p=0.025,df=12,lower.tail = F)
-m   <- tstar*se 
-tt  <- (mu1-mu2)/se
-IC <- c(-1,1)*m + c(1,1)*(mu1-mu2)
-2*pt(q=abs(tt),df=12,lower.tail = FALSE)
+#########################
+## Comparing Two Means ##
+#########################
 
+## 7.2.56 ########################################
+## Level
+alpha <- 0.05
+## Sizes
+n1    <- 16
+n2    <- 13
+## Observed means
+mu1   <- 1130
+mu2   <- 781
+## Estimated variances (Square-root)
+s2    <- 6.0
+s1    <- 191
+## Standart Error
+se    <- sqrt( ((s1^2)/n1) + ((s2^2)/n2))
+# Conservative approach
+dl    <- min(n1-1,n2-1)
+## Critical value (alpha = 5% -> alpha/2 pour test bilatéral)
+tstar <- qt(p=alpha/2,df=dl,lower.tail = F)
+## Margin of Error
+m     <- tstar*se 
+## Two-sample t statistic
+tt    <- (mu1-mu2)/se
+### Confidence interval
+IC    <- c(-1,1)*m + c(1,1)*(mu1-mu2)
+## p-value for two-sided alternative (valeur-p du test bilatéral)
+p_val <- 2*pt(q=abs(tt),df=dl,lower.tail = FALSE)
+##################################################
+## Conclusion ##
+#La valeur-p du test bilatéral est < 0.05 (alpha=5%), 
+## on rejette l’hypothèse (nulle) selon laquelle le score moyen au test est égal au niveau 5%
+# Sinon
+#La valeur-p du test bilatéral est > 0.05 (alpha=5%), 
+## les données ne fournissent pas de preuve à l’encontre de l'hypothèse nulle au niveau 5%
 
-## 8.64-68
-n1=358
-p1=(29.9/100)
-n2=851
-p2=(20.8/100)
-## Difference proportion
-d=p1-p2
-## standard error of the difference D
-sed = sqrt( ((p1*(1-p1))/n1) + ((p2*(1-p2))/n2) )
-## margin of error
-m=qnorm(0.975)*sed
-## confidence intervalle
-ic = d + c(-1,1)*m
-### Significance test level alpha = 0.05 H0: p1=p2 vs Ha=p1 neq p2
-## pooled estimate
-phat = (p1*n1+p2*n2)/(n1+n2)
-## standard error of the estimate difference D
-sedp=sqrt( phat*(1-phat)*((1/n1) +(1/n2))   )
+###############################
+## Comparing Two Proportions ##
+###############################
+
+## 8.64-68 ########################################
+
+## Sizes
+n1         = 358
+n2         = 851
+## Sample proportions
+p1         = (29.9/100)
+p2         = (20.8/100)
+## Large-sample estimate of the difference in two population proportions
+d_hat      = p1-p2
+## Standard error of the difference d_hat
+se_d_hat   = sqrt( ((p1*(1-p1))/n1) + ((p2*(1-p2))/n2) )
+## Margin of error
+## 0.975 =(1-C)/2
+m          = qnorm(0.975)*se_d_hat
+### Confidence intervalle
+IC         = d_hat + c(-1,1)*m
+### Significance test level alpha = 0.05 
+### H0: p1=p2 vs Ha:p1=!=p2
+## Pooled estimate
+p_hat      = (p1*n1+p2*n2)/(n1+n2)
+## Standard error of the estimate difference D
+se_d_hat_p = sqrt( p_hat*(1-p_hat)*((1/n1) +(1/n2))   )
 ## z statistic
-zz=(p1-p2)/sedp
-## 2P(Z>= |zz|)
-2*pnorm(abs(zz),lower.tail = F)*100
-
+zz         = (p1-p2)/se_d_hat_p
+## p-value for two-sided alternative (valeur-p du test bilatéral) 2P(Z>= |zz|)
+p_val      = 2*pnorm(q=abs(zz),lower.tail = F)*100
+##################################################
