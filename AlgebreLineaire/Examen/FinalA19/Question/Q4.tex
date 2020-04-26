@@ -1,0 +1,107 @@
+\section*{Question 4}
+\subsection{}
+Le polynôme caratéristique de la matric $A$ est :
+\[\begin{split} P_A(\lambda)&=
+\begin{vmatrix}
+4-\lambda  & 0 & 0 & 0 \\
+0 & 2-\lambda  & 0 & 2 \\
+0 & 0 & 4-\lambda  & 0 \\
+0 & 2 & 0 & 2-\lambda  \\
+\end{vmatrix}\\
+&=\lambda ^4-12 \lambda ^3+48 \lambda ^2-64 \lambda\\
+&=(\lambda -4)^3 \lambda
+\end{split}\]
+On conclut que $\lambda = 4$ est une racine du polynôme caratéristique de $A$, donc une de ses valeurs propres. Elle est d'ailleurs de multiplicité algébrique de 3.
+\subsection{}
+Selon le résultat obtenue ci-dessus, les valeurs propres de $A$ sont $\lambda_1=4$ et $\lambda_2=0$ respectivement de multiplicité algébrique de 3 et de 1. \\
+Pour $\lambda_1$,
+\[\begin{split}
+\left(
+\begin{array}{cccc}
+4-\lambda _1 & 0 & 0 & 0 \\
+0 & 2-\lambda _1 & 0 & 2 \\
+0 & 0 & 4-\lambda _1 & 0 \\
+0 & 2 & 0 & 2-\lambda _1 \\
+\end{array}
+\right)&=\left(
+\begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & -2 & 0 & 2 \\
+0 & 0 & 0 & 0 \\
+0 & 2 & 0 & -2 \\
+\end{array}
+\right)\\
+&\sim \left(
+\begin{array}{cccc}
+0 & 1 & 0 & -1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}
+\right)
+\end{split}\]
+Donc,
+$E_{\lambda_1}=Vect\left\{\begin{pmatrix}
+1\\0\\0\\0
+\end{pmatrix},\begin{pmatrix}
+0\\1\\0\\1
+\end{pmatrix},\begin{pmatrix}
+0\\0\\0\\1
+\end{pmatrix}\right\}$
+\\
+Pour $\lambda_2$,
+\[\begin{split}
+\left(
+\begin{array}{cccc}
+4-\lambda _2 & 0 & 0 & 0 \\
+0 & 2-\lambda _2 & 0 & 2 \\
+0 & 0 & 4-\lambda _2 & 0 \\
+0 & 2 & 0 & 2-\lambda _2 \\
+\end{array}
+\right)&=\left(
+\begin{array}{cccc}
+4 & 0 & 0 & 0 \\
+0 & 2 & 0 & 2 \\
+0 & 0 & 4 & 0 \\
+0 & 2 & 0 & 2 \\
+\end{array}
+\right)\\
+&\sim\left(
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}
+\right)
+\end{split}\]
+Donc $E_{\lambda_2}=Vect\left\{\begin{pmatrix}
+0\\-1\\0\\1
+\end{pmatrix}\right\}$
+\subsection{}
+La matrice $P$ est :
+\[\left(
+\begin{array}{cccc}
+0 & 0 & 1 & 0 \\
+1 & 0 & 0 & -1 \\
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 1 \\
+\end{array}
+\right)\]
+En normalisant les vecteurs propres, on obtient la matrice $O$ et la matrice diagonale des valeurs propres $D$:
+\[O=\left(
+\begin{array}{cccc}
+0 & 0 & 1 & 0 \\
+\frac{1}{\sqrt{2}} & 0 & 0 & -\frac{1}{\sqrt{2}} \\
+0 & 1 & 0 & 0 \\
+\frac{1}{\sqrt{2}} & 0 & 0 & \frac{1}{\sqrt{2}} \\
+\end{array}
+\right),\qquad D=\left(
+\begin{array}{cccc}
+4 & 0 & 0 & 0 \\
+0 & 4 & 0 & 0 \\
+0 & 0 & 4 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}
+\right)\]
+\subsection{}
