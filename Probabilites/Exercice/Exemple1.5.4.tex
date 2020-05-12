@@ -1,0 +1,38 @@
+\section*{Exemple 1.5.4}
+Combien y a-t-il de sous-ensembles d'un ensemble à 3 éléments ? Répondez à la question en donnant la liste des sous-ensembles de l'ensemble $A = \{a, b, c\}$.
+\subsection*{Solution}
+\begin{multicols}{2}
+\begin{verbbox}
+In[305]:= A=Characters["abc"];
+Subsets[A]//TableForm
+Length[%]
+Out[306]//TableForm=
+	
+a		
+b		
+c		
+a	b	
+a	c	
+b	c	
+a	b	c
+Out[307]= 8
+\end{verbbox}
+	\theverbbox
+	\columnbreak
+	\\
+	L'ensemble des parties de l'ensemble $A$ est
+	\begin{equation*}
+		\begin{array}{ccc}
+		\{\} &  &  \\
+		\text{a} & \text{} & \text{} \\
+		\text{b} & \text{} & \text{} \\
+		\text{c} & \text{} & \text{} \\
+		\text{a} & \text{b} & \text{} \\
+		\text{a} & \text{c} & \text{} \\
+		\text{b} & \text{c} & \text{} \\
+		\text{a} & \text{b} & \text{c} \\
+		\end{array}%
+	\end{equation*}
+	Il y en a 8. Avec $r$ objet parmis $3$ pour $r=0,1,2,3$, la formule du binôme le retrouve ce résultat.  
+	\[\sum_{r=0}^3\binom{3}{r}=\binom{3}{0}+\binom{3}{1}+\binom{3}{2}+\binom{3}{3}=8=2^3\] 
+\end{multicols}

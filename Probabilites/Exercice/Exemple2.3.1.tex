@@ -1,0 +1,53 @@
+\section*{Exemple 2.3.1}
+	Trouver une expression simple pour les événements suivants;
+	\begin{multicols}{2}
+		\begin{enumerate}[label=\alph*)]
+			\item $(E\cup F)\cap (E\cup F^C)$
+			\item $(E\cap F)\cup (E\cap F^C)$
+			\item $(E\cup F)\cup (E\cup F^C)$
+			\item $(E\cap F)\cap (E\cap F^C)$
+		\end{enumerate}
+	\end{multicols}
+\subsection*{Solution}
+\begin{verbbox}
+statement={
+   "(E||F) && (E||\[Not]F)",
+   "(E&&F) || (E&&\[Not]F)",
+   "(E||F) || (E||\[Not]F)",
+   "(E&&F) && (E&&\[Not]F)"}
+For[i=1,i<=Length[statement],i++,Print[
+WolframAlpha["Venn diagram "<>statement[[i]],
+   IncludePods->"VennDiagram",
+   AppearanceElements->{"Pods"},
+   TimeConstraint->{20,Automatic,Automatic,Automatic}, 
+   PodStates->{"MinimalForms__Text notation","MinimalForms__More"}]
+   ]
+  ]
+\end{verbbox}
+\theverbbox\\
+\\
+\begin{figure}[!htp]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.6\linewidth]{Exercice/Image/Exemple2.3.1/VennDiagram1}
+		\caption{$E$}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.6\linewidth]{Exercice/Image/Exemple2.3.1/VennDiagram2}
+		\caption{$E$}
+	\end{subfigure}
+	%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.6\linewidth]{Exercice/Image/Exemple2.3.1/VennDiagram3}
+		\caption{$S$}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.6\linewidth]{Exercice/Image/Exemple2.3.1/VennDiagram4}
+		\caption{$\O$}
+	\end{subfigure}
+	\caption*{Diagramme de Venn}
+\end{figure}

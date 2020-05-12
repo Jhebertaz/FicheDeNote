@@ -1,0 +1,59 @@
+\section*{Exemple 1.6.3}
+\begin{equation*}
+	(x_1+x_2+x_3)^2  = \sum_{\substack{(n_1,n_2,n_3):\\n_1+n_2+n_3=2}}%
+	\binom{2}{n_1,n_2,n_3}x_1^{n_1} x_2^{n_2} x_3^{n_3}
+\end{equation*}
+\subsection*{Solution}
+\begin{multicols}{2}
+\noindent%
+\texttt{In[122]:=}\\
+\quad\texttt{triplet=$\mathtt{ \left\{n_1,n_2,n_3\right\} }$}\\*[2pt]
+\begin{verbbox}
+    triplet /.FindInstance[
+              Total[triplet]==2,triplet,
+              NonNegativeIntegers,10
+              ]//TableForm
+\end{verbbox}
+\theverbbox\\
+    \texttt{P = $\mathtt{x_1+x_2+x_3}$}\\*[2pt]
+\begin{verbbox}
+ExpandAll[P^2]
+Out[123]//TableForm=
+0	0	2
+0	1	1
+0	2	0
+1	0	1
+1	1	0
+2	0	0
+\end{verbbox}
+\theverbbox\\
+\texttt{Out[124]= $\mathtt{x_1^2+2 x_2 x_1+2 x_3 x_1+x_2^2+x_3^2+2 x_2 x_3}$}
+	\columnbreak\\
+	Par la formule,
+	\begin{IEEEeqnarray*}{rCl}	
+		 (x_1+x_2+\cdots+x_r)^n & = &	\sum_{\substack{(n_1,n_2,\cdots,n_r):\\n_1+n_2+\cdots+n_r=n}}\left\{%
+		 									\sum_{i=1}^{r}n_i\cdot\prod_{i=1}^{r}\frac{x_i^{n_1}}{(n_i)!}\right\}\\
+		 						& = &	\sum_{\substack{(n_1,n_2,\cdots,n_r):\\n_1+n_2+\cdots+n_r=n}}\left\{%
+		 									n\cdot\prod_{i=1}^{r}\frac{x_i^{n_1}}{(n_i)!}\right\}	 									
+	\end{IEEEeqnarray*}
+	Considérons le tableau suivant où chaque ligne sont les solutions possibles tels que $n_1+n_2+n_3=2$
+	\begin{center}\begin{tabular}{ccc}
+			$n_1$&$n_2$&$n_3$\\
+			0 & 0 & 2 \\
+			0 & 1 & 1 \\
+			0 & 2 & 0 \\
+			1 & 0 & 1 \\
+			1 & 1 & 0 \\
+			2 & 0 & 0 \\
+	\end{tabular}\end{center}
+	Appliquons la formule ci-dessus,
+	\begin{IEEEeqnarray*}{rCl}	
+	(x_1+x_2+x_3)^2 & = &	\quad 2\left(\frac{x_1^0}{0!}\cdot\frac{x_2^0}{0!}\cdot\frac{x_3^2}{2!}\right)\\
+					&   &	+\; 2\left(\frac{x_1^0}{1!}\cdot\frac{x_2^1}{1!}\cdot\frac{x_3^1}{1!}\right)\\
+					&   &	+\; 2\left(\frac{x_1^0}{0!}\cdot\frac{x_2^2}{2!}\cdot\frac{x_3^0}{0!}\right)\\
+					&   &	+\; 2\left(\frac{x_1^1}{1!}\cdot\frac{x_2^0}{0!}\cdot\frac{x_3^1}{1!}\right)\\
+					&   &	+\; 2\left(\frac{x_1^1}{1!}\cdot\frac{x_2^1}{1!}\cdot\frac{x_3^0}{0!}\right)\\
+					&   &	+\; 2\left(\frac{x_1^2}{2!}\cdot\frac{x_2^0}{0!}\cdot\frac{x_3^0}{0!}\right)\\
+					& = &	x_1^2+2 x_2 x_1+2 x_3 x_1+x_2^2+x_3^2+2 x_2 x_3
+\end{IEEEeqnarray*}
+\end{multicols}

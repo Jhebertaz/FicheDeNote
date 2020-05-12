@@ -1,0 +1,31 @@
+\documentclass[french, babel]{article}
+\input{preambule}
+\cfoot{Probabilités}
+\usepackage[retainorgcmds]{IEEEtrantools}
+%%%
+\newtheorem{mydef}{Définition}
+\newtheorem{myprop}{Proposition}
+\newtheorem{mythm}{Théorème}
+\newtheorem*{remark}{Remarque}
+\newtheorem{lemma}[mythm]{Lemme}
+%%%
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.5\textwidth]{Universite_de_Montreal_logo}\par\vspace{1cm}
+	{\scshape\LARGE Université de Montréal\par}
+	\vspace{1cm}
+	{\scshape\Large Fiche De Note\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Probabilités \par}
+	\vspace{2cm}
+	{\Large\itshape Julien Hébert-Doutreloux\par}
+	\vfill
+	\vfill
+	{\large \today\par}
+\end{titlepage}
+\tableofcontents
+\newpage
+\input{Chapitre/Chapitre1}
+\input{Chapitre/Chapitre2}
+\end{document}

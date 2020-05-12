@@ -1,0 +1,87 @@
+%prop:
+%def : definition
+%eq  : equation
+%id	 : identity
+\section[Chapitre 1]{Analyse combinatoire}
+	\begin{mythm}[Principe de multiplication]\index{Principe de multiplication}
+		Soit $r$ le nombre d'expérience à réaliser tel que pour chaque expérience il y a $n_i$ possibilités avec $i=1,2,3\dots,r$ alors le total des possibilités est donné par
+		\begin{equation}\label{prop:prodprinciple}
+			\prod_i^r n_i
+		\end{equation}%
+	\end{mythm}%
+	\begin{mydef}[Permutation]\index{Permutation}
+		On appelle permutation un arrangement de $n$ objets considérés en même
+		temps et pris dans un ordre donné.
+	\end{mydef}%
+	\begin{mythm}
+		 Le nombre de permutaitons de $n$ objets discernables est $n!$.
+	\end{mythm}%
+	\begin{mythm}[Permutations d'objets partiellement indiscernables]\index{Permutations d'objets partiellement indiscernables}
+		Le nombre de permutations de $n$ objets dont $n_1$ sont indiscernables entre eux, $n_2$ sont indiscernables entre eux, $..., n_r$ sont indiscernables entre eux est donné par :
+		\begin{remark}
+			Une permutation de $n$ objets est un arrangement de ces objets considérés tous en même temps. Dans certains cas, on peut faire un arrangement de $r$ objets choisis parmi $n$, avec ou	sans répétition.
+			\begin{enumerate}
+				\item Permutation sans répétition,\[A_r^n:=\frac{n!}{(n-1)!}\]
+				\item Permutation avec répétition, \[n\cdot n\cdots n=n^r\]
+			\end{enumerate}%
+		\end{remark}%
+	\end{mythm}%
+	\begin{mydef}[Coefficient binomial]\index{Coefficient binomial}\index{Combinaison}
+		Toute disposition de $r$ objets choisis sans répétition dans un ensemble qui en
+		contient $n$ est appelé combinaison de $r$ objets pris parmi $n$. On note le coefficient binomial par
+		\begin{equation}\label{def:coefbinomial}
+			\binom{n}{k}=C_k^n=\frac{n!}{k!(n-k)!}
+		\end{equation}%
+	\end{mydef}%
+	\begin{mythm}
+		$\binom{n}{r}$ est le nombre de combinaisons de $r$ objets pris parmi $n$.
+		\begin{remark}
+			$\binom{n}{r}$ est nombre de façons de choisir $r$ objets sans répétition dans un ensemble qui en	contient $n$. Les cas particuliers,
+			\[\binom{n}{0}=1\quad,\quad\binom{n}{1}=n\quad,\quad\binom{n}{n}=1\quad,\quad\binom{n}{n-1}=n\]
+		\end{remark}%
+	\end{mythm}%
+	\begin{mythm}[Théorème du binôme]\index{Théorème du binôme)}
+		\begin{equation}\label{eq:binome}
+			(x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^ky^{n-k}
+		\end{equation}%
+		Quelques s'identités remarquables
+		\begin{IEEEeqnarray*}{rCl}
+			(x+y)^2&=&x^2+2 x y+y^2\\
+			(x+y)^3&=&3 x^2 y+x^3+3 x y^2+y^3\\
+			(x+y)^4&=&6 x^2 y^2+4 x^3 y+x^4+4 x y^3+y^4\\
+			(x+y)^5&=&10 x^3 y^2+10 x^2 y^3+5 x^4 y+x^5+5 x y^4+y^5\\
+			(x+y)^6&=&15 x^4 y^2+20 x^3 y^3+15 x^2 y^4+6 x^5 y+x^6+6 x y^5+y^6\\
+			(x+y)^7&=&21 x^5 y^2+35 x^4 y^3+35 x^3 y^4+21 x^2 y^5+7 x^6 y+x^7+7 x y^6+y^7\\
+			(x+y)^8&=&28 x^6 y^2+56 x^5 y^3+70 x^4 y^4+56 x^3 y^5+28 x^2 y^6+8 x^7 y+x^8+8 x y^7+y^8\\
+			(x+y)^9&=&36 x^7 y^2+84 x^6 y^3+126 x^5 y^4+126 x^4 y^5+84 x^3 y^6+36 x^2 y^7+9 x^8 y+x^9+9 x y^8+y^9
+		\end{IEEEeqnarray*}%
+	\end{mythm}%
+	\begin{lemma}
+		\begin{equation}\label{id:binomial}
+			\binom{n}{r}=\binom{n-1}{r-1}+\binom{n}{r}
+		\end{equation}%
+	\end{lemma}%
+	\begin{mydef}[Coefficients multinomiaux]\index{Coefficients multinomiaux}
+		Soit $n_1, n_2,\cdots,n_r$ des entiers positifs tels que $\sum_{i=1}^{r}n_i = n$. On définit le coefficients multinomiaux par
+		\begin{equation}\label{def:coefmultinomial}
+			\binom{n}{n_1,n_2,\cdots,n_r}=\frac{n}{n_1!\cdot n_2!\cdot\cdots\cdot n_r!}=\sum_{i=1}^{r}n_i\cdot \left(\prod_{i=1}^{r}(n_i)!\right)^{-1}
+		\end{equation}%
+	\end{mydef}%
+	\begin{mythm}[Formule du multinôme de Newton]
+		\normalfont
+		\begin{IEEEeqnarray}{rCl}
+			(x_1+x_2+\cdots+x_r)^n & = & \sum_{\substack{(n_1,n_2,\cdots,n_r):\\n_1+n_2+\cdots+n_r=n}}%
+											\binom{n}{n_1,n_2,\cdots,n_r}x_1^{n_1} x_2^{n_2}\cdots x_r^{n_r}%
+											\label{eq:multinomial}\\
+			                       & = & \sum_{\substack{(n_1,n_2,\cdots,n_r):\\n_1+n_2+\cdots+n_r=n}}\left\{%
+			                       			\prod_{i=1}^{r}x_i^{n_i}\binom{n}{n_1,n_2,\cdots,n_r}\right\}\nonumber\\
+			                       & = &\sum_{\substack{(n_1,n_2,\cdots,n_r):\\n_1+n_2+\cdots+n_r=n}}\left\{%
+			                       			\prod_{i=1}^{r}x_i^{n_i}\cdot\sum_{i=1}^{r}n_i\cdot%
+			                       				\left(\prod_{i=1}^{r}(n_i)!\right)^{-1}\right\}\nonumber\\
+			                       & = &\sum_{\substack{(n_1,n_2,\cdots,n_r):\\n_1+n_2+\cdots+n_r=n}}\left\{%
+			                       			\sum_{i=1}^{r}n_i\cdot\prod_{i=1}^{r}\frac{x_i^{n_1}}{(n_i)!}\right\}\nonumber
+		\end{IEEEeqnarray}%
+	\end{mythm}%
+	\begin{mythm}
+		Il y a $\binom{n+r-1}{r-1}$ vecteurs $(n_1,n_2,\cdots,n_r)$ à composantes entières et non négatives satisfaisant à la relation $n_1+n_2+\cdots +n_r=n$
+	\end{mythm}%

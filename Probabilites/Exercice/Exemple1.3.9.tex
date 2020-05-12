@@ -1,0 +1,32 @@
+\section*{Exemple 1.3.9}
+M. Jones va disposer 11 livres différents sur un rayon de sa bibliothèque. Cinq d'entre eux sont des livres de mathématiques, quatre de chimie et deux de physique. Les livres traitant du même sujet sont indiscernables.
+\subsection*{Solution}
+\begin{multicols}{2}
+\begin{verbbox}
+livre={{M1,M2,M3,M4,M5},
+	{C1,C2,C3,C4},
+	{P1,P2}};
+Length@Flatten[%]!
+Out[51]= 39916800
+ReplacePart[livre,1->M];
+Flatten[%];
+m=Permutations[%];
+%[[1;;5040;;900]]//TableForm
+Out[188]//TableForm= M	C1	C2	C3	C4	P1	P2
+C1	C2	C4	P1	M	C3	P2
+C2	C4	M	C1	C3	P1	P2
+C3	P1	C2	C4	M	C1	P2
+P1	M	C1	C2	C3	C4	P2
+P2	C1	C3	C4	M	C2	P1
+Length[m]*Length[Permutations[livre[[1]]]]
+Out[189]= 604800
+\end{verbbox}
+	\theverbbox
+	\columnbreak
+	\\
+	Soit $M_a,C_b,P_c$ tels que $a=1,\cdots 5$, $b=1,\cdots,4$ et $c=1,2$. En considérant le groupe de livre de mathématique comme un seul livre (on multiplie ensuite par le nombre de permutations de se groupe de livre, si on désire considérer ces arrangements parmi toutes les permutations des livres tenant compte du groupe), alors par le théorème 1.3.7 il y a ,
+	\begin{equation*}
+	\frac{6!}{1!\cdot 4!\cdot 2!}\cdot 5! = 604\;800\quad (\text{ou $5040$ avec M invariable })
+	\end{equation*}
+	arrangements possibles. Il y a sinon $11!$ arrangement sans tenir compte du groupe de livre de mathématique.
+\end{multicols}
