@@ -1,0 +1,238 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8023,        230]
+NotebookOptionsPosition[      5411,        171]
+NotebookOutlinePosition[      6580,        206]
+CellTagsIndexPosition[      6537,        203]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["TP1", "Title",
+ CellChangeTimes->{{3.798802949703959*^9, 
+  3.798802950799035*^9}},ExpressionUUID->"9cd6827e-9c76-4454-afc3-\
+5f4f9ea4673e"],
+
+Cell[CellGroupData[{
+
+Cell["Question 10", "Section",
+ CellChangeTimes->{{3.7988029563901167`*^9, 
+  3.7988029605773087`*^9}},ExpressionUUID->"7cd55fa4-3825-42e9-9e9a-\
+f6cf0dd1a5fe"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"homme", "=", "6"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"femme", "=", "8"}], ";"}]}], "Code",
+ CellChangeTimes->{{3.798807323162712*^9, 
+  3.798807354554793*^9}},ExpressionUUID->"f5f920a9-db9e-4615-980d-\
+1a2bb859d2e5"],
+
+Cell["a) 2 hommes refusent d\[CloseCurlyQuote]\[EHat]tre ensemble dans le \
+comit\[EAcute] ?", "Text",
+ CellChangeTimes->{{3.7988029636077337`*^9, 3.798802963897786*^9}, {
+  3.798803232669533*^9, 3.798803238323823*^9}, {3.798807316491495*^9, 
+  3.798807318884797*^9}, {3.798820154876774*^9, 
+  3.7988201569179277`*^9}},ExpressionUUID->"a900350a-a177-4ae4-bc6c-\
+661194142180"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"homme", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"femme", "=", "8"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Binomial", "[", 
+   RowBox[{"femme", ",", "3"}], "]"}], "*", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"homme", ",", "3"}], "]"}], "-", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{
+      RowBox[{"homme", "-", "2"}], ",", "1"}], "]"}]}], ")"}]}]}], "Code",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQAWIQXTCVN3eJ7xvHczXni0E0m2dyJYhOYPCsAtEtGcc8
+lgLpRt+rfiC6oSclFERrCURHgmir86vjQHTfqskJIPrOF/M0EH09818OiI6b
+mFcIop+dXF8O1t/v1wyipbYdbwHR82/cnQKiTQ/7TgXRPu4X54HonrRDC0B0
+hYb5KhDd+3bLGhB9LPf5BhA9S697K4i+/Zr7IoiWO7LuGogWdQ+7C6L5fNVe
+gGjFyb/egOhd139+ANE621xElwHpUx+2S4PoH6ZiGiCa39VHB0SXs/bagOgu
+9+XOYPrMGXcQff1cfxCIzrRMjwTRO/7/TgTRAK5UqEQ=
+  "],
+ CellLabel->
+  "In[185]:=",ExpressionUUID->"00a8d184-41f5-435e-b993-0c855c944029"],
+
+Cell[BoxData["896"], "Output",
+ CellChangeTimes->{{3.798806861597164*^9, 3.7988068828553333`*^9}, {
+   3.798807014962702*^9, 3.798807069721511*^9}, 3.79880710800657*^9, {
+   3.798807146615603*^9, 3.798807189054576*^9}, {3.798807248868813*^9, 
+   3.798807312283022*^9}},
+ CellLabel->
+  "Out[187]=",ExpressionUUID->"a1a8a8c7-6d82-41e3-95ff-ae68c50fbc66"]
+}, Open  ]],
+
+Cell["b) 2 femmes refusent d\[CloseCurlyQuote]\[EHat]tre ensemble dans le \
+comit\[EAcute] ?", "Text",
+ CellChangeTimes->{{3.798803415943076*^9, 3.798803427988714*^9}, {
+  3.798820140025531*^9, 
+  3.7988201438264313`*^9}},ExpressionUUID->"6333770a-e278-42df-8e8a-\
+2b3139d8c4c5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Binomial", "[", 
+   RowBox[{"homme", ",", "3"}], "]"}], "*", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"femme", ",", "3"}], "]"}], "-", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{
+      RowBox[{"femme", "-", "2"}], ",", "1"}], "]"}]}], ")"}]}]], "Code",
+ CellChangeTimes->{{3.798803479755238*^9, 3.7988034860455923`*^9}, {
+  3.798807205389941*^9, 
+  3.798807208903514*^9}},ExpressionUUID->"cd1c863a-c21e-47ff-bf9d-\
+379aa46a59e7"],
+
+Cell[BoxData["1000"], "Output",
+ CellChangeTimes->{3.7988034872744417`*^9},
+ CellLabel->"Out[72]=",ExpressionUUID->"243e368c-46ab-4e21-bca6-b7037f37f9e9"]
+}, Open  ]],
+
+Cell["\<\
+c)  1 homme et 1 femme refusent d\[CloseCurlyQuote]\[EHat]tre ensemble dans \
+le comit\[EAcute] ?\
+\>", "Text",
+ CellChangeTimes->{{3.798803493794284*^9, 3.7988035065667477`*^9}, {
+  3.79882012297969*^9, 
+  3.798820136600398*^9}},ExpressionUUID->"7517a0d4-690d-4240-8fcd-\
+5caee567b20d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Binomial", "[", 
+    RowBox[{"homme", ",", "3"}], "]"}], "*", 
+   RowBox[{"Binomial", "[", 
+    RowBox[{"femme", ",", "3"}], "]"}]}], "-", 
+  RowBox[{
+   RowBox[{"Binomial", "[", 
+    RowBox[{
+     RowBox[{"homme", "-", "1"}], ",", "2"}], "]"}], "*", 
+   RowBox[{"Binomial", "[", 
+    RowBox[{
+     RowBox[{"femme", "-", "1"}], ",", "2"}], "]"}]}]}]], "Code",
+ CellChangeTimes->{{3.798803509975985*^9, 3.798803565354711*^9}},
+ CellLabel->"In[73]:=",ExpressionUUID->"b4d75727-ca17-4fde-9eac-18a66154a926"],
+
+Cell[BoxData["910"], "Output",
+ CellChangeTimes->{3.7988035659170322`*^9},
+ CellLabel->"Out[73]=",ExpressionUUID->"09a8dd7c-a738-4e85-9314-ae69ab9b93b2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 11", "Section",
+ CellChangeTimes->{{3.7988038169925756`*^9, 
+  3.79880381860925*^9}},ExpressionUUID->"0cc15cb1-dcc1-46e9-a1ec-\
+7f968e26bb0c"],
+
+Cell["a)", "Text",
+ CellChangeTimes->{{3.798820794456778*^9, 
+  3.7988208027826147`*^9}},ExpressionUUID->"a76fc32a-e186-49f8-b842-\
+bf72e092cdc8"],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.798820257758463*^9, 
+  3.798820258531144*^9}},ExpressionUUID->"7c4c0271-90c7-4def-becf-\
+650063c61641"]
+}, Open  ]]
+}, Open  ]]
+},
+NotebookAutoSave->True,
+WindowSize->{800, 836},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{Automatic, Automatic},
+"PostScriptOutputFile"->"/home/fiftyfour/Documents/Documents/FicheDeNote/\
+Probabilites/Exercice/Travaux_Pratiques/TP1.pdf"},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> FrontEnd`FileName[{
+        ParentDirectory[
+         ParentDirectory[
+          ParentDirectory[
+           ParentDirectory[
+            ParentDirectory[
+             ParentDirectory[]]]]]], "Downloads"}, "latex-style.nb", 
+       CharacterEncoding -> "UTF-8"]]]}, 
+  WindowMargins -> {{525, Automatic}, {62, Automatic}}, Visible -> False, 
+  FrontEndVersion -> "12.0 for Linux x86 (64-bit) (April 8, 2019)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 146, 3, 77, "Title",ExpressionUUID->"9cd6827e-9c76-4454-afc3-5f4f9ea4673e"],
+Cell[CellGroupData[{
+Cell[751, 29, 160, 3, 79, "Section",ExpressionUUID->"7cd55fa4-3825-42e9-9e9a-f6cf0dd1a5fe"],
+Cell[914, 34, 253, 7, 86, "Code",ExpressionUUID->"f5f920a9-db9e-4615-980d-1a2bb859d2e5"],
+Cell[1170, 43, 376, 6, 34, "Text",ExpressionUUID->"a900350a-a177-4ae4-bc6c-661194142180"],
+Cell[CellGroupData[{
+Cell[1571, 53, 941, 24, 111, "Code",ExpressionUUID->"00a8d184-41f5-435e-b993-0c855c944029"],
+Cell[2515, 79, 352, 6, 37, "Output",ExpressionUUID->"a1a8a8c7-6d82-41e3-95ff-ae68c50fbc66"]
+}, Open  ]],
+Cell[2882, 88, 279, 5, 34, "Text",ExpressionUUID->"6333770a-e278-42df-8e8a-2b3139d8c4c5"],
+Cell[CellGroupData[{
+Cell[3186, 97, 496, 14, 60, "Code",ExpressionUUID->"cd1c863a-c21e-47ff-bf9d-379aa46a59e7"],
+Cell[3685, 113, 154, 2, 37, "Output",ExpressionUUID->"243e368c-46ab-4e21-bca6-b7037f37f9e9"]
+}, Open  ]],
+Cell[3854, 118, 297, 7, 34, "Text",ExpressionUUID->"7517a0d4-690d-4240-8fcd-5caee567b20d"],
+Cell[CellGroupData[{
+Cell[4176, 129, 551, 15, 60, "Code",ExpressionUUID->"b4d75727-ca17-4fde-9eac-18a66154a926"],
+Cell[4730, 146, 153, 2, 37, "Output",ExpressionUUID->"09a8dd7c-a738-4e85-9314-ae69ab9b93b2"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4932, 154, 157, 3, 79, "Section",ExpressionUUID->"0cc15cb1-dcc1-46e9-a1ec-7f968e26bb0c"],
+Cell[5092, 159, 146, 3, 34, "Text",ExpressionUUID->"a76fc32a-e186-49f8-b842-bf72e092cdc8"],
+Cell[5241, 164, 142, 3, 34, "Text",ExpressionUUID->"7c4c0271-90c7-4def-becf-650063c61641"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
