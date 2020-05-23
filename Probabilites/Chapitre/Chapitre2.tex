@@ -11,17 +11,28 @@
 		\begin{remark}~
 			\begin{enumerate}
 				\item L'événement $\{a\}$ contenant un seul élément de $S$ est appelé événement élémentaire.\index{Événement élémentaire}
-				\item L'ensemble vide noté $\O$ et $S$ sont des événements. Le premier est appelé événement impossible, alors que le deuxième est appelé événement certain.
+				\item L'ensemble vide noté $\emptyset$ et $S$ sont des événements. Le premier est appelé événement impossible, alors que le deuxième est appelé événement certain.
 				\index{Événement impossible}\index{Événement certain}
 			\end{enumerate}%
 		\end{remark}%
 	\end{mydef}%
 	\begin{mydef}
-		Si un résultat de l'expérience est contenu dans $E$, on dit que $E$ est réalisé.
+		Si un résultat de l'expérience est contenu dans $E$, on dit que $E$ est \textbf{réalisé}.
 	\end{mydef}%
 	\begin{mydef}
 		Soit $E$ et $F$ des événements d'un ensemble fondamental $S$.
-		\begin{enumerate}
-			\item $E\cup F$ dit l'union de $E$ et $F$, est l'événement qui est réalisé si 
-		\end{enumerate}
+		\begin{enumerate}\index{Opérations sur les ensembles}
+			\item $E\cup F$ dit l'\textbf{union} de $E$ et $F$, est l'événement qui est réalisé si $E$ \underline{ou} $F$ est réalisé.
+			\item $E \cap F$, appelé l'\textbf{intersection} de $E$ et $F$, est l'événement qui est réalisé si $E$ \underline{et} $F$ sont tous les deux réalisés.
+			\item $E^c$ appelé le \textbf{complémentaire} de $E$ dans $S$, est l'événement qui est réalisé si $E$ n'est pas réalisé.
+		\end{enumerate}%
 	\end{mydef}%
+	\begin{mydef}[\'Evénement mutuellement exclusifs]\index{\'Evénement mutuellement exclusifs}
+		Si $E\cap F = \emptyset$, $E$ et $F$ sont dits mutuellement exclusifs (ou disjoints ou incompatibles).
+	\end{mydef}%
+	\begin{mythm}
+		\begin{IEEEeqnarray*}{rCl}
+			P(E_1\cup E_2\cup\cdots\cup E_n)=P\left(\bigcup_{i=1}^{n}E_i\right)=
+		\end{IEEEeqnarray*}
+	\end{mythm}
+	
