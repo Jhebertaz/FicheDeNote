@@ -1,0 +1,184 @@
+\documentclass{article}
+\usepackage[french]{babel}
+\input{../preambule}
+\usepackage{pdflscape}
+\usepackage{array}
+\newtheorem*{mydef}{Définition}
+\cfoot{Probabilités}
+\rhead{}
+\lhead{}
+\chead{Julien Hébert-Doutreloux}
+\everymath{\displaystyle}
+\setlength{\tabcolsep}{2pt}
+\newtheorem*{thm}{Théorème}
+\newtheorem*{prop}{Propriété(s)}
+\newtheorem*{remark}{Remarque}
+\renewcommand{\arraystretch}{2.25}
+\renewcommand{\emptyset}{\O}
+\newcolumntype{C}{>{$}c<{$}}
+%\usepackage{showframe}
+\begin{document}
+		\section*{Densité marginale}
+%	\section*{Variables aléatoires simultanées}
+%	\begin{mydef}
+%		On définit une fonction \(F\) de répartition simultanée, ou conjointe, pour toute paire de variables aléatoire \(X\) et \(Y\).
+%		\[F(a,b)=P\{X\leq a, Y\leq b\}\quad -\infty<a,b<\infty\]
+%	\end{mydef}
+	\begin{mydef}[Densités marginales] Si \(f(x, y)\) est continue, les densités marginales de \(X\) et \(Y\) sont données par:
+		\[f_X(x)=\int_{-\infty}^{\infty}f(x,y)\,dy\quad\text{et}\quad f_Y(y)=\int_{-\infty}^{\infty}f(x,y)\,dx\]
+	\end{mydef}
+	\begin{mydef}[Fonction de répartition marginale]
+		La fonction de répartition marginale est déduite de la fonction de répartition conjointe de \(X\) et \(Y\) comme suit\\
+		\begin{tabular}{cc}
+				\begin{minipage}{.5\textwidth}
+					\begin{eqnarray*}
+						F_X(a)&=&P\{X\leq a\}=\{X\leq a,Y<\infty\}\\
+						&=&\lim_{b\to\infty}F(a,b)=F(a,\infty)
+					\end{eqnarray*}
+				\end{minipage}&
+			\begin{minipage}{.5\textwidth}
+				\begin{eqnarray*}
+					F_Y(a)&=&P\{Y\leq b\}=\{X<\infty,Y\leq b\}\\
+					&=&\lim_{a\to\infty}F(a,b)=F(\infty,b)
+				\end{eqnarray*}
+			\end{minipage}
+		\end{tabular}
+	\begin{align*}
+		P\{a_1<X\leq a_2,b_1<Y\leq b_2\}&=F(a_2,b_2)+F(a_1,b_1)-F(a_1,b_2)-F(a_2,b_1)\\
+		P\{X>a,Y>b\}&=1-F_X(a)-F_Y(b)+F(a,b)
+	\end{align*}
+	\end{mydef}
+%	\begin{mydef}[Loi discrète conjointe]
+%		Si \(X\) et \(Y\) sont des variables aléatoires discrètes, on définit la loi de probabilité simultanée ou conjointe de \(X\) et \(Y\) par :
+%		\[p(x,y)=P\{X=x,Y=y\}\]
+%		\begin{prop}~
+%			\begin{enumerate}
+%				\item \(p(x,y)\geq 0\)
+%				\item \(\sum_{\substack{(x,y):\\p(x,y)>0}}=1\)
+%			\end{enumerate}
+%		\end{prop}
+%		\begin{remark}
+%			Si \(p(x, y)\) est connue, on trouve la loi de probabilité marginale de \(X\) comme suit :\\
+%			\begin{tabular}{cc}
+%				\begin{minipage}{.5\textwidth}
+%				\[p_X(x)=P\{X=x\}=\sum_{y:p(x,y)>0}p(x,y)\]
+%				\end{minipage}&
+%				\begin{minipage}{.5\textwidth}
+%					\[p_Y(y)=P\{Y=y\}=\sum_{x:p(x,y)>0}p(x,y)\]
+%				\end{minipage}
+%			\end{tabular}
+%		\end{remark}	
+%	\end{mydef}
+%	\begin{mydef}[Densité conjointe]
+%		Les variables aléatoires \(X\) et \(Y\) sont dites conjointement continues s'il existe une fonction \(f\) non négative sur \(\mathbb{R}^2\) telle que pour tout \(C \subset \mathbb{R}^2\)
+%		\[P\big\{(X,Y)\in C\big\}=\iint_{(x,y)\in C}f(x,y)\,dx\,dy\]
+%		\begin{prop}~
+%			\begin{enumerate}
+%				\item \(f(x,y)\geq 0\)
+%				\item \(\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x,y)\,dx\,dy=1\)
+%			\end{enumerate}
+%		\end{prop}
+%	\end{mydef}
+%	\section*{Densité marginale}
+	\noindent Soit \(f(x)=f_{X_{(1)},X_{(2)},\ldots,X_{(n)}}\) la fonction de densité conjointe de \(X_{(1)},X_{(2)},\ldots,X_{(n)}\), alors la densité marginale de \(X_{(j)}\) est:
+	\begin{eqnarray*}
+		f_{X_{(j)}}(x)&=&\underbrace{\int_{-\infty}^{\infty}\cdots\int_{-\infty}^{\infty}}_{(n-1) fois} \underset{X_{(1)},X_{(2)},\ldots,X_{(j-1)},X_{(j+1)},\ldots,X_{(n)}}{f(x_1,x_2,\ldots,x_{j-1},x_{j+1},\ldots,x_n)}\,dx_1\,dx_2\cdots dx_{j-1}\,dx_{j+1}\cdots dx_n\\
+		&\overset{ou}{=}&\binom{n}{j-1,n-j,1}\Big(\big(F(x)\big)^{j-1}\big(1-F(x)\big)^{n-j}f(x)\Big)
+	\end{eqnarray*}
+	\section*{Changement de variables multidimensionnelles}
+		Soient des variables aléatoires conjointement continues de densité, on considère la transformation :
+	\begin{eqnarray*}
+		g:\mathbb{R}^n &\longrightarrow& \mathbb{R}^n\\
+		(X_1,X_2,\ldots,X_n)&\longmapsto&(Y_1,Y_2,\ldots,Y_n)\text{ avec }\quad
+		\begin{aligned}
+		Y_1&=g_1(X_1,X_2,\ldots,X_n)\\
+		Y_2&=g_2(X_1,X_2,\ldots,X_n)\\
+		\vdots&\\
+		Y_n&=g_n(X_1,X_2,\ldots,X_n)\\
+		\end{aligned}
+	\end{eqnarray*}
+	\begin{enumerate}
+		\item En supposant que la transformation est un bijective, alors l'on résout par rapport à \(x_1,x_2,\ldots,x_n\) le système d'équation:
+		\begin{equation*}
+		\begin{cases}
+		y_1=g_1(x_1,x_2,\ldots,x_n)\\
+		y_2=g_2(x_1,x_2,\ldots,x_n)\\
+		\vdots\\
+		y_n=g_n(x_1,x_2,\ldots,x_n)\\
+		\end{cases}\underset{\text{les solutions}}{\implies}
+		\begin{cases}
+		x_1=h_1(y_1,y_2,\ldots,y_n)\\
+		x_2=h_2(y_1,y_2,\ldots,y_n)\\
+		\vdots\\
+		x_n=h_n(y_1,y_2,\ldots,y_n)\\
+		\end{cases}
+		\end{equation*}
+		\item Les fonctions \(g_1,g_2,\ldots,g_n\) sont continument dérivables et de jacobien partout non nul :
+		\begin{equation*}
+		J(x_1,x_2,\ldots,x_n)=\det\Bigg(\bigg(\frac{\partial g_i(x_1,x_2,\ldots,x_n)}{\partial x_j}\bigg)_{1\leq i,j\leq n}\Bigg)\neq 0
+		\end{equation*}
+	\end{enumerate}
+	Sous ces conditions, les variables \(Y_1,Y_2,\ldots,Y_n\) sont conjointement continues et de densité :
+	\begin{equation*}
+		\underset{Y_{1},Y_{2},\ldots,Y_{n}}{f(y_1,y_2,\ldots,y_n)}=\underset{X_{1},X_{2},\ldots,X_{n}}{f(x_1,x_2,\ldots,x_n)}\big|J(x_1,x_2,\ldots,x_n)\big|^{-1}
+	\end{equation*}
+	\newpage
+	\begin{landscape}
+		\hfill\vfill
+		\begin{center}
+			\begin{tabular}{|lll|}
+				\hline
+				\multicolumn{1}{||c}{}																					&	\multicolumn{1}{l}{\Large\bf Discret}						&	\multicolumn{1}{l||}{\Large\bf Continu}	\\ \hline\hline
+				Densité conjointe																			&	$p(x,y)=P\{X=x,Y=y\}$										&	$P\big\{(X,Y)\in C\big\}=\underset{(x,y)\in C}{\iint}f(x,y)\,dx\,dy$	\\
+				Fonction de répartion conjointe																			&	$F(a,b)=\sum_{\substack{x\leq a\\ y\leq b}}p(x,y)$			&	$F(a,b)=\int_{-\infty}^{a}\int_{-\infty}^{b}f(x,y)\, dy \,dx$	\\
+				Densités marginales																		&	$p_X(x)=P\{X=x\}=\sum_{y:p(x,y)>0}p(x,y)$					&	$f_X(x)=\int_{-\infty}^{\infty}f(x,y)dy$	\\
+				\begin{minipage}{0.3\textwidth}Distribution conjointe de\\ plusieurs variables aléatoires\end{minipage}	&	\begin{minipage}{0.5\textwidth}\begin{multline*} p(n_1,n_2,\ldots,n_r)=\\P(X_1=n_1,X_2=n_2,\ldots,X_r=n_r)\end{multline*}\end{minipage}	&	\begin{minipage}{0.5\textwidth}\begin{multline*} P\big\{(X_1,X_2,\ldots,X_n)\in C\big\}= \\ \underset{(x_1,x_2,\ldots,x_n)\in C}{\int\int\cdots\int} f(x_1,x_2,\ldots,x_n)\,dx_1\, dx_2\cdots\,dx_n \end{multline*}\end{minipage}	\\
+				\begin{minipage}{0.3\textwidth}Somme de variables \\aléatoires indépendantes\end{minipage}				&	$p_{X+Y}(n)=\sum_{k=0}^{n}p_X(n-k)p_Y(k):=p_X*p_Y(n)$		&	$\begin{cases}F_{X+Y}(a)=P\{X+Y\leq a\}=\int_{-\infty}^{\infty}F_X(a-y)f_Y(y)\,dy\\ f_{X+Y}(a)=\int_{-\infty}^{\infty}f_X(a-y)f_Y(y)\,dy:=f_X*f_Y(a)\end{cases}$	\\
+				Distributions conditionnelles																			&	$\begin{cases}p_{X|Y}(x,y)=P\{X=x|Y=y\}=\frac{p(x,y)}{p_Y(y)}\\ F_{X|Y}(x,y)=P\{X\leq x|Y=y\}=\sum_{a\leq x}P_{X|Y}(a,y)\end{cases}$	&	$f_{X|Y}(x,y)=\frac{f(x,y)}{f_Y(y)}$		\\
+				Convolution&$P_{X+Y}(n)=\sum_{k=0}^{n}p_X(n-k)p_Y(k)=p_X*p_Y(n)$&$f_{X+Y}(a)=\int_{-\infty}^{\infty}f_X(a-y)f_Y(y)\,dy=f_X*f_Y(a)$\\ \hline
+			\end{tabular}
+		\end{center}
+		\hfill\vfill
+	\end{landscape}
+\newpage
+	\begin{center}
+		\begin{tabular}{|llccl|}
+			\hline
+			\multicolumn{5}{||c||}{\Large Variable Aléatoire Discrète et Continue}                                                                                                         \\ \hline\hline
+			\bf \large Nom                & \bf\large Formule                                           & \begin{minipage}{75pt}\begin{center}\bf\large Espérance\\ (Moyenne)\end{center}
+			\end{minipage} &    \bf\large Variance    & \bf\large Notation  \\\hline
+			Bernoulli                     & $\begin{cases}P(X=1)=p\\P(X=0)=1-p\end{cases}$                &         $p$         &         $p(1-p)$         &                     \\
+			Binomiale					  & $P\{X=i\}=\binom{n}{i}p^i(1-p)^{n-i}$                         &        $np$         &        $np(1-p)$         & $X\sim B(n,p)$      \\
+			Binomiale négative            & $P\{X=n\}=\binom{n-1}{r-1}p^r(1-p)^{n-r}$                     &    $\frac{r}{p}$    &   $\frac{r(1-p)}{p^2}$   & $X\sim Bn(r,p)$     \\
+			Poisson\footnotemark          & $P\{X=i\}=e^{-\lambda}\frac{\lambda^i}{i!}$                   &      $\lambda$      &        $\lambda$         & $X\sim Po(\lambda)$ \\
+			Géométrique                   & $P\{X=n\}=(1-p)^{n-1}p$                                       &    $\frac{1}{p}$    &    $\frac{1-p}{p^2}$     & $X\sim Geom(p)$     \\
+			Hypergéométrique\footnotemark & $P\{X=i\}=\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}} $ &        $np$         & $np(1-p)\frac{N-n}{N-1}$ & $X\sim Hpg(n,N,m)$  \\
+			Uniforme								& $P\{a\leq X\leq b\}=\frac{b-a}{\beta-\alpha}$                                                                                      & $\frac{\beta+\alpha}{2}$ & $\frac{(\beta-\alpha)^2}{12}$ & $X\sim Unif(\alpha,\beta)$ \\
+			Normale\footnotemark  & $P\{X\leq a\}=P\bigg\{\frac{X-\mu}{\sigma}\leq\frac{a-\mu}{\sigma}\bigg\}$ &          $\mu$           &          $\sigma^2$           & $X\sim N(\mu,\sigma^2)$    \\
+			Exponentielle\footnotemark         & $P\{X\leq a\}=1-e^{-\lambda a}$                                                                                &   $\frac{1}{\lambda}$    &     $\frac{1}{\lambda^2}$     & $X\sim Exp(\lambda)$       \\
+			Gamma\footnotemark    & $P\{T_n\leq t\}=\sum _{j=n}^\infty \frac{e^{-\lambda t}(\lambda t)^j}{j!}$                                    &   $\frac{s}{\lambda}$    &     $\frac{s}{\lambda^2}$     & $T_n\sim Gam(n,p)$         \\ \hline
+		\end{tabular}
+		\begin{tabular}{|ll|}
+			\hline
+			\multicolumn{2}{||c||}{\Large Fonction de densité}\\ \hline\hline
+			\bf \large Nom& \bf\large Formule  \\ \hline
+			Exponentielle & \(f(x)=\begin{cases}\lambda e^{-\lambda x}&,x\geq0\\0&,x<0\end{cases}\)                                   \\
+			Gamma         & \(f(x)=\begin{cases}\frac{\lambda e^{-\lambda x}(\lambda x)^{s-1}}{\Gamma(x)}&,x\geq0\\0&,x<0\end{cases}\) \\
+			Uniforme      & \(f(x)=\begin{cases}\frac{1}{\beta-\alpha}&,\alpha<x<\beta\\0&sinon\end{cases}\)                                               \\
+			Normale       & \(f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-(x-\mu)^2/2\sigma^2}\quad, x\in\mathbb{R}\)\\\hline
+		\end{tabular}
+			\hfill\vfill
+			\setcounter{footnote}{3}
+			\footnotetext{Approximation poissonnienne de lois binomiales: Si $n$ est grand et si $p$ est petit, alors $B(n,p)\approx Po(\lambda)$\\Processus de Poisson (3 conditions): $P\Big(N(t)=k\Big)=\binom{n}{k}\Big(\frac{\lambda t}{n}\Big)^k\Big(1-\frac{\lambda t}{n}\Big)^{n-k}\approx e^{-\lambda t}\frac{(\lambda t)^k}{k!},\quad N(t)=\lambda t$}
+		
+			\addtocounter{footnote}{1}
+			\footnotetext{$n$ : sous-ensemble de la population, $N$ : population, $m$ : ensemble ayant une caractéristique (indistinguable entre eux)}
+			\addtocounter{footnote}{1}
+			\footnotetext{Variable normale centrée réduite}
+			\addtocounter{footnote}{1}
+			\footnotetext{Taux de panne : \(\lambda(t)=\frac{f(t)}{(1-F(t))}\) tel que \(F(t)=1-\exp\Bigg(-\int_{0}^{t}\lambda(t)\,dt\Bigg)\)}
+			\addtocounter{footnote}{1}
+			\footnotetext{Fonction Gamma : \(\Gamma(s)=\int_{0}^{\infty}e^{-y}y^{s-1}\,dy\) tel que \(\forall n\in\mathbb{N},\Gamma(n)=(n-1)!\)\\
+			Si \(s = n\) entier, la loi gamma de paramètres \((n, \lambda)\) décrit le temps d'attente avant la n-ième apparition du phénomène. Notons \(T_n\) l'heure à laquelle le n-ième événement se produit et \(N(t)\) le nombre d'événements dans l'intervalle \([0, t]\)}
+	\end{center}
+\end{document}

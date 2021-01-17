@@ -1,38 +1,47 @@
-%prop:
+%prop: proposition
 %def : definition
 %eq  : equation
 %id	 : identity
-\section[Chapitre 2]{Axiomes de probabilités}
-	\begin{mydef}[Ensemble fondamental]\index{Ensemble fondamental}
-		L'ensemble des résultats possibles d'une expérience est appelé ensemble fondamental et est noté $S$.
-	\end{mydef}%
-	\begin{mydef}[Événement]\index{Événement}
-		Tout sous-ensemble $E$ de $S$ est appelé événement.
-		\begin{remark}~
-			\begin{enumerate}
-				\item L'événement $\{a\}$ contenant un seul élément de $S$ est appelé événement élémentaire.\index{Événement élémentaire}
-				\item L'ensemble vide noté $\emptyset$ et $S$ sont des événements. Le premier est appelé événement impossible, alors que le deuxième est appelé événement certain.
-				\index{Événement impossible}\index{Événement certain}
-			\end{enumerate}%
-		\end{remark}%
-	\end{mydef}%
-	\begin{mydef}
-		Si un résultat de l'expérience est contenu dans $E$, on dit que $E$ est \textbf{réalisé}.
-	\end{mydef}%
-	\begin{mydef}
-		Soit $E$ et $F$ des événements d'un ensemble fondamental $S$.
-		\begin{enumerate}\index{Opérations sur les ensembles}
-			\item $E\cup F$ dit l'\textbf{union} de $E$ et $F$, est l'événement qui est réalisé si $E$ \underline{ou} $F$ est réalisé.
-			\item $E \cap F$, appelé l'\textbf{intersection} de $E$ et $F$, est l'événement qui est réalisé si $E$ \underline{et} $F$ sont tous les deux réalisés.
-			\item $E^c$ appelé le \textbf{complémentaire} de $E$ dans $S$, est l'événement qui est réalisé si $E$ n'est pas réalisé.
-		\end{enumerate}%
-	\end{mydef}%
-	\begin{mydef}[\'Evénement mutuellement exclusifs]\index{\'Evénement mutuellement exclusifs}
-		Si $E\cap F = \emptyset$, $E$ et $F$ sont dits mutuellement exclusifs (ou disjoints ou incompatibles).
-	\end{mydef}%
-	\begin{mythm}
-		\begin{IEEEeqnarray*}{rCl}
-			P(E_1\cup E_2\cup\cdots\cup E_n)=P\left(\bigcup_{i=1}^{n}E_i\right)=
-		\end{IEEEeqnarray*}
-	\end{mythm}
-	
+%\section[Chapitre 2]{Axiomes de probabilités}
+%	\begin{mydef}[Ensemble fondamental]\index{Ensemble fondamental}
+%		L'ensemble des résultats possibles d'une expérience est appelé ensemble fondamental et est noté $S$.
+%	\end{mydef}%
+%	\begin{mydef}[Événement]\index{Événement}
+%		Tout sous-ensemble $E$ de $S$ est appelé événement.
+%		\begin{remark}~
+%			\begin{enumerate}
+%				\item L'événement $\{a\}$ contenant un seul élément de $S$ est appelé événement élémentaire.\index{Événement élémentaire}
+%				\item L'ensemble vide noté $\O$ et $S$ sont des événements. Le premier est appelé événement impossible, alors que le deuxième est appelé événement certain.
+%				\index{Événement impossible}\index{Événement certain}
+%			\end{enumerate}%
+%		\end{remark}%
+%	\end{mydef}%
+%	\begin{mydef}
+%		Si un résultat de l'expérience est contenu dans $E$, on dit que $E$ est réalisé.
+%	\end{mydef}%
+%	\begin{mydef}
+%		Soit $E$ et $F$ des événements d'un ensemble fondamental $S$.
+%		\begin{enumerate}
+%			\item $E\cup F$ dit l'union de $E$ et $F$, est l'événement qui est réalisé si 
+%		\end{enumerate}
+%	\end{mydef}%
+\section[Chapitre 2-3]{Théorème de probabilité et probabilités conditionnelles}
+\begin{enumerate}
+	\item Si $\emptyset$ est l'ensemble vide, alors $P(\emptyset)=0$
+	\item Si $S$ est l'espace échantillonnal, alors $P(S)=1$
+	\item Si $E$ et $F$ sont deux événements, alors
+	\[P(E\cup F) = P(E) + P(F) - P(E\cap F)\]
+	\item Si $E$ et $F$ sont des événements mutuellement exclusifs, alors
+	\[P(E\cup F) = P(E) + P(F)\]
+	\item Si $E$ et $E^c$ sont des événements complémentaires, alors
+	\[P(E) = 1 - P(E^c)\]
+	\item La probabilité conditionnelle de l'événement $E$ sachant l'événement $F$ dénoté par $P(E|F)$ et est définie par
+	\[P(E|F)=\frac{P(E\cap F)}{P(F)}\]
+	\item Deux événements $E$ et $F$ sont dits indépendant si et seulement si
+	\[P(E\cap F)=P(E)\cdot P(F)\]
+	$E$ est dit statistiquement indépendant de $F$ si $P(E|F)=P(E)$ et $P(F|E)=P(F)$
+	\item Les événements $E_1,E_2,...,E_n$ sont appelés mutuellement indépendant pour toute combinaison si et seulement si chaque combinaison de ces événements pris à un nombre quelconque à la fois est indépendante.
+	\item (Théorème de Bayes) Si $E_1,E_2,...,E_n$ sont $n$ événements mutuellement exclusifs où leur union est l'espace échantillonnal $S$, et $E$ est un événement arbitraire de $S$ tel que $P(E)\neq 0$, alors
+	\[P(E_k|E)=\frac{P(E|E_k)\cdot P(E_k)}{\sum_{j=1}^{n}P(E|E_j)\cdot P(E_j)}\]
+	\item Si $E$ et $F$ sont des événements indépendants, alors $E$ et $F^c$ le sont aussi	
+\end{enumerate}

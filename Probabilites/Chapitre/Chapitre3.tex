@@ -1,0 +1,43 @@
+%\section[Chapitre 3]{Probabilités conditionnelles}
+	\begin{mydef}[Probabilité conditionnelle]\index{Probabilité conditionnelle}
+		Si $P(A)>0$, alors la \textbf{probabilité conditionnelle} de $B$ est :
+		\begin{gather}
+			P(B|A)=\frac{P(B\cap A)}{P(A)}\label{eq:prodcond1}\\ \Longleftrightarrow\nonumber\\ P(B\cap A) =P(A)\cdot P(B|A)\label{eq:prodcond2} 
+		\end{gather}%
+		\begin{remark}[Généralisation de \ref{eq:prodcond2}]\index{Règle de multiplication} La règle de multiplication est:
+			\begin{equation}
+			 P\bigg(\bigcap_{i=1}^n A_i\bigg)= P(A_1)\cdot P(A_2|A_1)\cdot\prod_{i=2}^{n-1}P\bigg(A_{i+1}\Big\lvert\bigcap_{j=1}^{i}A_j\bigg)
+			\end{equation}%
+		\end{remark}%
+	\end{mydef}%
+	\begin{mydef}[Formule des probabilités totales]\index{Formule des probabilités totales}
+		Soient $A$ et $B$ deux événements. avec $(A\cap B)\cap(A\cap B^c)=\emptyset$
+		\begin{equation}\label{eq:probtot}
+			A=(A\cap B)\cup(A\cap B^c)
+		\end{equation}
+		Par la règle de multiplication
+		\begin{equation}
+			(A)=P(A|B)\cdot P(B) + P(A|B^c)\cdot P(B^c)
+		\end{equation}
+	\end{mydef}
+	\begin{mydef}[Formule de Bayes]\index{Formule de Bayes}
+		\begin{equation}\label{eq:bayes}
+			P(B|A)=\frac{P(A|B)\cdot P(B)}{P(A)}=\frac{P(A\cap B)}{P(A)}=\frac{P(A|B)}{P(A|B)\cdot P(B) + P(A|B^c)\cdot P(B^c)}
+		\end{equation}%
+	\end{mydef}%
+	\begin{mydef}[Partition]\index{Partition}
+		Soit $S$ un ensemble donné. Si pour un certain $k>0, S_1, S_2,\cdots, S_k$ sont des sous-ensembles \textbf{disjoints} non vides de $S$ tels que :
+		\[\bigcup_{i=1}^k~S_i = S\]
+		alors l'ensemble ${S_1,S_2,\cdots, S_k}$ est une partition de $S$.
+	\end{mydef}
+	\begin{mythm}[Formule de Bayes généralisée]
+		\begin{equation}\label{eq:bayesgen}
+			P(B_j|A)=\frac{P(A|B_j)\cdot P(B_j)}{\sum_{i=1}^{n} P(A|B_i)\cdot P(B_i)}
+		\end{equation}%
+	\end{mythm}%
+	Quelques identités
+	\begin{enumerate}
+		\item \(P(A^c \cap B^c) = P(A\cup B)^c\)
+		\item \(P(B^c|A)= 1-P(B|A)\)
+		\item \(P(B|A^c)= 1-P(B^c|A^c)\)
+	\end{enumerate}

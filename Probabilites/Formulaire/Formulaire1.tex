@@ -1,0 +1,59 @@
+\documentclass{article}
+\input{../preambule}
+\usepackage{array}
+\cfoot{Probabilités}
+\rhead{}
+\lhead{}
+\chead{Julien Hébert-Doutreloux}
+\everymath{\displaystyle}
+\renewcommand{\arraystretch}{2}
+\renewcommand{\emptyset}{\O}
+\newtheorem*{mythm}{Théorème}
+\begin{document}
+	\centering
+	\begin{tabular}{|@{$~\triangleright~$}l||>{$}c<{$}|}
+		\hline
+		Probabilité conditionnelle       &                                                  P(A|B)=\frac{P(A\cap B)}{P(B)}                                                  \\
+		Règle de multiplication          & P\bigg(\bigcap_{i=1}^n A_i\bigg)= P(A_1)\cdot P(A_2|A_1)\cdot\prod_{i=2}^{n-1}P\bigg(A_{i+1}\Big\lvert\bigcap_{j=1}^{i}A_j\bigg) \\
+		Formule des probabilités totales &                                                P(A) = P(A|B)P(B) + P(A|B^c)P(B^c)                                                \\
+		Formule de Bayes généralisée     &                P(B_i|A)=\frac{P(A\cap B_i)}{P(A)}=\frac{P(A|B_j)\cdot P(B_j)}{\sum_{i=1}^{n}P(A|B_i)\cdot P(B_i)}                \\
+		Inclusion/Exclusion              &        P\Bigg(\bigcup_{k=1}^N X_k\Bigg)=\sum_{n=1}^N (-1)^{n-1} \sum_{i_1<\cdots<i_n} P\Bigg(\bigcap_{j=1}^n X_{i_j}\Bigg)         \\ \hline
+	\end{tabular}
+\section*{Théorème de probabilité}
+	\begin{enumerate}
+		\item Si $\emptyset$ est l'ensemble vide, alors $P(\emptyset)=0$
+		\item Si $S$ est l'espace échantillonnal, alors $P(S)=1$
+		\item Si $E$ et $F$ sont deux événements, alors
+		\[P(E\cup F) = P(E) + P(F) - P(E\cap F)\]
+		\item Si $E$ et $F$ sont des événements mutuellement exclusifs, alors
+		\[P(E\cup F) = P(E) + P(F)\]
+		\item Si $E$ et $E^c$ sont des événements complémentaires, alors
+		\[P(E) = 1 - P(E^c)\]
+		\item La probabilité conditionnelle de l'événement $E$ sachant l'événement $F$ dénoté par $P(E|F)$ et est définie par
+		\[P(E|F)=\frac{P(E\cap F)}{P(F)}\]
+		\item Deux événements $E$ et $F$ sont dits indépendant si et seulement si
+		\[P(E\cap F)=P(E)\cdot P(F)\]
+		$E$ est dit statistiquement indépendant de $F$ si $P(E|F)=P(E)$ et $P(F|E)=P(F)$
+		\item Les événements $E_1,E_2,...,E_n$ sont appelés mutuellement indépendant pour toute combinaison si et seulement si chaque combinaison de ces événements pris à un nombre quelconque à la fois est indépendante.
+		\item Les événements $E_1,E_2,...,E_n$ sont totalement indépendant si pour tout sous-ensemble \(\{E_{i_1},E_{i_2},...,E_{i_r}\}, r\leq n\)
+		\[P\Bigg(\bigcap_{j=1}^r E_{i_j}\Bigg)=\prod_{j=1}^{r}P(E_{i_j})\]
+		\item (Théorème de Bayes) Si $E_1,E_2,...,E_n$ sont $n$ événements mutuellement exclusifs où leur union est l'espace échantillonnal $S$, et $E$ est un événement arbitraire de $S$ tel que $P(E)\neq 0$, alors
+		\[P(E_k|E)=\frac{P(E|E_k)\cdot P(E_k)}{\sum_{j=1}^{n}P(E|E_j)\cdot P(E_j)}\]
+		\item Si $E$ et $F$ sont des événements indépendants, alors $E$ et $F^c$ le sont aussi (\textit{idem} pour $E^c$ et $F$ et $E$ et $F$)
+		\item Les $A,B,C$ trois  événements (avec $P(C)>0$), $A$ et $B$ sont indépendant conditionnellement à $C$ si \[P(A\cap B|C)=P(A|C)P(B|C)\]
+		\item Quelques identités
+		\begin{enumerate}
+			\item \(P(A^c \cap B^c) = P(A\cup B)^c\)
+			\item \(P(B^c|A)= 1-P(B|A)\)
+			\item \(P(B|A^c)= 1-P(B^c|A^c)\)
+		\end{enumerate}
+	\end{enumerate}
+\begin{tabular}{|cc|}
+	\hline
+	\multicolumn{2}{||c||}{\Large Tirage}                           \\ \hline\hline
+	     \Large Nom       &                 Méthode                 \\ \hline
+	     simultanée       &      Combinaison \(\binom{n}{r}\)       \\
+	Successif sans remise & Arrangement \(A_r^n=\frac{n!}{(n-r)!}\) \\
+	Successif avec remise &      Arrangement et/ou combinaison      \\ \hline
+\end{tabular}
+\end{document}

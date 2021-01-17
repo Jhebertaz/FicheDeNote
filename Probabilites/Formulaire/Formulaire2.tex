@@ -1,0 +1,142 @@
+\documentclass{article}
+\input{../preambule}
+\newtheorem*{mydef}{Définition}
+\usepackage{array}
+\cfoot{Probabilités}
+\rhead{}
+\lhead{}
+\chead{Julien Hébert-Doutreloux}
+\everymath{\displaystyle}
+\setlength{\tabcolsep}{2pt}
+\newtheorem*{thm}{Théorème}
+\renewcommand{\arraystretch}{2.25}
+\renewcommand{\emptyset}{\O}
+\newcolumntype{C}{>{$}c<{$}}
+\begin{document}
+	\begin{center}
+		\begin{tabular}{|llccl|}
+			\hline
+			\multicolumn{5}{||c||}{\Large Variable Aléatoire Discrète}                                                                                                         \\ \hline\hline
+			\bf \large Nom                & \bf\large Formule                                           & \bf\large Espérance &    \bf\large Variance    & \bf\large Notation  \\ \hline
+			Bernoulli                     & $\begin{cases}P(X=1)=p\\P(X=0)=1-p\end{cases}$              &         $p$         &         $p(1-p)$         &                     \\
+			Binomiale\footnotemark        & $P(X=i)=\binom{n}{i}p^i(1-p)^{n-i}$                         &        $np$         &        $np(1-p)$         & $X\sim B(n,p)$      \\
+			Binomiale négative            & $P(X=n)=\binom{n-1}{r-1}p^r(1-p)^{n-r}$                     &    $\frac{r}{p}$    &   $\frac{r(1-p)}{p^2}$   & $X\sim Bn(r,p)$     \\
+			Poisson\footnotemark          & $P(X=i)=e^{-\lambda}\frac{\lambda^i}{i!}$                   &      $\lambda$      &        $\lambda$         & $X\sim Po(\lambda)$ \\
+			Géométrique                   & $P(X=n)=(1-p)^{n-1}p$                                       &    $\frac{1}{p}$    &    $\frac{1-p}{p^2}$     & $X\sim Geom(p)$     \\
+			Hypergéométrique\footnotemark & $P(X=i)=\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}} $ &        $np$         & $np(1-p)\frac{N-n}{N-1}$ & $X\sim Hpg(n,N,m)$  \\\hline
+		\end{tabular}
+	\end{center}
+	%\addtocounter{footnote}{-2}
+	\setcounter{footnote}{1}
+	\footnotetext{\(\sum_{i=0}^n \binom{n}{i}p^i(1-p)^{n-i}=1\)}
+	\addtocounter{footnote}{1}
+	\footnotetext{Approximation poissonnienne de lois binomiales : Si $n$ est grand et si $p$ est petit, alors $B(n,p)\approx Po(\lambda)$}
+	\footnotetext{Processus de Poisson (3 conditions): $P\Big(N(t)=k\Big)=\binom{n}{k}\Big(\frac{\lambda t}{n}\Big)^k\Big(1-\frac{\lambda t}{n}\Big)^{n-k}\approx e^{-\lambda t}\frac{(\lambda t)^k}{k!},\quad N(t)=\lambda t$}
+	\addtocounter{footnote}{1}
+	\footnotetext{$n$ : sous-ensemble de la population, $N$ : population, $m$ : ensemble ayant une caractéristique (indistinguable entre eux)}
+	\begin{thm}
+		\begin{align*}
+			E[aX+b]   & =aE[X]+b                 \\
+			Var(X)    & =E[X^2]-\big(E[X]\big)^2 \\
+			Var(aX+b) & =a^2Var(X)
+		\end{align*}
+	\end{thm}
+	\section*{Fonctions de répartition et probabilité sur $X$}
+	\begin{mydef}
+		La fonction de répartition \(F\) d'une variable aléatoire \(X\) est définie pour tout nombre réel \(b,-\infty<b<\infty\) par :
+		\[F(b)=P(X\leq b)=F(b)\lim_{x\to b^-} F(x)\]
+		\begin{enumerate}
+			\item \(P(a<X\leq b)=F(b)-F(a)\)
+			\item \(P(X>b)=1-P(X\leq b)=1-F(b)\)
+			\item \(P(X\geq a)=1-P(X<b)=1-\lim_{n\to\infty} F\Big(b-\frac{1}{n}\Big)\)
+		\end{enumerate}
+	\end{mydef}
+	\section*{Densité de probabilité et fonction de répartition d'une variable aléatoire continue}
+		\begin{mydef}
+			Soit la variable aléatoire \(X : S \longrightarrow \mathbb{R}\). Si \(X(S)\) est un sous-ensemble infini non dénombrable, alors \(X\) est une variable aléatoire continue s'il existe une fonction non négative définie sur \(\mathbb{R}\) et vérifiant pour tout ensemble \(B \subseteq R\) (la fonction \(f\) est appelée densité de probabilité):
+			\[P\big(\{X\in B\}\big)=\int_B f(x)\,dx\]
+			\begin{enumerate}
+				\item \(f(x)\geq 0\)
+				\item \(\int_{-\infty}^{\infty}f(x)\,dx=1\)
+				\item \(P(a\leq X\leq b)=\int_a^b f(x)\,dx\)
+				\item \(P(a\leq X\leq b)=P(a\leq X<b)=P(a<X\leq b)=P(a<X<b)\)
+				\item \(P(X\leq a)=\int_{-\infty}^a f(x)\,dx\quad P(X\geq b)=\int_b^{\infty}f(x)\,dx\)
+			\end{enumerate}
+		\end{mydef}
+	\begin{mydef}
+		Soit \(X\) une variable aléatoire continue de densité \(f(x)\). La fonction de répartition \(F_X\) de \(X\) est définie par :
+		\[F_X(a)=P(X\leq a)=\int_{-\infty}^a f(x)\, dx\]
+	\end{mydef}
+	\begin{center}
+		\begin{tabular}{|llccl|}
+			\hline
+			\multicolumn{5}{||c||}{\Large Variable Aléatoire Continue}                                                                                                                                                                         \\ \hline\hline
+			\bf \large Nom             & \bf\large Formule                                                                                             &   \bf\large Espérance    &      \bf\large Variance       & \bf\large Notation         \\ \hline
+			Uniforme\footnotemark      & $P\{a\leq X\leq b\}=\frac{b-a}{\beta-\alpha}$                                                                 & $\frac{\beta+\alpha}{2}$ & $\frac{(\beta-\alpha)^2}{12}$ & $X\sim Unif(\alpha,\beta)$ \\
+			Normale\footnotemark       & $P\{X\leq a\}=P\bigg\{\frac{X-\mu}{\sigma}\leq\frac{a-\mu}{\sigma}\bigg\}=\Phi\Big(\frac{a-\mu}{\sigma}\Big)$ &          $\mu$           &          $\sigma^2$           & $X\sim N(\mu,\sigma^2)$    \\
+			Exponentielle\footnotemark & $P\{X\leq a\}=1-e^{-\lambda a}$                                                                               &   $\frac{1}{\lambda}$    &     $\frac{1}{\lambda^2}$     & $X\sim Exp(\lambda)$       \\
+			Gamma\footnotemark         & $P\{T_n\leq t\}=\sum _{j=n}^\infty \frac{e^{-\lambda t}(\lambda t)^j}{j!}$                                    &   $\frac{s}{\lambda}$    &     $\frac{s}{\lambda^2}$     & $T_n\sim Gam(n,p)$         \\ \hline
+		\end{tabular}
+%		\begin{tabular}{|ll|}
+%			\hline
+%			\multicolumn{2}{||c||}{\Large Fonction de densité}\\ \hline\hline
+%			\bf \large Nom& \bf\large Formule  \\ \hline
+%			Exponentielle & \(f(x)=\begin{cases}\lambda e^{-\lambda x}&,x\geq0\\0&,x<0\end{cases}\)                                   \\
+%			Gamma         & \(f(x)=\begin{cases}\frac{\lambda e^{-\lambda x}(\lambda x)^{s-1}}{\Gamma(x)}&,x\geq0\\0&,x<0\end{cases}\) \\
+%			Uniforme      & \(f(x)=\begin{cases}C&,\alpha<x<\beta\\0&sinon\end{cases}\)                                               \\
+%			Normale       & \(f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-(x-\mu)^2/2\sigma^2}\quad, x\in\mathbb{R}\)\\\hline
+%		\end{tabular}
+	\end{center}
+	\section*{Poisson vs Exponentielle}
+		\begin{itemize}
+			\item Poisson : Compte le nombre d'apparition d'un phénomène
+			\item Exponentielle : Compte le temps entre deux apparition d'un phénomène
+		\end{itemize}
+	\addtocounter{footnote}{-1}
+	\footnotetext{\(f(x)=\begin{cases} \frac{1}{\beta -\alpha}\quad si\,\alpha\leq x\leq \beta\\ 0\quad sinon\end{cases}\)}
+	\addtocounter{footnote}{1}
+	\footnotetext{Variable normale centrée réduite}
+	\addtocounter{footnote}{1}
+	\footnotetext{Taux de panne : \(\lambda(t)=\frac{f(t)}{(1-F(t))}\) tel que \(F(t)=1-\exp\Bigg(-\int_{0}^{t}\lambda(t)\,dt\Bigg)\)}
+	\addtocounter{footnote}{1}
+	\footnotetext{Fonction Gamma : \(\Gamma(s)=\int_{0}^{\infty}e^{-y}y^{s-1}\,dy\) tel que \(\forall n\in\mathbb{N},\Gamma(n)=(n-1)!\)}
+	\footnotetext{Si \(s = n\) entier, la loi gamma de paramètres \((n, \lambda)\) décrit le temps d'attente avant la n-ième apparition du phénomène. Notons \(T_n\) l'heure à laquelle le n-ième événement se produit et \(N(t)\) le nombre d'événements dans l'intervalle \([0, t]\)}
+	\section*{Correction de continuité et Approximation}
+%	\belowdisplayskip=-10pt%
+	\begin{align*}
+		\intertext{Si \(X\sim Bin(n,p)\) est approximée par \(Y\sim N\big(np,np(1-p)\big)\), on a :}
+		P(X=a)           & \simeq P(a-0.5<Y<a+0.5) \\
+		P(a<X<b)         & \simeq P(a+0.5<Y<b-0.5) \\
+		P(a\leq X\leq b) & \simeq P(a-0.5<Y<b+0.5)
+	\end{align*}
+	\begin{enumerate}
+		\item Soit \(X\sim Bin(n,p)\) tel que \(np\leq 5\), alors l'approximation par une loi de Poisson est adéquate \(X\approx Po(\lambda=np)\)
+		\item Soit \(X\sim Bin(n,p)\) tel que \(np>5\), alors l'approximation par une loi Normale est adéquate \(X\approx N(\mu=np,\sigma^2=np(1-p))\)
+	\end{enumerate}
+\section*{Fonction de densité}
+\begin{center}
+	\begin{tabular}{|ll|}
+		\hline
+		\multicolumn{2}{||c||}{\Large Fonction de densité}                                                                          \\ \hline\hline
+		\bf \large Nom & \bf\large Formule                                                                                          \\ \hline
+		Exponentielle  & \(f(x)=\begin{cases}\lambda e^{-\lambda x}&,x\geq0\\0&,x<0\end{cases}\)                                    \\
+		Gamma          & \(f(x)=\begin{cases}\frac{\lambda e^{-\lambda x}(\lambda x)^{s-1}}{\Gamma(x)}&,x\geq0\\0&,x<0\end{cases}\) \\
+		Uniforme       & \(f(x)=\begin{cases}\frac{1}{\beta-\alpha}&,\alpha<x<\beta\\0&sinon\end{cases}\)                           \\
+		Normale        & \(f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-(x-\mu)^2/2\sigma^2}\quad, x\in\mathbb{R}\)                          \\ \hline
+	\end{tabular}
+\end{center}
+\begin{thm}
+	Soit \(X\) une variable aléatoire continue de densité \(f_X\). Soit \(g\) une fonction strictement monotone (croissante ou décroissante) et dérivable, donc continue. La densité de la variable	aléatoire \(Y = g(X)\) est
+	\[f_Y(y)=\begin{cases}
+	f_X\big(g^{-1}(y)\big)\bigg|\frac{d}{dy}g^{-1}(y)\bigg|&\text{si~} y = g(x)\text{~pour un \(x\) quelconque}\\0&\text{si~} y\neq g(x)\text{~pour tout \(x\)}
+	\end{cases}\] 
+\end{thm}
+\end{document}
+\(f(x)=\begin{cases}\lambda e^{-\lambda x}&,x\geq0\\0&,x<0\end{cases}\)
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+\(f(x)=\begin{cases}\frac{\lambda e^{-\lambda x}(\lambda x)^{s-1}}{\Gamma(x)}&,x\geq0\\0&,x<0\end{cases}\)
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+\(f(x)=\begin{cases}\frac{1}{\beta-\alpha}&,\alpha<x<\beta\\0&sinon\end{cases}\)
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+\(f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-(x-\mu)^2/2\sigma^2}\quad, x\in\mathbb{R}\)
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

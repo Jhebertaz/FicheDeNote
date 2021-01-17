@@ -1,0 +1,296 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10372,        288]
+NotebookOptionsPosition[      7263,        222]
+NotebookOutlinePosition[      8348,        253]
+CellTagsIndexPosition[      8305,        250]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["TP2", "Title",
+ CellChangeTimes->{{3.798802949703959*^9, 3.798802950799035*^9}, {
+  3.799668188594962*^9, 
+  3.799668188791*^9}},ExpressionUUID->"9cd6827e-9c76-4454-afc3-5f4f9ea4673e"],
+
+Cell[CellGroupData[{
+
+Cell["Question 1", "Section",
+ CellChangeTimes->{{3.798880374624981*^9, 3.798880375483656*^9}, {
+  3.7996681906867027`*^9, 
+  3.799668192108905*^9}},ExpressionUUID->"9d7e29f5-4219-41a2-acc3-\
+087d4b39a2d2"],
+
+Cell["\<\
+Pour une partie de bridge chacun des 4 joueurs re\[CCedilla]oit 13 cartes. Le \
+jeu en compte
+52. Combien y a-t-il de donnes possibles ?\
+\>", "Text",
+ CellChangeTimes->{{3.7996681944566936`*^9, 
+  3.799668215737871*^9}},ExpressionUUID->"3e846e3a-4a45-4fd5-8601-\
+69417f667bb8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Binomial", "[", 
+   RowBox[{"52", ",", "13"}], "]"}], "*", 
+  RowBox[{"Binomial", "[", 
+   RowBox[{"39", ",", "13"}], "]"}], "*", 
+  RowBox[{"Binomial", "[", 
+   RowBox[{"26", ",", "13"}], "]"}], "*", 
+  RowBox[{"Binomial", "[", 
+   RowBox[{"13", ",", "13"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7996682325586348`*^9, 3.799668298552621*^9}, {
+  3.799672111402913*^9, 3.799672130866356*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"ccca5453-50e9-46ad-8e50-44c68afd635c"],
+
+Cell[BoxData["53644737765488792839237440000"], "Output",
+ CellChangeTimes->{
+  3.799668304271673*^9, {3.7996721185444393`*^9, 3.7996721464057007`*^9}},
+ CellLabel->"Out[27]=",ExpressionUUID->"65173800-139c-44b4-9200-b3bbf7ae52fb"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 2", "Section",
+ CellChangeTimes->{{3.79966831762566*^9, 
+  3.799668323556142*^9}},ExpressionUUID->"adb33838-d627-4775-9db6-\
+b8286fde782f"],
+
+Cell["\<\
+Si 12 personnes doivent \[EHat]tre r\[EAcute]parties en 3 comit\[EAcute]s \
+comptant respectivement 3, 4
+et 5 individus, de combien de mani\[EGrave]res peut-on s\[CloseCurlyQuote]y \
+prendre ?\
+\>", "Text",
+ CellChangeTimes->{{3.799668356332426*^9, 3.79966836613374*^9}, {
+  3.799668891853003*^9, 
+  3.7996688977742853`*^9}},ExpressionUUID->"4930d16c-e3e0-4352-9a9e-\
+f9778cc564a9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Multinomial", "[", 
+  RowBox[{"5", ",", "4", ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.798880201921714*^9, {3.799668452462825*^9, 3.7996684542143106`*^9}, {
+   3.799668486138962*^9, 3.799668533574738*^9}, {3.79966866069594*^9, 
+   3.799668739865324*^9}, {3.799668791666271*^9, 3.799668803942595*^9}, {
+   3.7996688487629433`*^9, 3.79966888306679*^9}, {3.799669017742835*^9, 
+   3.79966904607729*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"0c3007c9-233c-4533-900c-e3fc1ef5200c"],
+
+Cell[BoxData["27720"], "Output",
+ CellChangeTimes->{{3.7996685030472927`*^9, 3.799668524021042*^9}, {
+   3.799668664086954*^9, 3.7996687400524073`*^9}, {3.799668795374571*^9, 
+   3.7996688041549807`*^9}, {3.7996688549193163`*^9, 3.7996688834662647`*^9}, 
+   3.7996690466242*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"77afd29d-9a86-41fb-a63a-7bb689ab2ae3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 3", "Section",
+ CellChangeTimes->{{3.799669331472419*^9, 
+  3.7996693422622223`*^9}},ExpressionUUID->"c77b2439-10db-4c81-b3a6-\
+e8cf78df7f6a"],
+
+Cell["Huit nouveaux professeurs vont \[EHat]tre envoy\[EAcute]s dans 4 \
+\[EAcute]coles.", "Text",
+ CellChangeTimes->{{3.799669352699821*^9, 
+  3.7996693615309963`*^9}},ExpressionUUID->"37399a25-bd91-463c-a184-\
+d40899869232"],
+
+Cell["a) Combien y a-t-il d\[CloseCurlyQuote]affectations possibles ?", "Text",
+ CellChangeTimes->{{3.7996694782323112`*^9, 
+  3.799669508950646*^9}},ExpressionUUID->"276a7a63-f5cc-4a66-8c25-\
+ea013167594e"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", GridBox[{
+      {"8"},
+      {
+       RowBox[{
+        SubscriptBox["n", "1"], ",", 
+        SubscriptBox["n", "2"], ",", 
+        SubscriptBox["n", "3"], ",", 
+        SubscriptBox["n", "4"]}]}
+     }], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "36986f29-efa4-4586-9353-d63a83db2d7b"],
+ " ",
+ Cell[BoxData[
+  FormBox["\[Implies]", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d327f9fe-d2b1-4328-8217-2205314b1688"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"8", "+", "4", "-", "1"}]},
+      {
+       RowBox[{"4", "-", "1"}]}
+     }], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bf7e37ef-a5c2-45cd-a37f-9fbd19d1437b"],
+ " possibilit\[EAcute]s d\[CloseCurlyQuote]affection"
+}], "Text",
+ CellChangeTimes->{{3.799669511085217*^9, 3.799669593302102*^9}, 
+   3.799671501053179*^9, {3.799671646377019*^9, 3.7996717551817923`*^9}, {
+   3.799671852911598*^9, 3.7996718529764853`*^9}, {3.799671972887336*^9, 
+   3.7996719734630327`*^9}},ExpressionUUID->"43bc6dfd-79e3-4c0f-abf2-\
+2b12b6183c96"],
+
+Cell["\<\
+b) Qu\[CloseCurlyQuote]en est-il si l\[CloseCurlyQuote]on impose que chaque \
+\[EAcute]cole recevra deux professeurs ?\
+\>", "Text",
+ CellChangeTimes->{{3.799671779722954*^9, 
+  3.799671799654327*^9}},ExpressionUUID->"ad38f382-cf94-4a17-9430-\
+3d9221d5d87f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Binomial", "[", 
+   RowBox[{"8", ",", "2"}], "]"}], "*", 
+  RowBox[{"Binomial", "[", 
+   RowBox[{"6", ",", "2"}], "]"}], "*", 
+  RowBox[{"Binomial", "[", 
+   RowBox[{"4", ",", "2"}], "]"}], 
+  RowBox[{"4", "!"}]}]], "Input",
+ CellChangeTimes->{
+  3.798880201921714*^9, {3.799672340455166*^9, 3.7996723532240553`*^9}, {
+   3.799672491819278*^9, 3.7996725185896*^9}, {3.7996725894619513`*^9, 
+   3.7996726575443583`*^9}, {3.7996727143593082`*^9, 3.799672714513452*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"5622b2b8-d497-4878-92f8-8c8414f65be4"],
+
+Cell[BoxData["60480"], "Output",
+ CellChangeTimes->{
+  3.7996725189788857`*^9, {3.7996726078284616`*^9, 3.7996726337812557`*^9}, 
+   3.799672714900069*^9},
+ CellLabel->"Out[35]=",ExpressionUUID->"96fff545-1d82-42dc-b38a-4ddc4d079b22"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["2520"], "Input",
+ CellChangeTimes->{{3.7996724481431017`*^9, 
+  3.7996724591554327`*^9}},ExpressionUUID->"daaabdac-be24-4ae2-b3d5-\
+53d1e55ee3da"],
+
+Cell[BoxData["645120"], "Output",
+ CellChangeTimes->{3.799672451680953*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"786bae09-88f2-4dbe-8897-c51bb61c6f23"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{
+  3.798880201921714*^9, {3.799672440610333*^9, 
+   3.799672444084869*^9}},ExpressionUUID->"948f4805-ab4b-47a2-81c7-\
+5f9b3a44fe87"],
+
+Cell[BoxData["40320"], "Output",
+ CellChangeTimes->{3.7996724416249533`*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"01ac5eeb-1d23-4aa7-a809-cc3e520ba222"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+NotebookAutoSave->True,
+WindowSize->{800, 836},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{Automatic, Automatic},
+"PostScriptOutputFile"->"/home/fiftyfour/Documents/Documents/FicheDeNote/\
+Probabilites/Exercice/Travaux_Pratiques/TP1.pdf"},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Perso.nb"]], 
+   Cell[
+    StyleData["Input"], CellChangeTimes -> {3.798880201921714*^9}, Background -> 
+    RGBColor[0.9098039215686274, 0.9098039215686274, 0.9098039215686274]]}, 
+  WindowMargins -> {{525, Automatic}, {62, Automatic}}, Visible -> False, 
+  FrontEndVersion -> "12.0 for Linux x86 (64-bit) (April 8, 2019)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 190, 3, 77, "Title",ExpressionUUID->"9cd6827e-9c76-4454-afc3-5f4f9ea4673e"],
+Cell[CellGroupData[{
+Cell[795, 29, 206, 4, 79, "Section",ExpressionUUID->"9d7e29f5-4219-41a2-acc3-087d4b39a2d2"],
+Cell[1004, 35, 288, 7, 56, "Text",ExpressionUUID->"3e846e3a-4a45-4fd5-8601-69417f667bb8"],
+Cell[CellGroupData[{
+Cell[1317, 46, 509, 12, 55, "Input",ExpressionUUID->"ccca5453-50e9-46ad-8e50-44c68afd635c"],
+Cell[1829, 60, 230, 3, 37, "Output",ExpressionUUID->"65173800-139c-44b4-9200-b3bbf7ae52fb"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2108, 69, 154, 3, 79, "Section",ExpressionUUID->"adb33838-d627-4775-9db6-b8286fde782f"],
+Cell[2265, 74, 392, 9, 56, "Text",ExpressionUUID->"4930d16c-e3e0-4352-9a9e-f9778cc564a9"],
+Cell[CellGroupData[{
+Cell[2682, 87, 514, 9, 55, "Input",ExpressionUUID->"0c3007c9-233c-4533-900c-e3fc1ef5200c"],
+Cell[3199, 98, 357, 5, 37, "Output",ExpressionUUID->"77afd29d-9a86-41fb-a63a-7bb689ab2ae3"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3605, 109, 157, 3, 79, "Section",ExpressionUUID->"c77b2439-10db-4c81-b3a6-e8cf78df7f6a"],
+Cell[3765, 114, 226, 4, 34, "Text",ExpressionUUID->"37399a25-bd91-463c-a184-d40899869232"],
+Cell[3994, 120, 207, 3, 34, "Text",ExpressionUUID->"276a7a63-f5cc-4a66-8c25-ea013167594e"],
+Cell[4204, 125, 1178, 36, 53, "Text",ExpressionUUID->"43bc6dfd-79e3-4c0f-abf2-2b12b6183c96"],
+Cell[5385, 163, 268, 6, 34, "Text",ExpressionUUID->"ad38f382-cf94-4a17-9430-3d9221d5d87f"],
+Cell[CellGroupData[{
+Cell[5678, 173, 581, 13, 55, "Input",ExpressionUUID->"5622b2b8-d497-4878-92f8-8c8414f65be4"],
+Cell[6262, 188, 234, 4, 37, "Output",ExpressionUUID->"96fff545-1d82-42dc-b38a-4ddc4d079b22"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6533, 197, 160, 3, 55, InheritFromParent,ExpressionUUID->"daaabdac-be24-4ae2-b3d5-53d1e55ee3da"],
+Cell[6696, 202, 154, 2, 37, "Output",ExpressionUUID->"786bae09-88f2-4dbe-8897-c51bb61c6f23"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6887, 209, 178, 4, 55, "Input",ExpressionUUID->"948f4805-ab4b-47a2-81c7-5f9b3a44fe87"],
+Cell[7068, 215, 155, 2, 37, "Output",ExpressionUUID->"01ac5eeb-1d23-4aa7-a809-cc3e520ba222"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

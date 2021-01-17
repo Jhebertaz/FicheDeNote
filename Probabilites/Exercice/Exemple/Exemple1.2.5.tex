@@ -1,0 +1,35 @@
+\section*{Exemple 1.2.5}
+	Combien de codes alphanumériques (formés de chiff{}res et de lettres) de longueur 3 peut-on former si les répétitions ne sont pas permises ?
+\subsection*{Solution}
+\begin{multicols}{2}
+\begin{verbbox}
+Permutations[{"L","L","L","C","C","C"},{3,3}];
+%//TableForm
+	L	L	L
+	L	L	C
+	L	C	L
+	L	C	C
+	C	L	L
+	C	L	C
+	C	C	L
+	C	C	C
+	\end{verbbox}
+	\theverbbox
+	\columnbreak
+	\\
+	\\
+	\begin{equation*}
+	+\begin{array}{c @{\cdot}c @{\cdot}c}
+	26&25&24\\
+	26&25&10\\
+	26&10&25\\
+	26&10&9\\
+	10&26&25\\
+	10&26&9\\
+	10&9&26\\
+	10&9&8\\
+	\hline
+	\multicolumn{3}{c}{42\;840}
+	\end{array}
+	\end{equation*}
+\end{multicols}

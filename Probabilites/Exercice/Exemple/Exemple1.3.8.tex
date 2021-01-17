@@ -1,0 +1,23 @@
+\section*{Exemple 1.3.8}
+	Trouvez le nombre d'anagrammes du mot \textit{PATATAS}.
+\subsection*{Solution}
+\begin{multicols}{2}
+\begin{verbbox}
+In[44]:= Characters["PATATAS"];
+m= Permutations[%];
+%[[1;;5]]// TableForm
+Length[m]
+Out[46]//TableForm=
+P	A	T	A	T	A	S
+P	A	T	A	T	S	A
+P	A	T	A	A	T	S
+P	A	T	A	A	S	T
+P	A	T	A	S	T	A
+Out[47]= 420
+	\end{verbbox}
+	\theverbbox
+	\columnbreak
+	\\
+	Soit $P\,A_1\,T_1\,A_2\,T_3\,A_3\,S$ une chaîne de 7 caractères dont ayant trois $A$, deux $T$, un $P$ et un $S$. Par le théorème 1.3.7,
+	\begin{equation*}\text{nombre d'anagrame}=\frac{7!}{3!\cdot 2!\cdot 1!\cdot 1!}=420\end{equation*}
+\end{multicols}

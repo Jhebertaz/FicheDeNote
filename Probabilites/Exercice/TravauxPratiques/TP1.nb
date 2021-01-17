@@ -1,0 +1,308 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11124,        300]
+NotebookOptionsPosition[      7824,        231]
+NotebookOutlinePosition[      8921,        263]
+CellTagsIndexPosition[      8878,        260]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["TP1", "Title",
+ CellChangeTimes->{{3.798802949703959*^9, 
+  3.798802950799035*^9}},ExpressionUUID->"9cd6827e-9c76-4454-afc3-\
+5f4f9ea4673e"],
+
+Cell[CellGroupData[{
+
+Cell["Question 10", "Section",
+ CellChangeTimes->{{3.7988029563901167`*^9, 
+  3.7988029605773087`*^9}},ExpressionUUID->"7cd55fa4-3825-42e9-9e9a-\
+f6cf0dd1a5fe"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"homme", "=", "6"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"femme", "=", "8"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.798807323162712*^9, 3.798807354554793*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"f5f920a9-db9e-4615-980d-1a2bb859d2e5"],
+
+Cell["a) 2 hommes refusent d\[CloseCurlyQuote]\[EHat]tre ensemble dans le \
+comit\[EAcute] ?", "Text",
+ CellChangeTimes->{{3.7988029636077337`*^9, 3.798802963897786*^9}, {
+  3.798803232669533*^9, 3.798803238323823*^9}, {3.798807316491495*^9, 
+  3.798807318884797*^9}, {3.798820154876774*^9, 
+  3.7988201569179277`*^9}},ExpressionUUID->"a900350a-a177-4ae4-bc6c-\
+661194142180"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Binomial", "[", 
+   RowBox[{"femme", ",", "3"}], "]"}], "*", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"homme", ",", "3"}], "]"}], "-", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{
+      RowBox[{"homme", "-", "2"}], ",", "1"}], "]"}]}], ")"}]}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBWIQXTCVN3eJ7xvHczXni0E0m2dyJYhOYPCsAtEtGcc8
+lgLpRt+rfiC6oSclFERrCURHgmir86vjQHTfqskJIPrOF/M0EH09818OiI6b
+mFcIop+dXF8O1t/v1wyipbYdbwHR82/cnQKiTQ/7TgXRPu4X54HonrRDC0B0
+hYb5KhDd+3bLGhB9LPf5BhA9S697K4i+/Zr7IoiWO7LuGogWdQ+7C6L5fNVe
+gGjFyb/egOhd139+ANE621xElwHpUx+2S4PoH6ZiGiCa39VHB0SXs/bagOgu
+9+XOYPrMGXcQff1cfxCIzrRMjwTRO/7/TgTRb+K3VZ0E0i6TjoNpAISSsV0=
+
+  "],
+ CellLabel->"In[3]:=",ExpressionUUID->"00a8d184-41f5-435e-b993-0c855c944029"],
+
+Cell[BoxData["896"], "Output",
+ CellChangeTimes->{{3.798806861597164*^9, 3.7988068828553333`*^9}, {
+   3.798807014962702*^9, 3.798807069721511*^9}, 3.79880710800657*^9, {
+   3.798807146615603*^9, 3.798807189054576*^9}, {3.798807248868813*^9, 
+   3.798807312283022*^9}, 3.798880010195956*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"d98e0e1c-b714-4471-bd48-ec25a04baede"]
+}, Open  ]],
+
+Cell["b) 2 femmes refusent d\[CloseCurlyQuote]\[EHat]tre ensemble dans le \
+comit\[EAcute] ?", "Text",
+ CellChangeTimes->{{3.798803415943076*^9, 3.798803427988714*^9}, {
+  3.798820140025531*^9, 
+  3.7988201438264313`*^9}},ExpressionUUID->"6333770a-e278-42df-8e8a-\
+2b3139d8c4c5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Binomial", "[", 
+   RowBox[{"homme", ",", "3"}], "]"}], "*", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"femme", ",", "3"}], "]"}], "-", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{
+      RowBox[{"femme", "-", "2"}], ",", "1"}], "]"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.798803479755238*^9, 3.7988034860455923`*^9}, {
+  3.798807205389941*^9, 3.798807208903514*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"cd1c863a-c21e-47ff-bf9d-379aa46a59e7"],
+
+Cell[BoxData["1000"], "Output",
+ CellChangeTimes->{3.7988034872744417`*^9, 3.798880010231607*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"61d15866-b381-477c-86b1-65cbf2b8f4ce"]
+}, Open  ]],
+
+Cell["\<\
+c)  1 homme et 1 femme refusent d\[CloseCurlyQuote]\[EHat]tre ensemble dans \
+le comit\[EAcute] ?\
+\>", "Text",
+ CellChangeTimes->{{3.798803493794284*^9, 3.7988035065667477`*^9}, {
+  3.79882012297969*^9, 
+  3.798820136600398*^9}},ExpressionUUID->"7517a0d4-690d-4240-8fcd-\
+5caee567b20d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Binomial", "[", 
+    RowBox[{"homme", ",", "3"}], "]"}], "*", 
+   RowBox[{"Binomial", "[", 
+    RowBox[{"femme", ",", "3"}], "]"}]}], "-", 
+  RowBox[{
+   RowBox[{"Binomial", "[", 
+    RowBox[{
+     RowBox[{"homme", "-", "1"}], ",", "2"}], "]"}], "*", 
+   RowBox[{"Binomial", "[", 
+    RowBox[{
+     RowBox[{"femme", "-", "1"}], ",", "2"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.798803509975985*^9, 3.798803565354711*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"b4d75727-ca17-4fde-9eac-18a66154a926"],
+
+Cell[BoxData["910"], "Output",
+ CellChangeTimes->{3.7988035659170322`*^9, 3.798880010262*^9, 
+  3.798885303221182*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"db03e505-aae8-4064-9e32-f2c0f0b8dc9c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 11", "Section",
+ CellChangeTimes->{{3.7988038169925756`*^9, 
+  3.79880381860925*^9}},ExpressionUUID->"0cc15cb1-dcc1-46e9-a1ec-\
+7f968e26bb0c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"amies", "=", "8"}]], "Input",
+ CellChangeTimes->{{3.798879205717888*^9, 3.7988792161530447`*^9}, {
+  3.7988877269*^9, 3.798887772826318*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"1675d279-e5b5-497d-92af-145767238cde"],
+
+Cell[BoxData["8"], "Output",
+ CellChangeTimes->{3.7988878472163258`*^9},
+ CellLabel->"Out[39]=",ExpressionUUID->"26e8c1cc-eb89-465d-8060-d0755edef809"]
+}, Open  ]],
+
+Cell["\<\
+a) De combien de mani\[EGrave]res peut-elle s'y prendre si deux d'entre elles \
+sont en mauvais termes et ne viennent en aucun cas ensemble ?\
+\>", "Text",
+ CellChangeTimes->{{3.798879205717888*^9, 3.7988792161530447`*^9}, {
+  3.7988877269*^9, 
+  3.798887746168982*^9}},ExpressionUUID->"8ce893d6-5559-464e-a933-\
+fd6f9acb0d63"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Binomial", "[", 
+   RowBox[{"amies", ",", "5"}], "]"}], "-", 
+  RowBox[{"Binomial", "[", 
+   RowBox[{
+    RowBox[{"amies", "-", "2"}], ",", "3"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.798820257758463*^9, 3.798820258531144*^9}, {
+  3.798880000149625*^9, 3.798880005864197*^9}, {3.798887752908614*^9, 
+  3.798887802725452*^9}, {3.798887836754045*^9, 3.798887843556452*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"7c4c0271-90c7-4def-becf-650063c61641"],
+
+Cell[BoxData["36"], "Output",
+ CellChangeTimes->{{3.798880010308247*^9, 3.7988800371703663`*^9}, 
+   3.798880147336342*^9, 3.798885255481988*^9, 3.798885305682055*^9, 
+   3.798887804218893*^9, {3.798887844365754*^9, 3.798887852394799*^9}},
+ CellLabel->"Out[40]=",ExpressionUUID->"0c277ef6-a129-4eb6-8318-d79d2affba87"]
+}, Open  ]],
+
+Cell["\<\
+b)  Et si au contraire deux d\[CloseCurlyQuote]entre elles ne viendront que \
+si l\[CloseCurlyQuote]autre est aussi invit\[EAcute]e ?\
+\>", "Text",
+ CellChangeTimes->{{3.798887904440908*^9, 
+  3.798887960581587*^9}},ExpressionUUID->"e7882d5d-2c0d-4c92-bb94-\
+7ae2eb4ce8c1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Binomial", "[", 
+    RowBox[{"2", ",", "2"}], "]"}], "*", 
+   RowBox[{"Binomial", "[", 
+    RowBox[{"6", ",", "3"}], "]"}]}], "+", 
+  RowBox[{"Binomial", "[", 
+   RowBox[{"6", ",", "5"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7988880235577583`*^9, 3.798888044439323*^9}, {
+  3.798970153070326*^9, 3.798970205429338*^9}},
+ CellLabel->"In[45]:=",ExpressionUUID->"e8a4ca4e-daca-401e-8c48-d6e080221d08"],
+
+Cell[BoxData["26"], "Output",
+ CellChangeTimes->{3.7988880453500433`*^9, 3.798970206242393*^9},
+ CellLabel->"Out[45]=",ExpressionUUID->"a97b75db-6809-4da7-bacb-efc9fa4571c2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "Section",
+ CellChangeTimes->{{3.798880374624981*^9, 
+  3.798880375483656*^9}},ExpressionUUID->"9d7e29f5-4219-41a2-acc3-\
+087d4b39a2d2"]
+}, Open  ]]
+},
+NotebookAutoSave->True,
+WindowSize->{800, 836},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{Automatic, Automatic},
+"PostScriptOutputFile"->"/home/fiftyfour/Documents/Documents/FicheDeNote/\
+Probabilites/Exercice/Travaux_Pratiques/TP1.pdf"},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Perso.nb"]], 
+   Cell[
+    StyleData["Input"], "Code", CellChangeTimes -> {3.798880201921714*^9}, 
+    Background -> 
+    RGBColor[0.9098039215686274, 0.9098039215686274, 0.9098039215686274]]}, 
+  WindowMargins -> {{Automatic, 94}, {Automatic, 54}}, Visible -> False, 
+  FrontEndVersion -> "12.0 for Linux x86 (64-bit) (April 8, 2019)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 146, 3, 77, "Title",ExpressionUUID->"9cd6827e-9c76-4454-afc3-5f4f9ea4673e"],
+Cell[CellGroupData[{
+Cell[751, 29, 160, 3, 79, "Section",ExpressionUUID->"7cd55fa4-3825-42e9-9e9a-f6cf0dd1a5fe"],
+Cell[914, 34, 272, 6, 81, "Input",ExpressionUUID->"f5f920a9-db9e-4615-980d-1a2bb859d2e5"],
+Cell[1189, 42, 376, 6, 34, "Text",ExpressionUUID->"a900350a-a177-4ae4-bc6c-661194142180"],
+Cell[CellGroupData[{
+Cell[1590, 52, 808, 20, 55, "Input",ExpressionUUID->"00a8d184-41f5-435e-b993-0c855c944029"],
+Cell[2401, 74, 369, 5, 37, "Output",ExpressionUUID->"d98e0e1c-b714-4471-bd48-ec25a04baede"]
+}, Open  ]],
+Cell[2785, 82, 279, 5, 34, "Text",ExpressionUUID->"6333770a-e278-42df-8e8a-2b3139d8c4c5"],
+Cell[CellGroupData[{
+Cell[3089, 91, 515, 13, 55, "Input",ExpressionUUID->"cd1c863a-c21e-47ff-bf9d-379aa46a59e7"],
+Cell[3607, 106, 175, 2, 37, "Output",ExpressionUUID->"61d15866-b381-477c-86b1-65cbf2b8f4ce"]
+}, Open  ]],
+Cell[3797, 111, 297, 7, 34, "Text",ExpressionUUID->"7517a0d4-690d-4240-8fcd-5caee567b20d"],
+Cell[CellGroupData[{
+Cell[4119, 122, 552, 15, 81, "Input",ExpressionUUID->"b4d75727-ca17-4fde-9eac-18a66154a926"],
+Cell[4674, 139, 197, 3, 37, "Output",ExpressionUUID->"db03e505-aae8-4064-9e32-f2c0f0b8dc9c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4920, 148, 157, 3, 79, "Section",ExpressionUUID->"0cc15cb1-dcc1-46e9-a1ec-7f968e26bb0c"],
+Cell[CellGroupData[{
+Cell[5102, 155, 244, 4, 55, "Input",ExpressionUUID->"1675d279-e5b5-497d-92af-145767238cde"],
+Cell[5349, 161, 151, 2, 37, "Output",ExpressionUUID->"26e8c1cc-eb89-465d-8060-d0755edef809"]
+}, Open  ]],
+Cell[5515, 166, 337, 7, 56, "Text",ExpressionUUID->"8ce893d6-5559-464e-a933-fd6f9acb0d63"],
+Cell[CellGroupData[{
+Cell[5877, 177, 489, 10, 55, "Input",ExpressionUUID->"7c4c0271-90c7-4def-becf-650063c61641"],
+Cell[6369, 189, 318, 4, 37, "Output",ExpressionUUID->"0c277ef6-a129-4eb6-8318-d79d2affba87"]
+}, Open  ]],
+Cell[6702, 196, 283, 6, 34, "Text",ExpressionUUID->"e7882d5d-2c0d-4c92-bb94-7ae2eb4ce8c1"],
+Cell[CellGroupData[{
+Cell[7010, 206, 449, 11, 55, "Input",ExpressionUUID->"e8a4ca4e-daca-401e-8c48-d6e080221d08"],
+Cell[7462, 219, 174, 2, 37, "Output",ExpressionUUID->"a97b75db-6809-4da7-bacb-efc9fa4571c2"]
+}, Open  ]]
+}, Open  ]],
+Cell[7663, 225, 145, 3, 79, "Section",ExpressionUUID->"9d7e29f5-4219-41a2-acc3-087d4b39a2d2"]
+}, Open  ]]
+}
+]
+*)
+

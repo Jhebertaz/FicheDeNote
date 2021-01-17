@@ -1,0 +1,33 @@
+\section*{Exemple 1.3.9}
+M. Jones va disposer 11 livres différents sur un rayon de sa bibliothèque. Cinq d'entre eux sont des livres de mathématiques, quatre de chimie et deux de physique. Les livres traitant du même sujet sont indiscernables.
+\subsection*{Solution}
+\begin{multicols}{2}
+\begin{verbbox}
+livre={{M,M,M,M,M},
+	{C,C,C,C},
+	{P,P}};
+Multinomial[5,4,2]
+Out[51]= 6930
+ReplacePart[livre,1->M];
+Flatten[%];
+m=Permutations[%];
+%[[5;;10]]//TableForm
+Out[188]//TableForm=
+M	C	C	P	C	P	C
+M	C	C	P	P	C	C
+M	C	P	C	C	C	P
+M	C	P	C	C	P	C
+M	C	P	C	P	C	C
+M	C	P	P	C	C	C
+Length[m]
+Out[189]= 105
+\end{verbbox}
+	\theverbbox
+	\columnbreak
+	\\
+	Soit $M_a,C_b,P_c$ tels que $a=1,\cdots 5$, $b=1,\cdots,4$ et $c=1,2$. En considérant le groupe de livre de mathématique comme un seul livre, alors par le théorème 1.3.7 il y a ,
+	\begin{equation*}
+	\frac{7!}{1!\cdot 4!\cdot 2!} = 165
+	\end{equation*}
+	arrangements possibles. Il y a sinon 6930 arrangement sans tenir compte du groupe de livre de mathématique.
+\end{multicols}

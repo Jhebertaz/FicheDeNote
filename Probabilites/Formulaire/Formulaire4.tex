@@ -1,0 +1,146 @@
+\documentclass{article}
+\usepackage[french]{babel}
+\input{../preambule}
+\usepackage{pdflscape}
+\usepackage{array}
+\usepackage{centernot}
+\newtheorem*{mydef}{Définition}
+\cfoot{Probabilités}
+\rhead{}
+\lhead{}
+\chead{Julien Hébert-Doutreloux}
+\everymath{\displaystyle}
+\setlength{\tabcolsep}{2pt}
+\newtheorem*{thm}{Théorème}
+\newtheorem*{prop}{Propriété(s)}
+\newtheorem*{remark}{Remarque}
+\renewcommand{\arraystretch}{2.25}
+\renewcommand{\emptyset}{\O}
+%\usepackage{showframe}
+\newcolumntype{C}{>{$}c<{$}}
+\newcolumntype{R}{>{$}r<{$}}
+\newcolumntype{L}{>{$}l<{$}}
+\newcolumntype{M}{R@{${}={}$}L}
+\DeclareMathOperator{\varo}{Var}
+\DeclareMathOperator{\covo}{Cov}
+\DeclareMathOperator{\espo}{\mathbb{E}}
+\DeclareMathOperator{\probo}{\mathbb{P}}
+\newcommand{\var}[1]{\varo\left( #1\right) }
+\newcommand{\cov}[1]{\covo\left( #1\right) }
+\newcommand{\esp}[1]{\espo\left[ #1\right] }
+\newcommand{\prob}[1]{\probo\left\{ #1\right\} }
+
+\begin{document}
+	\begin{mydef}[Espérance conditionnelle]
+	\begin{equation*}
+		\esp{g(X)|Y=y}=%
+		\begin{cases}
+			\sum_{x}g(x)p_{X|Y}(x|y)&\text{cas discret}\\
+			\int_{-\infty}^{\infty}g(x)f_{X|Y}(x|y)\,dx& \text{cas continue}
+		\end{cases}
+	\end{equation*}
+	\end{mydef}
+	\begin{mydef}
+		Soit \(X\) une variable aléatoire, on définit fonction génératrice des moments \(M_X\) pour tout \(t\in\mathbb{R}\):
+		\begin{equation*}
+		M_X(t)=\esp{e^{tX}}=\begin{cases}
+			\sum_{x}e^{tx}p(x)&\text{si $X$ est discrète, de loi $p(x)$}\\
+			\int_{-\infty}^{\infty}e^{tx}f(x)\,dx&\text{si $X$ est continue, de densité $f(x)$}\\
+		\end{cases} 
+		\end{equation*}
+%		\begin{remark}
+%			\(M_X^{(n)}(0)=\esp{X^n}\) est appelé le \(n\)-ième moment (ou le moment d'ordre n) de la variable \(X\).
+%		\end{remark}
+		\begin{prop}
+			Si \(X\) et \(Y\) sont des variables aléatoires indépendantes de fonctions génératrices de moments \(M_X(t)\) et \(M_Y(t)\), alors \(M_{X+Y}(t)=M_X(t)M_Y(t)\)
+		\end{prop}
+	\end{mydef}
+	\begin{mydef}
+		Soit \(n\) variables aléatoires \(X_1, X_2, \ldots, X_n\). Leur fonction génératrice des moments conjoints \(M_{X_1, X_2, \ldots, X_n}\) est définie pour \(\vec{t}=(t_1, t_2,\ldots, t_n)\in\mathbb{R}^n\) par: \(M=M_{X_1, X_2, \ldots, X_n}(\vec{~t~})=\esp{e^{t_1X_1+t_2X_2+\ldots+t_nX_n}}\)
+			\begin{enumerate}
+				\item Les fonctions génératrices des moments individuelles sont calculables à partir de \(M\)
+					\begin{equation*}
+						M_{X_i}(t)=\esp{e^{tX_i}}=M(0,\ldots,0,t_i=t,0\ldots,0)
+					\end{equation*}
+				\item Si \(X_1, X_2, \ldots, X_n\) sont indépendantes, alors: \(M=\prod_{i=1}^n M_{X_i}(t_i)\)
+			\end{enumerate}
+	\end{mydef}
+	\begin{thm}
+		\[\forall t_i\in(u_i,v_i) : u_i<0<v_i\implies \forall \vec{\alpha} :|\vec{\alpha}|=n~\wedge~\sum_{i=1}^n\alpha_i=r, \esp{\prod_{i=1}^n X_i^{\alpha_i}}=\frac{\partial^r M}{\partial t_1^{\alpha_1}\partial t_2^{\alpha_2}\cdots\partial t_n^{\alpha_n}}\]
+	\end{thm}
+	\begin{center}
+		\begin{tabular}{|MMM|}
+			\hline
+			\multicolumn{2}{||c}{\Large\bf Espérance} & \multicolumn{2}{c}{\Large\bf Covariance} &          \multicolumn{2}{c||}{\Large\bf Corrélation}           \\ \hline\hline
+			\esp{X}      & \esp{\esp{X|Y=y}}            & \cov{X,Y}  & \esp{XY}-\esp{X}\esp{Y}     & \rho\left(X,Y\right) & \frac{\cov{X,Y}}{\sqrt{\var{X}\var{Y}}} \\
+			\esp{aX|Y=y} & a\esp{X|Y=y}               & \cov{X,Y}  & \cov{Y,X}                   & \rho(X,Y)            & \rho(Y,X)                               \\
+			\prob{X}     & \esp{\prob{X|Y=y}}           & \cov{aX,Y} & a\cov{X,Y}                  & \rho(X,\pm X)        & \pm 1                                 \\ \hline\hline
+			\multicolumn{6}{|C|}{\esp{\sum_{i=1}^{n}X_i|Y=y} = \sum_{i=1}^{n}\esp{X_i|Y=y}}                                                                       \\
+			\multicolumn{6}{|C|}{\cov{\sum_{i=1}^{n}X_i,\sum_{j=1}^{m}Y_i}=\sum_{i=1}^{n}\sum_{j=1}^{m}\cov{X_i,Y_j} }                                            \\
+			\multicolumn{6}{|C|}{\var{\sum_{i=1}^{n} X_i}=\sum_{i=1}^{n}\var{X_i}+2\underset{i<j}{\sum\sum}\cov{X_i,Y_i}}                                         \\
+			\multicolumn{6}{|C|}{\esp{X}=\esp{X|Y}\prob{Y}+\esp{X|Y^C}\prob{Y^C}}                                                                                 \\
+			\multicolumn{6}{|c|}{\Large Sous l'hypothèse de variables indépendantes}                                                                              \\
+			\multicolumn{6}{|C|}{\cov{X,Y}=0=\rho(X,Y)\quad(\centernot\implies X\perp Y)}                                                                         \\
+			\multicolumn{6}{|C|}{\esp{\prod_{i=1}^{n}g_i(X_i)}=\prod_{i=1}^{n}\esp{g_i(X_i)}}                                                                     \\
+			\multicolumn{6}{|C|}{\var{\sum_{i=1}^{n} X_i}=\sum_{i=1}^{n}\var{X_i}}                                                                                \\ \hline
+		\end{tabular}
+	\end{center}
+	\newpage
+	\begin{landscape}
+		\hfill\vfill
+		\begin{center}
+			\begin{tabular}{|llcccl|}
+				\hline
+				\multicolumn{6}{||c||}{\Large Variable Aléatoire Discrète et Continue}                                                                                                                                                                                                                                 \\ \hline\hline
+				\bf \large Nom     & \bf\large Formule                                                          & \large\bf Moment                         & \begin{minipage}{75pt}\begin{center}\bf\large Espérance\\ (Moyenne)\end{center}\end{minipage} &      \bf\large Variance       & \bf\large Notation         \\ \hline
+				Bernoulli          & $\begin{cases}P(X=1)=p\\P(X=0)=1-p\end{cases}$                             & $$                                       &                                              $p$                                              &           $p(1-p)$            &                            \\
+				Binomiale          & $P\{X=i\}=\binom{n}{i}p^i(1-p)^{n-i}$                                      & $\left(pe^t+1-p \right)^n$               &                                             $np$                                              &           $np(1-p)$           & $X\sim B(n,p)$             \\
+				Binomiale négative & $P\{X=n\}=\binom{n-1}{r-1}p^r(1-p)^{n-r}$                                  & $\left(\frac{pe^t}{1-(1-p)e^t}\right)^r$ &                                         $\frac{r}{p}$                                         &     $\frac{r(1-p)}{p^2}$      & $X\sim Bn(r,p)$            \\
+				Poisson            & $P\{X=i\}=e^{-\lambda}\frac{\lambda^i}{i!}$                                & $e^{\lambda(e^t-1)}$                     &                                           $\lambda$                                           &           $\lambda$           & $X\sim Po(\lambda)$        \\
+				Géométrique        & $P\{X=n\}=(1-p)^{n-1}p$                                                    & $\frac{pe^t}{1-(1-p)e^t}$                &                                         $\frac{1}{p}$                                         &       $\frac{1-p}{p^2}$       & $X\sim Geom(p)$            \\
+				Hypergéométrique   & $P\{X=i\}=\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}} $              & $$                                       &                                             $np$                                              &   $np(1-p)\frac{N-n}{N-1}$    & $X\sim Hpg(n,N,m)$         \\
+				Uniforme           & $P\{a\leq X\leq b\}=\frac{b-a}{\beta-\alpha}$                              & $\frac{e^{t\beta}-e^{t\alpha}}{t(\beta-\alpha)}$           &                                   $\frac{\beta+\alpha}{2}$                                    & $\frac{(\beta-\alpha)^2}{12}$ & $X\sim Unif(\alpha,\beta)$ \\
+				Normale            & $P\{X\leq a\}=P\bigg\{\frac{X-\mu}{\sigma}\leq\frac{a-\mu}{\sigma}\bigg\}$ & $e^{\mu t+\sigma^2t^2/2}$                &                                             $\mu$                                             &          $\sigma^2$           & $X\sim N(\mu,\sigma^2)$    \\
+				Exponentielle      & $P\{X\leq a\}=1-e^{-\lambda a}$                                            & $\frac{\lambda}{\lambda-t}$              &                                      $\frac{1}{\lambda}$                                      &     $\frac{1}{\lambda^2}$     & $X\sim Exp(\lambda)$       \\
+				Gamma              & $P\{T_n\leq t\}=\sum _{j=n}^\infty \frac{e^{-\lambda t}(\lambda t)^j}{j!}$ & $\left( \frac{\lambda}{\lambda-t}\right)^s$  &                                      $\frac{s}{\lambda}$                                      &     $\frac{s}{\lambda^2}$     & $T_n\sim Gam(n,p)$         \\ \hline
+			\end{tabular}
+		\end{center}
+		\hfill\vfill
+	\end{landscape}
+	\newpage
+\begin{landscape}
+	\hfill\vfill
+	\begin{center}
+			\begin{tabular}{|lll|}
+			\hline
+			\multicolumn{1}{||c}{}																					&	\multicolumn{1}{l}{\Large\bf Discret}						&	\multicolumn{1}{l||}{\Large\bf Continu}	\\ \hline\hline
+			Densité conjointe																			&	$p(x,y)=P\{X=x,Y=y\}$										&	$P\big\{(X,Y)\in C\big\}=\underset{(x,y)\in C}{\iint}f(x,y)\,dx\,dy$	\\
+			Fonction de répartion conjointe																			&	$F(a,b)=\sum_{\substack{x\leq a\\ y\leq b}}p(x,y)$			&	$F(a,b)=\int_{-\infty}^{a}\int_{-\infty}^{b}f(x,y)\, dy \,dx$	\\
+			Densités marginales																		&	$p_X(x)=P\{X=x\}=\sum_{y:p(x,y)>0}p(x,y)$					&	$f_X(x)=\int_{-\infty}^{\infty}f(x,y)dy$	\\
+			\begin{minipage}{0.3\textwidth}Distribution conjointe de\\ plusieurs variables aléatoires\end{minipage}	&	\begin{minipage}{0.5\textwidth}\begin{multline*} p(n_1,n_2,\ldots,n_r)=\\P(X_1=n_1,X_2=n_2,\ldots,X_r=n_r)\end{multline*}\end{minipage}	&	\begin{minipage}{0.5\textwidth}\begin{multline*} P\big\{(X_1,X_2,\ldots,X_n)\in C\big\}= \\ \underset{(x_1,x_2,\ldots,x_n)\in C}{\int\int\cdots\int} f(x_1,x_2,\ldots,x_n)\,dx_1\, dx_2\cdots\,dx_n \end{multline*}\end{minipage}	\\
+			\begin{minipage}{0.3\textwidth}Somme de variables \\aléatoires indépendantes\end{minipage}				&	$p_{X+Y}(n)=\sum_{k=0}^{n}p_X(n-k)p_Y(k):=p_X*p_Y(n)$		&	$\begin{cases}F_{X+Y}(a)=P\{X+Y\leq a\}=\int_{-\infty}^{\infty}F_X(a-y)f_Y(y)\,dy\\ f_{X+Y}(a)=\int_{-\infty}^{\infty}f_X(a-y)f_Y(y)\,dy:=f_X*f_Y(a)\end{cases}$	\\
+			Distributions conditionnelles																			&	$\begin{cases}p_{X|Y}(x,y)=P\{X=x|Y=y\}=\frac{p(x,y)}{p_Y(y)}\\ F_{X|Y}(x,y)=P\{X\leq x|Y=y\}=\sum_{a\leq x}P_{X|Y}(a,y)\end{cases}$	&	$f_{X|Y}(x,y)=\frac{f(x,y)}{f_Y(y)}$		\\
+			Convolution&$p_{X+Y}(n)=\sum_{k=0}^{n}p_X(n-k)p_Y(k)=p_X*p_Y(n)$&$f_{X+Y}(a)=\int_{-\infty}^{\infty}f_X(a-y)f_Y(y)\,dy=f_X*f_Y(a)$\\ \hline
+		\end{tabular}
+	\end{center}
+	\hfill\vfill
+\end{landscape}
+
+
+\newpage
+	\begin{thm}[Inégalité de Tchebychev/Markov]
+		Si \(X\) est une variable aléatoire positive, alors \[\forall\alpha\in\mathbb{N},\,\prob{X>a}\leq\frac{\esp{X^{\alpha}}}{a^{\alpha}}\quad\text{et}\quad \prob{|X-\mu|<a}\leq\frac{\sigma^2}{a^2}\]
+	\end{thm}
+	\begin{thm}[Inégalité de unilatérale de Tchebychev]
+		Soit \(X\) une variable aléatoire, avec \(\esp{X}=\mu\) et \(\var{X}=\sigma^2\), alors pour tout réel \(a>0\),
+		\[\prob{X\geq \mu+a}\leq\frac{\sigma^2}{\sigma^2+a^2}\quad\text{et}\quad\prob{X\leq\mu-a}\leq\frac{\sigma^2}{\sigma^2+a^2}\]
+	\end{thm}
+	\begin{thm}[Théorème central limite]~
+		\begin{enumerate}
+			\item Si \(X_i\) pour \(i=1,\ldots\) sont \textit{i.i.d} avec \(\esp{X}=\mu\) et \(\var{X}=\sigma^2\) alors, 
+			\[\lim_{n\to\infty}\prob{a\leq\frac{\sum_{i=1}^n X_i-n\mu}{\sigma\sqrt{n}}\leq b}=\Phi(b)-\Phi(a)\]
+			\item Si \(X_i\) pour \(i=1,\ldots\) sont indépendantes avec \(\esp{X_i}=\mu_i\) et \(\var{X_i}=\sigma_i^2<\infty\) alors,
+			\[\lim_{n\to\infty}\prob{a\leq\frac{\sum_{i=1}^n X_i-\sum_{i=1}^n\mu_i}{\sqrt{\sum_{i=1}^n \sigma_i^2}}\leq b}=\Phi(b)-\Phi(a)\]
+		\end{enumerate}
+	\end{thm}
+\end{document}
